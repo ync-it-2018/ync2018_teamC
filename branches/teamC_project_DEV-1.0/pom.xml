@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ync-it</groupId>
 	<artifactId>team-b</artifactId>
-	<name>team04ex02</name> <!-- 안녕  -->
+	<name>team04ex02</name> <!-- 바이  -->
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
