@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * CommonExceptionAdvice.java
  * 
- * @Author	: 배세희
+ * @Author	: 배세희3
  * @Date 	: 2018. 10. 15.
  * @Description
  * 공통 error 처리용 controller 
