@@ -35,7 +35,63 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "front/shopping-cart";
+		return "front/index";
 	}
+	
+	
+	@RequestMapping(value = "/product", method = RequestMethod.GET)
+	public String product(Locale locale, Model model) {
+		
+		return "front/product";
+	}
+	
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(Locale locale, Model model) {
+		
+		return "front/index";
+	}
+	
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String about(Locale locale, Model model) {
+		
+		return "front/about";
+	}
+	
+	@RequestMapping(value = "/blog_detail", method = RequestMethod.GET)
+	public String blog_detail(Locale locale, Model model) {
+		
+		return "front/blog_detail";
+	}
+	
+	@RequestMapping(value = "/blog", method = RequestMethod.GET)
+	public String blog(Locale locale, Model model) {
+		
+		return "front/blog";
+	}
+	
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	public String contact(Locale locale, Model model) {
+		
+		return "front/contact";
+	}
+	
+	@RequestMapping(value = "/home_02", method = RequestMethod.GET)
+	public String home_02(Locale locale, Model model) {
+		
+		return "front/home_02";
+	}
+	
+	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
+	public String product_detail(Locale locale, Model model) {
+		
+		return "front/product_detail";
+	}
+		
+	@RequestMapping(value = "/shoping_cart", method = RequestMethod.GET)
+	public String shopping_cart(Locale locale, Model model) {
+		
+		return "front/shoping_cart";
+	}
+	
 	
 }
