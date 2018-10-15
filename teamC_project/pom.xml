@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ync-it</groupId>
 	<artifactId>team-b</artifactId>
-	<name>ex02</name>
+	<name>team04ex02</name> <!-- 바이  -->
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -17,6 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+<!-- 이윤정  -->
 	</properties>
 	<dependencies>
 		<!-- Spring -->
