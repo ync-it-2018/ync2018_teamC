@@ -82,32 +82,32 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="index.jsp">Home</a>
+								<a href="/index">Home</a>
 								<ul class="sub-menu">
-									<li><a href="index.jsp">Homepage 1</a></li>
-									<li><a href="home-02.jsp">Homepage 2</a></li>
-									<li><a href="home-03.jsp">Homepage 3</a></li>
+									<li><a href="/index">Homepage 1</a></li>
+									<li><a href="/home_02">Homepage 2</a></li>
+									<li><a href="/home-03">Homepage 3</a></li>
 								</ul>
 							</li>
 
 							<li>
-								<a href="product.jsp">Shop</a>
+								<a href="/product">Shop</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="shoping-cart.jsp">Features</a>
+								<a href="/shoping-cart">Features</a>
 							</li>
 
 							<li>
-								<a href="blog.jsp">Blog</a>
+								<a href="/blog">Blog</a>
 							</li>
 
 							<li>
-								<a href="about.jsp">About</a>
+								<a href="/about">About</a>
 							</li>
 
 							<li>
-								<a href="contact.jsp">Contact</a>
+								<a href="/contact">Contact</a>
 							</li>
 						</ul>
 					</div>	
@@ -134,7 +134,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.jsp"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="/index"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -193,11 +193,11 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.jsp">Home</a>
+					<a href="/index">Home</a>
 					<ul class="sub-menu-m">
-						<li><a href="index.jsp">Homepage 1</a></li>
-						<li><a href="home-02.jsp">Homepage 2</a></li>
-						<li><a href="home-03.jsp">Homepage 3</a></li>
+						<li><a href="/index">Homepage 1</a></li>
+						<li><a href="/home_02">Homepage 2</a></li>
+						<li><a href="/home-03">Homepage 3</a></li>
 					</ul>
 					<span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -205,23 +205,23 @@
 				</li>
 
 				<li>
-					<a href="product.jsp">Shop</a>
+					<a href="/product">Shop</a>
 				</li>
 
 				<li>
-					<a href="shoping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="/shoping-cart" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
-					<a href="blog.jsp">Blog</a>
+					<a href="/blog">Blog</a>
 				</li>
 
 				<li>
-					<a href="about.jsp">About</a>
+					<a href="/about">About</a>
 				</li>
 
 				<li>
-					<a href="contact.jsp">Contact</a>
+					<a href="/contact">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -315,11 +315,11 @@
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.jsp" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+						<a href="/shoping-cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
 							View Cart
 						</a>
 
-						<a href="shoping-cart.jsp" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+						<a href="/shoping-cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
 							Check Out
 						</a>
 					</div>
@@ -332,12 +332,12 @@
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="index.jsp" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="/index" class="stext-109 cl8 hov-cl1 trans-04">
 				Home
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
-			<a href="product.jsp" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="/product" class="stext-109 cl8 hov-cl1 trans-04">
 				Men
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
@@ -705,7 +705,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Esprit Ruffle Shirt
 									</a>
 
@@ -737,7 +737,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Herschel supply
 									</a>
 
@@ -769,7 +769,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Only Check Trouser
 									</a>
 
@@ -801,7 +801,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Classic Trench Coat
 									</a>
 
@@ -833,7 +833,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Front Pocket Jumper
 									</a>
 
@@ -865,7 +865,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Vintage Inspired Classic 
 									</a>
 
@@ -897,7 +897,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Shirt in Stretch Cotton
 									</a>
 
@@ -929,7 +929,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Pieces Metallic Printed
 									</a>
 

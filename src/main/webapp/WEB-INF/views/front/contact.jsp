@@ -76,32 +76,32 @@
                <div class="menu-desktop">
                   <ul class="main-menu">
                      <li>
-                        <a href="index.jsp">Home</a>
+                        <a href="/index">Home</a>
                         <ul class="sub-menu">
-                           <li><a href="index.jsp">Homepage 1</a></li>
-                           <li><a href="home-02.jsp">Homepage 2</a></li>
-                           <li><a href="home-03.jsp">Homepage 3</a></li>
+                           <li><a href="/index">Homepage 1</a></li>
+                           <li><a href="/home_02">Homepage 2</a></li>
+                           <li><a href="/home_03">Homepage 3</a></li>
                         </ul>
                      </li>
 
                      <li>
-                        <a href="product.jsp">Shop</a>
+                        <a href="/product">Shop</a>
                      </li>
 
                      <li class="label1" data-label1="hot">
-                        <a href="shoping-cart.jsp">Features</a>
+                        <a href="/shoping_cart">Features</a>
                      </li>
 
                      <li>
-                        <a href="blog.jsp">Blog</a>
+                        <a href="/blog">Blog</a>
                      </li>
 
                      <li>
-                        <a href="about.jsp">About</a>
+                        <a href="/about">About</a>
                      </li>
 
                      <li class="active-menu">
-                        <a href="contact.jsp">Contact</a>
+                        <a href="/contact">Contact</a>
                      </li>
                   </ul>
                </div>   
@@ -128,7 +128,7 @@
       <div class="wrap-header-mobile">
          <!-- Logo moblie -->      
          <div class="logo-mobile">
-            <a href="index.jsp"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="/index"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
          </div>
 
          <!-- Icon header -->
@@ -187,10 +187,10 @@
 
          <ul class="main-menu-m">
             <li>
-               <a href="index.jsp">Home</a>
+               <a href="/index">Home</a>
                <ul class="sub-menu-m">
-                  <li><a href="index.jsp">Homepage 1</a></li>
-                  <li><a href="home-02.jsp">Homepage 2</a></li>
+                  <li><a href="/index">Homepage 1</a></li>
+                  <li><a href="/home-02">Homepage 2</a></li>
                   <li><a href="home-03.jsp">Homepage 3</a></li>
                </ul>
                <span class="arrow-main-menu-m">
@@ -199,23 +199,23 @@
             </li>
 
             <li>
-               <a href="product.jsp">Shop</a>
+               <a href="/product">Shop</a>
             </li>
 
             <li>
-               <a href="shoping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
+               <a href="/shoping_cart" class="label1 rs1" data-label1="hot">Features</a>
             </li>
 
             <li>
-               <a href="blog.jsp">Blog</a>
+               <a href="/blog">Blog</a>
             </li>
 
             <li>
-               <a href="about.jsp">About</a>
+               <a href="/about">About</a>
             </li>
 
             <li>
-               <a href="contact.jsp">Contact</a>
+               <a href="/contact">Contact</a>
             </li>
          </ul>
       </div>
@@ -224,7 +224,7 @@
       <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
          <div class="container-search-header">
             <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-               <img src="images/icons/icon-close2.png" alt="CLOSE">
+               <img src="/resources/front/images/icons/icon-close2.png" alt="CLOSE">
             </button>
 
             <form class="wrap-search-header flex-w p-l-15">
@@ -309,11 +309,11 @@
                </div>
 
                <div class="header-cart-buttons flex-w w-full">
-                  <a href="shoping-cart.jsp" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                  <a href="/shoping_cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                      View Cart
                   </a>
 
-                  <a href="shoping-cart.jsp" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                  <a href="/shoping_cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                      Check Out
                   </a>
                </div>
@@ -324,7 +324,7 @@
 
 
    <!-- Title page -->
-   <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+   <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/resources/front/images/bg-01.jpg');">
       <h2 class="ltext-105 cl0 txt-center">
          Contact
       </h2>
@@ -412,7 +412,7 @@
    
    <!-- Map -->
    <div class="map">
-      <div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
+      <div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="/resources/front/images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
    </div>
 
 
