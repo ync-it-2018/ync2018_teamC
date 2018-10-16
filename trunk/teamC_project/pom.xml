@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ync-it</groupId>
-	<artifactId>team-b</artifactId>
-	<name>team04ex02</name> <!-- 바이  -->
+	<artifactId>team-c</artifactId>
+	<name>team03ex02</name> <!-- 바이  -->
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -16,7 +16,7 @@
 		<!-- Jenkins에서 사용하는 부분 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
+<!-- 배세희 -->
 <!-- 이윤정  -->
 	</properties>
 	<dependencies>
