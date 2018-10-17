@@ -35,7 +35,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "front/index";
+		return "admin/index";
 	}
 	
 	/*1017수정2*/
@@ -98,6 +98,20 @@ public class HomeController {
 		
 		return "front/login";
 	}
+	
+	@RequestMapping(value = "/alogin", method = RequestMethod.GET)
+	public String alogin(Locale locale, Model model) {
+		
+		return "admin/alogin";
+	}
+	
+	@RequestMapping(value = "/productup", method = RequestMethod.GET)
+	public String productup(Locale locale, Model model) {
+		
+		return "admin/aproduct/productup";
+	}
+	
+	
 	
 	
 }
