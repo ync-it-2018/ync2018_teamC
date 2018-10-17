@@ -38,7 +38,7 @@ public class HomeController {
 		return "front/index";
 	}
 	
-	
+	/*1017수정*/
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Locale locale, Model model) {
 		
