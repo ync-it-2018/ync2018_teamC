@@ -320,8 +320,8 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/resources/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                <li><a href="/resources/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                <li><a href="/alogin"><i class="fa fa-circle-o"></i> login</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> productup</a></li>
               </ul>
             </li>
             <li class="treeview">
