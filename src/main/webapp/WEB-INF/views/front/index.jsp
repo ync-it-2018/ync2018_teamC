@@ -51,21 +51,18 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
+						<a href="/login" class="flex-c-m trans-04 p-lr-25">
+							LOGIN
 						</a>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
+							JOIN
 						</a>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
+							MyPage
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
 					</div>
 				</div>
 			</div>
@@ -83,15 +80,22 @@
 						<ul class="main-menu">
 							<li class="active-menu">
 								<a href="/index">Home</a>
-								<ul class="sub-menu">
-									<li><a href="/index">Homepage 1</a></li>
-									<li><a href="/home_02">Homepage 2</a></li>
-									<li><a href="/home_03">Homepage 3</a></li>
-								</ul>
 							</li>
 
 							<li>
 								<a href="/product">Shop</a>
+								<ul class="sub-menu">
+									<li><a href="/index" >Homepage 1</a>
+										<ul class="dropdown-menu">
+									<li><a href="/index" class="dropdown-toggle" data-toggle="dropdown">Homepage 1</a></li>
+									<li><a href="/home_02">Homepage 2</a></li>
+									<li><a href="/home_03">Homepage 3</a></li>
+								</ul>
+									</li>
+									<li><a href="/home_02">Homepage 2</a></li>
+									<li><a href="/home_03">Homepage 3</a></li>
+								</ul>
+							
 							</li>
 
 							<li class="label1" data-label1="hot">
@@ -173,7 +177,6 @@
 				<li>
 					<div class="right-top-bar flex-w h-full">
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -184,9 +187,6 @@
 							EN
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
-						</a>
 					</div>
 				</li>
 			</ul>

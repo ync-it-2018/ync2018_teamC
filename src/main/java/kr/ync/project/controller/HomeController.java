@@ -38,7 +38,7 @@ public class HomeController {
 		return "front/index";
 	}
 	
-	/*1017수정*/
+	/*1017수정2*/
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Locale locale, Model model) {
 		
@@ -91,6 +91,12 @@ public class HomeController {
 	public String shopping_cart(Locale locale, Model model) {
 		
 		return "front/shoping_cart";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		
+		return "front/login";
 	}
 	
 	
