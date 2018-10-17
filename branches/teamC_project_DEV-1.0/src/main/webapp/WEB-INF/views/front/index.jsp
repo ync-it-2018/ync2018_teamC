@@ -55,7 +55,7 @@
 							LOGIN
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="/join" class="flex-c-m trans-04 p-lr-25" >
 							JOIN
 						</a>
 
