@@ -51,21 +51,18 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
+						<a href="/login" class="flex-c-m trans-04 p-lr-25">
+							LOGIN
+						</a>
+
+						<a href="/join" class="flex-c-m trans-04 p-lr-25" >
+							JOIN
 						</a>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
+							MyPage
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
 					</div>
 				</div>
 			</div>
@@ -83,15 +80,22 @@
 						<ul class="main-menu">
 							<li class="active-menu">
 								<a href="/index">Home</a>
-								<ul class="sub-menu">
-									<li><a href="/index">Homepage 1</a></li>
-									<li><a href="/home_02">Homepage 2</a></li>
-									<li><a href="/home_03">Homepage 3</a></li>
-								</ul>
 							</li>
 
 							<li>
 								<a href="/product">Shop</a>
+								<ul class="sub-menu">
+									<li><a href="/index" >Homepage 1</a>
+										<ul class="dropdown-menu">
+									<li><a href="/index" class="dropdown-toggle" data-toggle="dropdown">Homepage 1</a></li>
+									<li><a href="/home_02">Homepage 2</a></li>
+									<li><a href="/home_03">Homepage 3</a></li>
+								</ul>
+									</li>
+									<li><a href="/home_02">Homepage 2</a></li>
+									<li><a href="/home_03">Homepage 3</a></li>
+								</ul>
+							
 							</li>
 
 							<li class="label1" data-label1="hot">
@@ -173,7 +177,6 @@
 				<li>
 					<div class="right-top-bar flex-w h-full">
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -184,9 +187,6 @@
 							EN
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
-						</a>
 					</div>
 				</li>
 			</ul>
@@ -417,7 +417,7 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-01.jpg" alt="IMG-BANNER">
+						<img src="/resources/front/images/banner-01.jpg" alt="IMG-BANNER">
 
 						<a href="/product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
@@ -1449,7 +1449,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										</div>
 									</div>
 
-									<div class="item-slick3" data-thumb="/resources/images/product-detail-02.jpg">
+									<div class="item-slick3" data-thumb="/resources/front/images/product-detail-02.jpg">
 										<div class="wrap-pic-w pos-relative">
 											<img src="/resources/front/images/product-detail-02.jpg" alt="IMG-PRODUCT">
 
@@ -1580,7 +1580,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!--===============================================================================================-->
 	<script src="/resources/front/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="/resources//frontvendor/bootstrap/js/popper.js"></script>
+	<script src="/resources/front/vendor/bootstrap/js/popper.js"></script>
 	<script src="/resources/front/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="/resources/front/vendor/select2/select2.min.js"></script>
