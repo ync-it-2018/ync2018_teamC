@@ -40,7 +40,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>LT</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Zerock</b> PROJECT</span>
+          <span class="logo-lg"><b>Mung</b> Nyang</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -317,113 +317,128 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-dashboard"></i> <span>관리자 로그인</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/alogin"><i class="fa fa-circle-o"></i> login</a></li>
-                <li><a href="/productup"><i class="fa fa-circle-o"></i> productup</a></li>
+                <li><a href="/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> 회원가입</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> 로그아웃</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
-                <span>Layout Options</span>
+                <span>메인관리</span>
                 <span class="label label-primary pull-right">4</span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> 슬라이드</a></li>
+                <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> 대표카테고리</a></li>
+                <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> 베스트상품</a></li>
+                <li><a href="/"><i class="fa fa-circle-o"></i> 팝업창 관리</a></li>
+                <li><a href="/"><i class="fa fa-circle-o"></i> 신상품 </a></li>
+                <li><a href="/"><i class="fa fa-circle-o"></i> 이벤트 </a></li>
+                <li><a href="/"><i class="fa fa-circle-o"></i> 추천상품 </a></li>
+                <li><a href="/"><i class="fa fa-circle-o"></i> 푸터관리</a></li>
+                
+              
               </ul>
             </li>
-            <li>
+             <!-- <li>
               <a href="../widgets.html">
                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
-              </a>
-            </li>
+              </a> 
+            </li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
-                <span>Charts</span>
+                <span>쇼핑 관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
+                <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> 상품등록</a></li>
+                <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>UI Elements</span>
+                <span>회원관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> 회원관리 </a></li>
+                <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> 등급관리 </a></li>
+                <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Front 화면 </a></li>
               </ul>
             </li>
             <li class="treeview active">
               <a href="#">
-                <i class="fa fa-edit"></i> <span>Forms</span>
+                <i class="fa fa-edit"></i> <span>이벤트관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
+              <!-- <ul class="treeview-menu">
                 <li class="active"><a href="general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
                 <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-              </ul>
+              </ul> -->
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-table"></i> <span>Tables</span>
+                <i class="fa fa-table"></i> <span>매출관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> 일별매출</a></li>
+                <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 매출조회</a></li>
               </ul>
             </li>
             <li>
               <a href="../calendar.html">
-                <i class="fa fa-calendar"></i> <span>Calendar</span>
+                <i class="fa fa-calendar"></i> <span>문의관리</span>
                 <small class="label pull-right bg-red">3</small>
               </a>
             </li>
             <li>
               <a href="../mailbox/mailbox.html">
-                <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                <i class="fa fa-envelope"></i> <span>공지사항</span>
                 <small class="label pull-right bg-yellow">12</small>
+              </a>
+            </li>
+              <li>
+              <a href="../widgets.html">
+                <i class="fa fa-envelope"></i> <span>검색</span>
+              </a>
+            </li>
+            <li>
+              <a href="../mailbox/mailbox.html">
+                <i class="fa fa-envelope"></i> <span>어바웃관리</span>
+                <small class="label pull-right bg-blue">6</small>
               </a>
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i> <span>Examples</span>
+                <i class="fa fa-folder"></i> <span>후기</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
+             <!--  <ul class="treeview-menu">
                 <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
                 <li><a href="../examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
                 <li><a href="../examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
                 <li><a href="../examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
                 <li><a href="../examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
                 <li><a href="../examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>                
-              </ul>
+                <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>              
+              </ul>  --> 
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-share"></i> <span>Multilevel</span>
+                <i class="fa fa-share"></i> <span>주문관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
+              <!-- <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                 <li>
                   <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
@@ -439,14 +454,14 @@
                   </ul>
                 </li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-              </ul>
+              </ul> -->
             </li>
-            <li><a href="/resources/documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            <!-- <li><a href="/resources/documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-          </ul>
+          </ul> -->
         </section>
         <!-- /.sidebar -->
       </aside>

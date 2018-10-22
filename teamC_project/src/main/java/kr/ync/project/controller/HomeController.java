@@ -26,6 +26,7 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		//saehee
 		// 가나다
+		//바꼈니
 		logger.info("hi", locale);
 
 		Date date = new Date();
@@ -112,6 +113,10 @@ public class HomeController {
 	}
 	
 	
-	
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String join(Locale locale, Model model) {
+		
+		return "front/join";
+	}
 	
 }
