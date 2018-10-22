@@ -32,6 +32,8 @@ button {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    border-radius: 27px;
+    
 }
 
 button:hover {
@@ -41,13 +43,15 @@ button:hover {
 /* Extra styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
-    background-color: #f44336;
+    background-color: #3c3b3b;
+    border-radius: 27px;
 }
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
   float: left;
-  width: 50%;
+  width: 200px;
+  margin-left: 180px;
 }
 
 /* Add padding to container elements */
@@ -73,8 +77,9 @@ button:hover {
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
+    border: 1px solid #fff;
     width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 25px;
 }
 
 /* Style the horizontal ruler */
@@ -112,6 +117,16 @@ hr {
        width: 100%;
     }
 }
+
+.bg{
+   
+    background-color: #ebebeb;
+}
+
+#id-size{
+    width: 130px;
+}
+
 </style>
 <head>
 <meta charset="UTF-8">
@@ -119,18 +134,23 @@ hr {
 </head>
 
 
-<body>
-	<h2>Modal Signup Form</h2>
-
+<body class="bg">
+<!-- <h2>Modal Signup Form</h2> -->
+<!--    
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
-
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  -->
+<div > <!--  id="id01" class="modal"--> 
+<!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"> &times;</span>--> 
+  <form class="modal-content"><!--  action="/action_page.php" -->
     <div class="container">
+     <a href="/index" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a> 
+    
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
+      <label for="id"><b>ID</b></label>
+      <input id="id-size" type="text" placeholder="Enter ID" name="ID">
+      <br>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
 
@@ -144,10 +164,9 @@ hr {
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
 
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
+   
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="location.href='/index'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
         <button type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>
@@ -156,13 +175,14 @@ hr {
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
-
+/* var modal = document.getElementById('id01');
+ */
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+} 
+</script>
 </body>
 </html>
