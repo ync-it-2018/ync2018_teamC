@@ -40,6 +40,7 @@
 <body class="animsition">
 	<!-- front -->
 	<!-- Header -->
+	<!-- 배새희1022 -->
 	<header>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
@@ -194,6 +195,10 @@
 			<ul class="main-menu-m">
 				<li>
 					<a href="/index">Home</a>
+				</li>
+
+				<li>
+					<a href="/product">Shop</a>
 					<ul class="sub-menu-m">
 						<li><a href="/index">Homepage 1</a></li>
 						<li><a href="/home_02">Homepage 2</a></li>
@@ -202,10 +207,6 @@
 					<span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</span>
-				</li>
-
-				<li>
-					<a href="/product">Shop</a>
 				</li>
 
 				<li>
