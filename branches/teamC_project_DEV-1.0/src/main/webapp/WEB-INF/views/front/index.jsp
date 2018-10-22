@@ -69,11 +69,11 @@
 			</div>
 
 			<div class="wrap-menu-desktop">
-				<nav class="limiter-menu-desktop container">
-					
-					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="/resources/front/images/logo01.png" alt="IMG-LOGO">
+								<nav class="limiter-menu-desktop container">
+
+					<!-- Logo desktop -->
+					<a href="/index" class="logo">
+						<img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -81,41 +81,88 @@
 						<ul class="main-menu">
 							<li class="active-menu">
 								<a href="/index">Home</a>
+
 							</li>
 
 							<li>
-								<a href="/product">Shop</a>
+								<a href="product.html">Shop</a>
 								<ul class="sub-menu">
-									<li><a href="/index" >Homepage 1</a>
-										<ul class="dropdown-menu">
-									<li><a href="/index" class="dropdown-toggle" data-toggle="dropdown">Homepage 1</a></li>
-									<li><a href="/home_02">Homepage 2</a></li>
-									<li><a href="/home_03">Homepage 3</a></li>
-								</ul>
+									<li><a href="/product">강아지</a>
+										<ul class="sub-menu">
+											<li><a href="/product">사료 / 간식</a>
+												<ul class="sub-menu">
+													<li><a href="/product">자견용</a></li>
+													<li><a href="/product">성견용</a></li>
+													<li><a href="/product">노견용</a></li>
+													<li><a href="/product">유기농</a></li>
+												</ul>
+											</li>
+											<li><a href="/product">생활 / 훈련</a>
+												<ul class="sub-menu">
+													<li><a href="/product">배변</a></li>
+													<li><a href="/product">장난감</a></li>
+													<li><a href="/product">목욕</a></li>
+													<li><a href="/product">하우스</a></li>
+												</ul>
+											</li>
+											<li><a href="/product">패션 / 악세사리</a>
+												<ul class="sub-menu">
+													<li><a href="/product">신발</a></li>
+													<li><a href="/product">상의</a></li>
+													<li><a href="/product">하의</a></li>
+													<li><a href="/product">원피스</a></li>
+												</ul>
+											</li>
+										</ul>
 									</li>
-									<li><a href="/home_02">Homepage 2</a></li>
-									<li><a href="/home_03">Homepage 3</a></li>
+									<li><a href="/product">고양이</a>
+										<ul class="sub-menu">
+											<li><a href="/product">사료 / 간식</a>
+												<ul class="sub-menu">
+													<li><a href="/product">자묘용</a></li>
+													<li><a href="/product">성묘용</a></li>
+													<li><a href="/product">노묘용</a></li>
+													<li><a href="/product">유기농</a></li>
+												</ul>
+											</li>
+											<li><a href="/product">생활 / 훈련</a>
+												<ul class="sub-menu">
+													<li><a href="/product">배변</a></li>
+													<li><a href="/product">장난감</a></li>
+													<li><a href="/product">목욕</a></li>
+													<li><a href="/product">하우스</a></li>
+												</ul>
+											</li>
+											<li><a href="/product">패션 / 악세사리</a>
+												<ul class="sub-menu">
+													<li><a href="/product">신발</a></li>
+													<li><a href="/product">상의</a></li>
+													<li><a href="/product">하의</a></li>
+													<li><a href="/product">원피스</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
 								</ul>
-							
 							</li>
 
-							<li class="label1" data-label1="hot">
-								<a href="/shoping_cart">Features</a>
+							<!-- <li class="label1" data-label1="hot">
+								<a href="shoping-cart.html">Features</a>
+							</li> -->
+
+							<li>
+								<a href="blog.html">Blog</a>
 							</li>
 
 							<li>
-								<a href="/blog">Blog</a>
+								<a href="about.html">About</a>
 							</li>
 
 							<li>
-								<a href="/about">About</a>
-							</li>
-
-							<li>
-								<a href="/contact">Contact</a>
+								<a href="contact.html">Contact</a>
 							</li>
 						</ul>
-					</div>	
+					</div>
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
