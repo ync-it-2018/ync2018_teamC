@@ -40,7 +40,7 @@
 <body class="animsition">
 	<!-- front -->
 	<!-- Header -->
-	<!-- 배새희1022 -->
+	<!-- 배세희11140001111 -->
 	<header>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
@@ -79,11 +79,11 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
+							<!-- <li class="active-menu">
 								<a href="/index">Home</a>
 
 							</li>
-
+ -->
 							<li>
 								<a href="product.html">Shop</a>
 								<ul class="sub-menu">
@@ -145,21 +145,27 @@
 									</li>
 								</ul>
 							</li>
+							
+							<li>
+								<a href="/blog">Event</a>
+							</li>
+							
+							
+							<li>
+								<a href="/about">About</a>
+							</li>
+							
 
-							<!-- <li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
+							<li class="label1" data-label1="hot">
+								<a href="/blog">Review</a>
+							</li> 
+<!-- 
+							<li>
+								<a href="blog.html">Blog</a>
 							</li> -->
 
 							<li>
-								<a href="blog.html">Blog</a>
-							</li>
-
-							<li>
-								<a href="about.html">About</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
+								<a href="/contact">Contact</a>
 							</li>
 						</ul>
 					</div>
@@ -387,7 +393,7 @@
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Women Collection 2018
+									Healthy food
 								</span>
 							</div>
 								
@@ -411,13 +417,13 @@
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men New-Season
+									Everything about dogs 
 								</span>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									Jackets & Coats
+									Food & House
 								</h2>
 							</div>
 								
@@ -435,7 +441,7 @@
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men Collection 2018
+									Cat's Collection 2018
 								</span>
 							</div>
 								
@@ -465,16 +471,16 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="/resources/front/images/banner-01.jpg" alt="IMG-BANNER">
+						<img src="/resources/front/images/cate06.png" alt="IMG-BANNER" >
 
 						<a href="/product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
+									Dog
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Brand new!
 								</span>
 							</div>
 
@@ -490,16 +496,16 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="/resources/front/images/banner-02.jpg" alt="IMG-BANNER">
+						<img src="/resources/front/images/cate02.jpg" alt="IMG-BANNER">
 
 						<a href="/product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
+									Cat
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Brand new!
 								</span>
 							</div>
 
@@ -515,16 +521,16 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="/resources/front/images/banner-03.jpg" alt="IMG-BANNER">
+						<img src="/resources/front/images/cate04.jpg" alt="IMG-BANNER">
 
 						<a href="/product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories
+									Organic
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									New Trend
+									Brand new!
 								</span>
 							</div>
 
@@ -797,7 +803,7 @@
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="/resources/front/images/product-01.jpg" alt="IMG-PRODUCT">
+							<img src="/resources/front/images/d01.jpeg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
@@ -806,7 +812,9 @@
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
+							
 								<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								
 									Esprit Ruffle Shirt
 								</a>
 
@@ -829,7 +837,7 @@
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="/resources/front/images/product-02.jpg" alt="IMG-PRODUCT">
+							<img src="/resources/front/images/d02.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
@@ -861,7 +869,7 @@
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="/resources/front/images/product-03.jpg" alt="IMG-PRODUCT">
+							<img src="/resources/front/images/d03.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
@@ -893,7 +901,7 @@
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="/resources/front/images/product-04.jpg" alt="IMG-PRODUCT">
+							<img src="/resources/front/images/c01.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
@@ -925,7 +933,7 @@
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="/resources/front/images/product-05.jpg" alt="IMG-PRODUCT">
+							<img src="/resources/front/images/dh01.jpg" alt="IMG-PRODUCT" style="height:120%;">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
