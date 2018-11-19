@@ -4,7 +4,8 @@
 <html>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+* {box-sizing: border-box;
+	}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -30,7 +31,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 150px;
     opacity: 0.9;
     border-radius: 27px;
     
@@ -84,7 +85,7 @@ button:hover {
 
 /* Style the horizontal ruler */
 hr {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #BDBDBD;
     margin-bottom: 25px;
 }
  
@@ -148,27 +149,64 @@ hr {
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
-      <label for="id"><b>ID</b></label>
+      <label for="id" style="padding-right:60px;"><b>ID</b></label>
       <input id="id-size" type="text" placeholder="Enter ID" name="ID">
+      <button type="button">중복체크</button>
+      <br>
+      <label for="pwd" style="padding-right:10px;"><b>비밀번호</b></label>
+      <input id="id-size" type="password" placeholder="Enter pwd" name="psw" required>
+      <label for="pwdck"><b>비밀번호확인</b></label>
+      <input id="id-size" type="password" placeholder="Passward check" name="pswck" required>
+       <br>
+        <label for="name" style="padding-right:40px;"><b>이름</b></label>
+      <input id="id-size" type="text" placeholder="name" name="ID">
+      <br>
+      
+      
+      <label for="tel" style="padding-right:20px;"><b>전화번호</b></label>
+      <select name="areacode">
+    	<option value="서울">02</option>
+   		<option value="대구">053</option>
+    	<option value="부산">051</option>
+    	<option value="경기">031</option>
+    	<option value="대전">042</option>
+    	<option value="충북">043</option>
+    	<option value="강원">033</option>
+    	<option value="제주">064</option>
+	</select>
+	-
+      <input id="id-size" type="text" placeholder="tel" name="tel">
+      <br>
+      <label for="phonenum" style="padding-right:35px;"><b>폰번호</b></label>
+      <select name="areacode">
+    	<option>010</option>
+   		<option>011</option>
+	</select>
+	-
+      <input id="id-size" type="text" placeholder="phone" name="phone">
+      -
+      <input id="id-size" type="text" placeholder="phone" name="phone">
+      <br>
+      
+      <label for="address"><b>주소</b></label>
+      <input type="text" placeholder="address" name="address">
+      
       <br>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
       
-      <label>
+      <hr>
+      
+      <!-- <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
-
+      </label> -->
+		
    
       <div class="clearfix">
         <button type="button" onclick="location.href='/index'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
         <button type="submit" class="signupbtn">Sign Up</button>
       </div>
+      
     </div>
   </form>
 </div>
