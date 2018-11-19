@@ -36,7 +36,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "front/index";
+		return "admin/index";
 	}
 	
 	/*1017수정2*/

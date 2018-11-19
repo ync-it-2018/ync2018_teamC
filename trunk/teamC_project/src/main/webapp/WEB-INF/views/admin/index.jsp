@@ -20,6 +20,33 @@
       </div><!--/.col (left) -->
       </div>   <!-- /.row -->
     </section><!-- /.content -->
+    
+    
+    
+    
+    <!-- 관리자 계정 관리 1119김진희 -->
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <c:forEach var="user" items="${ users }">
+            <tr>
+                <td>${ user.email }</td>
+                <td>
+                    <c:forEach var="authority" items="${ user.authorities }">
+                        ${ authority.authority }
+                    </c:forEach>
+                </td>
+            </tr>
+        </c:forEach>
+    </tbody>
+</table>
+
+
 
     
 <%@include file="include/footer.jsp" %>
