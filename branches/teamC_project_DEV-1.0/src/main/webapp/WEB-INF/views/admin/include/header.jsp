@@ -321,9 +321,10 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
-                <li><a href="/productup"><i class="fa fa-circle-o"></i> 회원가입</a></li>
+                <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 로그아웃</a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
+                <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
               </ul>
             </li>
             <li class="treeview">
