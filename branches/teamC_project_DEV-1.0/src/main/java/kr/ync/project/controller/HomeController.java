@@ -131,4 +131,10 @@ public class HomeController {
 		return "front/join";
 	}
 	
+	@RequestMapping(value = "/MypageUserinfo", method = RequestMethod.GET)
+	public String MypageUserinfo(Locale locale, Model model) {
+		
+		return "front/MypageUserinfo";
+	}
+	
 }
