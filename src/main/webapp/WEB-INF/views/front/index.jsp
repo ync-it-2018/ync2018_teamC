@@ -67,7 +67,7 @@
 							JOIN
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="/MypageUserinfo" class="flex-c-m trans-04 p-lr-25">
 							MyPage
 						</a>
 
@@ -92,7 +92,7 @@
 							</li>
  -->
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="/product">Shop</a>
 								<ul class="sub-menu">
 									<li><a href="/product">강아지</a>
 										<ul class="sub-menu">
