@@ -106,6 +106,18 @@ public class HomeController {
 		return "admin/alogin";
 	}
 	
+	@RequestMapping(value = "/ajoin", method = RequestMethod.GET)
+	public String ajoin(Locale locale, Model model) {
+		
+		return "admin/ajoin";
+	}
+	
+	@RequestMapping(value = "/coInfo", method = RequestMethod.GET)
+	public String coInfo(Locale locale, Model model) {
+		
+		return "admin/coInfo";
+	}
+	
 	@RequestMapping(value = "/productup", method = RequestMethod.GET)
 	public String productup(Locale locale, Model model) {
 		
