@@ -52,7 +52,7 @@ button:hover {
 .cancelbtn, .signupbtn {
   float: left;
   width: 200px;
-  margin-left: 180px;
+  margin-left: 250px;
 }
 
 /* Add padding to container elements */
@@ -147,19 +147,19 @@ hr {
      <a href="/index" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a> 
     
       <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
+      <p>회원정보입력</p>
       <hr>
       <label for="id" style="padding-right:60px;"><b>ID</b></label>
-      <input id="id-size" type="text" placeholder="Enter ID" name="ID">
+      <input style="width: 130px;" type="text" placeholder="Enter ID" name="ID">
       <button type="button">중복체크</button>
       <br>
       <label for="pwd" style="padding-right:10px;"><b>비밀번호</b></label>
-      <input id="id-size" type="password" placeholder="Enter pwd" name="psw" required>
+      <input style="width: 130px;" type="password" placeholder="Enter pwd" name="psw" required>
       <label for="pwdck"><b>비밀번호확인</b></label>
-      <input id="id-size" type="password" placeholder="Passward check" name="pswck" required>
+      <input style="width: 130px;" type="password" placeholder="Passward check" name="pswck" required>
        <br>
         <label for="name" style="padding-right:40px;"><b>이름</b></label>
-      <input id="id-size" type="text" placeholder="name" name="ID">
+      <input style="width: 130px;" type="text" placeholder="name" name="username">
       <br>
       
       
@@ -175,7 +175,7 @@ hr {
     	<option value="제주">064</option>
 	</select>
 	-
-      <input id="id-size" type="text" placeholder="tel" name="tel">
+      <input style="width: 130px;" type="text" placeholder="tel" name="tel">
       <br>
       <label for="phonenum" style="padding-right:35px;"><b>폰번호</b></label>
       <select name="areacode">
@@ -183,25 +183,41 @@ hr {
    		<option>011</option>
 	</select>
 	-
-      <input id="id-size" type="text" placeholder="phone" name="phone">
+      <input style="width: 130px;" type="text" placeholder="phone" name="phone">
       -
-      <input id="id-size" type="text" placeholder="phone" name="phone">
+      <input style="width: 130px;" type="text" placeholder="phone" name="phone">
       <br>
       
       <label for="address"><b>주소</b></label>
-      <input type="text" placeholder="address" name="address">
+      <input type="text" placeholder="Enter address" name="address">
       
       <br>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-      
+      <input style="width: 130px;" type="text" placeholder="Enter Email" name="email" required>
+      @
+       <select name="areacode">
+    	<option value="네이버">naver.com</option>
+   		<option value="구글">gmail.com</option>
+    	<option value="다음">daum.net</option>
+	</select>
+	<button type="button">직접입력</button>
       <hr>
       
       <!-- <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label> -->
-		
-   
+		 <p>반려견 정보 (*선택)</p>
+	<hr>	 
+	 <label for="name" style="padding-right:30px;"><b>반려견 이름</b></label>
+      <input style="width: 130px;" type="text" placeholder="petname" name="petname">   
+	<label for="gender" style = "padding:100px;"><b>성별</b></label>
+	<input type="radio" name="gender">
+	<label>암</label>
+	<input type="radio" name="gender">
+	<label>수</label>   
+   <br>
+    <label for="name" style="padding-right:80px;"><b>견종</b></label>
+      <input style="width: 130px;" type="text" placeholder="petname" name="petname"> 
       <div class="clearfix">
         <button type="button" onclick="location.href='/index'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
         <button type="submit" class="signupbtn">Sign Up</button>

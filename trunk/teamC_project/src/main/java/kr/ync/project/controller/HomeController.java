@@ -36,7 +36,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "admin/index";
+		return "front/index";
 	}
 	
 	/*1017수정2*/
@@ -106,6 +106,18 @@ public class HomeController {
 		return "admin/alogin";
 	}
 	
+	@RequestMapping(value = "/ajoin", method = RequestMethod.GET)
+	public String ajoin(Locale locale, Model model) {
+		
+		return "admin/ajoin";
+	}
+	
+	@RequestMapping(value = "/coInfo", method = RequestMethod.GET)
+	public String coInfo(Locale locale, Model model) {
+		
+		return "admin/coInfo";
+	}
+	
 	@RequestMapping(value = "/productup", method = RequestMethod.GET)
 	public String productup(Locale locale, Model model) {
 		
@@ -117,6 +129,12 @@ public class HomeController {
 	public String join(Locale locale, Model model) {
 		
 		return "front/join";
+	}
+	
+	@RequestMapping(value = "/MypageUserinfo", method = RequestMethod.GET)
+	public String MypageUserinfo(Locale locale, Model model) {
+		
+		return "front/MypageUserinfo";
 	}
 	
 }
