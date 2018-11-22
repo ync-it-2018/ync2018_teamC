@@ -24,7 +24,7 @@
     
     
     
-    <!-- 관리자 계정 관리 1119김진희 -->
+    <!-- 관리자 계정 관리 1119김진희 나중에 옮겨-->
     <table class="table table-striped">
     <thead>
         <tr>
