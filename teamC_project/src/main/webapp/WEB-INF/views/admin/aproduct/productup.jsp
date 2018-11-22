@@ -22,7 +22,7 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">REGISTER BOARD</h3>
+					<h3 class="box-title">상품등록</h3>
 				</div>
 				<!-- /.box-header -->
 
@@ -30,12 +30,12 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Title</label> <input type="text"
-								name='title' class="form-control" placeholder="Enter Title">
+								name='title' class="form-control" placeholder="상품명">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Content</label>
 							<textarea class="form-control" name="content" rows="3"
-								placeholder="Enter ..."></textarea>
+								placeholder="상품 설명"></textarea>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Writer</label>
