@@ -161,4 +161,28 @@ public class HomeController {
 		return "front/MypageUserinfo";
 	}
 	
+	@RequestMapping(value = "/MypageSavedMoney", method = RequestMethod.GET)
+	public String MypageSavedMoney(Locale locale, Model model) {
+		
+		return "front/MypageSavedMoney";
+	}
+	
+	@RequestMapping(value = "/MypageOrder", method = RequestMethod.GET)
+	public String MypageOrder(Locale locale, Model model) {
+		
+		return "front/MypageOrder";
+	}
+	
+	@RequestMapping(value = "/MypageWithdrawal", method = RequestMethod.GET)
+	public String MypageWithdrawal(Locale locale, Model model) {
+		
+		return "front/MypageWithdrawal";
+	}
+	
+	@RequestMapping(value = "/MypageInterestedpdt", method = RequestMethod.GET)
+	public String MypageInterestedpdt(Locale locale, Model model) {
+		
+		return "front/MypageInterestedpdt";
+	}
+	
 }
