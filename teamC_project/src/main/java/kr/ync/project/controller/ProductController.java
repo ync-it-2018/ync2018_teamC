@@ -1,4 +1,4 @@
-package kr.ync.project.controller;
+/*package kr.ync.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,3 +23,4 @@ public class ProductController {
 		return mav;
 	}
 }
+*/

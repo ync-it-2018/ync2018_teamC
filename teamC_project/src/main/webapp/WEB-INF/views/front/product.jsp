@@ -42,15 +42,15 @@
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
-		<div class="container-menu-desktop">
+		<div class="container-menu-desktop" >
 			<!-- Topbar -->
-			<div class="top-bar">
-				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
+			<div class="top-bar" style="background-color:#dbbb87;">
+				<div class="content-topbar flex-sb-m h-full container" >
+					<div class="left-top-bar" style="color : black;">
 						Free shipping for standard order over $100
 					</div>
 
-					<div class="right-top-bar flex-w h-full">
+					<div class="right-top-bar flex-w h-full" >
 						<a href="/login" class="flex-c-m trans-04 p-lr-25">
 							LOGIN
 						</a>
@@ -59,7 +59,7 @@
 							JOIN
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="/MypageUserinfo" class="flex-c-m trans-04 p-lr-25">
 							MyPage
 						</a>
 
@@ -78,13 +78,13 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
+							<!-- <li class="active-menu">
 								<a href="/index">Home</a>
 
 							</li>
-
+ -->
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="/product">Shop</a>
 								<ul class="sub-menu">
 									<li><a href="/product">강아지</a>
 										<ul class="sub-menu">
@@ -144,21 +144,27 @@
 									</li>
 								</ul>
 							</li>
+							
+							<li>
+								<a href="/blog">Event</a>
+							</li>
+							
+							
+							<li>
+								<a href="/about">About</a>
+							</li>
+							
 
-							<!-- <li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
+							<li class="label1" data-label1="hot">
+								<a href="/blog">Review</a>
+							</li> 
+<!-- 
+							<li>
+								<a href="blog.html">Blog</a>
 							</li> -->
 
 							<li>
-								<a href="blog.html">Blog</a>
-							</li>
-
-							<li>
-								<a href="about.html">About</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
+								<a href="/contact">Contact</a>
 							</li>
 						</ul>
 					</div>

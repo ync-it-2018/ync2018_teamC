@@ -36,7 +36,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "front/index";
+		return "front/write_review";
 	}
 	
 	/*1017수정2*/
@@ -100,6 +100,12 @@ public class HomeController {
 		return "front/login";
 	}
 	
+	@RequestMapping(value = "/aindex", method = RequestMethod.GET)
+	public String aindex(Locale locale, Model model) {
+		
+		return "admin/index";
+	}
+	
 	@RequestMapping(value = "/alogin", method = RequestMethod.GET)
 	public String alogin(Locale locale, Model model) {
 		
@@ -124,6 +130,24 @@ public class HomeController {
 		return "admin/aproduct/productup";
 	}
 	
+	@RequestMapping(value = "/addslider", method = RequestMethod.GET)
+	public String addslider(Locale locale, Model model) {
+		
+		return "admin/addslider";
+	}
+	
+	@RequestMapping(value = "/test02", method = RequestMethod.GET)
+	public String popup(Locale locale, Model model) {
+		
+		return "admin/test02";
+	}
+	
+	@RequestMapping(value = "/test02_1", method = RequestMethod.GET)
+	public String popuptest(Locale locale, Model model) {
+		
+		return "admin/test02_1";
+	}
+	
 	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Locale locale, Model model) {
@@ -135,6 +159,30 @@ public class HomeController {
 	public String MypageUserinfo(Locale locale, Model model) {
 		
 		return "front/MypageUserinfo";
+	}
+	
+	@RequestMapping(value = "/MypageSavedMoney", method = RequestMethod.GET)
+	public String MypageSavedMoney(Locale locale, Model model) {
+		
+		return "front/MypageSavedMoney";
+	}
+	
+	@RequestMapping(value = "/MypageOrder", method = RequestMethod.GET)
+	public String MypageOrder(Locale locale, Model model) {
+		
+		return "front/MypageOrder";
+	}
+	
+	@RequestMapping(value = "/MypageWithdrawal", method = RequestMethod.GET)
+	public String MypageWithdrawal(Locale locale, Model model) {
+		
+		return "front/MypageWithdrawal";
+	}
+	
+	@RequestMapping(value = "/MypageInterestedpdt", method = RequestMethod.GET)
+	public String MypageInterestedpdt(Locale locale, Model model) {
+		
+		return "front/MypageInterestedpdt";
 	}
 	
 }
