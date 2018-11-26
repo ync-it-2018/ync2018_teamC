@@ -100,6 +100,12 @@ public class HomeController {
 		return "front/login";
 	}
 	
+	@RequestMapping(value = "/aindex", method = RequestMethod.GET)
+	public String aindex(Locale locale, Model model) {
+		
+		return "admin/index";
+	}
+	
 	@RequestMapping(value = "/alogin", method = RequestMethod.GET)
 	public String alogin(Locale locale, Model model) {
 		
@@ -122,6 +128,24 @@ public class HomeController {
 	public String productup(Locale locale, Model model) {
 		
 		return "admin/aproduct/productup";
+	}
+	
+	@RequestMapping(value = "/addslider", method = RequestMethod.GET)
+	public String addslider(Locale locale, Model model) {
+		
+		return "admin/addslider";
+	}
+	
+	@RequestMapping(value = "/test02", method = RequestMethod.GET)
+	public String popup(Locale locale, Model model) {
+		
+		return "admin/test02";
+	}
+	
+	@RequestMapping(value = "/test02_1", method = RequestMethod.GET)
+	public String popuptest(Locale locale, Model model) {
+		
+		return "admin/test02_1";
 	}
 	
 	
