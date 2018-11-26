@@ -36,10 +36,13 @@
 	<link rel="stylesheet" type="text/css" href="/resources/front/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/resources/front/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/resources/front/vendor/bootstrap/css/bootstrap-grid.css">
-	<link rel="stylesheet" type="text/css" href="/resources/dist/css/bootstrap3-showmanyslideonecarousel.css">
-	<link rel="stylesheet" type="text/css" href="/resources/dist/css/bootstrap3-showmanyslideonecarousel.css.map">
-	<link rel="stylesheet" type="text/css" href="/resources/dist/css/bootstrap3-showmanyslideonecarousel.min.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/front/css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="/resources/front/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.green.css">
+	<link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.green.min.css">
 </head>
 <style>
 	
@@ -50,15 +53,15 @@
 	<!-- 배세희11140001111222222 -->
 	<header>
 		<!-- Header desktop -->
-		<div class="container-menu-desktop">
+		<div class="container-menu-desktop" >
 			<!-- Topbar -->
-			<div class="top-bar">
-				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
+			<div class="top-bar" style="background-color:#dbbb87;">
+				<div class="content-topbar flex-sb-m h-full container" >
+					<div class="left-top-bar" style="color : black;">
 						Free shipping for standard order over $100
 					</div>
 
-					<div class="right-top-bar flex-w h-full">
+					<div class="right-top-bar flex-w h-full" >
 						<a href="/login" class="flex-c-m trans-04 p-lr-25">
 							LOGIN
 						</a>
@@ -1137,73 +1140,57 @@
 				</h3>
 			</div>
 			
-<!-- 			<div class="container">
-  
-   
- <a href="https://github.com/rtpHarry/Bootstrap3-ShowManySlideOneCarousel">this code sample</a>  
-<div class="row">
-   <div class="col-md-12">
-      <div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
-         <div class="carousel-inner">
-            <div class="item active">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/0054A6/fff/&text=1" class="img-responsive"></a>
-               </div>
-            </div>
-            <div class="item">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/002d5a/fff/&text=2" class="img-responsive"></a>
-               </div>
-            </div>
-            <div class="item">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/d6d6d6/333&text=3" class="img-responsive"></a>
-               </div>
-            </div>
-            <div class="item">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/002040/eeeeee&text=4" class="img-responsive"></a>
-               </div>
-            </div>
-            <div class="item">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/0054A6/fff/&text=5" class="img-responsive"></a>
-               </div>
-            </div>
-            <div class="item">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/002d5a/fff/&text=6" class="img-responsive"></a>
-               </div>
-            </div>
-            <div class="item">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/eeeeee&text=7" class="img-responsive"></a>
-               </div>
-            </div>
-            <div class="item">
-               <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="http://placehold.it/500/40a1ff/002040&text=8" class="img-responsive"></a>
-               </div>
-            </div>
-         </div>
-         <a class="left carousel-control" href="#carousel-tilenav" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-         <a class="right carousel-control" href="#carousel-tilenav" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div>
-   </div>
-</div>
 
-   
-</div> -->
-			
-			
+		<div class="owl-carousel owl-theme">
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+		    <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
 		</div>
+
+
+		<div class="p-b-10" style="margin-top:5%;">
+				<h3 class="ltext-103 cl5">
+					EVENT	
+				</h3>
+			</div>
+			<img src="/resources/front/images/event.png" alt="IMG-PRODUCT" style="width:100%;">
+			
+			
+			<div class="p-b-10" style="margin-top:5%;">
+				<h3 class="ltext-103 cl5">
+					MD'S PICK	
+				</h3>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="/resources/front/images/md.png" alt="IMG-PRODUCT" style="width:100%;">
+				</div>
+				<div class="col-md-4">
+					<img src="/resources/front/images/md.png" alt="IMG-PRODUCT" style="width:100%;">
+				</div>
+				<div class="col-md-4">
+					<img src="/resources/front/images/md.png" alt="IMG-PRODUCT" style="width:100%;">
+				</div>
+			</div>
+		</div>
+		
+		
 		
 	</section>
 
 
 	<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
+	<footer class="bg3 p-t-75 p-b-32" >
+		<div class="container" >
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
@@ -1609,28 +1596,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 	<script src="/resources/front/js/main.js"></script>
-	<script src="/resources/dist/js/bootstrap3-showmanyslideonecarousel.js"></script>
-	<script src="/resources/dist/js/bootstrap3-showmanyslideonecarousel.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/dist/js/owl.carousel.js"></script>
+	<script src="/resources/dist/js/owl.carousel.min.js"></script>
 	<script>
-	(function(){
-		  $('.carousel-showmanymoveone .item').each(function(){
-		    var itemToClone = $(this);
-
-		    for (var i=1;i<6;i++) {
-		      itemToClone = itemToClone.next();
-
-		      // wrap around if at end of item collection
-		      if (!itemToClone.length) {
-		        itemToClone = $(this).siblings(':first');
-		      }
-
-		      // grab item, clone, add marker class, add to collection
-		      itemToClone.children(':first-child').clone()
-		        .addClass("cloneditem-"+(i))
-		        .appendTo($(this));
-		    }
-		  });
-		}());
+	$('.owl-carousel').owlCarousel({
+	    loop:true,
+	    margin:10,
+	    nav:true,
+	    responsive:{
+	        0:{
+	            items:1
+	        },
+	        600:{
+	            items:3
+	        },
+	        1000:{
+	            items:5
+	        }
+	    }
+	})
 	</script>
 </body>
 </html>
