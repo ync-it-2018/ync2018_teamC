@@ -37,6 +37,14 @@
 	<link rel="stylesheet" type="text/css" href="/resources/front/css/main.css">
 <!--===============================================================================================-->
 </head>
+<style>
+	#write-form td {
+  	  border: none;
+	}
+	#write-form textarea {
+   	 width: 99%;
+	}
+</style>
 <body class="animsition">
 	
 	<!-- Header -->
@@ -389,36 +397,81 @@
 	<!-- Product -->
 	<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
-			<div class="flex-w flex-sb-m p-b-52">
-				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button onclick="location.href='/MypageUserinfo'" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1">
-						회원정보
-					</button>
+         <div class="flex-w flex-sb-m p-b-52">
+            <div class="flex-w flex-l-m filter-tope-group m-tb-10">
+               <button onclick="location.href='/MypageUserinfo'"
+                  class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
+                  회원정보</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" >
-						적립금
-					</button>
+               <button onclick="location.href='/MypageSavedMoney'"
+                  class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
+                  적립금</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" >
-						주문내역
-					</button>
+               <button onclick="location.href='/MypageOrder'"
+                  class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
+                  주문내역</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" >
-						회원탈퇴
-					</button>
+               <button onclick="location.href='/MypageWithdrawal'"
+                  class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1">
+                  회원탈퇴</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" >
-						관심상품
-					</button>
+               <button onclick="location.href='/MypageInterestedpdt'"
+                  class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
+                  관심상품</button>
 
-				</div>
-			</div>
-		</div>
+            </div>
+            
+         </div>
+         
+         <hr>
+         <form >
+         <table style="margin : 0 auto;">
+         <tr>
+         	<td >
+         		<label for="title" style="margin-right:50px; "><b>제목</b></label> 
+         		<br>
+         	</td>
+         	<td>
+         		<input style="width: 60%; border: 1px solid lightgray;"
+            type="text" name="title"> 
+            <br> 
+         	</td>
+         </tr>
+         
+         <tr>
+         	<td>
+         		<label for="content" ><b>내용</b></label>
+         	</td>
+         	<td>
+         		 <textarea rows="20" cols="90" style="border: 1px solid lightgray;"></textarea>
+            <br>
+         	</td>
+         </tr>
+         
+         <tr>
+         	<td><label for="reviewimg" ><b>파일</b></label></td>
+         	<td><input type="file" name="attachFile" style="color:slategray;border:1 solid silver;width:100%; height:20">
+			</td>
+         </tr>
+         
+         
+         </table>
+         </form>
+            <hr>
+          <div style="text-align:center;">
+         <button type="button" style="border:1px solid lightgray; background-color: white; padding: 14px 20px;
+          margin: 8px 0;  border-radius: 10px; width: 100px; opacity: 0.9;">취소</button>
+          <button type="button" style="border:1px solid lightgray; background-color: white; padding: 14px 20px;
+          margin: 8px 0;  border-radius: 10px; width: 100px; opacity: 0.9;">등록</button>
+          </div>
+      </div>
+		
+		
 	</div>
 		
 
 	<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
+ 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
@@ -553,14 +606,14 @@
 				</div>
 
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 
 				</p>
 			</div>
 		</div>
-	</footer>
+	</footer> 
 
 
 

@@ -340,7 +340,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 [ Top bar ]*/
 .top-bar {
   height: 40px;
-  background-color: #9bc1ff;
+  background-color: #dbbb87;
 }
 
 /*---------------------------------------------*/
@@ -348,7 +348,6 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   font-family: Poppins-Regular;
   font-size: 12px;
   line-height: 1.8;
-  color: #b2b2b2;
 }
 
 
@@ -359,7 +358,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   line-height: 1.8;
 
   height: 100%;
-  color: #b2b2b2;
+  color: black;
   border-right: 1px solid rgba(255,255,255,0.3);
 }
 
@@ -368,7 +367,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 
 .right-top-bar a:hover {
-  color: #6c7ae0;
+  color: #ff8040;
 }
 
 
@@ -2764,7 +2763,7 @@ input.num-product::-webkit-inner-spin-button {
 .bg0 {background-color: #fff;}
 .bg1 {background-color: #717fe0;}
 .bg2 {background-color: #e6e6e6;}
-.bg3 {background-color: #222;}
+.bg3 {background-color: #dbbb87;}
 .bg5 {background-color: rgba(0,0,0,0.5);}
 .bg6 {background-color: #f2f2f2;}
 .bg7 {background-color: #333;}
