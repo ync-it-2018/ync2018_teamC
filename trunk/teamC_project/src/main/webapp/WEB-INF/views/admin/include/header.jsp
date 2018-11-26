@@ -322,7 +322,6 @@
               <ul class="treeview-menu">
                 <li><a href="/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
                 <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
-                <li><a href="/productup"><i class="fa fa-circle-o"></i> 로그아웃</a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
               </ul>
@@ -334,10 +333,10 @@
                 <span class="label label-primary pull-right">4</span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> 슬라이드</a></li>
+                <li><a href="/addslider"><i class="fa fa-circle-o"></i> 슬라이드</a></li>
                 <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> 대표카테고리</a></li>
                 <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> 베스트상품</a></li>
-                <li><a href="/"><i class="fa fa-circle-o"></i> 팝업창 관리</a></li>
+                <li><a href="/test02"><i class="fa fa-circle-o"></i> 팝업창 관리</a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 신상품 </a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 이벤트 </a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 추천상품 </a></li>

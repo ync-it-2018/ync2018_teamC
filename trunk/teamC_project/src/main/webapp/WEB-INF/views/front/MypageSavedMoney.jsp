@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MypageUserinfo</title>
+	<title>MypageSavedmoney</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -37,21 +37,20 @@
 	<link rel="stylesheet" type="text/css" href="/resources/front/css/main.css">
 <!--===============================================================================================-->
 </head>
-
 <body class="animsition">
 	
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
-		<div class="container-menu-desktop" >
+		<div class="container-menu-desktop">
 			<!-- Topbar -->
-			<div class="top-bar" style="background-color:#dbbb87;">
-				<div class="content-topbar flex-sb-m h-full container" >
-					<div class="left-top-bar" style="color : black;">
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container">
+					<div class="left-top-bar">
 						Free shipping for standard order over $100
 					</div>
 
-					<div class="right-top-bar flex-w h-full" >
+					<div class="right-top-bar flex-w h-full">
 						<a href="/login" class="flex-c-m trans-04 p-lr-25">
 							LOGIN
 						</a>
@@ -60,7 +59,7 @@
 							JOIN
 						</a>
 
-						<a href="/MypageUserinfo" class="flex-c-m trans-04 p-lr-25">
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							MyPage
 						</a>
 
@@ -79,11 +78,11 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<!-- <li class="active-menu">
+							<li class="active-menu">
 								<a href="/index">Home</a>
 
 							</li>
- -->
+
 							<li>
 								<a href="/product">Shop</a>
 								<ul class="sub-menu">
@@ -145,27 +144,21 @@
 									</li>
 								</ul>
 							</li>
-							
-							<li>
-								<a href="/blog">Event</a>
-							</li>
-							
-							
-							<li>
-								<a href="/about">About</a>
-							</li>
-							
 
-							<li class="label1" data-label1="hot">
-								<a href="/blog">Review</a>
-							</li> 
-<!-- 
-							<li>
-								<a href="blog.html">Blog</a>
+							<!-- <li class="label1" data-label1="hot">
+								<a href="shoping-cart.html">Features</a>
 							</li> -->
 
 							<li>
-								<a href="/contact">Contact</a>
+								<a href="blog.html">Blog</a>
+							</li>
+
+							<li>
+								<a href="about.html">About</a>
+							</li>
+
+							<li>
+								<a href="contact.html">Contact</a>
 							</li>
 						</ul>
 					</div>
@@ -392,11 +385,11 @@
 		<div class="container">
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button onclick="location.href='/MypageUserinfo'" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1">
+					<button onclick="location.href='/MypageUserinfo'" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
 						회원정보
 					</button>
 
-					<button onclick="location.href='/MypageSavedMoney'" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" >
+					<button onclick="location.href='/MypageSavedMoney'" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" >
 						적립금
 					</button>
 
@@ -413,25 +406,14 @@
 					</button>
 
 				</div>
-				<p>마이페이지 > 회원정보</p>
+				<p>마이페이지 > 적립금</p>
 			</div>
 			<hr>
-			<div style="float:left; ">
-				<h1>사용자님의<br>구매등급</h1>
+			<div style="width:900px; height:280px; border:1px solid lightgray;  margin: 45px 45px 35px 0px; padding: 130px;">				
+					<p>현재 적립금:</p>
 			</div>
-			<div style="float:center">
-				<img src="/resources/front/images/vip.png" alt="IMG">
-			</div>
+			
 			<hr>
-			<div style="width:900px; height:280px; border:1px solid lightgray;  margin: 45px 45px 35px 0px; padding: 30px;">
-				<p>ID:</p><br>
-				<p>비밀번호:</p><br>
-				<p>이름:</p><br>
-				<p>주소:</p><br>
-				<p>휴대전화:</p>
-			</div>
-			<button type="button" style="border:1px solid black; background-color: white; padding: 14px 20px;
-    				margin: 8px 0;  border-radius: 15px; width: 100px; opacity: 0.9; float:right">수정</button>
 		</div>
 	</div>
 		
