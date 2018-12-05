@@ -148,6 +148,19 @@ public class HomeController {
 		return "admin/test02_1";
 	}
 	
+	@RequestMapping(value = "/management", method = RequestMethod.GET)
+	public String management(Locale locale, Model model) {
+		
+		return "admin/management";
+	}
+	
+	
+	@RequestMapping(value = "/popupload", method = RequestMethod.GET)
+	public String popupload(Locale locale, Model model) {
+		
+		return "admin/popupload";
+	}
+	
 	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Locale locale, Model model) {
