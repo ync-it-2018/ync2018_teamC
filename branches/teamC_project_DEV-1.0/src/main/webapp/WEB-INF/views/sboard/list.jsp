@@ -5,6 +5,7 @@
 <%@ page session="false"%>
 
 
+<%@include file="include/header.jsp" %>
 <!-- Main content -->
 <section class="content">
 	<div class="row">
@@ -159,4 +160,4 @@
 			});
 </script>
 
-
+<%@include file="include/footer.jsp" %>
