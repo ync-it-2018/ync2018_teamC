@@ -14,7 +14,7 @@
 }
 </style>
 
-
+<%@include file="include/header.jsp" %>
 <!-- Main content -->
 <section class="content">
 	<div class="row">
@@ -245,4 +245,4 @@ $("#popup_img").on("click", function(){
 </div>
 <!-- /.content-wrapper -->
 
-
+<%@include file="include/footer.jsp" %>
