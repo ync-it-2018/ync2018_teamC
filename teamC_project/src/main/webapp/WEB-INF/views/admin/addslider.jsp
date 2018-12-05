@@ -1,9 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<%@include file="include/header.jsp" %>
+<%@include file="include/header.jsp"%>
 <%-- <!DOCTYPE html>
 <html>
 <head>
@@ -212,68 +212,119 @@ function save()
 <!DOCTYPE html>
 <html>
 <head>
-  <TITLE> New Document </TITLE>
-  <META NAME="Generator" CONTENT="EditPlus">
-  <META NAME="Author" CONTENT="">
-  <META NAME="Keywords" CONTENT="">
-  <META NAME="Description" CONTENT="">
+<TITLE>New Document</TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
 
 <style type="text/css">
-table {background-color:#505050;width:600px; margin-left : 7%; margin-top: 7%;}
- .normal {background-color:#FFFFFF;font-size:9pt;height:30px;text-align:center;width:150px;}
- .activetd {background-color:#B0B0B0;font-size:9pt;height:30px;text-align:center;width:150px;}
- .edittd {background-color:#FFFFFF;font-size:9pt;height:30px;text-align:left;width:150px;}
- 
+table {
+	background-color: #505050;
+	width: 600px;
+	margin-left: 7%;
+	margin-top: 7%;
+}
+
+.normal {
+	background-color: #FFFFFF;
+	font-size: 9pt;
+	height: 30px;
+	text-align: center;
+	width: 150px;
+}
+
+.activetd {
+	background-color: #B0B0B0;
+	font-size: 9pt;
+	height: 30px;
+	text-align: center;
+	width: 150px;
+}
+
+.edittd {
+	background-color: #FFFFFF;
+	font-size: 9pt;
+	height: 30px;
+	text-align: left;
+	width: 150px;
+}
 </style>
 
 <script language="javascript">
-function appendRow() {
- var tr_obj    = document.getElementById("sample");
- var clone_obj = tr_obj.cloneNode(true)
+	function appendRow() {
+		var tr_obj = document.getElementById("sample");
+		var clone_obj = tr_obj.cloneNode(true)
 
- tr_obj.parentNode.appendChild(clone_obj);
-}
+		tr_obj.parentNode.appendChild(clone_obj);
+	}
 
-function deleteRow() {
- var tr_obj    = document.getElementById("sample");
- var tbody_obj = tr_obj.parentNode;
- var tbl_obj   = tbody_obj.parentNode;
- var tbl_cnt   = tbl_obj.rows.length;tbl_cnt
+	function deleteRow() {
+		var tr_obj = document.getElementById("sample");
+		var tbody_obj = tr_obj.parentNode;
+		var tbl_obj = tbody_obj.parentNode;
+		var tbl_cnt = tbl_obj.rows.length;
+		tbl_cnt
 
- if(tbl_cnt < 3) {
-  alert('삭제할 행이 없습니다.');
+		if (tbl_cnt < 3) {
+			alert('삭제할 행이 없습니다.');
 
-  return;
- }
+			return;
+		}
 
- tr_obj.parentNode.removeChild(tr_obj);
-}
+		tr_obj.parentNode.removeChild(tr_obj);
+	}
 </script>
- </HEAD>
+</HEAD>
 
- <BODY>
-<table width="70%" border="1" cellpadding="0" cellspacing="0">
-  <col width="20%">
-  <tr>
-  <!-- 테이블 번호 자동생성 -->
-    <td class="normal"> 순서</td>
-    <td class="normal"> 슬라이드 제목</td>
-<!--     <td class="normal">취미</td>
+<BODY>
+
+	<table width="70%" border="1" cellpadding="0" cellspacing="0">
+		<col width="20%">
+		<tr>
+			<!-- 테이블 번호 자동생성 -->
+			<td class="normal">순서</td>
+			<td class="normal">슬라이드 제목</td>
+			<!--     <td class="normal">취미</td>
     <td class="normal">기타</td> -->
-    <td class="normal"></td>
-  </tr>
-  <tr id="sample">
-    <td class="normal"><input type="text" name="docName"></td>
-    <td class="normal"><input type="text" name="docAge"></td>
-    <td class="normal"><input type="button" value="추가" onclick="appendRow();"><input type="button" value="삭제" onclick="deleteRow();"></td>
-<!-- <td class="normal"><input type="text" name="docHabit"></td>
-    <td class="normal"><input type="text" name="docEtc"></td> -->  
-  </tr>
-</table>
- </BODY>
+			<td class="normal"></td>
+		</tr>
+		<tr id="sample">
+			<td class="normal"><input type="text" name="docName"></td>
+			<td class="normal"><input type="text" name="docAge"></td>
+			<td class="normal"><input type="button" value="추가"
+				onclick="appendRow();"><input type="button" value="삭제"
+				onclick="deleteRow();"></td>
+			<!-- <td class="normal"><input type="text" name="docHabit"></td>
+    <td class="normal"><input type="text" name="docEtc"></td> -->
+		</tr>
+	</table>
+	
+	
+	<table width="70%" border="1" cellpadding="0" cellspacing="0">
+		<col width="20%">
+		<tr>
+			<!-- 테이블 번호 자동생성 -->
+			<td class="normal">순서</td>
+			<td class="normal">슬라이드 제목</td>
+			<!--     <td class="normal">취미</td>
+    <td class="normal">기타</td> -->
+			<td class="normal"></td>
+		</tr>
+		<tr id="sample">
+			<td class="normal"><input type="text" name="docName"></td>
+			<td class="normal"><input type="text" name="docAge"></td>
+			<td class="normal"><input type="button" value="추가"
+				onclick="appendRow();"><input type="button" value="삭제"
+				onclick="deleteRow();"></td>
+			<!-- <td class="normal"><input type="text" name="docHabit"></td>
+    <td class="normal"><input type="text" name="docEtc"></td> -->
+		</tr>
+	</table>
+
+</BODY>
 </HTML>
-    
-<%@include file="include/footer.jsp" %>
- 
- 
-  
+
+<%@include file="include/footer.jsp"%>
+
+

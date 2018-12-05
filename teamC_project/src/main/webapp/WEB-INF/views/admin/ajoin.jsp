@@ -24,6 +24,7 @@
   </head>
   <body class="login-page">
     <div class="login-box">
+     <a href="/alogin" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a>
       <div class="login-logo">
         <b>AJoin</b>
       </div><!-- /.login-logo -->

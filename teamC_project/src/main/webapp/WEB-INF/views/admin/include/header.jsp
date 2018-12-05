@@ -357,7 +357,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
+                <li><a href="/management"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
                 <li><a href="/readProduct"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
@@ -375,7 +375,7 @@
               </ul>
             </li>
             <li class="treeview active">
-              <a href="#">
+              <a href="/popupload">
                 <i class="fa fa-edit"></i> <span>이벤트관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
