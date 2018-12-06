@@ -140,7 +140,7 @@
 							</li>
 							
 							<li>
-								<a href="/blog">Event</a>
+								<a href="/event">Event</a>
 							</li>
 							
 							
@@ -150,7 +150,7 @@
 							
 
 							<li class="label1" data-label1="hot">
-								<a href="/blog">Review</a>
+								<a href="/review">Review</a>
 							</li> 
 <!-- 
 							<li>
@@ -264,7 +264,7 @@
             </li>
 
             <li>
-               <a href="/blog">Blog</a>
+               <a href="/review">Reivew</a>
             </li>
 
             <li>
@@ -370,9 +370,6 @@
                      View Cart
                   </a>
 
-                  <a href="/shoping_cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-                     Check Out
-                  </a>
                </div>
             </div>
          </div>
@@ -467,10 +464,6 @@
    </section>   
    
    
-   <!-- Map -->
-   <div class="map">
-      <div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="/resources/front/images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
-   </div>
 
 
 
