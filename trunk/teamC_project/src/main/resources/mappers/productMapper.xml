@@ -37,19 +37,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE   p_idx = #{p_idx}
 	</select>
 
-  
-	<update id="keepLogin" >
-		UPDATE tbl_user SET 	sessionKey = #{sessionId},
-	  							sessionLimit = #{next}
-		WHERE uids = #{uids}
+
+	<insert id="create">
+		INSERT INTO tc_product (p_idx, p_name, replytext, replyer)
+		VALUES (SEQ_REPLY.NEXTVAL, #{bno},#{replytext},#{replyer})
+	</insert>
+
+	<update id="update">
+		UPDATE tbl_reply SET replytext = #{replytext},
+		updatedate = SYSDATE
+		WHERE rno = #{rno}
 	</update>
 
-	<select id="checkUserWithSessionKey" resultType="UserVO">
-		<!-- value는 loginCookie에 저장된 session 값 -->
-		SELECT 	*
-		FROM	tbl_user
-		WHERE	sessionKey = #{value}
-		AND		sessionlimit > SYSDATE
-	</select>	
+	<delete id="delete">
+		DELETE
+		FROM tbl_reply
+		WHERE rno = #{rno}
+	</delete>
 
 </mapper>

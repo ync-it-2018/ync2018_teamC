@@ -44,6 +44,9 @@
 						<div class="form-group">
 							<label for="exampleInputEmail1">File DROP Here</label>
 							<div class="fileDrop"></div>
+							<input type='file' name='files'>
+							<input type='file' name='files'>
+							<input type='file' name='files'>
 						</div>
 					</div>
 					<!-- /.box-body -->
@@ -81,7 +84,7 @@
 <li>
   <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
   <div class="mailbox-attachment-info">
-	<a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
+	<a href="{{getLink}}" target="_blank" class="mailbox-attachment-name">{{fileName}}</a>
 	<a href="{{fullName}}" 
      class="btn btn-default btn-xs pull-right delbtn"><i class="fa fa-fw fa-remove"></i></a>
   </div>
@@ -141,8 +144,27 @@ $("#registerForm").submit(function(event){
 	that.get(0).submit();
 });
 
-
-
+$(".uploadedList").on("click", ".mailbox-attachment-info a", function(event){
+	event.preventDefault();
+	
+	var that = $(this);
+	
+	$.ajax({
+		url:"/deleteFile",
+		type:"post",
+		data: {fileName:$(this).attr("href")},
+		dataType:"text",
+		success:function(result){
+			if(result == 'deleted'){
+				that.parents().eq(1).remove();
+			}
+		},
+		error:function(jqXHR, textStatus, errorThrown){
+			//console.log("textStatus Code : " + textStatus);
+			alert('첨부파일 삭제 중 오류가 발생하였습니다.');
+		}
+	});
+});
 </script>
 
 <%@include file="../include/footer.jsp"%>
