@@ -36,7 +36,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "front/write_review";
+		return "front/index";
 	}
 	
 	/*1017수정2*/
@@ -44,6 +44,24 @@ public class HomeController {
 	public String product(Locale locale, Model model) {
 		
 		return "front/product";
+	}
+	
+	@RequestMapping(value = "/review", method = RequestMethod.GET)
+	public String review(Locale locale, Model model) {
+		
+		return "front/review";
+	}
+	
+	@RequestMapping(value = "/event", method = RequestMethod.GET)
+	public String event(Locale locale, Model model) {
+		
+		return "front/event";
+	}
+	
+	@RequestMapping(value = "/write_review", method = RequestMethod.GET)
+	public String write_review(Locale locale, Model model) {
+		
+		return "front/write_review";
 	}
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)

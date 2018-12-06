@@ -154,7 +154,7 @@
 							</li>
 							
 							<li>
-								<a href="/blog">Event</a>
+								<a href="/event">Event</a>
 							</li>
 							
 							
@@ -164,12 +164,8 @@
 							
 
 							<li class="label1" data-label1="hot">
-								<a href="/blog">Review</a>
+								<a href="/review">Review</a>
 							</li> 
-<!-- 
-							<li>
-								<a href="blog.html">Blog</a>
-							</li> -->
 
 							<li>
 								<a href="/contact">Contact</a>
@@ -278,7 +274,7 @@
 				</li>
 
 				<li>
-					<a href="/blog">Blog</a>
+					<a href="/review">Review</a>
 				</li>
 
 				<li>
@@ -384,9 +380,6 @@
 							View Cart
 						</a>
 
-						<a href="/shoping-cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							Check Out
-						</a>
 					</div>
 				</div>
 			</div>
