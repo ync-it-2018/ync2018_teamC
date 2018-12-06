@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
+<%@include file="../admin/include/header.jsp" %>
 
 <style>
 .fileDrop {
@@ -14,7 +14,7 @@
 }
 </style>
 
-<%@include file="include/header.jsp" %>
+
 <!-- Main content -->
 <section class="content">
 	<div class="row">
@@ -245,4 +245,4 @@ $("#popup_img").on("click", function(){
 </div>
 <!-- /.content-wrapper -->
 
-<%@include file="include/footer.jsp" %>
+<%@include file="../admin/include/footer.jsp" %>
