@@ -3,7 +3,6 @@ package kr.ync.project.domain;
 import java.util.Arrays;
 import java.util.Date;
 
-
 public class BoardVO {
 	private Integer bno;
 	private String title;
@@ -12,6 +11,11 @@ public class BoardVO {
 	private Date regdate;
 	private int viewcnt;
 	private int replycnt;
+	
+	private String  R_TITEL;
+	private int  R_NUM;
+	private String  R_CONTENTS;
+	private int  R_VIEWCOUNT;
 	
 	private String[] files;
 	
