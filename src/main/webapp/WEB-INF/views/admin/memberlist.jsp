@@ -4,7 +4,7 @@
   pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@include file="../include/header.jsp" %>
+<%@include file="include/header.jsp" %>
 
 <!-- Main content -->
 <section class="content">
@@ -162,7 +162,7 @@
 	});
 </script>
 
-<%@include file="../include/footer.jsp" %>
+<%@include file="include/footer.jsp" %>
  
  
   
