@@ -3,11 +3,8 @@
 <%@page session="false"%>
 
 <script>
-
 var result = '${savedName}';
 
-// frame 사용부분 빼고 그냥 alert 띄우기
-//parent.addFilePath(result);
-alert(result);
+parent.addFilePath(result);
 </script>
 
