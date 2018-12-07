@@ -136,13 +136,12 @@ hr {
 
 
 <body class="bg">
-<!-- <h2>Modal Signup Form</h2> -->
-<!--    
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
-  -->
-<div > <!--  id="id01" class="modal"--> 
-<!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"> &times;</span>--> 
-  <form class="modal-content"><!--  action="/action_page.php" -->
+
+<div > 
+  
+  <form class="modal-content" id="signUpForm" method="POST" action="/signup/signup.do">
+  
+  <!--  action="/action_page.php" -->
     <div class="container">
      <a href="/index" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a> 
     
@@ -150,16 +149,16 @@ hr {
       <p>회원정보입력</p>
       <hr>
       <label for="id" style="padding-right:60px;"><b>ID</b></label>
-      <input style="width: 130px;" type="text" placeholder="Enter ID" name="ID">
-      <button type="button">중복체크</button>
+      	<input style="width: 130px;" type="text" placeholder="Enter ID" name="M_ID">
+      	<button type="button">중복체크</button>
       <br>
       <label for="pwd" style="padding-right:10px;"><b>비밀번호</b></label>
-      <input style="width: 130px;" type="password" placeholder="Enter pwd" name="psw" required>
-      <label for="pwdck"><b>비밀번호확인</b></label>
-      <input style="width: 130px;" type="password" placeholder="Passward check" name="pswck" required>
+      	<input style="width: 130px;" type="password" placeholder="Enter pwd" name="M_PWD" required>
+      	<label for="pwdck"><b>비밀번호확인</b></label>
+      	<input style="width: 130px;" type="password" placeholder="Passward check" name=""m_pwdchk"" required>
        <br>
-        <label for="name" style="padding-right:40px;"><b>이름</b></label>
-      <input style="width: 130px;" type="text" placeholder="name" name="username">
+      <label for="name" style="padding-right:40px;"><b>이름</b></label>
+      	<input style="width: 130px;" type="text" placeholder="name" name="M_NAME">
       <br>
       
       
@@ -175,7 +174,7 @@ hr {
     	<option value="제주">064</option>
 	</select>
 	-
-      <input style="width: 130px;" type="text" placeholder="tel" name="tel">
+      <input style="width: 130px;" type="text" placeholder="tel" name="M_TEL">
       <br>
       <label for="phonenum" style="padding-right:35px;"><b>폰번호</b></label>
       <select name="areacode">
@@ -189,18 +188,18 @@ hr {
       <br>
       
       <label for="address"><b>주소</b></label>
-      <input type="text" placeholder="Enter address" name="address">
+      <input type="text" placeholder="Enter address" name="M_ADDRESS">
       
       <br>
       <label for="email"><b>Email</b></label>
-      <input style="width: 130px;" type="text" placeholder="Enter Email" name="email" required>
+      <input style="width: 130px;" type="text" placeholder="Enter Email" name="M_EMAIL" required>
       @
        <select name="areacode">
     	<option value="네이버">naver.com</option>
    		<option value="구글">gmail.com</option>
     	<option value="다음">daum.net</option>
 	</select>
-	<button type="button">직접입력</button>
+	<button type="button" >직접입력</button>
       <hr>
       
       <!-- <label>
@@ -209,19 +208,22 @@ hr {
 		 <p>반려견 정보 (*선택)</p>
 	<hr>	 
 	 <label for="name" style="padding-right:30px;"><b>반려견 이름</b></label>
-      <input style="width: 130px;" type="text" placeholder="petname" name="petname">   
-	<label for="gender" style = "padding:100px;"><b>성별</b></label>
-	<input type="radio" name="gender">
-	<label>암</label>
-	<input type="radio" name="gender">
-	<label>수</label>   
+      <input style="width: 130px;" type="text" placeholder="petname" name="POINT">   
+		<label for="gender" style = "padding:100px;"><b>성별</b></label>
+		<input type="radio" name="gender">
+		<label>암</label>
+		<input type="radio" name="gender">
+		<label>수</label>   
    <br>
     <label for="name" style="padding-right:80px;"><b>견종</b></label>
-      <input style="width: 130px;" type="text" placeholder="petname" name="petname"> 
-      <div class="clearfix">
-        <button type="button" onclick="location.href='/index'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
+      <input style="width: 130px;" type="text" placeholder="petname" name="LEVEL_CODE"> 
+      
+	      <div class="clearfix">
+	        <button type="button" onclick="location.href='/index'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
+	        
+	        <button type="submit" class="signupbtn" >Sign Up</button>
+	        
+	      </div>
       
     </div>
   </form>

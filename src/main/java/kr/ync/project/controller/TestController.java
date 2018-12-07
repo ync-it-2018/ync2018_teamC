@@ -44,24 +44,3 @@ public class TestController {
 	
 	
 }
-
-/*@Controller
-public class OverseasController {
-   
-   private static final Logger logger = LoggerFactory.getLogger(OverseasController.class);
-   
-   @Inject
-   private FProductService service;
-
-   @RequestMapping(value = "/overseas", method = RequestMethod.GET)
-   public String about(Locale locale, Model model) throws Exception {
-
-      // 가나다
-      logger.info("해외여행상품으로 이동", locale);
-      model.addAttribute("list", service.listAll());
-      
-      return "front/overseas";
-   }
-   
-}
-*/
