@@ -112,7 +112,7 @@ public class HomeController {
 		return "front/shoping_cart";
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = {RequestMethod.POST,RequestMethod.GET})
 	public String login(Locale locale, Model model) {
 		
 		return "front/login";

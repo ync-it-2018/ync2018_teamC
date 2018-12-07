@@ -36,7 +36,7 @@
 
          <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
                <a href="/index" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a>
-            <form class="login100-form validate-form flex-sb flex-w">
+            <form class="login100-form validate-form flex-sb flex-w" action="/user/loginPost.do">
                <span class="login100-form-title p-b-32">
                   Account Login
                </span>
@@ -45,7 +45,7 @@
                   Username
                </span>
                <div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-                  <input class="input100" type="text" name="username" >
+                  <input class="input100" type="text" name="M_ID" >
                   <span class="focus-input100"></span>
                </div>
 
@@ -56,7 +56,7 @@
                   <span class="btn-show-pass">
                      <i class="fa fa-eye"></i>
                   </span>
-                  <input class="input100" type="password" name="pass" >
+                  <input class="input100" type="password" name="M_PWD" >
                   <span class="focus-input100"></span>
                </div>
 
