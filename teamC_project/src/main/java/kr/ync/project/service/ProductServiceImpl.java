@@ -18,19 +18,25 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public ProductVO detailProduct(int p_idx) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void updateProduct(ProductVO vo) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteProduct(int p_idx) {
+	public ProductVO detailProduct(String p_code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteProduct(String p_code) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertProduct(ProductVO vo) {
 		// TODO Auto-generated method stub
 		
 	}

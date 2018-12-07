@@ -30,7 +30,7 @@ public class SearchBoardController {
 	@GetMapping(value = "/list")
 	public void listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 
-		log.info(cri.toString()); // SearchCriteria 객체의 값
+		log.info(cri.toString()); // SearchCriteria 객체의 값3
 
 		//model.addAttribute("list", service.listCriteria(cri));
 		model.addAttribute("list", service.listSearchCriteria(cri));
