@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.signupMapper">
+
+	<insert id="insertMember" >  
+	<!-- parameterType="kr.ync.project.domain.SignupVO" -->
+        INSERT INTO TC_MEMBER(
+            M_ID,
+            M_PWD,
+            M_NAME,
+            M_EMAIL,
+            M_ADDRESS,
+            M_TEL
+           <!--  ,POINT,
+            LEVEL_CODE -->
+        )VALUES(
+            #{M_ID, jdbcType=VARCHAR},
+            #{M_PWD, jdbcType=VARCHAR},
+            #{M_NAME, jdbcType=VARCHAR},
+            #{M_EMAIL, jdbcType=VARCHAR},
+            #{M_ADDRESS, jdbcType=VARCHAR},
+            #{M_TEL, jdbcType=VARCHAR}
+            <!-- ,#{POINT, jdbcType=INTEGER},
+            #{LEVEL_CODE, jdbcType=INTEGER} -->
+        )
+    </insert>		
+
+</mapper>
+
+

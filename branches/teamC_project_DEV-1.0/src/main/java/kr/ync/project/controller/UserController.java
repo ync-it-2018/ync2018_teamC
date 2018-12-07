@@ -10,12 +10,15 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.WebUtils;
 
 import kr.ync.project.domain.UserVO;
@@ -24,7 +27,7 @@ import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/user/*")
 @Slf4j
 public class UserController {
 
@@ -53,6 +56,7 @@ public class UserController {
 	
 	//postHandle 실행
 	@PostMapping(value = "/loginPost")
+	@ResponseStatus(value=HttpStatus.OK)
 	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		UserVO vo = service.login(dto);
@@ -69,7 +73,7 @@ public class UserController {
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
+			service.keepLogin(vo.getM_ID(), session.getId(), sessionLimit);
 		}
 
 	}
@@ -96,10 +100,12 @@ public class UserController {
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
-				service.keepLogin(vo.getUids(), session.getId(), new Date());
+				service.keepLogin(vo.getM_ID(), session.getId(), new Date());
 				log.info("logout success................");
 			}
 		}
 		response.sendRedirect("/sboard/list");
 	}
+	
+	
 }
