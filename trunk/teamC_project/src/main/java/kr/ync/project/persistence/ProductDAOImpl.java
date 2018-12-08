@@ -4,9 +4,13 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.ProductVO;
+import kr.ync.project.domain.SearchCriteria;
 
+@Repository
 public class ProductDAOImpl implements ProductDAO{
 	@Autowired
 	private SqlSession session;
@@ -14,8 +18,8 @@ public class ProductDAOImpl implements ProductDAO{
 	private static String namespace = "kr.ync.project.mapper.ProductMapper";
 
 	@Override
-	public List<ProductVO> listProduct(int p_idx) throws Exception{
-		return session.selectList(namespace + ".list", p_idx);
+	public List<ProductVO> productList(ProductVO productVO){
+		return session.selectList(namespace + ".list", productVO);
 	}
 
 	@Override
@@ -35,8 +39,44 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 
 	@Override
-	public void create(ProductVO vo) throws Exception {
-		session.insert(namespace + ".create", vo);
+	public void insertProduct(ProductVO vo) throws Exception {
+		session.insert(namespace + ".insert", vo);
+	}
+
+	@Override
+	public List<ProductVO> listAll() throws Exception {
+		return session.selectList(namespace + ".listAll");
+	}
+
+	@Override
+	public List<ProductVO> listPage(int page) throws Exception {
+		if (page <= 0) {
+			page = 1;
+		}
+
+		page = (page - 1) * 10;
+
+		return session.selectList(namespace + ".listPage", page);
+	}
+
+	@Override
+	public List<ProductVO> listCriteria(Criteria cri) throws Exception {
+		return session.selectList(namespace + ".listCriteria", cri);
+	}
+
+	@Override
+	public int countPaging(Criteria cri) throws Exception {
+		return session.selectOne(namespace + ".countPaging", cri);
+	}
+
+	@Override
+	public List<ProductVO> listSearch(SearchCriteria cri) throws Exception {
+		return session.selectList(namespace + ".listSearch", cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 	
 	

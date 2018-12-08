@@ -6,18 +6,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.ProductMapper">
 
 	<!-- 상품 전체 목록 -->
-	<select id="list" resultType="ProductVO">
-		SELECT	p_idx,
+	<select id="list" resultType="productVO">
+		SELECT	p_code,
 				p_name,
-				price,
-				p_detail,
-				p_code
+				stock,
+				price
 		FROM	tc_product
-		ORDER BY p_name
 	</select>
 	
 	<!-- 상품 상세 -->
-	<select id="detailProduct" resultType="ProductVO">
+	<select id="detailProduct" resultType="productVO">
 		SELECT	p_name,
 				price,
 				sale_price,
@@ -31,16 +29,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				size_s,
 				size_m,
 				size_l,
-				p_code,
-				p_idx
+				p_code
 		FROM	tc_product
-		WHERE   p_idx = #{p_idx}
+		WHERE   p_code = #{p_code}
 	</select>
 
 
-	<insert id="create">
-		INSERT INTO tc_product (p_idx, p_name, replytext, replyer)
-		VALUES (SEQ_REPLY.NEXTVAL, #{bno},#{replytext},#{replyer})
+	<insert id="insert">
+		INSERT INTO TC_PRODUCT (P_CODE, P_NAME, PRICE, STOCK)
+		VALUES (#{P_CODE}, #{P_NAME}, #{PRICE}, #{STOCK})
 	</insert>
 
 	<update id="update">

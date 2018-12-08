@@ -8,38 +8,40 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.domain.AUserVO;
 import kr.ync.project.domain.UserVO;
+import kr.ync.project.dto.ALoginDTO;
 import kr.ync.project.dto.LoginDTO;
 
 @Repository
-public class UserDAOImpl implements UserDAO {
+public class AUserDAOImpl implements AUserDAO {
 
 	@Autowired
 	private SqlSession session;
 
-	private static String namespace = "kr.ync.project.mapper.userMapper";
+	private static String namespace = "kr.ync.project.mapper.AuserMapper";
 
 	@Override
-	public UserVO login(LoginDTO dto) throws Exception {
+	public AUserVO alogin(ALoginDTO dto) throws Exception {
 
-		return session.selectOne(namespace + ".login", dto);
+		return session.selectOne(namespace + ".alogin", dto);
 	}
 
 	@Override
-	public void keepLogin(String M_ID, String sessionId, Date next) {
+	public void keepALogin(String A_ID, String sessionId, Date next) {
 
 		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("M_ID", M_ID);
+		paramMap.put("A_ID", A_ID);
 		paramMap.put("sessionId", sessionId);
 		paramMap.put("next", next);
 
-		session.update(namespace + ".keepLogin", paramMap);
+		session.update(namespace + ".keepALogin", paramMap);
 
 	}
 
 	@Override
-	public UserVO checkUserWithSessionKey(String value) {
+	public AUserVO checkAUserWithSessionKey(String value) {
 
-		return session.selectOne(namespace + ".checkUserWithSessionKey", value);
+		return session.selectOne(namespace + ".checkAUserWithSessionKey", value);
 	}
 }
