@@ -21,22 +21,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.WebUtils;
 
+import kr.ync.project.domain.AUserVO;
 import kr.ync.project.domain.UserVO;
+import kr.ync.project.dto.ALoginDTO;
 import kr.ync.project.dto.LoginDTO;
+import kr.ync.project.service.AUserService;
 import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/user/*")
+@RequestMapping("/auser/*")
 @Slf4j
-public class UserController {
+public class AdminLoginController {
 
 	@Autowired
-	private UserService service;
+	private AUserService service;
 
-	@GetMapping(value = "/login")
-	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {
-
+	@GetMapping(value = "/alogin")
+	public String AloginGET(@ModelAttribute("dto") ALoginDTO dto) {
+		log.info("login call.....");
+		
+		return "admin/aloginPost";
 	}
 	
 	//preHandle 실행
@@ -55,17 +60,17 @@ public class UserController {
 	}*/
 	
 	//postHandle 실행
-	@PostMapping(value = "/loginPost")
+	@PostMapping(value = "/aloginPost")
 	@ResponseStatus(value=HttpStatus.OK)
-	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
+	public void AloginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
 
-		UserVO vo = service.login(dto);
+		AUserVO vo = service.alogin(dto);
 
 		if (vo == null) {
-			return;
+			return ;
 		}
 
-		model.addAttribute("userVO", vo);
+		model.addAttribute("AUserVO", vo);
 
 		if (dto.isUseCookie()) {
 
@@ -73,9 +78,10 @@ public class UserController {
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
+			service.keepALogin(vo.getA_ID(), session.getId(), sessionLimit);
 		}
 
+		
 	}
 
 	@GetMapping(value = "/logout")
@@ -87,7 +93,7 @@ public class UserController {
 		Object obj = session.getAttribute("login");
 
 		if (obj != null) {
-			UserVO vo = (UserVO) obj;
+			AUserVO vo = (AUserVO) obj;
 			log.info("logout.................................2");
 			session.removeAttribute("login");
 			session.invalidate();
@@ -100,7 +106,7 @@ public class UserController {
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
-				service.keepLogin(vo.getUids(), session.getId(), new Date());
+				service.keepALogin(vo.getA_ID(), session.getId(), new Date());
 				log.info("logout success................");
 			}
 		}
