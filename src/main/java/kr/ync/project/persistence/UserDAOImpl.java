@@ -17,7 +17,7 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	private SqlSession session;
 
-	private static String namespace = "kr.ync.project.mapper.UserMapper";
+	private static String namespace = "kr.ync.project.mapper.userMapper";
 
 	@Override
 	public UserVO login(LoginDTO dto) throws Exception {

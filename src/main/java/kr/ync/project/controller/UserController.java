@@ -6,6 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,8 +36,16 @@ public class UserController {
 	private UserService service;
 
 	@GetMapping(value = "/login")
-	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {
-
+	public String loginGET(@ModelAttribute("dto") LoginDTO dto) {
+		log.info("UserController loginGET");
+		return "front/login";
+	}
+	
+	@GetMapping(value = "/value")
+	public String valueGET(@ModelAttribute("UserVO") UserVO vo , Model model) {
+		log.info("UserController valueGET");
+		model.addAttribute("UserVO", vo);
+		return "front/index";
 	}
 	
 	//preHandle 실행
@@ -55,30 +64,34 @@ public class UserController {
 	}*/
 	
 	//postHandle 실행
-	@PostMapping(value = "/loginPost")
-	@ResponseStatus(value=HttpStatus.OK)
-	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
+	@PostMapping("/loginPost")
+	//@ResponseStatus(value=HttpStatus.OK)
+	public String loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		UserVO vo = service.login(dto);
 
 		if (vo == null) {
-			return;
+			return"";
 		}
+		log.info(vo.getM_ID());
+		model.addAttribute("UserVO", vo);
+		//JOptionPane.showMessageDialog(frame, "Eggs are not supposed to be green.");
+		
 
-		model.addAttribute("userVO", vo);
-
-		if (dto.isUseCookie()) {
+		/*if (dto.isUseCookie()) {
 
 			int amount = 60 * 60 * 24 * 7;
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
 			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
-		}
-
+			
+			 
+		}*/
+		return "front/loginPost";
 	}
 
-	@GetMapping(value = "/logout")
+	/*@GetMapping(value = "/logout")
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
@@ -105,7 +118,7 @@ public class UserController {
 			}
 		}
 		response.sendRedirect("/sboard/list");
-	}
+	}*/
 	
 	
 }
