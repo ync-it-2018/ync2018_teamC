@@ -9,8 +9,14 @@ import lombok.ToString;
 @ToString
 public class UserVO {
 
-	private String uids;
-	private String upw;
-	private String uname;
-	private int upoint;
+	private String M_ID;
+	private String M_PWD;
+	private String M_NAME;
+//	private String M_ADDRESS;
+//	private String M_TEL;
+//	private String M_EMAIL;
+//	
+//	private Integer POINT;
+//	private Integer LEVEL_CODE;
+//	
 }
