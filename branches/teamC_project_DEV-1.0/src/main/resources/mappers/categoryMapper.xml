@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.CategoryMapper">
+
+	<insert id="bigcreate">
+        INSERT INTO TC_BIG(P_BIG, P_BIG_NAME)
+        VALUES (#{P_BIG}, #{P_BIG_NAME})
+    </insert>
+    
+</mapper>
