@@ -22,11 +22,9 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
 	public String home(Locale locale, Model model) {
-		//saehee
-		// 가나다
-		//바꼈니
+		
 		logger.info("hi", locale);
 
 		Date date = new Date();
@@ -112,9 +110,9 @@ public class HomeController {
 		return "front/shoping_cart";
 	}
 	
-	@RequestMapping(value = "/login", method = {RequestMethod.POST,RequestMethod.GET})
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
-		
+		logger.info("home ctroller");
 		return "front/login";
 	}
 	
@@ -177,6 +175,18 @@ public class HomeController {
 	public String popupload(Locale locale, Model model) {
 		
 		return "admin/popupload";
+	}
+	
+	@RequestMapping(value = "/categorybig", method = RequestMethod.GET)
+	public String categorybig(Locale locale, Model model) {
+		
+		return "admin/categorybig";
+	}
+	
+	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
+	public String productlist(Locale locale, Model model) {
+		
+		return "admin/aproduct/productlist";
 	}
 	
 	

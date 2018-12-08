@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.AdminsignupMapper">
+
+	<insert id="insertadminMember" >  
+	<!-- parameterType="kr.ync.project.domain.AdminSignupVO" -->
+        INSERT INTO TC_ADMIN(
+            A_ID,
+            A_PWD,
+            A_NAME,
+            A_EMAIL,
+            A_TEL
+           <!--  ,POINT,
+            LEVEL_CODE -->
+        )VALUES(
+            #{A_ID, jdbcType=VARCHAR},
+            #{A_PWD, jdbcType=VARCHAR},
+            #{A_NAME, jdbcType=VARCHAR},
+            #{A_EMAIL, jdbcType=VARCHAR},
+            #{A_TEL, jdbcType=VARCHAR}
+            <!-- ,#{POINT, jdbcType=INTEGER},
+            #{LEVEL_CODE, jdbcType=INTEGER} -->
+        )
+    </insert>		
+
+</mapper>
+
+

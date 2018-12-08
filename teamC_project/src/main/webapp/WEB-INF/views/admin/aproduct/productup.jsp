@@ -26,35 +26,35 @@
 				</div>
 				<!-- /.box-header -->
 				
-				<form role="form" id="form" name="form" enctype="meltipart/from-data"method="post">
+				<form role="form" id="form" name="form" enctype="meltipart/from-data" method="POST">
 					<div class="box-body">
 						<div class="form-group">
 							<label for="exampleInputEmail1">상품번호</label> <input type="text"
-								name='p_code' class="form-control" placeholder="상품번호">
+								name='P_CODE' class="form-control" placeholder="상품번호">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">상품명</label> <input type="text"
-								name='p_name' class="form-control" placeholder="상품명">
+								name='P_NAME' class="form-control" placeholder="상품명">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">판매가</label> <input type="text"
-								name='price' class="form-control" placeholder="판매가">
+								name='PRICE' class="form-control" placeholder="판매가">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">세일가격</label> <input type="text"
-								name='sale_price' class="form-control" placeholder="세일가격">
+								name='SALE_PRICE' class="form-control" placeholder="세일가격">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">재고</label> <input type="text"
-								name='stock' class="form-control" placeholder="재고">
+								name='STOCK' class="form-control" placeholder="재고">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">적립률</label> <input type="text"
-								name='p_point' class="form-control" placeholder="적립률">
+								name='P_POINT' class="form-control" placeholder="적립률">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">상품설명</label>
-							<textarea class="form-control" name="p_detail" rows="3"
+							<textarea class="form-control" name="P_DETAIL" rows="3"
 								placeholder="상품 설명"></textarea>
 						</div>
 						<%-- <div class='box-body'>
@@ -87,23 +87,23 @@
 				</div> --%>						
 						<div class="form-group">
 							<label for="exampleInputEmail1">대분류</label> <input type="number"
-								min="0" max="" name='p_big' class="form-control" placeholder="대분류">
+								min="0" max="" name='P_BIG' class="form-control" placeholder="대분류">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">중분류</label> <input type="number"
-								min="0" max="" name='p_middle' class="form-control" placeholder="중분류">
+								min="0" max="" name='P_MIDDLE' class="form-control" placeholder="중분류">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">소분류</label> <input type="number"
-								min="0" max="" name='p_small' class="form-control" placeholder="소분류">
+								min="0" max="" name='P_SMALL' class="form-control" placeholder="소분류">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">이벤트번호</label> <input type="number"
-								min="0" max="" name='e_num' class="form-control" placeholder="이벤트번호">
+								min="0" max="" name='E_NUM' class="form-control" placeholder="이벤트번호">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">사이즈</label> <input type="text"
-								name='size' class="form-control" placeholder="사이즈">
+								name='P_SIZE' class="form-control" placeholder="사이즈">
 						</div>
 						
 						
@@ -196,23 +196,23 @@
 <script>
 $(document).ready(function(){
 	$("#addBtn").click(function(){
-		var p_code = $("p_code").val();
-		var p_name = $("p_name").val();
-		var price = $("price").val();
-		var stock = $("stock").val();
+		var P_CODE = $("P_CODE").val();
+		var P_NAME = $("P_NAME").val();
+		var PRICE = $("PRICE").val();
+		var STOCK = $("STOCK").val();
 		
-		if(p_code == ""){
+		if(P_CODE == ""){
 			alert("상품코드를 입력해주세요");
-			p_code.focus();
-		} else if (p_name == ""){
+			P_CODE.focus();
+		} else if (P_NAME == ""){
 			alert("상품명을 입력해주세요");
-			p_name.focus();
-		} else if (price == ""){
+			P_NAME.focus();
+		} else if (PRICE == ""){
 			alert("상품 가격을 입력해주세요");
-			price.focus();
-		} else if (stock == ""){
+			PRICE.focus();
+		} else if (STOCK == ""){
 			alert("상품 재고를 입력해주세요");
-			stock.focus();
+			STOCK.focus();
 		}
 		
 		//상품 정보 전송

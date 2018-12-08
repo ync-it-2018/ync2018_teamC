@@ -357,7 +357,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/management"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
+                <li><a href="/categorybig"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
                 <li><a href="/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
@@ -370,7 +370,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/memberlist"><i class="fa fa-circle-o"></i> 회원관리 </a></li>
-                <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> 등급관리 </a></li>
+                <li><a href="/management"><i class="fa fa-circle-o"></i> 등급관리 </a></li>
                 <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Front 화면 </a></li>
               </ul>
             </li>

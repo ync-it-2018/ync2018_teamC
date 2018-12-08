@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.AuserMapper">
+
+	<select id="alogin" resultType="AUserVO">
+		SELECT	A_ID,
+				A_PWD,
+		FROM	TC_ADMIN
+		WHERE	A_ID = #{A_ID}
+		AND		A_PWD = #{A_PWD}
+	</select>
+  
+	<!-- <update id="keepALogin" >
+		UPDATE TC_ADMIN SET 	sessionKey = #{sessionId},
+	  							sessionLimit = #{next}
+		WHERE A_ID = #{A_ID}
+	</update>
+
+	<select id="checkAUserWithSessionKey" resultType="AUserVO">
+		value는 loginCookie에 저장된 session 값
+		SELECT 	*
+		FROM	TC_ADMIN
+		WHERE	sessionKey = #{value}
+		AND		sessionlimit > SYSDATE
+	</select> -->
+	
+	
+
+</mapper>
+
+
