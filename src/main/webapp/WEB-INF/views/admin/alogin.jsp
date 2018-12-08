@@ -31,13 +31,13 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-<form action="/user/loginPost" method="post">
+<form action="/auser/aloginPost" method="post">
   <div class="form-group has-feedback">
-    <input type="text" name="uids" class="form-control" placeholder="USER ID"/>
+    <input type="text" name="A_ID" class="form-control" placeholder="USER ID"/>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
   </div>
   <div class="form-group has-feedback">
-    <input type="password" name="upw" class="form-control" placeholder="Password"/>
+    <input type="password" name="A_PWD" class="form-control" placeholder="Password"/>
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
   </div>
   <div class="row">

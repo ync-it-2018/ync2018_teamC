@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,8 +10,12 @@
 </head>
 <body>
   <script type="text/javascript">
-    self.location = "/admin/index";
+    //self.location = "/sboard/list";
+    
   </script>
+  ${AUserVO.A_ID};
+  ${AUserVO.A_PWD};
+  
 </body>
 </html>
 
