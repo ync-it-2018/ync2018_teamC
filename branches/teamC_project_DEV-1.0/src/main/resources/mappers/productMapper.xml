@@ -6,12 +6,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.ProductMapper">
 
 	<!-- 상품 전체 목록 -->
+	<select id="list" parameterType="hashMap" resultType="ProductVO">
+		SELECT A.P_NAME
+			  ,A.PRICE
+			  ,A.SALE_PRICE
+			  ,A.STOCK
+			  ,A.P_POINT
+			  ,A.P_DETAIL
+			  ,A.P_SMALL
+			  ,A.P_BIG
+			  ,A.P_MIDDLE
+			  ,A.E_NUM
+			  --,A.SIZE
+			  ,A.P_CODE
+			  ,B.P_IMAGE_SRC
+		 FROM TC_PRODUCT A
+			 ,TC_P_FILE  B
+		WHERE A.P_CODE = B.P_CODE
+		
+		</select>
+
 	<select id="list" resultType="productVO">
 		SELECT	p_code,
 				p_name,
 				stock,
 				price
 		FROM	tc_product
+
 	</select>
 	
 	<!-- 상품 상세 -->
