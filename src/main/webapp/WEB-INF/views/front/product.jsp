@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -629,25 +632,29 @@
 			</div>
 
 			<div class="row isotope-grid">
+			<c:forEach items = "${productList}" var="product">
+				<script>
+					console.log("image : " + '${product}');
+				</script>
+				
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+				
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="/resources/front/images/product-01.jpg" alt="IMG-PRODUCT">
-
+							<img src="${product.pImageSrc}" alt="IMG-PRODUCT">
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Esprit Ruffle Shirt
+									${product.pName}
 								</a>
 
 								<span class="stext-105 cl3">
-									$16.64
+									<fmt:formatNumber value="${product.price}" pattern="###,###,###" />원
 								</span>
 							</div>
 
@@ -659,10 +666,11 @@
 							</div>
 						</div>
 					</div>
+					
 				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+				</c:forEach>
+				<!-- <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-02.jpg" alt="IMG-PRODUCT">
@@ -694,7 +702,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-03.jpg" alt="IMG-PRODUCT">
@@ -726,7 +734,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-04.jpg" alt="IMG-PRODUCT">
@@ -758,7 +766,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-05.jpg" alt="IMG-PRODUCT">
@@ -790,7 +798,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-06.jpg" alt="IMG-PRODUCT">
@@ -822,7 +830,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-07.jpg" alt="IMG-PRODUCT">
@@ -854,7 +862,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-08.jpg" alt="IMG-PRODUCT">
@@ -886,7 +894,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-09.jpg" alt="IMG-PRODUCT">
@@ -918,7 +926,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT">
@@ -950,7 +958,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-11.jpg" alt="IMG-PRODUCT">
@@ -982,7 +990,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-12.jpg" alt="IMG-PRODUCT">
@@ -1014,7 +1022,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-13.jpg" alt="IMG-PRODUCT">
@@ -1046,7 +1054,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-14.jpg" alt="IMG-PRODUCT">
@@ -1078,7 +1086,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-15.jpg" alt="IMG-PRODUCT">
@@ -1110,7 +1118,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
+					Block2
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="/resources/front/images/product-16.jpg" alt="IMG-PRODUCT">
@@ -1140,7 +1148,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
@@ -1511,7 +1519,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 
 		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').jsp();
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to wishlist !", "success");
 
@@ -1521,7 +1529,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 
 		$('.js-addwish-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').jsp();
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to wishlist !", "success");
@@ -1534,7 +1542,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		/*---------------------------------------------*/
 
 		$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').jsp();
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to cart !", "success");
 			});

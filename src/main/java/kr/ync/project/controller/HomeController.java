@@ -2,14 +2,23 @@ package kr.ync.project.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.ync.project.domain.ProductVO;
+import kr.ync.project.service.ProductService;
 
 /**
  * Handles requests for the application home page.
@@ -33,13 +42,25 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
-		
+		 
 		return "front/index";
 	}
 	
+	@Inject
+	private ProductService productService;
+	
 	/*1017수정2*/
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
-	public String product(Locale locale, Model model) {
+	public String product(Locale locale, Model model) throws Exception {//model:택배기사
+		/*Map param = new HashMap<String, String>();
+		param.put("big", "01");
+		param.put("middle", "02");*/
+		
+		List<ProductVO> productList = productService.listProduct();
+		
+		System.out.println("가져온 상품 : " + productList);
+		
+		model.addAttribute("productList", productList);//"key",value
 		
 		return "front/product";
 	}
