@@ -7,13 +7,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="alogin" resultType="AUserVO">
 		SELECT	A_ID,
-				A_PWD,
+				A_PWD
 		FROM	TC_ADMIN
 		WHERE	A_ID = #{A_ID}
 		AND		A_PWD = #{A_PWD}
 	</select>
   
-	<!-- <update id="keepALogin" >
+	<update id="keepALogin" >
 		UPDATE TC_ADMIN SET 	sessionKey = #{sessionId},
 	  							sessionLimit = #{next}
 		WHERE A_ID = #{A_ID}
@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM	TC_ADMIN
 		WHERE	sessionKey = #{value}
 		AND		sessionlimit > SYSDATE
-	</select> -->
+	</select>
 	
 	
 
