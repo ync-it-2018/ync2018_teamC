@@ -122,6 +122,8 @@ public class HomeController {
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
 	public String product_detail(Locale locale, Model model) {
 		
+		
+		
 		return "front/product_detail";
 	}
 		
