@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.service.BoardService;
 import kr.ync.project.service.QnaService;
@@ -41,6 +42,17 @@ public class QnaController {
 		model.addAttribute("qnalist", service.listAll());
 		
 		return "admin/Qnalist";
+	}
+	
+	
+	@RequestMapping(value = "/QnaRead", method = {RequestMethod.GET,RequestMethod.POST})
+	public String aNoticeRead(@RequestParam("qNum")Integer qNum, Model model) throws Exception {
+		
+		logger.info("리스트상세보기");	
+		
+		model.addAttribute("list",service.read(qNum));
+		
+		return "admin/QnaRead";
 	}
 	
 	
