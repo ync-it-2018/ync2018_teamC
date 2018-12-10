@@ -67,16 +67,16 @@
 							<th style="width: 40px">Q_CHECK</th>
 						</tr>
 
-						<c:forEach items="${qnalist}" var="qnaVO">
+						<c:forEach items="${qnalist}" var="QnaVO">
 
 							<tr>
-								<td>${QnaVO.Q_NUM}</td>
-								<td>${QnaVO.Q_CATEGORY_NUM}</td>
-								<td>${QnaVO.Q_TITLE}</td>
-								<td>${QnaVO.M_ID}</td>
+								<td>${QnaVO.qNum}</td>
+								<td>${QnaVO.qCategoryNum}</td>
+								<td><a href='#' onClick='fn_view(${QnaVO.qNum})'><c:out value="${QnaVO.qTitle}"/></a></td>
+								<td>${QnaVO.mID}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss"
-										value="${QnaVO.Q_UP_DATE}" /></td>
-								<td><span class="badge bg-red">${QnaVO.Q_CHECK }</span></td>
+										value="${QnaVO.qUpDate}" /></td>
+								<td><span class="badge bg-red">${QnaVO.qCheck}</span></td>
 							</tr>
 
 						</c:forEach>
@@ -151,11 +151,51 @@
 
 				$('#newBtn').on("click", function(evt) {
 
-					self.location = "register";
+					self.location = "QnaRegister";
 
 				});
 
 			});
 </script>
+
+<script>
+function fn_view(qNum){
+    
+    var form = document.getElementById("QnaForm");
+    var url = "<c:url value='/QnaRead'/>";
+    url = url + "?qNum=" + qNum;
+    
+    form.action = url;    
+    form.submit(); 
+}
+</script>
+
+
+<!-- <script type="text/javascript">
+        $(document).ready(function(){
+            $("#list").on("click",function(e){
+                e.preventDefault();
+                fn_openBoardList();
+            })
+            $("#modify").on("click",function(e){
+                e.preventDefault();
+                fn_openBoardModify();
+            })
+        })
+         
+        function fn_openBoardList(){
+            var comSubmit = new ComSubmit();
+            comSubmit.setUrl("<c:url value='/admin/aNotice'/>");
+            comSubmit.submit();
+        }
+        function fn_openBoardModify(){
+            var idx = "${map.IDX}";
+            var comSubmit = new ComSubmit();
+            comSubmit.setUrl("<c:url value='/admin/aNoticeModify'/>");
+            comSubmit.addParam("IDX",idx);
+            comSubmit.submit();
+        }
+    </script>
+ -->
 
 <%@include file="../admin/include/footer.jsp" %>

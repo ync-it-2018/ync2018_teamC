@@ -6,19 +6,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.QnaMapper">
 
 <select id="listAll" resultType="QnaVO">
-
-SELECT  	Q.Q_NUM,
-			Q.Q_TITLE,
-			Q.Q_CONTENTS,
-			Q.Q_UP_DATE,
-			Q.Q_CHECK,
+	<![CDATA[
+	SELECT  
+			N.Q_NUM,
+			N.Q_TITLE,
+			N.Q_CONTENTS,
+			N.Q_UP_DATE,
+			N.Q_CHECK,
 			M.M_ID,
-			Q.Q_CATEGORY_NUM
+			N.Q_CATEGORY_NUM
 	FROM TC_MEMBER M,
-		 TC_QNA Q
-	WHERE M.M_ID = Q.M_ID
-
+		 TC_QNA N
+	WHERE M.M_ID = N.M_ID
+	]]> 
 
 </select>
+
+<select id="read" resultType="QnaVO">
+	
+	SELECT 	Q_NUM,
+			Q_TITLE,
+			Q_CONTENTS,
+			Q_UP_DATE,
+			Q_CHECK,
+			M_ID
+	FROM 	TC_QNA
+	WHERE	Q_NUM = #{Q_NUM}
+</select>
+ 
  
 </mapper>

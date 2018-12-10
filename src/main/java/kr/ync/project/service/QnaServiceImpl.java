@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import kr.ync.project.domain.AnoticeVO;
 import kr.ync.project.domain.QnaVO;
 import kr.ync.project.persistence.QnaDAO;
 
@@ -26,6 +27,13 @@ public class QnaServiceImpl implements QnaService {
 	@Override
 	public List<QnaVO> listAll() throws Exception {
 		return dao.listAll();
+	}
+	
+	
+	@Override
+	public QnaVO read(Integer qNum) throws Exception {
+
+		return dao.read(qNum);
 	}
 
 
