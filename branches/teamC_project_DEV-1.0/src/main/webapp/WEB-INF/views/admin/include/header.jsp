@@ -357,7 +357,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/categorybig"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
+                <li><a href="/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
                 <li><a href="/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
@@ -402,7 +402,7 @@
               </a>
             </li>
             <li>
-              <a href="../mailbox/mailbox.html">
+              <a href="/aNotice">
                 <i class="fa fa-envelope"></i> <span>공지사항</span>
                 <small class="label pull-right bg-yellow">12</small>
               </a>

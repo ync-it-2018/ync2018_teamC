@@ -7,15 +7,51 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
+/*@Getter
 @Setter
-@ToString
+@ToString*/
 public class AnoticeVO {
-	private Integer N_CODE;
-	private String N_TITLE;
-	private String N_UP_DATE;
-	private String N_CONTENTS;
-	private Integer N_VIEW_COUNT;
+	private Integer nCode;
+	private String nTitle;
+	private Date nUpDate;
+	private String nContents;
+	private Integer nViewCount;
+	public Integer getnCode() {
+		return nCode;
+	}
+	public void setnCode(Integer nCode) {
+		this.nCode = nCode;
+	}
+	public String getnTitle() {
+		return nTitle;
+	}
+	public void setnTitle(String nTitle) {
+		this.nTitle = nTitle;
+	}
+	public Date getnUpDate() {
+		return nUpDate;
+	}
+	public void setnUpDate(Date nUpDate) {
+		this.nUpDate = nUpDate;
+	}
+	public String getnContents() {
+		return nContents;
+	}
+	public void setnContents(String nContents) {
+		this.nContents = nContents;
+	}
+	public Integer getnViewCount() {
+		return nViewCount;
+	}
+	public void setnViewCount(Integer nViewCount) {
+		this.nViewCount = nViewCount;
+	}
+	
+	
+	
+	
+	
+	
 	
 
 }

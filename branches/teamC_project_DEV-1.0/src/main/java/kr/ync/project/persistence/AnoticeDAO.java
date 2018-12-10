@@ -15,6 +15,8 @@ public interface AnoticeDAO {
 
 	public List<AnoticeVO> listAll() throws Exception;
 
-	
+	public AnoticeVO read(Integer nCode) throws Exception;
+
+	public void updateViewCnt(Integer nCode)throws Exception;
 
 }

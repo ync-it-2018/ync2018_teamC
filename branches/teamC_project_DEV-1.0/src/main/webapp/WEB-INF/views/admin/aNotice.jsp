@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@include file="../admin/include/header.jsp" %>
 <!-- Main content -->
@@ -12,7 +14,7 @@
 			<!-- general form elements -->
 			<div class='box'>
 				<div class="box-header with-border">
-					<h3 class="box-title">Board List</h3>
+					<h3 class="box-title">Notice</h3>
 				</div>
 
 
@@ -54,32 +56,33 @@
 					<h3 class="box-title">LIST PAGING</h3>
 				</div>
 				<div class="box-body">
+				<form id="noticeForm" name="noticeForm" method="POST">
 					<table class="table table-bordered">
 						<tr>
-							<th style="width: 10px">BNO</th>
+							<th style="width: 10px">N_CODE</th>
 							<th>TITLE</th>
-							<th>WRITER</th>
-							<th>REGDATE</th>
-							<th style="width: 40px">VIEWCNT</th>
+							<th style="width: 200px">DATE</th>
+							<!-- <th style="width: 40px">VIEWCNT</th> -->
 						</tr>
 
-						<c:forEach items="${list}" var="boardVO">
+						<c:forEach items="${serverTime}" var="AnoticeVO">
 
 							<tr>
-								<td>${boardVO.bno}</td>
-								<td><a
-									href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
-										${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
-								</a></td>
-								<td>${boardVO.writer}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${boardVO.regdate}" /></td>
-								<td><span class="badge bg-red">${boardVO.viewcnt }</span></td>
+								<td>${AnoticeVO.nCode}</td>
+								<%-- <td>
+									<input type="hidden" id="nCode" value="${AnoticeVO.nCode}">
+									<a href='/aNoticeRead${pageMaker.makeSearch(pageMaker.cri.page) }&nCode=${AnoticeVO.nCode}'>
+									${AnoticeVO.nTitle}
+								</a></td> --%>
+								<td><a href='#' onClick='fn_view(${AnoticeVO.nCode})'><c:out value="${AnoticeVO.nTitle}"/></a></td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${AnoticeVO.nUpDate}" /></td>
+								<%-- <td><span class="badge bg-red">${AnoticeVO.nViewCount}</span></td> --%>
 							</tr>
 
 						</c:forEach>
 
 					</table>
+					</form>
 				</div>
 				<!-- /.box-body -->
 
@@ -149,11 +152,51 @@
 
 				$('#newBtn').on("click", function(evt) {
 
-					self.location = "register";
+					self.location = "aNoticeRegister";
 
 				});
 
 			});
 </script>
+
+<script>
+function fn_view(nCode){
+    
+    var form = document.getElementById("noticeForm");
+    var url = "<c:url value='/aNoticeRead'/>";
+    url = url + "?nCode=" + nCode;
+    
+    form.action = url;    
+    form.submit(); 
+}
+</script>
+
+
+<!-- <script type="text/javascript">
+        $(document).ready(function(){
+            $("#list").on("click",function(e){
+                e.preventDefault();
+                fn_openBoardList();
+            })
+            $("#modify").on("click",function(e){
+                e.preventDefault();
+                fn_openBoardModify();
+            })
+        })
+         
+        function fn_openBoardList(){
+            var comSubmit = new ComSubmit();
+            comSubmit.setUrl("<c:url value='/admin/aNotice'/>");
+            comSubmit.submit();
+        }
+        function fn_openBoardModify(){
+            var idx = "${map.IDX}";
+            var comSubmit = new ComSubmit();
+            comSubmit.setUrl("<c:url value='/admin/aNoticeModify'/>");
+            comSubmit.addParam("IDX",idx);
+            comSubmit.submit();
+        }
+    </script>
+ -->
 
 <%@include file="../admin/include/footer.jsp" %>

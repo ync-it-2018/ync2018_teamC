@@ -9,11 +9,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<![CDATA[
 	SELECT 	N_CODE,
 			N_TITLE,
-			N_CONTENTS,
-			N_VIEW_COUNT,
 			N_UP_DATE
-	FROM TC_NOTICE 
+	FROM TC_NOTICE
 	]]>  
+</select>
+
+
+<insert id="insert">
+	INSERT INTO TC_NOTICE (N_CODE, N_TITLE, N_CONTENTS) 
+	VALUES(TC_SEQ_NOTICE.NEXTVAL, #{N_TITLE},#{N_CONTENTS})
+</insert>
+
+<select id="read" resultType="AnoticeVO">
+	SELECT 	N_CODE,
+			N_TITLE,
+			N_CONTENTS,
+			N_UP_DATE
+	FROM TC_NOTICE
+	WHERE	N_CODE = #{N_CODE}
 </select>
  
 </mapper>
