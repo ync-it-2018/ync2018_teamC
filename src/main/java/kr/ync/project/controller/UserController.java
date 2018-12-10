@@ -1,6 +1,7 @@
 package kr.ync.project.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -44,9 +45,12 @@ public class UserController {
 	@GetMapping(value = "/value")
 	public String valueGET(@ModelAttribute("UserVO") UserVO vo , Model model) {
 		log.info("UserController valueGET");
+		
 		model.addAttribute("UserVO", vo);
-		return "front/index";
-	}
+		
+		return "front/loginPost2";
+
+}
 	
 	//preHandle 실행
 	/*@PostMapping(value = "/loginPost")

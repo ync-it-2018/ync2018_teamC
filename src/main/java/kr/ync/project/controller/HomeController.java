@@ -2,10 +2,13 @@ package kr.ync.project.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
+import javax.inject.Inject;
 
 import javax.inject.Inject;
 
@@ -17,14 +20,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kr.ync.project.domain.EventVO;
+import kr.ync.project.service.EventService;
+
 import kr.ync.project.domain.ProductVO;
 import kr.ync.project.service.ProductService;
-
 /**
  * Handles requests for the application home page.
  */
+
 @Controller
 public class HomeController {
+	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -71,8 +78,17 @@ public class HomeController {
 		return "front/review";
 	}
 	
+	@Inject
+	private EventService eventService;
+	
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
-	public String event(Locale locale, Model model) {
+	public String event(Locale locale, Model model) throws Exception {
+		
+		 List<EventVO> eventList = eventService.listEvent();
+	      
+		 System.out.println(eventList);
+		 
+	     model.addAttribute("eventList", eventList);
 		
 		return "front/event";
 	}
@@ -242,6 +258,12 @@ public class HomeController {
 	public String MypageInterestedpdt(Locale locale, Model model) {
 		
 		return "front/MypageInterestedpdt";
+	}
+	
+	@RequestMapping(value = "/aevent", method = RequestMethod.GET)
+	public String aevent(Locale locale, Model model) {
+		
+		return "admin/aevent";
 	}
 	
 }

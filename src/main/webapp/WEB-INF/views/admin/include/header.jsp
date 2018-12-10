@@ -385,6 +385,19 @@
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
               </ul> -->
             </li>
+            
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>이벤트</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/aevent"><i class="fa fa-circle-o"></i> 이벤트 등록 </a></li>
+                <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> 등급관리 </a></li>
+               </ul>
+            </li>
+            
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-table"></i> <span>매출관리</span>
