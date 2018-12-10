@@ -413,6 +413,9 @@
                 <i class="fa fa-calendar"></i> <span>문의관리</span>
                 <small class="label pull-right bg-red">3</small>
               </a>
+              <ul class="treeview-menu">
+                <li><a href="/Qnalist"><i class="fa fa-circle-o"></i> 문의관리 목록</a></li>
+              </ul>
             </li>
             <li>
               <a href="/aNotice">

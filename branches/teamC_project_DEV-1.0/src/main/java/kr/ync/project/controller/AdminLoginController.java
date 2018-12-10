@@ -6,6 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,10 +39,16 @@ public class AdminLoginController {
 	private AUserService service;
 
 	@GetMapping(value = "/alogin")
-	public String AloginGET(@ModelAttribute("dto") ALoginDTO dto) {
-		log.info("login call.....");
-		
-		return "admin/aloginPost";
+	public String loginGET(@ModelAttribute("dto") ALoginDTO dto) {
+		log.info("AdminLoginController loginGET");
+		return "admin/alogin";
+	}
+	
+	@GetMapping(value = "/avalue")
+	public String valueGET(@ModelAttribute("AUserVO") AUserVO vo , Model model) {
+		log.info("AdminLoginController valueGET");
+		model.addAttribute("AUserVO", vo);
+		return "admin/aindex";
 	}
 	
 	//preHandle 실행
@@ -60,31 +67,34 @@ public class AdminLoginController {
 	}*/
 	
 	//postHandle 실행
-	@PostMapping(value = "/aloginPost")
-	@ResponseStatus(value=HttpStatus.OK)
-	public void AloginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
+	@PostMapping("/aloginPost")
+	//@ResponseStatus(value=HttpStatus.OK)
+	public String loginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		AUserVO vo = service.alogin(dto);
 
 		if (vo == null) {
-			return ;
+			return"";
 		}
-
+		log.info(vo.getA_ID());
 		model.addAttribute("AUserVO", vo);
+		//JOptionPane.showMessageDialog(frame, "Eggs are not supposed to be green.");
+		
 
-		if (dto.isUseCookie()) {
+		/*if (dto.isUseCookie()) {
 
 			int amount = 60 * 60 * 24 * 7;
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-			service.keepALogin(vo.getA_ID(), session.getId(), sessionLimit);
-		}
-
-		
+			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
+			
+			 
+		}*/
+		return "admin/aloginPost";
 	}
 
-	@GetMapping(value = "/logout")
+	/*@GetMapping(value = "/logout")
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
@@ -93,7 +103,7 @@ public class AdminLoginController {
 		Object obj = session.getAttribute("login");
 
 		if (obj != null) {
-			AUserVO vo = (AUserVO) obj;
+			UserVO vo = (UserVO) obj;
 			log.info("logout.................................2");
 			session.removeAttribute("login");
 			session.invalidate();
@@ -106,12 +116,12 @@ public class AdminLoginController {
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
-				service.keepALogin(vo.getA_ID(), session.getId(), new Date());
+				service.keepLogin(vo.getUids(), session.getId(), new Date());
 				log.info("logout success................");
 			}
 		}
 		response.sendRedirect("/sboard/list");
-	}
+	}*/
 	
 	
 }

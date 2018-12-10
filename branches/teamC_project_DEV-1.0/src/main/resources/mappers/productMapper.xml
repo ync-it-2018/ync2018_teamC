@@ -25,7 +25,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE A.P_CODE = B.P_CODE
 		
 		</select>
-
 	
 	<!-- 상품 상세 -->
 	<select id="detailProduct" resultType="productVO">
