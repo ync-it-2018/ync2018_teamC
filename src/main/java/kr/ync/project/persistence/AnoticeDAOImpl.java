@@ -28,5 +28,17 @@ public class AnoticeDAOImpl implements AnoticeDAO {
 		return session.selectList(namespace + ".listAll");
 	}
 
+
+	@Override
+	public AnoticeVO read(Integer nCode) throws Exception {
+		return session.selectOne(namespace + ".read", nCode);
+	}
+
+
+	@Override
+	public void updateViewCnt(Integer nCode) throws Exception {
+		session.update(namespace + ".updateViewCnt", nCode);
+	}
+
 	
 }

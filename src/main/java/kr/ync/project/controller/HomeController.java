@@ -200,11 +200,6 @@ public class HomeController {
 		return "admin/popupload";
 	}
 	
-	@RequestMapping(value = "/categorybig", method = RequestMethod.GET)
-	public String categorybig(Locale locale, Model model) {
-		
-		return "admin/categorybig";
-	}
 	
 	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
 	public String productlist(Locale locale, Model model) {

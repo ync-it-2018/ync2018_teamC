@@ -53,7 +53,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@include file="../include/header.jsp"%>
+<%@include file="../admin/include/header.jsp"%>
 
 <style>
 .fileDrop {
@@ -82,11 +82,11 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label for="exampleInputEmail1">카테고리 번호</label> 
-							<input type="number" name='p_big' class="form-control" placeholder="카테고리 번호">
+							<input type="number" name='P_BIG' class="form-control" placeholder="카테고리 번호">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">카테고리명</label> 
-							<input type="text" name='p_big_name' class="form-control" placeholder="카테고리명">
+							<input type="text" name='P_BIG_NAME' class="form-control" placeholder="카테고리명">
 						</div>
 						
 					</div>
@@ -132,60 +132,7 @@
      class="btn btn-default btn-xs pull-right delbtn"><i class="fa fa-fw fa-remove"></i></a>
   </div>
 </li>                
-</script>    
-
-
-<script>
-$(document).ready(function(){
-	$("#addBtn").click(function(){
-		var p_code = $("p_code").val();
-		var p_name = $("p_name").val();
-		var price = $("price").val();
-		var stock = $("stock").val();
-		
-		if(p_code == ""){
-			alert("상품코드를 입력해주세요");
-			p_code.focus();
-		} else if (p_name == ""){
-			alert("상품명을 입력해주세요");
-			p_name.focus();
-		} else if (price == ""){
-			alert("상품 가격을 입력해주세요");
-			price.focus();
-		} else if (stock == ""){
-			alert("상품 재고를 입력해주세요");
-			stock.focus();
-		}
-		
-		//상품 정보 전송
-		document.form.action = "${path}/shop/product/insert.do";
-		document.form.submit();
-	});
-	
-	//상품 목록 이동
-	$("#listBtn").click(function(){
-		location.href = '${path}/shop/product/list.do'
-	});
-	
-	
-	$('#searchBtn').on("click",function(event) {
-		self.location = "list"
-						+ '${pageMaker.makeQuery(1)}'
-						+ "&searchType="
-						+ $("select option:selected").val()
-						+ "&keyword=" + $('#keywordInput').val();
-
-	});
-
-	$('#newBtn').on("click", function(evt) {
-		self.location = "register";
-	});
-});
-
-</script>
-
-
-
+</script>   
 
 <script>
 
@@ -263,5 +210,5 @@ $(".uploadedList").on("click", ".mailbox-attachment-info a", function(event){
 });
 </script>
 
-<%@include file="../include/footer.jsp"%>
+<%@include file="../admin/include/footer.jsp"%>
 
