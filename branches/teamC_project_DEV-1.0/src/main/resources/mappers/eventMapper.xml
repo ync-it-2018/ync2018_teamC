@@ -37,6 +37,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
            TC_E_FILE  B
       WHERE A.E_NUM = B.E_NUM
     </select>
+    
+    <select id="elistAll" resultType="EventVO">
+	<![CDATA[
+	SELECT 	E_NUM,
+			E_NAME,
+			E_STARTDATE,
+			E_ENDDATE,
+			E_DETAIL
+	FROM TC_EVENT
+	]]>  
+	</select>
+
+	<select id="read" resultType="EventVO">
+		SELECT 	E_NUM,
+				E_NAME,
+				E_STARTDATE,
+				E_ENDDATE
+		FROM TC_EVENT
+		WHERE	E_NUM = #{E_NUM}
+	</select>
 
 </mapper>
 

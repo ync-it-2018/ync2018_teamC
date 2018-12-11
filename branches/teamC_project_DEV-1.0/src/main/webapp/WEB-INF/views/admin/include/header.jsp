@@ -374,17 +374,17 @@
                 <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Front 화면 </a></li>
               </ul>
             </li>
-            <li class="treeview active">
+            <!-- <li class="treeview active">
               <a href="/popupload">
                 <i class="fa fa-edit"></i> <span>이벤트관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <!-- <ul class="treeview-menu">
+              <ul class="treeview-menu">
                 <li class="active"><a href="general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
                 <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-              </ul> -->
-            </li>
+              </ul>
+            </li> -->
             
             <li class="treeview">
               <a href="#">
@@ -394,7 +394,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/aevent"><i class="fa fa-circle-o"></i> 이벤트 등록 </a></li>
-                <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> 등급관리 </a></li>
+                <li><a href="/aeventList"><i class="fa fa-circle-o"></i> 이벤트 리스트 </a></li>
+                 <li><a href="/aeventPhoto"><i class="fa fa-circle-o"></i> 이벤트 사진 관리 </a></li>
                </ul>
             </li>
             

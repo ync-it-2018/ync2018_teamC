@@ -16,6 +16,7 @@ public class AnoticeVO {
 	private Date nUpDate;
 	private String nContents;
 	private Integer nViewCount;
+	
 	public Integer getnCode() {
 		return nCode;
 	}

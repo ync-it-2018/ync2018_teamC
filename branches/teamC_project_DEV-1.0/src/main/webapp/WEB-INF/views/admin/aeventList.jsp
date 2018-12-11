@@ -14,7 +14,7 @@
 			<!-- general form elements -->
 			<div class='box'>
 				<div class="box-header with-border">
-					<h3 class="box-title">Notice</h3>
+					<h3 class="box-title">Event</h3>
 				</div>
 
 
@@ -56,27 +56,22 @@
 					<h3 class="box-title">LIST PAGING</h3>
 				</div>
 				<div class="box-body">
-				<form id="noticeForm" name="noticeForm" method="POST" >
+				<form  id="eventForm" name="eventForm" method="POST" >
 					<table class="table table-bordered">
 						<tr>
-							<th style="width: 10px">N_CODE</th>
-							<th>TITLE</th>
-							<th style="width: 200px">DATE</th>
-							<!-- <th style="width: 40px">VIEWCNT</th> -->
+							<th style="width: 10px">E_NUM</th>
+							<th>E_NAME</th>
+							<th style="width: 150px">E_STARTDATE</th>
+							<th style="width: 150px">E_ENDDATE</th>
 						</tr>
 
-						<c:forEach items="${serverTime}" var="AnoticeVO">
+						<c:forEach items="${eventlist}" var="EventVO">
 
 							<tr>
-								<td>${AnoticeVO.nCode}</td>
-								<%-- <td>
-									<input type="hidden" id="nCode" value="${AnoticeVO.nCode}">
-									<a href='/aNoticeRead${pageMaker.makeSearch(pageMaker.cri.page) }&nCode=${AnoticeVO.nCode}'>
-									${AnoticeVO.nTitle}
-								</a></td> --%>
-								<td><a href='#' onClick='fn_view(${AnoticeVO.nCode})'><c:out value="${AnoticeVO.nTitle}"/></a></td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${AnoticeVO.nUpDate}" /></td>
-								<%-- <td><span class="badge bg-red">${AnoticeVO.nViewCount}</span></td> --%>
+								<td>${EventVO.eNum}</td>
+								<td><a href='' onClick='fe_view(${EventVO.eNum})'><c:out value="${EventVO.eName}"/></a></td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${EventVO.eStartdate}" /></td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${EventVO.eEnddate}" /></td>
 							</tr>
 
 						</c:forEach>
@@ -84,8 +79,6 @@
 					</table>
 					</form>
 				</div>
-				<!-- /.box-body -->
-
 
 				<div class="box-footer">
 
@@ -160,11 +153,11 @@
 </script>
 
 <script>
-function fn_view(nCode){
+function fe_view(eNum){
     
-    var form = document.getElementById("noticeForm");
-    var url = "<c:url value='/aNoticeRead'/>";
-    url = url + "?nCode=" + nCode;
+    var form = document.getElementById("eventForm");
+    var url = "<c:url value='/aeventRead'/>";
+    url = url + "?eNum=" + eNum;
     
     form.action = url;    
     form.submit(); 
@@ -172,31 +165,5 @@ function fn_view(nCode){
 </script>
 
 
-<!-- <script type="text/javascript">
-        $(document).ready(function(){
-            $("#list").on("click",function(e){
-                e.preventDefault();
-                fn_openBoardList();
-            })
-            $("#modify").on("click",function(e){
-                e.preventDefault();
-                fn_openBoardModify();
-            })
-        })
-         
-        function fn_openBoardList(){
-            var comSubmit = new ComSubmit();
-            comSubmit.setUrl("<c:url value='/admin/aNotice'/>");
-            comSubmit.submit();
-        }
-        function fn_openBoardModify(){
-            var idx = "${map.IDX}";
-            var comSubmit = new ComSubmit();
-            comSubmit.setUrl("<c:url value='/admin/aNoticeModify'/>");
-            comSubmit.addParam("IDX",idx);
-            comSubmit.submit();
-        }
-    </script>
- -->
 
 <%@include file="../admin/include/footer.jsp" %>

@@ -1,6 +1,8 @@
 package kr.ync.project.controller;
 
 
+import java.util.Locale;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.WebUtils;
 
 import kr.ync.project.domain.EventVO;
@@ -32,6 +35,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EventController {
 
+	private static final Logger logger = LoggerFactory.getLogger(AnoticeController.class);
+	
 	@Autowired
 	private EventService eventService;
     
@@ -49,6 +54,5 @@ public class EventController {
             
             return "admin/index";
         }
-	
 	
 }
