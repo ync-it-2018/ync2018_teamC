@@ -49,4 +49,10 @@ public class EventDAOImpl implements EventDAO {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace + ".read", eNum);
 	}
+
+	@Override
+	public void insertEventPhoto(EventVO eventVO) {
+		// TODO Auto-generated method stub
+		session.insert("insertEventPhoto",eventVO);
+	}
 }

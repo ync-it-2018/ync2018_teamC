@@ -24,7 +24,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             #{eEnddate, jdbcType=DATE},
             #{eLink, jdbcType=VARCHAR}
         )
-    </insert>		
+    </insert>	
+    
+    <insert id="insertEventPhoto" >  
+    
+        INSERT INTO TC_E_FILE(
+            E_NUM,
+            E_IMAGE_SRC,
+            E_IMAGE_INDEX
+            
+        )VALUES(
+            #{eNum, jdbcType=INTEGER},
+            #{eImageSrc, jdbcType=VARCHAR},
+            #{eImageIndex, jdbcType=INTEGER}
+        )
+    </insert>			
     
     <select id="selectEvent" parameterType="hashMap" resultType="EventVO">
     	SELECT A.E_NAME,

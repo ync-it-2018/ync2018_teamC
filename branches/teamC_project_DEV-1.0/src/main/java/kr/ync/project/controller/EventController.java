@@ -47,12 +47,25 @@ public class EventController {
     }
     
     //SignUp POST
-        @RequestMapping(value="/event.do", method=RequestMethod.POST)
-        public String eventPOST(EventVO eventVO) {
+    @RequestMapping(value="/event.do", method=RequestMethod.POST)
+    public String eventPOST(EventVO eventVO) {
             
-        	eventService.insertEvent(eventVO);
+     eventService.insertEvent(eventVO);
             
-            return "admin/index";
-        }
+        return "admin/index";
+    }
+    
+    @RequestMapping(value="/eventPhoto.do", method=RequestMethod.GET)
+    public void eventPhotoGET() {
+        
+    }
+    
+    @RequestMapping(value="/eventPhoto.do", method=RequestMethod.POST)
+    public String eventPhotoPOST(EventVO eventVO) {
+            
+     eventService.insertEventPhoto(eventVO);
+            
+        return "admin/index";
+    }
 	
 }

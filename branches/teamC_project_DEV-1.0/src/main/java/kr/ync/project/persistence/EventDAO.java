@@ -21,4 +21,6 @@ public interface EventDAO {
 
 	public EventVO read(Integer eNum) throws Exception;
 
+	public void insertEventPhoto(EventVO eventVO);
+
 }

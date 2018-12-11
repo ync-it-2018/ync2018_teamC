@@ -274,6 +274,18 @@ public class HomeController {
 		return "admin/aevent";
 	}
 	
+	@RequestMapping(value = "/aeventPhoto", method = RequestMethod.GET)
+	public String aeventPhoto(Locale locale, Model model) {
+		
+		return "admin/aeventPhoto";
+	}
+	
+	@RequestMapping(value = "/aeventUp", method = RequestMethod.GET)
+	public String aeventUp(Locale locale, Model model) {
+		
+		return "admin/aeventUp";
+	}
+	
 	@Inject
 	private EventService eventservice;
 	

@@ -46,5 +46,11 @@ public class EventServiceImpl implements EventService {
 
 		return dao.read(eNum);
 	}
+
+	@Override
+	public void insertEventPhoto(EventVO eventVO) {
+		// TODO Auto-generated method stub
+		dao.insertEventPhoto(eventVO);
+	}
 }
 
