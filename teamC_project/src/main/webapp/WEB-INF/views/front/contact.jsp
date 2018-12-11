@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +33,19 @@
    <link rel="stylesheet" type="text/css" href="/resources/front/css/main.css">
 <!--===============================================================================================-->
 </head>
+<style>
+	th {
+	  background-color: #ddbe7e;
+	  color: white;
+	}
+	th, td {
+	  padding: 15px;
+	  text-align: left;
+	  border-bottom: 1px solid #ddd;
+	}
+	tr:hover {background-color: #f5f5f5;}
+</style>
+
 <body class="animsition">
    
    <!-- Header -->
@@ -386,9 +401,62 @@
 
 
    <!-- Content page -->
-   <section class="bg0 p-t-104 p-b-116">
-      <div class="container">
-         <div class="flex-w flex-tr">
+   <section class="bg0 p-t-104 p-b-116" >
+      <div class="container" style="text-align:center;">
+      
+      	<div class="box-body" style="display:inline-block;">
+      		<form id="noticeForm" name="noticeForm" method="POST" >
+					<table> 
+						<tr>
+							<th style="width: 10%;">N_CODE</th>
+							<th style="width: 60%;">TITLE</th>
+							<th style="width: 30%;">DATE</th>
+						</tr>
+
+						<c:forEach items="${serverTime}" var="AnoticeVO">
+							<tr>
+								<td>${AnoticeVO.nCode}</td>
+								<td><a href='#' onClick='fn_view(${AnoticeVO.nCode})'><c:out value="${AnoticeVO.nTitle}"/></a></td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${AnoticeVO.nUpDate}" /></td>
+							</tr>
+						</c:forEach>
+
+					</table>
+					</form>
+				</div>
+				
+				<div class="box-footer" >
+
+					<div class="text-center">
+						<ul class="pagination">
+
+							<c:if test="${pageMaker.prev}">
+								<li><a
+									href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+							</c:if>
+
+							<c:forEach begin="${pageMaker.startPage }"
+								end="${pageMaker.endPage }" var="idx">
+								<li
+									<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+									<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
+								</li>
+							</c:forEach>
+
+							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+								<li><a
+									href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+							</c:if>
+
+						</ul>
+					</div>
+
+				</div>
+      			<br><br>
+      
+      
+      
+          <div class="flex-w flex-tr">
             <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
                <form>
                   <h4 class="mtext-105 cl2 txt-center p-b-30">
@@ -661,6 +729,52 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    <script src="/resources/front/js/map-custom.js"></script>
 <!--===============================================================================================-->
    <script src="/resources/front/js/main.js"></script>
+   
+   <script>
+	var result = '${msg}';
+
+	if (result == 'SUCCESS') {
+		alert("처리가 완료되었습니다.");
+		location.replace(self.location);
+	}
+</script>
+
+<script>
+	$(document).ready(
+			function() {
+
+				$('#searchBtn').on(
+						"click",
+						function(event) {
+
+							self.location = "list"
+									+ '${pageMaker.makeQuery(1)}'
+									+ "&searchType="
+									+ $("select option:selected").val()
+									+ "&keyword=" + $('#keywordInput').val();
+
+						});
+
+				$('#newBtn').on("click", function(evt) {
+
+					self.location = "aNoticeRegister";
+
+				});
+
+			});
+</script>
+
+<script>
+function fn_view(nCode){
+    
+    var form = document.getElementById("noticeForm");
+    var url = "<c:url value='/NoticeRead'/>";
+    url = url + "?nCode=" + nCode;
+    
+    form.action = url;    
+    form.submit(); 
+}
+</script>
 
 </body>
 </html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.eventMapper">
+
+	<insert id="insertEvent" >  
+	<!-- parameterType="kr.ync.project.domain.EventVO" -->
+	 
+        INSERT INTO TC_EVENT(
+            E_NUM,
+            E_NAME,
+            E_DETAIL,
+            E_STARTDATE,
+            E_ENDDATE,
+            E_LINK
+            
+        )VALUES(
+            #{eNum, jdbcType=INTEGER},
+            #{eName, jdbcType=VARCHAR},
+            #{eDetail, jdbcType=VARCHAR},
+            #{eStartdate, jdbcType=DATE},
+            #{eEnddate, jdbcType=DATE},
+            #{eLink, jdbcType=VARCHAR}
+        )
+    </insert>		
+    
+    <select id="selectEvent" parameterType="hashMap" resultType="EventVO">
+    	SELECT A.E_NAME,
+           	 A.E_DETAIL,
+           A.E_STARTDATE,
+           A.E_ENDDATE,
+           A.E_LINK,
+           B.E_IMAGE_SRC
+       FROM TC_EVENT  A,
+           TC_E_FILE  B
+      WHERE A.E_NUM = B.E_NUM
+    </select>
+    
+    <select id="elistAll" resultType="EventVO">
+	<![CDATA[
+	SELECT 	E_NUM,
+			E_NAME,
+			E_STARTDATE,
+			E_ENDDATE,
+			E_DETAIL
+	FROM TC_EVENT
+	]]>  
+	</select>
+
+	<select id="read" resultType="EventVO">
+		SELECT 	E_NUM,
+				E_NAME,
+				E_STARTDATE,
+				E_ENDDATE
+		FROM TC_EVENT
+		WHERE	E_NUM = #{E_NUM}
+	</select>
+
+</mapper>
+
+

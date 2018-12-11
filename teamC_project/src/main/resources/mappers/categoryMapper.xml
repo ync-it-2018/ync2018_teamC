@@ -10,4 +10,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         VALUES (#{P_BIG}, #{P_BIG_NAME})
     </insert>
     
+    
+    <select id="listAll" resultType="CategoryBigVO">
+	<![CDATA[
+	SELECT 	P_BIG, P_BIG_NAME
+	FROM 	TC_P_BIG
+	]]>  
+</select>
+    
 </mapper>

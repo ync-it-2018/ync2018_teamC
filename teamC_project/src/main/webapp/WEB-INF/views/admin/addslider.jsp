@@ -299,28 +299,6 @@ table {
     <td class="normal"><input type="text" name="docEtc"></td> -->
 		</tr>
 	</table>
-	
-	
-	<table width="70%" border="1" cellpadding="0" cellspacing="0">
-		<col width="20%">
-		<tr>
-			<!-- 테이블 번호 자동생성 -->
-			<td class="normal">순서</td>
-			<td class="normal">슬라이드 제목</td>
-			<!--     <td class="normal">취미</td>
-    <td class="normal">기타</td> -->
-			<td class="normal"></td>
-		</tr>
-		<tr id="sample">
-			<td class="normal"><input type="text" name="docName"></td>
-			<td class="normal"><input type="text" name="docAge"></td>
-			<td class="normal"><input type="button" value="추가"
-				onclick="appendRow();"><input type="button" value="삭제"
-				onclick="deleteRow();"></td>
-			<!-- <td class="normal"><input type="text" name="docHabit"></td>
-    <td class="normal"><input type="text" name="docEtc"></td> -->
-		</tr>
-	</table>
 
 </BODY>
 </HTML>

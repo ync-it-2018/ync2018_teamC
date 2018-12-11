@@ -10,8 +10,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				M_PWD,
 				M_NAME
 		FROM	TC_MEMBER
-		WHERE	M_ID = #{M_ID}
-		AND		M_PWD = #{M_PWD}
+		WHERE	M_ID LIKE #{M_ID}
+		AND		M_PWD LIKE #{M_PWD}
 	</select>
   
 	<!-- <update id="keepLogin" >

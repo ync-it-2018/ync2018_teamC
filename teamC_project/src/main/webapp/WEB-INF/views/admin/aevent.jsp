@@ -1,59 +1,7 @@
-<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<%@include file="include/header.jsp"%>
-
-<html>
-<head>
-<style>
-.error {
-	color: #ff0000;
-}
-
-.errorblock {
-	color: #000;
-	background-color: #ffEEEE;
-	border: 3px solid #ff0000;
-	padding: 8px;
-	margin: 16px;
-}
-</style>
-</head>
-
-<body>
-	<h2>Big Category</h2>
-
-	<form:form method="POST" commandName="customerForm">
-		<form:errors path="*" cssClass="errorblock" element="div" />
-		<table>
-
-			<tr>
-				<td>Country :</td>
-				<td><form:select path="country">
-					  <form:option value="NONE" label="--- Select ---" />
-					  <form:options items="${countryList}" />
-				       </form:select>
-                                </td>
-				<td><form:errors path="country" cssClass="error" /></td>
-			</tr>
-
-			<tr>
-				<td colspan="3"><input type="submit" /></td>
-			</tr>
-		</table>
-	</form:form>
-
-</body>
-</html> --%>
-
-
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-<%@include file="../include/header.jsp"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@include file="include/header.jsp" %>
 
 <style>
 .fileDrop {
@@ -74,35 +22,55 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">카테고리 등록</h3>
+					<h3 class="box-title">이벤트 등록</h3><br><br>
 				</div>
 				<!-- /.box-header -->
 				
-				<form role="form" id="form" name="form" enctype="meltipart/from-data" method="POST">
+				<form class="modal-content" id="eventForm" method="POST" action="/event/event.do">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="exampleInputEmail1">카테고리 번호</label> 
-							<input type="number" name='p_big' class="form-control" placeholder="카테고리 번호">
+							<label for="exampleInputEmail1">이벤트 코드(숫자)</label> <input type="text"
+								name="eNum" class="form-control" placeholder="상품코드">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail1">카테고리명</label> 
-							<input type="text" name='p_big_name' class="form-control" placeholder="카테고리명">
+							<label for="exampleInputEmail1">이벤트 제목</label> <input type="text"
+								name="eName" class="form-control" placeholder="이벤트 제목">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">파일 업로드</label>
+							 <div class="fileDrop"></div>
+							 <!-- <input type='file' name='files'>
+							<input type='file' name='files'>
+							<input type='file' name='files'>   -->
+						</div>
+						<ul class="mailbox-attachments clearfix uploadedList">
+						</ul> 
+						
+						
+						<div class="form-group">
+							<label for="exampleInputPassword1">이벤트 기간</label><br>
+							<input type="date" id="Sday" name="eStartdate">
+							<input type="date" id="Eday" name="eEnddate">
+						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputPassword1">이벤트 설명</label>
+							<textarea class="form-control" name="eDetail" rows="3"
+								placeholder="이벤트 설명"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">사진 링크</label> 
+							<input type="text" name="eLink" class="form-control" placeholder="이벤트 사진">
 						</div>
 						
 					</div>
 					
-					
-					<!-- /.box-body -->
-
 					<div class="box-footer">
 						<div>
 							<hr>
 						</div>
 				
-						<ul class="mailbox-attachments clearfix uploadedList">
-						</ul>
-				
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary" style="float:right;" >등록</button>
 				
 					</div>
 				</form>
@@ -138,27 +106,27 @@
 <script>
 $(document).ready(function(){
 	$("#addBtn").click(function(){
-		var p_code = $("p_code").val();
-		var p_name = $("p_name").val();
-		var price = $("price").val();
-		var stock = $("stock").val();
+		var E_NUM = $("E_NUM").val();
+		var E_NAME = $("E_NAME").val();
+		var E_DETAIL = $("E_DETAIL").val();
+		var E_LINK = $("E_LINK").val();
 		
-		if(p_code == ""){
+		if(E_NUM == ""){
 			alert("상품코드를 입력해주세요");
-			p_code.focus();
-		} else if (p_name == ""){
+			E_NUM.focus();
+		} else if (E_NAME == ""){
 			alert("상품명을 입력해주세요");
-			p_name.focus();
-		} else if (price == ""){
+			E_NAME.focus();
+		} else if (E_DETAIL == ""){
 			alert("상품 가격을 입력해주세요");
-			price.focus();
-		} else if (stock == ""){
+			E_DETAIL.focus();
+		} else if (E_LINK == ""){
 			alert("상품 재고를 입력해주세요");
-			stock.focus();
+			E_LINK.focus();
 		}
 		
 		//상품 정보 전송
-		document.form.action = "${path}/shop/product/insert.do";
+		document.form.action  "/event/event.do" ;
 		document.form.submit();
 	});
 	
@@ -185,6 +153,24 @@ $(document).ready(function(){
 </script>
 
 
+
+<!-- <script type="text/javascript">
+//script구문 내부에 해당 메소드를 입력합니다.
+$(function() {
+  $( "#testDatepicker" ).datepicker({
+         changeMonth: true, 
+         changeYear: true,
+         nextText: '다음 달',
+         prevText: '이전 달' 
+  });
+  $( "#testDatepicker1" ).datepicker({
+      changeMonth: true, 
+      changeYear: true,
+      nextText: '다음 달',
+      prevText: '이전 달' 
+});
+});
+</script> -->
 
 
 <script>
@@ -264,4 +250,3 @@ $(".uploadedList").on("click", ".mailbox-attachment-info a", function(event){
 </script>
 
 <%@include file="../include/footer.jsp"%>
-

@@ -36,7 +36,7 @@
 	Server경로는 각 팀별로 /home/team_a/upload 이렇게 셋팅한다.
 	-->
 	<beans:bean id="uploadPath" class="java.lang.String">
-		<beans:constructor-arg value="D:\\spring\\upload">
+		<beans:constructor-arg value="D:\spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teamC_project_DEV-1.0\resources\productImages">
 		</beans:constructor-arg>
 	</beans:bean>
 	

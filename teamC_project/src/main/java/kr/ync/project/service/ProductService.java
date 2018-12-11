@@ -9,7 +9,11 @@ import kr.ync.project.domain.SearchCriteria;
 
 public interface ProductService {
 	//상품 목록
+
+	public List<ProductVO> listProduct() throws Exception;
+
 	public List<ProductVO> productList(ProductVO productVO);
+
 	//상품 상세
 	public ProductVO detailProduct(String p_code);
 	//상품수정
@@ -29,4 +33,6 @@ public interface ProductService {
 	public List<ProductVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 
 	public int listSearchCount(SearchCriteria cri) throws Exception;
+	
+	public ProductVO read(String pCode) throws Exception;
 }

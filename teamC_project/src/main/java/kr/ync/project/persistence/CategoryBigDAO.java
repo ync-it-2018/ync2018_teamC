@@ -1,7 +1,11 @@
 package kr.ync.project.persistence;
 
-import kr.ync.project.domain.CategoryBig;
+import java.util.List;
+
+import kr.ync.project.domain.CategoryBigVO;
 
 public interface CategoryBigDAO {
-	public void insert(CategoryBig categorybig);
+	public void insert(CategoryBigVO categorybig);
+	
+	public List<CategoryBigVO> listAll() throws Exception;
 }

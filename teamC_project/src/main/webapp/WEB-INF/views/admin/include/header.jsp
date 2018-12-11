@@ -357,7 +357,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/categorybig"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
+                <li><a href="/categorybigRegister"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
                 <li><a href="/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
@@ -374,17 +374,31 @@
                 <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Front 화면 </a></li>
               </ul>
             </li>
-            <li class="treeview active">
+            <!-- <li class="treeview active">
               <a href="/popupload">
                 <i class="fa fa-edit"></i> <span>이벤트관리</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <!-- <ul class="treeview-menu">
+              <ul class="treeview-menu">
                 <li class="active"><a href="general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
                 <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-              </ul> -->
+              </ul>
+            </li> -->
+            
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>이벤트</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/aevent"><i class="fa fa-circle-o"></i> 이벤트 등록 </a></li>
+                <li><a href="/aeventList"><i class="fa fa-circle-o"></i> 이벤트 리스트 </a></li>
+                 <li><a href="/aeventPhoto"><i class="fa fa-circle-o"></i> 이벤트 사진 관리 </a></li>
+               </ul>
             </li>
+            
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-table"></i> <span>매출관리</span>
@@ -400,9 +414,12 @@
                 <i class="fa fa-calendar"></i> <span>문의관리</span>
                 <small class="label pull-right bg-red">3</small>
               </a>
+              <ul class="treeview-menu">
+                <li><a href="/Qnalist"><i class="fa fa-circle-o"></i> 문의관리 목록</a></li>
+              </ul>
             </li>
             <li>
-              <a href="../mailbox/mailbox.html">
+              <a href="/aNotice">
                 <i class="fa fa-envelope"></i> <span>공지사항</span>
                 <small class="label pull-right bg-yellow">12</small>
               </a>
