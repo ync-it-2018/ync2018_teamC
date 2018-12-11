@@ -50,5 +50,27 @@ public class AnoticeController {
 		return "admin/aNoticeRead";
 	}
 	
+	@RequestMapping(value = "/contact", method = {RequestMethod.GET,RequestMethod.POST})
+	public String Notice(Locale locale, Model model) throws Exception {
+		
+		logger.info("리스트목록보기", locale);
+		
+		model.addAttribute("serverTime", service.listAll());
+		
+		
+		return "front/contact";
+	}
+	
+	
+	@RequestMapping(value = "/NoticeRead", method = {RequestMethod.GET,RequestMethod.POST})
+	public String NoticeRead(@RequestParam("nCode")Integer nCode, Model model) throws Exception {
+		
+		logger.info("리스트상세보기");	
+		
+		model.addAttribute("list",service.read(nCode));
+		
+		return "front/NoticeRead";
+	}
+	
 	
 }
