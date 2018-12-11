@@ -37,4 +37,16 @@ public class EventDAOImpl implements EventDAO {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".selectEvent", eventVO);
 	}
+
+	@Override
+	public List<EventVO> elistAll() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".elistAll");
+	}
+
+	@Override
+	public EventVO read(Integer eNum) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".read", eNum);
+	}
 }
