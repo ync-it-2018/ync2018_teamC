@@ -39,10 +39,6 @@
 				placeholder="Enter ..."></textarea>
 		</div>
 		
-		<div class="form-group">
-			<label for="exampleInputEmail1">File DROP Here</label>
-			<div class="fileDrop"></div>
-		</div>
 	</div>
 
 	<!-- /.box-body -->
@@ -59,7 +55,6 @@
 
 	</div>
 </form>
-
 
 			</div>
 			<!-- /.box -->
@@ -91,55 +86,6 @@
 
 
 <script>
-
-function goLogin(){
-	self.location ="/user/login";
-}
-
-
-var template = Handlebars.compile($("#template").html());
-
-$(".fileDrop").on("dragenter dragover", function(event){
-	event.preventDefault();
-});
-
-
-$(".fileDrop").on("drop", function(event){
-	event.preventDefault();
-	
-	var files = event.originalEvent.dataTransfer.files;
-	
-	var file = files[0];
-
-	var formData = new FormData();
-	
-	formData.append("file", file);	
-	
-	
-	$.ajax({
-		  url: '/uploadAjax',
-		  data: formData,
-		  dataType:'text',
-		  processData: false,
-		  contentType: false,
-		  type: 'POST',
-		  success: function(data){
-			  
-			  var fileInfo = getFileInfo(data);
-			  
-			  console.log("-----------------");
-			  console.log(fileInfo)
-			  
-			  var html = template(fileInfo);
-			  
-			  console.log("hTML............");
-			  console.log(html);
-			  
-			  $(".uploadedList").append(html);
-		  }
-		});	
-});
-
 
 $("#registerForm").submit(function(event){
 	event.preventDefault();
