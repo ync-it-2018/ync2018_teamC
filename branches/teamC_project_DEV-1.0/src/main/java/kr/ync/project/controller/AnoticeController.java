@@ -28,7 +28,7 @@ public class AnoticeController {
 	 * Simply selects the home view to render by returning its name.
 	 */	
 	
-	@RequestMapping(value = "/aNotice", method = {RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value = "/aNotice", method = RequestMethod.GET)
 	public String aNotice(Locale locale, Model model) throws Exception {
 		
 		logger.info("리스트목록보기", locale);

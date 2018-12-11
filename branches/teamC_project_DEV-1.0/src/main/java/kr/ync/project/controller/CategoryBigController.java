@@ -1,5 +1,6 @@
 package kr.ync.project.controller;
 
+import java.awt.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -11,7 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kr.ync.project.domain.CategoryBigVO;
 import kr.ync.project.service.CategoryBigService;
+import net.sf.json.JSONArray;
 
 @Controller
 public class CategoryBigController {
@@ -28,15 +31,25 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 		
 		logger.info("카테고리보기", locale);
 		
-		model.addAttribute("serverTime", service.listAll());
+		model.addAttribute("list", service.listAll());
 		
 		return "admin/categorylist";
 	}
 	
-	@RequestMapping(value = "/categorybig", method = RequestMethod.GET)
-	public String categorybig(Locale locale, Model model) {
+	
+	
+	@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
+	public String categorybigRegister(Locale locale, Model model, CategoryBigVO categorybigVO) throws Exception{
 		
-		return "admin/categorybig";
+		logger.info("카테고리 등록");
+		
+		/*List category = null;
+		category = (List) service.insert(categorybigVO);*/
+		
+		//틀만 잡힘. 
+		
+		model.addAttribute("category",JSONArray.fromObject(categorybigVO));
+		return "admin/categorybigRegister";
 	}
 	
 }

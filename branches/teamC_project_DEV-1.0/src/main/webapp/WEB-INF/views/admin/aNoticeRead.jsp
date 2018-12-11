@@ -91,19 +91,19 @@
 $(document).ready(function(){
 	/* update 클릭 */ 
 	$('#modifyBtn').on('click',function(){
-		formObj.attr("action", "/admin/aNoticeModify");
+		formObj.attr("action", "/aNoticeModify");
 		formObj.attr("method", "get");		
 		formObj.submit();
 	});
 	/* 삭제 클릭 */ 
 	$('#removeBtn').on('click',function(){
-		formObj.attr("action", "/admin/aNoticeRemove");
+		formObj.attr("action", "/aNoticeRemove");
 		formObj.submit();
 	});  
 	/* 리스트 클릭 */ 
 	$('#goListBtn').on('click',function(){
 		formObj.attr("method", "get");
-		formObj.attr("action", "/admin/aNotice");
+		formObj.attr("action", "/aNotice");
 		formObj.submit();
 	});
 })

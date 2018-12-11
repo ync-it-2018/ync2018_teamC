@@ -1,14 +1,28 @@
 package kr.ync.project.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
+/*@Getter
 @Setter
-@ToString
+@ToString*/
 public class CategoryBigVO {
-	private int p_big;
+	private int pBig;
 	
-	private String p_big_name;
+	private String pBigName;
+
+	public int getpBig() {
+		return pBig;
+	}
+
+	public void setpBig(int pBig) {
+		this.pBig = pBig;
+	}
+
+	public String getpBigName() {
+		return pBigName;
+	}
+
+	public void setpBigName(String pBigName) {
+		this.pBigName = pBigName;
+	}
+	
+	
 }

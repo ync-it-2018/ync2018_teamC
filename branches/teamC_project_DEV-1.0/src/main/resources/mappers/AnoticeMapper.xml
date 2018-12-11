@@ -7,15 +7,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <select id="listAll" resultType="AnoticeVO">
 	<![CDATA[
-	SELECT 	N_CODE,
-			N_TITLE,
-			N_UP_DATE
+	SELECT 	N_CODE, N_TITLE, N_UP_DATE
 	FROM TC_NOTICE
 	]]>  
 </select>
 
 
-<insert id="insert">
+<insert id="create">
 	INSERT INTO TC_NOTICE (N_CODE, N_TITLE, N_CONTENTS) 
 	VALUES(TC_SEQ_NOTICE.NEXTVAL, #{N_TITLE},#{N_CONTENTS})
 </insert>
@@ -25,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			N_TITLE,
 			N_CONTENTS,
 			N_UP_DATE
-	FROM TC_NOTICE
+	FROM 	TC_NOTICE
 	WHERE	N_CODE = #{N_CODE}
 </select>
  
