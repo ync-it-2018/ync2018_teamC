@@ -33,19 +33,6 @@
    <link rel="stylesheet" type="text/css" href="/resources/front/css/main.css">
 <!--===============================================================================================-->
 </head>
-<style>
-	th {
-	  background-color: #ddbe7e;
-	  color: white;
-	}
-	th, td {
-	  padding: 15px;
-	  text-align: left;
-	  border-bottom: 1px solid #ddd;
-	}
-	tr:hover {background-color: #f5f5f5;}
-</style>
-
 <body class="animsition">
    
    <!-- Header -->
@@ -401,133 +388,64 @@
 
 
    <!-- Content page -->
-   <section class="bg0 p-t-104 p-b-116" >
-      <div class="container" style="text-align:center;">
+   <section class="bg0 p-t-104 p-b-116">
+      <div class="container">
       
-      	<div class="box-body" style="display:inline-block;">
-      		<form id="noticeForm" name="noticeForm" method="POST" >
-					<table> 
-						<tr>
-							<th style="width: 10%;">N_CODE</th>
-							<th style="width: 60%;">TITLE</th>
-							<th style="width: 30%;">DATE</th>
-						</tr>
+   		<div class="row" >
+		<!-- left column -->
+		<div style="margin : 0 auto; width:80%;">
+			<!-- general form elements -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">Notice Detail</h3><br><br>
+				</div>
+				<!-- /.box-header -->
 
-						<c:forEach items="${serverTime}" var="AnoticeVO">
-							<tr>
-								<td>${AnoticeVO.nCode}</td>
-								<td><a href='#' onClick='fn_view(${AnoticeVO.nCode})'><c:out value="${AnoticeVO.nTitle}"/></a></td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${AnoticeVO.nUpDate}" /></td>
-							</tr>
-						</c:forEach>
+				<form role="form" action="modifyPage" method="post">
 
-					</table>
-					</form>
+					<input type='hidden' name='nCode' value="${list.nCode}"> 
+					<input type='hidden' name='page' value="${cri.page}"> 
+					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
+					<input type='hidden' name='searchType' value="${cri.searchType}">
+					<input type='hidden' name='keyword' value="${cri.keyword}">
+
+				</form>
+				
+				<div class="box-body">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Title</label> 
+						<input type="text" name='nTitle' class="form-control" value="${list.nTitle}"
+							readonly="readonly">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Content</label>
+						<textarea class="form-control" name="nContents" rows="3"
+							readonly="readonly">${list.nContents}</textarea>
+					</div>
 				</div>
 				
-				<div class="box-footer" >
+				<!-- /.box-body -->
+				
+			  <div class="box-footer">
+			    
+			    <div><hr></div>
+			
+			    <ul class="mailbox-attachments clearfix uploadedList">
+			    </ul>
+			    <button type="submit" class="btn btn-warning" onclick="history.go(-1);" id="goListBtn" style="float:right;">GO LIST </button>
+			  </div>
 
-					<div class="text-center">
-						<ul class="pagination">
+			</div>
+			<!-- /.box -->
+		</div>
+		<!--/.col (left) -->
 
-							<c:if test="${pageMaker.prev}">
-								<li><a
-									href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
-							</c:if>
-
-							<c:forEach begin="${pageMaker.startPage }"
-								end="${pageMaker.endPage }" var="idx">
-								<li
-									<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-									<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
-								</li>
-							</c:forEach>
-
-							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-								<li><a
-									href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
-							</c:if>
-
-						</ul>
-					</div>
-
-				</div>
-      			<br><br>
-      
-      
-      
-          <div class="flex-w flex-tr">
-            <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-               <form>
-                  <h4 class="mtext-105 cl2 txt-center p-b-30">
-                     Send Us A Message
-                  </h4>
-
-                  <div class="bor8 m-b-20 how-pos4-parent">
-                     <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-                     <img class="how-pos4 pointer-none" src="/resources/front/images/icons/icon-email.png" alt="ICON">
-                  </div>
-
-                  <div class="bor8 m-b-30">
-                     <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>
-                  </div>
-
-                  <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-                     Submit
-                  </button>
-               </form>
-            </div>
-
-            <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-               <div class="flex-w w-full p-b-42">
-                  <span class="fs-18 cl5 txt-center size-211">
-                     <span class="lnr lnr-map-marker"></span>
-                  </span>
-
-                  <div class="size-212 p-t-2">
-                     <span class="mtext-110 cl2">
-                        Address
-                     </span>
-
-                     <p class="stext-115 cl6 size-213 p-t-18">
-                        Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
-                     </p>
-                  </div>
-               </div>
-
-               <div class="flex-w w-full p-b-42">
-                  <span class="fs-18 cl5 txt-center size-211">
-                     <span class="lnr lnr-phone-handset"></span>
-                  </span>
-
-                  <div class="size-212 p-t-2">
-                     <span class="mtext-110 cl2">
-                        Lets Talk
-                     </span>
-
-                     <p class="stext-115 cl1 size-213 p-t-18">
-                        +1 800 1236879
-                     </p>
-                  </div>
-               </div>
-
-               <div class="flex-w w-full">
-                  <span class="fs-18 cl5 txt-center size-211">
-                     <span class="lnr lnr-envelope"></span>
-                  </span>
-
-                  <div class="size-212 p-t-2">
-                     <span class="mtext-110 cl2">
-                        Sale Support
-                     </span>
-
-                     <p class="stext-115 cl1 size-213 p-t-18">
-                        contact@example.com
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
+	</div> 
+   
+   
+   
+   
+   
       </div>
    </section>   
    

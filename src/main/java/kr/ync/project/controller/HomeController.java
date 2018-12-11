@@ -128,11 +128,11 @@ public class HomeController {
 		return "front/blog";
 	}
 	
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/contact", method = RequestMethod.GET)
 	public String contact(Locale locale, Model model) {
 		
 		return "front/contact";
-	}
+	}*/
 	
 	@RequestMapping(value = "/home_02", method = RequestMethod.GET)
 	public String home_02(Locale locale, Model model) {
