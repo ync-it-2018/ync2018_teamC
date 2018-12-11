@@ -74,10 +74,12 @@ public class UserController {
 
 		UserVO vo = service.login(dto);
 
+		// 로그인 실패시
 		if (vo == null) {
-			return"";
+			return "front/login";
 		}
-		log.info(vo.getM_ID());
+		
+		log.info(vo.getmId());
 		model.addAttribute("UserVO", vo);
 		//JOptionPane.showMessageDialog(frame, "Eggs are not supposed to be green.");
 		
@@ -92,6 +94,8 @@ public class UserController {
 			
 			 
 		}*/
+		
+		
 		return "front/loginPost";
 	}
 

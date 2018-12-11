@@ -11,5 +11,6 @@ public class LoginDTO {
 	
 	private String M_ID;
 	private String M_PWD;
+	private boolean useCookie;
 
 }

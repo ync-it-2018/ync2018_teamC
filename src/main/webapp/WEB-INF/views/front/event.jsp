@@ -404,8 +404,6 @@
                   
                   <p class="stext-113 cl6 p-b-26">
                   	${event.eDetail}<br>  
-                  	${event.eDetail}<br>  
-                  	${event.eDetail}<br>   
                   </p>
                   
                </div>
