@@ -33,4 +33,6 @@ public interface ProductService {
 	public List<ProductVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 
 	public int listSearchCount(SearchCriteria cri) throws Exception;
+	
+	public ProductVO read(String pCode) throws Exception;
 }

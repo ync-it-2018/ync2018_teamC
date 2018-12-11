@@ -392,17 +392,12 @@
             <div class="col-md-7 col-lg-8">
                <div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
                   <h3 class="mtext-111 cl2 p-b-16">
-                     Our Story
+                     Our Page
                   </h3>
 
                   <p class="stext-113 cl6 p-b-26">
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.
-                  </p>
-
-
-                  <p class="stext-113 cl6 p-b-26">
-                     Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-                  </p>
+                  </p>               
                </div>
             </div>
 
@@ -415,19 +410,48 @@
             </div>
          </div>
          
-         
-	   <!-- Map -->
-	  <div class="map">
-	      <div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="/resources/front/images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
-	   </div>
-	   
+           <div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+				<h3 class="mtext-111 cl2 p-b-16">
+                    Leader
+                  </h3>
+	 		 <div style="width:200px; height:150px; margin:50px;">		 
+	 		 <img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+	 		 <p>김진희</p>
+	 		 </div> 
+	 		 </div>
+	 		
+	 		<div style="padding-top: 200px;">
+	     	  <h3 class="mtext-111 cl2 p-b-16">
+                    Member
+                  </h3>
+	   		<div style="width:200px; height:150px; float:left; margin:35px;">
+ 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+	 		 	<p>김지혜</p>
+					</div>
+				
+				<div style="width:200px; height:150px; float:left; margin:35px;">
+ 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+	 		 	<p>배세희</p>
+				</div>
+				
+				<div style="width:200px; height:150px; float:left; margin:35px;">
+ 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+	 		 	<p>이윤정</p>
+				</div>
+				
+				<div style="width:200px; height:150px; float:left; margin:35px;">
+ 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+	 		 	<p>전유진</p>
+				</div>
+				
+				</div>
       </div>
    </section>   
    
       
 
    <!-- Footer -->
-   <footer class="bg3 p-t-75 p-b-32">
+   <!-- <footer class="bg3 p-t-75 p-b-32">
       <div class="container">
          <div class="row">
             <div class="col-sm-6 col-lg-3 p-b-50">
@@ -562,14 +586,14 @@
             </div>
 
             <p class="stext-107 cl6 txt-center">
-               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+               Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 
             </p>
          </div>
       </div>
-   </footer>
+   </footer> -->
 
 
    <!-- Back to top -->
@@ -616,10 +640,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
       });
    </script>
    <!--===============================================================================================-->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-   <script src="/resources/front/js/map-custom.js"></script>
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+   <script src="/resources/front/js/map-custom.js"></script> -->
 <!--===============================================================================================-->
    <script src="/resources/front/js/main.js"></script>
    
 </body>
-</html>>
+</html>

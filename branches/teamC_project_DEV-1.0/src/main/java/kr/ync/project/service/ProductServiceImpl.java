@@ -77,4 +77,10 @@ public class ProductServiceImpl implements ProductService{
 		return dao.listSearchCount(cri);
 	}
 
+	@Override
+	public ProductVO read(String pCode) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.read(pCode);
+	}
+
 }
