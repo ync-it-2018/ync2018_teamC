@@ -2,8 +2,10 @@ package kr.ync.project.persistence;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.domain.Criteria;
@@ -12,14 +14,22 @@ import kr.ync.project.domain.SearchCriteria;
 
 @Repository
 public class ProductDAOImpl implements ProductDAO{
-	@Autowired
+	
+	@Inject
 	private SqlSession session;
 	
 	private static String namespace = "kr.ync.project.mapper.ProductMapper";
 
 	@Override
+
+	public List<ProductVO> listProduct() throws Exception{
+		return session.selectList(namespace + ".list");//특정이름 찾아줌 id같은 역할
+	}
+
+
 	public List<ProductVO> productList(ProductVO productVO){
 		return session.selectList(namespace + ".list", productVO);
+
 	}
 
 	@Override
@@ -77,6 +87,14 @@ public class ProductDAOImpl implements ProductDAO{
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
+	}
+
+
+	@Override
+	public ProductVO read(String pCode) throws Exception {
+		// TODO Auto-generated method stub
+		
+		return session.selectOne(namespace + ".read", pCode );
 	}
 	
 	

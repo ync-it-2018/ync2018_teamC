@@ -2,20 +2,41 @@ package kr.ync.project.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import javax.inject.Inject;
+
+import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
+import kr.ync.project.domain.EventVO;
+import kr.ync.project.service.EventService;
+
+
+import kr.ync.project.domain.ProductVO;
+import kr.ync.project.service.ProductService;
 /**
  * Handles requests for the application home page.
  */
+
 @Controller
 public class HomeController {
+	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -32,14 +53,26 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		model.addAttribute("serverTime", formattedDate );
-		
+		model.addAttribute("serverTime", formattedDate);
+		 
 		return "front/index";
 	}
 	
+	@Inject
+	private ProductService productService; //서비스 객체
+	
 	/*1017수정2*/
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
-	public String product(Locale locale, Model model) {
+	public String product(Locale locale, Model model) throws Exception {//model:택배기사
+		/*Map param = new HashMap<String, String>();
+		param.put("big", "01");
+		param.put("middle", "02");*/
+		
+		List<ProductVO> productList = productService.listProduct();
+		
+		System.out.println("가져온 상품 : " + productList);
+		
+		model.addAttribute("productList", productList);//"key",value
 		
 		return "front/product";
 	}
@@ -50,8 +83,17 @@ public class HomeController {
 		return "front/review";
 	}
 	
+	@Inject
+	private EventService eventService;
+	
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
-	public String event(Locale locale, Model model) {
+	public String event(Locale locale, Model model) throws Exception {
+		
+		 List<EventVO> eventList = eventService.listEvent();
+	      
+		 System.out.println(eventList);
+		 
+	     model.addAttribute("eventList", eventList);
 		
 		return "front/event";
 	}
@@ -86,11 +128,11 @@ public class HomeController {
 		return "front/blog";
 	}
 	
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/contact", method = RequestMethod.GET)
 	public String contact(Locale locale, Model model) {
 		
 		return "front/contact";
-	}
+	}*/
 	
 	@RequestMapping(value = "/home_02", method = RequestMethod.GET)
 	public String home_02(Locale locale, Model model) {
@@ -99,7 +141,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
-	public String product_detail(Locale locale, Model model) {
+	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
+		
+		model.addAttribute("productData", productService.read(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
 		
 		return "front/product_detail";
 	}
@@ -109,6 +153,7 @@ public class HomeController {
 		
 		return "front/shoping_cart";
 	}
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
@@ -177,11 +222,6 @@ public class HomeController {
 		return "admin/popupload";
 	}
 	
-	@RequestMapping(value = "/categorybig", method = RequestMethod.GET)
-	public String categorybig(Locale locale, Model model) {
-		
-		return "admin/categorybig";
-	}
 	
 	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
 	public String productlist(Locale locale, Model model) {
@@ -224,6 +264,38 @@ public class HomeController {
 	public String MypageInterestedpdt(Locale locale, Model model) {
 		
 		return "front/MypageInterestedpdt";
+	}
+	
+	
+	@RequestMapping(value = "/aevent", method = RequestMethod.GET)
+	public String aevent(Locale locale, Model model) {
+		
+		return "admin/aevent";
+	}
+	
+	@Inject
+	private EventService eventservice;
+	
+	@RequestMapping(value = "/aeventList", method = RequestMethod.GET)
+	public String aeventList(Locale locale, Model model) throws Exception {
+		
+		logger.info("리스트목록보기", locale);
+		
+		model.addAttribute("eventlist", eventservice.elistAll());
+		
+		
+		return "admin/aeventList";
+	}
+	
+	
+	@RequestMapping(value = "/aeventRead", method = {RequestMethod.GET,RequestMethod.POST})
+	public String aeventRead(@RequestParam("eNum")Integer eNum, Model model) throws Exception {
+		
+		logger.info("리스트상세보기");	
+		
+		model.addAttribute("list",eventservice.read(eNum));
+		
+		return "admin/aeventRead";
 	}
 	
 }

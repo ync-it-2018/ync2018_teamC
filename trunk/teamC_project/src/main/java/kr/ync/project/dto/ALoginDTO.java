@@ -11,6 +11,6 @@ public class ALoginDTO {
 	
 	private String A_ID;
 	private String A_PWD;
-	private boolean useCookie;
+	//private boolean useCookie;
 
 }

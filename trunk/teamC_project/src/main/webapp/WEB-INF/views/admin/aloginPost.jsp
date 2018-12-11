@@ -10,11 +10,11 @@
 </head>
 <body>
   <script type="text/javascript">
-    //self.location = "/sboard/list";
+    self.location = "/auser/avalue";
     
   </script>
-  ${AUserVO.A_ID};
-  ${AUserVO.A_PWD};
+<%--   ${AUserVO.A_ID};
+  ${AUserVO.A_PWD}; --%>
   
 </body>
 </html>

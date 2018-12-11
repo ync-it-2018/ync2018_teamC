@@ -37,5 +37,12 @@ public class AnoticeServiceImpl implements AnoticeService {
 		return dao.listAll();
 	}
 
+	
+	@Override
+	public AnoticeVO read(Integer nCode) throws Exception {
+
+		return dao.read(nCode);
+	}
+
 
 }

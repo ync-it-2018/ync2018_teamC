@@ -30,7 +30,7 @@ public class TestController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/index2", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) throws Exception {
 		//saehee
 		// 가나다
@@ -39,7 +39,7 @@ public class TestController {
 		
 		model.addAttribute("serverTime", service.listAll());
 		
-		return "admin/index2";
+		return "sboard/list";
 	}
 	
 	

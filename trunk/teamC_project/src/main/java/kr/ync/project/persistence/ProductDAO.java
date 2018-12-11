@@ -10,7 +10,11 @@ import kr.ync.project.domain.SearchCriteria;
 
 public interface ProductDAO {
 	//상품목록
+
+	public List<ProductVO> listProduct() throws Exception;
+
 	public List<ProductVO> productList(ProductVO productVO);
+
 	//상품상세
 	public ProductVO detailProduct(int p_idx) throws Exception;
 	//상품등록
@@ -36,4 +40,6 @@ public interface ProductDAO {
 		
 	// 검색이 적용된 Query 결과 Count
 	public int listSearchCount(SearchCriteria cri)throws Exception;
+
+	public ProductVO read(String pCode) throws Exception;
 }

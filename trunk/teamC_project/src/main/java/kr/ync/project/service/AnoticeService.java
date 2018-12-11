@@ -12,5 +12,5 @@ public interface AnoticeService {
 
 	public List<AnoticeVO> listAll() throws Exception;
 
-
+	public AnoticeVO read(Integer nCode) throws Exception;
 }

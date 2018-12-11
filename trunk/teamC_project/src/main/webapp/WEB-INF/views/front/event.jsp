@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -389,21 +390,22 @@
    <section class="bg0 p-t-75 p-b-120">
       <div class="container">
          <!-- 이벤트 반복 구문 -->
+         <c:forEach items = "${eventList}" var="event">
          <div class="row" style="margin-left:30px; margin-top:50px;">
             <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
                <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md" style="margin-top:20px;">
                   <h3 class="mtext-111 cl2 p-b-16">
-                     이벤트명
+                     ${event.eName}
                   </h3> 
 
                   <p class="stext-113 cl6 p-b-26">
-                  	2018.12.31 - 2019.02.31   
+                  	${event.eStartdate} - ${event.eEnddate} 
                   </p>
                   
                   <p class="stext-113 cl6 p-b-26">
-                  	간단한 이벤트 설명<br>  
-                  	간단한 이벤트 설명<br>  
-                  	간단한 이벤트 설명<br>   
+                  	${event.eDetail}<br>  
+                  	${event.eDetail}<br>  
+                  	${event.eDetail}<br>   
                   </p>
                   
                </div>
@@ -413,12 +415,13 @@
             <div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
                <div class="how-bor2">
                   <div class="hov-img0">
-                     <img src="/resources/front/images/event.png" alt="IMG">
+                     <img src="${event.eImageSrc}" alt="IMG">
                      <!-- 이벤트 사진 -->
                   </div>
                </div>
             </div>
          </div>
+         </c:forEach>
          
       </div>
    </section>   

@@ -2,7 +2,9 @@ package kr.ync.project.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
 import org.springframework.stereotype.Service;
 
 import kr.ync.project.domain.Criteria;
@@ -12,12 +14,19 @@ import kr.ync.project.persistence.ProductDAO;
 
 @Service
 public class ProductServiceImpl implements ProductService{
-	@Autowired
+	
+	@Inject
 	private ProductDAO dao;
 
 	@Override
+
+	public List<ProductVO> listProduct() throws Exception {
+		return dao.listProduct();
+	}
+
 	public List<ProductVO> productList(ProductVO productVO) {
 		return dao.productList(productVO);
+
 	}
 
 	@Override
@@ -66,6 +75,12 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
+	}
+
+	@Override
+	public ProductVO read(String pCode) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.read(pCode);
 	}
 
 }
