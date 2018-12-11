@@ -59,8 +59,8 @@
             <form id="categoryForm" name="categoryForm" method="POST">
                <table class="table table-bordered">
                   <tr>
-                     <th style="width: 50px">pBig</th>
-                     <th>pBigName</th>
+                     <th style="width: 150px">대분류 코드</th>
+                     <th>대분류</th>
                   </tr>
 
                   <c:forEach items="${list}" var="CategoryBigVO">
@@ -75,6 +75,49 @@
                </table>
                </form>
             </div>
+            
+            
+            <%-- <form role="form" id="form" name="form" enctype="meltipart/from-data" method="POST">
+					<div class="box-body">
+						<div class="form-group">
+							<label>대분류</label> 
+							<select class="category1">
+								<option value="">전체</option>
+								<option value="">${CategoryBigVO.pBig}</option>
+							</select>
+							
+							<label>중분류</label> 
+							<select class="category2">
+								<option value="${CategoryBigVO.pBigName}">전체</option>
+							</select>
+							
+							<label>소분류</label> 
+							<select class="category3">
+								<option value="${AnoticeVO.nCode}">전체</option>
+							</select>
+						</div>
+						<!-- <div class="form-group">
+							<label for="exampleInputEmail1">카테고리명</label> 
+							<input type="text" name='P_BIG_NAME' class="form-control" placeholder="카테고리명">
+						</div> -->
+						
+					</div>
+					
+					
+					<!-- /.box-body -->
+
+					<div class="box-footer">
+						<div>
+							<hr>
+						</div>
+				
+						<ul class="mailbox-attachments clearfix uploadedList">
+						</ul>
+				
+						<button type="submit" class="btn btn-primary">Submit</button>
+				
+					</div>
+				</form> --%>
             <!-- /.box-body -->
 
 
