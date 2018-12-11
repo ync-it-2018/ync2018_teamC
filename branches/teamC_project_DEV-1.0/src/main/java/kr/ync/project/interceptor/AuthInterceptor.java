@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
 	@Autowired
-	private AUserService service;
+	private UserService service;
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -27,7 +27,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
 		HttpSession session = request.getSession();
 
-		if (session.getAttribute("Alogin") == null) {
+		if (session.getAttribute("login") == null) {
 
 			log.info("current Auser is not logined");
 
@@ -38,18 +38,18 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			if (loginCookie != null) { // 쿠기값이 있다면
 				
 				// 쿠키값으로 table에 저장되어 있는 session id 값을 조회해 사용자 정보를 가져온다.
-				AUserVO AUserVO = service.checkALoginBefore(loginCookie.getValue());
+				UserVO UserVO = service.checkLoginBefore(loginCookie.getValue());
 
-				log.info("AUSERVO: " + AUserVO);
+				log.info("AUSERVO: " + UserVO);
 
-				if (AUserVO != null) {
-					session.setAttribute("Alogin", AUserVO);
+				if (UserVO != null) {
+					session.setAttribute("login", UserVO);
 					return true;
 				}
 
 			}
 
-			response.sendRedirect("/alogin");
+			response.sendRedirect("/login");
 			return false;
 		}
 		return true;
