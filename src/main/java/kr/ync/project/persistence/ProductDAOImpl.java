@@ -23,7 +23,7 @@ public class ProductDAOImpl implements ProductDAO{
 	@Override
 
 	public List<ProductVO> listProduct() throws Exception{
-		return session.selectList(namespace + ".list");
+		return session.selectList(namespace + ".list");//특정이름 찾아줌 id같은 역할
 	}
 
 
@@ -87,6 +87,14 @@ public class ProductDAOImpl implements ProductDAO{
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
+	}
+
+
+	@Override
+	public ProductVO read(String pCode) throws Exception {
+		// TODO Auto-generated method stub
+		
+		return session.selectOne(namespace + ".read", pCode );
 	}
 	
 	

@@ -19,10 +19,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.service.EventService;
+
 
 import kr.ync.project.domain.ProductVO;
 import kr.ync.project.service.ProductService;
@@ -49,13 +53,13 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("serverTime", formattedDate);
 		 
 		return "front/index";
 	}
 	
 	@Inject
-	private ProductService productService;
+	private ProductService productService; //서비스 객체
 	
 	/*1017수정2*/
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
@@ -137,9 +141,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
-	public String product_detail(Locale locale, Model model) {
+	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
 		
-		
+		model.addAttribute("productData", productService.read(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
 		
 		return "front/product_detail";
 	}
@@ -149,6 +153,7 @@ public class HomeController {
 		
 		return "front/shoping_cart";
 	}
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
