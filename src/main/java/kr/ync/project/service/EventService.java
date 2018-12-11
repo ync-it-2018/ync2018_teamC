@@ -21,5 +21,7 @@ public interface EventService {
 	public List<EventVO> elistAll() throws Exception;
 
 	public EventVO read(Integer eNum) throws Exception;
+
+	public void insertEventPhoto(EventVO eventVO);
 	
 }

@@ -338,7 +338,7 @@
                 <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> 베스트상품</a></li>
                 <li><a href="/test02"><i class="fa fa-circle-o"></i> 팝업창 관리</a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 신상품 </a></li>
-                <li><a href="/"><i class="fa fa-circle-o"></i> 이벤트 </a></li>
+                <li><a href="/aeventUp"><i class="fa fa-circle-o"></i> 이벤트 </a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 추천상품 </a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 푸터관리</a></li>
                 

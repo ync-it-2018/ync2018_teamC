@@ -12,7 +12,7 @@
     //self.location = "/user/value";
   </script>
   
-  <p>
+ <p>
   	아이디 : ${UserVO.mId}
   </p>
   <p>

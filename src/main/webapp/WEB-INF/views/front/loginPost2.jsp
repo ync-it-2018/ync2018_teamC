@@ -12,6 +12,8 @@
 	   ID :  ${M_ID}
 	   <hr>
 	   PW :  ${M_PWD}
+	   
+	   <input id="loginok" type="button" value="OK"/>
 </body>
 </html>
 

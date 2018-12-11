@@ -36,7 +36,7 @@
 
          <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
                <a href="/index" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a>
-            <form class="login100-form validate-form flex-sb flex-w" action="/user/loginPost" method="POST">
+            <form class="login100-form validate-form flex-sb flex-w" action="/user/loginPost2" method="POST">
                <span class="login100-form-title p-b-32">
                   Account Login
                </span>

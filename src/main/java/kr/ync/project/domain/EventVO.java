@@ -19,8 +19,9 @@ public class EventVO {
 	private Date eEnddate;
 	private String eDetail;
 	private String eLink;
-	private String eImageSrc;
+	private String eImageSrc; //이미지 경로 
 	
+	private String eImageIndex; //이미지 인덱스
 	
 	public Integer geteNum() {
 		return eNum;
@@ -76,6 +77,14 @@ public class EventVO {
 
 	public void seteImageSrc(String eImageSrc) {
 		this.eImageSrc = eImageSrc;
+	}
+	
+	public String geteImageIndex() {
+		return eImageIndex;
+	}
+
+	public void seteImageIndex(String eImageIndex) {
+		this.eImageIndex = eImageIndex;
 	}
 
 }
