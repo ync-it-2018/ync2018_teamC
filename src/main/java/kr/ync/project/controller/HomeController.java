@@ -26,8 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.service.EventService;
-
-
+import kr.ync.project.service.MLevelService;
 import kr.ync.project.domain.ProductVO;
 import kr.ync.project.service.ProductService;
 /**
@@ -180,6 +179,12 @@ public class HomeController {
 		return "admin/ajoin";
 	}
 	
+	@RequestMapping(value = "/adaysaleprice", method = RequestMethod.GET)
+	public String adaysaleprice(Locale locale, Model model) {
+		
+		return "admin/aDaySaleprice";
+	}
+	
 	@RequestMapping(value = "/coInfo", method = RequestMethod.GET)
 	public String coInfo(Locale locale, Model model) {
 		
@@ -274,6 +279,12 @@ public class HomeController {
 		return "admin/aevent";
 	}
 	
+	@RequestMapping(value = "/asaleprice", method = RequestMethod.GET)
+	public String asaleprice(Locale locale, Model model) {
+		
+		return "admin/aSaleprice";
+	}
+	
 	@RequestMapping(value = "/aeventPhoto", method = RequestMethod.GET)
 	public String aeventPhoto(Locale locale, Model model) {
 		
@@ -310,5 +321,16 @@ public class HomeController {
 		
 		return "admin/aeventRead";
 	}
+	
+	@Inject
+	private MLevelService mlevelservice;
+	
+	@RequestMapping(value = "/mlevel", method = RequestMethod.GET)
+	public String mlevel(Locale locale, Model model) {
+		
+		return "admin/MLevel";
+	}
+
+
 	
 }

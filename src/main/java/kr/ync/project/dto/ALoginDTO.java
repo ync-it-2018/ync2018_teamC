@@ -9,8 +9,8 @@ import lombok.ToString;
 @ToString
 public class ALoginDTO {
 	
-	private String A_ID;
-	private String A_PWD;
-	//private boolean useCookie;
+	private String aID;
+	private String aPWD;
+	private boolean useCookie;
 
 }

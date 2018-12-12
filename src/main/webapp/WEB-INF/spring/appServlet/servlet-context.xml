@@ -41,5 +41,35 @@
 	</beans:bean>
 	
 	<!-- interceptor 관련 설정 -->
- 		
+ 	<beans:bean id="authInterceptor" class="kr.ync.project.interceptor.AuthInterceptor"></beans:bean>
+	<beans:bean id="loginInterceptor" class="kr.ync.project.interceptor.LoginInterceptor"></beans:bean>
+	
+	 <beans:bean id="aauthInterceptor" class="kr.ync.project.interceptor.AAuthInterceptor"></beans:bean>
+	<beans:bean id="aloginInterceptor" class="kr.ync.project.interceptor.ALoginInterceptor"></beans:bean>
+	
+
+	<interceptors>	
+ 
+		<interceptor>
+			<mapping path="admin/aloginPost" />
+			<beans:ref bean="aloginInterceptor" />
+		</interceptor>
+		
+		<interceptor>
+			<mapping path="front/loginPost" />
+			<beans:ref bean="loginInterceptor" />
+		</interceptor>
+		
+		<!-- <interceptor>
+			<mapping path="/aindex"/>
+			<beans:ref bean="aauthInterceptor"/>
+		</interceptor> -->
+	  	
+		<!-- <interceptor>
+			<mapping path="/sboard/register"/>
+			<mapping path="/sboard/modifyPage"/>
+			<mapping path="/sboard/removePage"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>  -->
+	</interceptors>
 </beans:beans>

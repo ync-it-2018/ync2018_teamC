@@ -10,7 +10,7 @@
 </head>
 <body>
   <script type="text/javascript">
-    self.location = "/auser/avalue";
+    self.location = "/aindex";
     
   </script>
 <%--   ${AUserVO.A_ID};

@@ -43,6 +43,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			Object dest = session.getAttribute("dest");
 			log.info("target URI : " + (String) dest);
 			response.sendRedirect(dest != null ? (String) dest : "/");
+		} else {
+			response.sendRedirect("로그인에러jsp경로적는곳");
 		}
 	}
 

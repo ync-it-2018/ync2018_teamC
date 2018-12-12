@@ -25,9 +25,9 @@ public class AUserServiceImpl implements AUserService {
 	}
 
 	@Override
-	public void keepALogin(String A_ID, String sessionId, Date next) throws Exception {
+	public void keepALogin(String aID, String sessionId, Date next) throws Exception {
 
-		dao.keepALogin(A_ID, sessionId, next);
+		dao.keepALogin(aID, sessionId, next);
 
 	}
 

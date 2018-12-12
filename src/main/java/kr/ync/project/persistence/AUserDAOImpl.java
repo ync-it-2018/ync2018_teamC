@@ -28,10 +28,10 @@ public class AUserDAOImpl implements AUserDAO {
 	}
 
 	@Override
-	public void keepALogin(String A_ID, String sessionId, Date next) {
+	public void keepALogin(String aID, String sessionId, Date next) {
 
 		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("A_ID", A_ID);
+		paramMap.put("aID", aID);
 		paramMap.put("sessionId", sessionId);
 		paramMap.put("next", next);
 

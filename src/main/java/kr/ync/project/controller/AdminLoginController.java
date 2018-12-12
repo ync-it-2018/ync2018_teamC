@@ -31,7 +31,7 @@ import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/auser/*")
+@RequestMapping("/admin/*")
 @Slf4j
 public class AdminLoginController {
 
@@ -39,17 +39,17 @@ public class AdminLoginController {
 	private AUserService service;
 
 	@GetMapping(value = "/alogin")
-	public String loginGET(@ModelAttribute("dto") ALoginDTO dto) {
-		log.info("AdminLoginController loginGET");
-		return "admin/alogin";
+	public void aloginGET(@ModelAttribute("dto") LoginDTO dto) {
+
 	}
 	
-	@GetMapping(value = "/avalue")
+	
+/*	@GetMapping(value = "/avalue")
 	public String valueGET(@ModelAttribute("AUserVO") AUserVO vo , Model model) {
 		log.info("AdminLoginController valueGET");
 		model.addAttribute("AUserVO", vo);
 		return "admin/aindex";
-	}
+	}*/
 	
 	//preHandle 실행
 	/*@PostMapping(value = "/loginPost")
@@ -69,32 +69,33 @@ public class AdminLoginController {
 	//postHandle 실행
 	@PostMapping("/aloginPost")
 	//@ResponseStatus(value=HttpStatus.OK)
-	public String loginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
+	public void loginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		AUserVO vo = service.alogin(dto);
 
 		if (vo == null) {
-			return"";
+			return  ;
 		}
-		log.info(vo.getA_ID());
+		log.info(vo.getAID());
 		model.addAttribute("AUserVO", vo);
 		//JOptionPane.showMessageDialog(frame, "Eggs are not supposed to be green.");
 		
 
-		/*if (dto.isUseCookie()) {
+		if (dto.isUseCookie()) {
 
 			int amount = 60 * 60 * 24 * 7;
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
+			service.keepALogin(vo.getAID(), session.getId(), sessionLimit);
 			
 			 
-		}*/
-		return "admin/aloginPost";
+		}
+		
+		
 	}
 
-	/*@GetMapping(value = "/logout")
+	@GetMapping(value = "/alogout")
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
@@ -103,7 +104,7 @@ public class AdminLoginController {
 		Object obj = session.getAttribute("login");
 
 		if (obj != null) {
-			UserVO vo = (UserVO) obj;
+			AUserVO vo = (AUserVO) obj;
 			log.info("logout.................................2");
 			session.removeAttribute("login");
 			session.invalidate();
@@ -116,12 +117,12 @@ public class AdminLoginController {
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
-				service.keepLogin(vo.getUids(), session.getId(), new Date());
+				service.keepALogin(vo.getAID(), session.getId(), new Date());
 				log.info("logout success................");
 			}
 		}
-		response.sendRedirect("/sboard/list");
-	}*/
+		response.sendRedirect("/anotice");
+	}
 	
 	
 }

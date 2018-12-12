@@ -35,13 +35,13 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">READ NOTICE</h3>
+					<h3 class="box-title">Member Level</h3>
 				</div>
 				<!-- /.box-header -->
 
 				<form role="form" action="modifyPage" method="post">
 
-					<input type='hidden' name='nNum' value="${list.qNum}"> 
+					<input type='hidden' name='nNum' value="${list.lCode}"> 
 					<input type='hidden' name='page' value="${cri.page}"> 
 					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
 					<input type='hidden' name='searchType' value="${cri.searchType}">
@@ -51,19 +51,19 @@
 				
 				<div class="box-body">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Title</label> 
-						<input type="text" name='qTitle' class="form-control" value="${list.qTitle}"
+						<label for="exampleInputEmail1">LEVEL_CODE</label> 
+						<input type="text" name='lCode' class="form-control" value="${list.lCode}"
 							readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Title</label> 
-						<input type="text" name='mID' class="form-control" value="${list.mID}"
+						<label for="exampleInputEmail1">NAME</label> 
+						<input type="text" name='lName' class="form-control" value="${list.lName}"
 							readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Content</label>
-						<textarea class="form-control" name="qContents" rows="3"
-							readonly="readonly">${list.qContents}</textarea>
+						<label for="exampleInputPassword1">POINT</label>
+						<textarea class="form-control" name='lPoint' rows="3"
+							readonly="readonly">${list.L_POINT}</textarea>
 					</div>
 				</div>
 				
