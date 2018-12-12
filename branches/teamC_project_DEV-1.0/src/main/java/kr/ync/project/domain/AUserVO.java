@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class AUserVO {
 
-	private String A_ID;
-	private String A_PWD;
+	private String aID;
+	private String aPWD;
 
 }

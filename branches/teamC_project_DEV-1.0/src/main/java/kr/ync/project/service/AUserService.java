@@ -11,7 +11,7 @@ public interface AUserService {
 
 	public AUserVO alogin(ALoginDTO dto) throws Exception;
 
-	public void keepALogin(String A_ID, String sessionId, Date next) throws Exception;
+	public void keepALogin(String aID, String sessionId, Date next) throws Exception;
 
 	public AUserVO checkALoginBefore(String value);
 	

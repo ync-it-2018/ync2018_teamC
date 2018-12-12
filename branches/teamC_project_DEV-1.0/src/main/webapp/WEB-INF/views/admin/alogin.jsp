@@ -31,13 +31,13 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-<form action="/auser/aloginPost" method="post">
+<form action="/admin/aloginPost" method="post">
   <div class="form-group has-feedback">
-    <input type="text" name="A_ID" class="form-control" placeholder="USER ID"/>
+    <input type="text" name="aID" class="form-control" placeholder="USER ID"/>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
   </div>
   <div class="form-group has-feedback">
-    <input type="password" name="A_PWD" class="form-control" placeholder="Password"/>
+    <input type="password" name="aPWD" class="form-control" placeholder="Password"/>
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
   </div>
   <div class="row">
@@ -49,7 +49,7 @@
       </div>                        
     </div><!-- /.col -->
     <div class="col-xs-4">
-      <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+      <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
     </div><!-- /.col -->
   </div>
 </form>

@@ -274,7 +274,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="#" class="btn btn-default btn-flat">log in</a>
                     </div>
                   </li>
                 </ul>
@@ -369,9 +369,10 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/memberlist"><i class="fa fa-circle-o"></i> 회원관리 </a></li>
-                <li><a href="/management"><i class="fa fa-circle-o"></i> 등급관리 </a></li>
-                <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Front 화면 </a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> 회원관리 </a></li>
+                 <li><a href="/mlevellist"><i class="fa fa-circle-o"></i> 등급 목록 </a></li>
+                <li><a href="/mlevel"><i class="fa fa-circle-o"></i> 등급 등록 </a></li>
+              
               </ul>
             </li>
             <!-- <li class="treeview active">
@@ -405,8 +406,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> 일별매출</a></li>
-                <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 매출조회</a></li>
+                <li><a href="/adaysaleprice"><i class="fa fa-circle-o"></i> 일별매출</a></li>
+                <li><a href="/asaleprice"><i class="fa fa-circle-o"></i> 매출조회</a></li>
               </ul>
             </li>
             <li>

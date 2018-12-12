@@ -9,14 +9,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT	A_ID,
 				A_PWD
 		FROM	TC_ADMIN
-		WHERE	A_ID = #{A_ID}
-		AND		A_PWD = #{A_PWD}
+		WHERE	A_ID = #{aID}
+		AND		A_PWD = #{aPWD}
 	</select>
   
 	<update id="keepALogin" >
 		UPDATE TC_ADMIN SET 	sessionKey = #{sessionId},
 	  							sessionLimit = #{next}
-		WHERE A_ID = #{A_ID}
+		WHERE A_ID = #{aID}
 	</update>
 
 	<select id="checkAUserWithSessionKey" resultType="AUserVO">
