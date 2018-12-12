@@ -51,12 +51,12 @@
 	<interceptors>	
  
 		<interceptor>
-			<mapping path="admin/aloginPost" />
+			<mapping path="/admin/aloginPost" />
 			<beans:ref bean="aloginInterceptor" />
 		</interceptor>
 		
 		<interceptor>
-			<mapping path="front/loginPost" />
+			<mapping path="/front/loginPost" />
 			<beans:ref bean="loginInterceptor" />
 		</interceptor>
 		

@@ -49,7 +49,7 @@
       </div>                        
     </div><!-- /.col -->
     <div class="col-xs-4">
-      <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+      <button id="login_btn" type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
     </div><!-- /.col -->
   </div>
 </form>
@@ -75,6 +75,31 @@
           increaseArea: '20%' // optional
         });
       });
+    </script>
+    <script>
+    $(document).ready(function() {
+    	$("#login_btn").unbind("click").click(function(e) {
+    		e.preventDefault();
+    		fn_login();
+    	});
+    });
+    
+    function fn_login() {
+    	if($("#aID").val().length <1)
+    	{
+    	alert("아이디를 입력해주세요.");
+    	}
+    else if($("#aPWD").val().length < 1)
+    	{
+    	alert("비밀번호를 입력해주세요.");
+    	}
+    else
+    	{
+    	val conSubmit = new ConSubmit("frm");
+    	conSubmit.setUrl("<c:url value='/admin/alogin'/>");
+    	comSubmit.submit();
+    	}
+    }
     </script>
   </body>
 </html>
