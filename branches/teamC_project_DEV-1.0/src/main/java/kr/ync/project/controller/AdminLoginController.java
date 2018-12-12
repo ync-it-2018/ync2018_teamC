@@ -39,8 +39,9 @@ public class AdminLoginController {
 	private AUserService service;
 
 	@GetMapping(value = "/alogin")
-	public void aloginGET(@ModelAttribute("dto") LoginDTO dto) {
-
+	public String aloginGET(@ModelAttribute("dto") ALoginDTO dto) {
+		log.info("AdminLoginController valueGET");
+		return "admin/alogin";
 	}
 	
 	
@@ -51,20 +52,6 @@ public class AdminLoginController {
 		return "admin/aindex";
 	}*/
 	
-	//preHandle 실행
-	/*@PostMapping(value = "/loginPost")
-	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
-
-		UserVO vo = service.login(dto);
-		
-		// UserVO가 null 이란 말은 DB에서 해당 user에 대한 data가 없다는 말이다.  
-		if (vo == null) {
-			return;
-		}
-
-		model.addAttribute("userVO", vo);
-
-	}*/
 	
 	//postHandle 실행
 	@PostMapping("/aloginPost")
@@ -88,11 +75,18 @@ public class AdminLoginController {
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
 			service.keepALogin(vo.getAID(), session.getId(), sessionLimit);
+	
 			
 			 
 		}
 		
 		
+	}
+	
+	@GetMapping(value = "/aloginError")
+	public String aloginError(@ModelAttribute("dto") ALoginDTO dto) {
+		log.info("Error");
+		return "admin/aloginError";
 	}
 
 	@GetMapping(value = "/alogout")

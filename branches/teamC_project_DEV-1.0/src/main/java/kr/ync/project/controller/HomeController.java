@@ -167,12 +167,6 @@ public class HomeController {
 		return "admin/index";
 	}
 	
-	@RequestMapping(value = "/alogin", method = RequestMethod.GET)
-	public String alogin(Locale locale, Model model) {
-		
-		return "admin/alogin";
-	}
-	
 	@RequestMapping(value = "/ajoin", method = RequestMethod.GET)
 	public String ajoin(Locale locale, Model model) {
 		

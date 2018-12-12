@@ -320,7 +320,7 @@
                 <i class="fa fa-dashboard"></i> <span>관리자 로그인</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
+                <li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
                 <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
