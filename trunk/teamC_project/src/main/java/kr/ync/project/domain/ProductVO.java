@@ -23,7 +23,7 @@ public class ProductVO {
 	private int stock; //재고
 	private int eNum; //이벤트num fk
 	
-	private MultipartFile productPhoto; //상품이미지
+	//private MultipartFile productPhoto; //상품이미지
 
 	private String pImageSrc;//이미지 경로
 
@@ -123,13 +123,13 @@ public class ProductVO {
 		this.eNum = eNum;
 	}
 
-	public MultipartFile getProductPhoto() {
+	/*public MultipartFile getProductPhoto() {
 		return productPhoto;
 	}
 
 	public void setProductPhoto(MultipartFile productPhoto) {
 		this.productPhoto = productPhoto;
-	}
+	}*/
 
 	public String getpImageSrc() {
 		return pImageSrc;

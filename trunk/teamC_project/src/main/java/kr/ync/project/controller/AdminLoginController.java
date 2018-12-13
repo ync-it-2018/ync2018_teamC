@@ -6,32 +6,23 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.JOptionPane;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.WebUtils;
 
 import kr.ync.project.domain.AUserVO;
-import kr.ync.project.domain.UserVO;
 import kr.ync.project.dto.ALoginDTO;
-import kr.ync.project.dto.LoginDTO;
 import kr.ync.project.service.AUserService;
-import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/auser/*")
+@RequestMapping("/admin/*")
 @Slf4j
 public class AdminLoginController {
 
@@ -39,89 +30,84 @@ public class AdminLoginController {
 	private AUserService service;
 
 	@GetMapping(value = "/alogin")
-	public String loginGET(@ModelAttribute("dto") ALoginDTO dto) {
-		log.info("AdminLoginController loginGET");
+	public String aloginGET(@ModelAttribute("dto") ALoginDTO dto) {
+		log.info("AdminLoginController valueGET");
 		return "admin/alogin";
 	}
 	
-	@GetMapping(value = "/avalue")
+	
+/*	@GetMapping(value = "/avalue")
 	public String valueGET(@ModelAttribute("AUserVO") AUserVO vo , Model model) {
 		log.info("AdminLoginController valueGET");
 		model.addAttribute("AUserVO", vo);
 		return "admin/aindex";
-	}
-	
-	//preHandle 실행
-	/*@PostMapping(value = "/loginPost")
-	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
-
-		UserVO vo = service.login(dto);
-		
-		// UserVO가 null 이란 말은 DB에서 해당 user에 대한 data가 없다는 말이다.  
-		if (vo == null) {
-			return;
-		}
-
-		model.addAttribute("userVO", vo);
-
 	}*/
+	
 	
 	//postHandle 실행
 	@PostMapping("/aloginPost")
 	//@ResponseStatus(value=HttpStatus.OK)
-	public String loginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
+	public void loginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		AUserVO vo = service.alogin(dto);
 
 		if (vo == null) {
-			return"";
+			return  ;
 		}
-		log.info(vo.getA_ID());
+		log.info(vo.getAID());
 		model.addAttribute("AUserVO", vo);
 		//JOptionPane.showMessageDialog(frame, "Eggs are not supposed to be green.");
 		
 
-		/*if (dto.isUseCookie()) {
+		if (dto.isUseCookie()) {
 
 			int amount = 60 * 60 * 24 * 7;
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
+			service.keepALogin(vo.getAID(), session.getId(), sessionLimit);
+	
 			
 			 
-		}*/
-		return "admin/aloginPost";
+		}
+		
+		
+	}
+	
+	@GetMapping(value = "/aloginError")
+	public String aloginError(@ModelAttribute("dto") ALoginDTO dto) {
+		log.info("Error");
+		return "admin/aloginError";
 	}
 
-	/*@GetMapping(value = "/logout")
-	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+	@GetMapping(value = "/alogout")
+	public void alogout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
-		log.info("logout.................................1");
+		log.info("alogout.................................1");
 
-		Object obj = session.getAttribute("login");
+		Object obj = session.getAttribute("alogin");
 
 		if (obj != null) {
-			UserVO vo = (UserVO) obj;
-			log.info("logout.................................2");
-			session.removeAttribute("login");
+			AUserVO vo = (AUserVO) obj;
+			log.info("alogout.................................2");
+			session.removeAttribute("alogin");
 			session.invalidate();
 
-			log.info("logout.................................3");
+			log.info("alogout.................................3");
 			Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
 
 			if (loginCookie != null) {
-				log.info("logout.................................4");
+				log.info("alogout.................................4");
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
-				service.keepLogin(vo.getUids(), session.getId(), new Date());
+				service.keepALogin(vo.getAID(), session.getId(), new Date());
 				log.info("logout success................");
 			}
 		}
-		response.sendRedirect("/sboard/list");
-	}*/
+		response.sendRedirect("/admin/alogin");
+	}
 	
 	
 }

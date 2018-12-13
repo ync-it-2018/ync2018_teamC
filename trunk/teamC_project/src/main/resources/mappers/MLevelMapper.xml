@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.MLevelMapper">
+
+	<insert id="insertMLevel" >  
+	<!-- parameterType="kr.ync.project.domain.EventVO" -->
+	 
+        INSERT INTO TC_LEVEL(
+            LEVEL_CODE,
+            L_NAME,
+            L_POINT
+        )VALUES(
+            #{lCode, jdbcType=INTEGER},
+            #{lName, jdbcType=VARCHAR},
+            #{lPoint, jdbcType=INTEGER}
+        )
+    </insert>		
+    
+<!--     <select id="selectMLevel" parameterType="hashMap" resultType="MLevelVO">
+    	SELECT A.LEVEL_CODE,
+           	 A.E_DETAIL,
+           A.E_STARTDATE,
+           A.E_ENDDATE,
+           A.E_LINK,
+           B.E_IMAGE_SRC
+       FROM TC_EVENT  A,
+           TC_E_FILE  B
+      WHERE A.E_NUM = B.E_NUM
+    </select> -->
+    
+    <select id="listAll" resultType="MLevelVO">
+	<![CDATA[
+	SELECT 	LEVEL_CODE,
+			L_NAME,
+			L_POINT
+	FROM TC_LEVEL
+	]]>  
+	</select>
+
+	 <select id="read" resultType="MLevelVO">
+		SELECT 	LEVEL_CODE,
+				L_NAME,
+				L_POINT
+		FROM TC_LEVEL
+		WHERE	LEVEL_CODE = #{LEVEL_CODE}
+	</select>
+
+</mapper>
+
+

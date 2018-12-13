@@ -31,13 +31,13 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-<form action="/auser/aloginPost" method="post">
+<form action="/admin/aloginPost" method="post">
   <div class="form-group has-feedback">
-    <input type="text" name="A_ID" class="form-control" placeholder="USER ID"/>
+    <input type="text" name="aID" class="form-control" placeholder="USER ID"/>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
   </div>
   <div class="form-group has-feedback">
-    <input type="password" name="A_PWD" class="form-control" placeholder="Password"/>
+    <input type="password" name="aPWD" class="form-control" placeholder="Password"/>
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
   </div>
   <div class="row">
@@ -49,7 +49,7 @@
       </div>                        
     </div><!-- /.col -->
     <div class="col-xs-4">
-      <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+      <button id="login_btn" type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
     </div><!-- /.col -->
   </div>
 </form>
@@ -75,6 +75,31 @@
           increaseArea: '20%' // optional
         });
       });
+    </script>
+    <script>
+    $(document).ready(function() {
+    	$("#login_btn").unbind("click").click(function(e) {
+    		e.preventDefault();
+    		fn_login();
+    	});
+    });
+    
+    function fn_login() {
+    	if($("#aID").val().length <1)
+    	{
+    	alert("아이디를 입력해주세요.");
+    	}
+    else if($("#aPWD").val().length < 1)
+    	{
+    	alert("비밀번호를 입력해주세요.");
+    	}
+    else
+    	{
+    	val conSubmit = new ConSubmit("frm");
+    	conSubmit.setUrl("<c:url value='/admin/alogin'/>");
+    	comSubmit.submit();
+    	}
+    }
     </script>
   </body>
 </html>

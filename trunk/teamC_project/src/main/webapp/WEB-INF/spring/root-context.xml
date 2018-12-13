@@ -37,10 +37,10 @@
       <property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@220.67.2.3:1521:ora11"></property>
       <property name="username" value="educ239"></property>
       <property name="password" value="pass239"></property>
-   </bean>  
+   </bean>   
 
     <!--HikariCP configuration-->
-      <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+       <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
       <constructor-arg ref="hikariConfig" />
    </bean> 
    
@@ -61,6 +61,7 @@
       class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
       <property name="dataSource" ref="dataSource"></property>
    </bean>
+   
    
    <context:component-scan base-package="kr.ync.project.persistence">
    </context:component-scan>

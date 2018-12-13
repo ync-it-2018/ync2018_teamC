@@ -57,6 +57,7 @@
 					<h3 class="box-title">LIST PAGING</h3>
 				</div>
 				<div class="box-body">
+				    <form id="QnaForm" name="QnaForm" method="POST">
 					<table class="table table-bordered">
 						<tr>
 							<th style="width: 10px">Q_NUM</th>
@@ -82,6 +83,7 @@
 						</c:forEach>
 
 					</table>
+					</form>
 				</div>
 				<!-- /.box-body -->
 
@@ -134,7 +136,7 @@
 </script>
 
 <script>
-	$(document).ready(
+/* 	$(document).ready(
 			function() {
 
 				$('#searchBtn').on(
@@ -155,7 +157,7 @@
 
 				});
 
-			});
+			}); */
 </script>
 
 <script>

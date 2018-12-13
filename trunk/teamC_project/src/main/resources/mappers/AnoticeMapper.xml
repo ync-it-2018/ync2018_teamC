@@ -9,22 +9,65 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<![CDATA[
 	SELECT 	N_CODE, N_TITLE, N_UP_DATE
 	FROM TC_NOTICE
+	WHERE N_CODE > 0
+	ORDER BY N_CODE DESC
+	]]>  
+</select>
+
+<select id="flistAll" resultType="AnoticeVO">
+	<![CDATA[
+	SELECT 	N_CODE, N_TITLE, N_UP_DATE
+	FROM TC_NOTICE
+	WHERE N_CODE > 0
+	ORDER BY N_CODE DESC
 	]]>  
 </select>
 
 
-<insert id="create">
+<insert id="createNotice">
 	INSERT INTO TC_NOTICE (N_CODE, N_TITLE, N_CONTENTS) 
-	VALUES(TC_SEQ_NOTICE.NEXTVAL, #{N_TITLE},#{N_CONTENTS})
+	VALUES(#{nCode}, #{nTitle},	#{nContents})
 </insert>
 
-<select id="read" resultType="AnoticeVO">
+
+
+<select id="readNotice" resultType="AnoticeVO">
 	SELECT 	N_CODE,
 			N_TITLE,
-			N_CONTENTS,
-			N_UP_DATE
+			N_CONTENTS
 	FROM 	TC_NOTICE
 	WHERE	N_CODE = #{N_CODE}
 </select>
+
+
+<update id="updateNotice">
+	UPDATE TC_NOTICE SET N_TITLE = #{nTitle}, N_CONTENTS = #{nContents}
+	WHERE N_CODE = #{nCode}
+</update>
+
+
+<delete id="deleteNotice">
+	delete from TC_NOTICE where N_CODE = #{nCode}
+</delete>
+
+<select id="listPage" resultType="AnoticeVO">
+	<![CDATA[
+	SELECT 	N_CODE, N_TITLE, N_UP_DATE
+	FROM TC_NOTICE
+	WHERE N_CODE > 0
+	ORDER BY N_CODE DESC, N_UP_DATE DESC
+	limit #{page}, 10
+	]]>
+</select>
  
+ 
+<select id="listCriteria" resultType="AnoticeVO">
+	<![CDATA[
+	SELECT 	N_CODE, N_TITLE, N_UP_DATE
+	FROM TC_NOTICE
+	WHERE N_CODE > 0
+	ORDER BY N_CODE DESC,N_UP_DATE DESC
+	limit #{pageStart}, #{perPageNum}
+	]]>
+</select>
 </mapper>

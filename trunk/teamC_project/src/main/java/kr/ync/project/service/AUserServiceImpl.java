@@ -1,11 +1,13 @@
 package kr.ync.project.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ync.project.domain.AUserVO;
+import kr.ync.project.domain.CategoryBigVO;
 import kr.ync.project.domain.UserVO;
 import kr.ync.project.dto.ALoginDTO;
 import kr.ync.project.dto.LoginDTO;
@@ -25,9 +27,9 @@ public class AUserServiceImpl implements AUserService {
 	}
 
 	@Override
-	public void keepALogin(String A_ID, String sessionId, Date next) throws Exception {
+	public void keepALogin(String aID, String sessionId, Date next) throws Exception {
 
-		dao.keepALogin(A_ID, sessionId, next);
+		dao.keepALogin(aID, sessionId, next);
 
 	}
 
@@ -42,8 +44,23 @@ public class AUserServiceImpl implements AUserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<UserVO> userlist() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.userlist();
+	}
+	//어드민 - 회원 삭제
+	@Override
+	public void deleteMember(String mId) throws Exception {
+		// TODO Auto-generated method stub
+		dao.deleteMember(mId);
+	}
+
+	@Override
+	public UserVO readMember(String mId) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.readMember(mId);
+	}
 	
-	/*public int insert(User user) {
-        return dao.insert(user);
-    }*/
 }

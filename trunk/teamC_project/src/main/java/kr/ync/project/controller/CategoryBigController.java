@@ -1,6 +1,5 @@
 package kr.ync.project.controller;
 
-import java.awt.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -13,14 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kr.ync.project.domain.BoardVO;
 import kr.ync.project.domain.CategoryBigVO;
 import kr.ync.project.service.CategoryBigService;
-import net.sf.json.JSONArray;
 
 @Controller
+@RequestMapping("/categorybig/*")
 public class CategoryBigController {
 		
 private static final Logger logger = LoggerFactory.getLogger(CategoryBigController.class);
@@ -39,8 +38,20 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 		
 		return "admin/categorylist";
 	}
-	
-	
+
+	@RequestMapping(value="/categorybig.do", method=RequestMethod.GET)
+    public void categorybigGET() {
+        
+    }
+    
+    //SignUp POST
+    @RequestMapping(value="/categorybig.do", method=RequestMethod.POST)
+    public String categorybigPOST(CategoryBigVO categorybigVO) {
+            
+    	service.insert(categorybigVO);
+            
+        return "admin/index";
+    }
 	
 	/*@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
 	public String categorybigRegister(Locale locale, Model model) throws Exception{
@@ -56,13 +67,23 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 		return "admin/categorybigRegister";
 	}*/
 	
+	@RequestMapping(value = "/categorybigRead", method = RequestMethod.GET)
+	public String CateBigRead(@RequestParam("pBig")int pBig, Model model) throws Exception {
+		
+		logger.info("리스트상세보기");	
+		
+		model.addAttribute("list",service.read(pBig));
+		
+		return "admin/categorybigRead";
+	}
 	
+	/*
 	@GetMapping(value = "/categorybigRegister")
 	public void registGET() throws Exception {
 
 		logger.info("regist get ...........");
-	}
-
+	}*/
+/*
 	@PostMapping(value = "/categorybigRegister")
 	public String registPOST(CategoryBigVO categorybigVO, RedirectAttributes rttr) throws Exception {
 
@@ -75,6 +96,6 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 
 		return "redirect:/categorylist";
 
-	}
+	}*/
 	
 }

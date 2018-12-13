@@ -14,40 +14,19 @@
 
 					<div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">HOME PAGE ${serverTime }</h3>
+              <h3 class="box-title">Welcome! ${serverTime}</h3>
             </div>
           </div>
-      </div><!--/.col (left) -->
-      </div>   <!-- /.row -->
-    </section><!-- /.content -->
+      </div>
+      </div>  
+    </section>
     
     
-    
-    
-    <!-- 관리자 계정 관리 1119김진희 나중에 옮겨-->
-    <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>User</th>
-            <th>Roles</th>
-        </tr>
-    </thead>
-    <tbody>
-        <c:forEach var="user" items="${ users }">
-            <tr>
-                <td>${ user.email }</td>
-                <td>
-                    <c:forEach var="authority" items="${ user.authorities }">
-                        ${ authority.authority }
-                    </c:forEach>
-                </td>
-            </tr>
-        </c:forEach>
-    </tbody>
-</table>
-
-
-
+    <div style="text-align:center;">
+	    <div style="display : inline block;">
+	    	<img src="/resources/front/images/logo.jpg" alt="IMG">
+	    </div>
+    </div>
     
 <%@include file="include/footer.jsp" %>
  

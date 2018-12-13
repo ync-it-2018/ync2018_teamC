@@ -19,12 +19,17 @@ public class CategoryBigDAOImpl implements CategoryBigDAO{
 	
 	@Override
 	public void insert(CategoryBigVO categorybig) {
-		session.insert("insert", categorybig);
+		session.insert("bigcreate", categorybig);
 	}
 
 	@Override
 	public List<CategoryBigVO> listAll() throws Exception {
 		return session.selectList(namespace + ".listAll");
+	}
+
+	@Override
+	public CategoryBigVO read(Integer pBig) throws Exception {
+		return session.selectOne(namespace + ".read", pBig);
 	}
 	 
 }

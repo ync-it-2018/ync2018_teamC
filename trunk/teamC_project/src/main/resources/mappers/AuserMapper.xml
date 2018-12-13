@@ -9,14 +9,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT	A_ID,
 				A_PWD
 		FROM	TC_ADMIN
-		WHERE	A_ID = #{A_ID}
-		AND		A_PWD = #{A_PWD}
+		WHERE	A_ID = #{aID}
+		AND		A_PWD = #{aPWD}
 	</select>
   
 	<update id="keepALogin" >
 		UPDATE TC_ADMIN SET 	sessionKey = #{sessionId},
 	  							sessionLimit = #{next}
-		WHERE A_ID = #{A_ID}
+		WHERE A_ID = #{aID}
 	</update>
 
 	<select id="checkAUserWithSessionKey" resultType="AUserVO">
@@ -27,7 +27,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND		sessionlimit > SYSDATE
 	</select>
 	
+	<!-- 어드민 - 회원관리 (멤버 리스트) -->
+	<select id="userlist" resultType="UserVO">
+		SELECT	M_ID,
+				M_PWD,
+				M_NAME
+		FROM	TC_MEMBER
+	</select>
 	
+	<!-- 어드민 - 회원 상세 -->
+	<select id="readMember" resultType="UserVO">
+		SELECT 	*
+		FROM 	TC_MEMBER
+		WHERE	M_ID = #{mId}
+	</select>
+
+	<!-- 어드민 - 회원 삭제 -->
+	<delete id="deleteMember">
+	delete from TC_MEMBER where M_ID = #{mId}
+	</delete>
 
 </mapper>
 
