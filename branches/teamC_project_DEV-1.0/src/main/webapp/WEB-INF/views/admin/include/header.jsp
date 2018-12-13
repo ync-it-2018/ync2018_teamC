@@ -422,7 +422,7 @@
               </ul>
             </li>
             <li>
-              <a href="/aNotice">
+              <a href="/admin/aNotice">
                 <i class="fa fa-envelope"></i> <span>공지사항</span>
                 <small class="label pull-right bg-yellow">1</small>
               </a>
