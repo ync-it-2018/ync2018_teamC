@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.categoryMapper">
 
-	<insert id="bigcreate">
+	<insert id="insert">
         INSERT INTO TC_P_BIG(P_BIG, P_BIG_NAME)
         VALUES (#{P_BIG}, #{P_BIG_NAME})
     </insert>
@@ -17,6 +17,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	FROM 	TC_P_BIG
 	ORDER BY P_BIG
 	]]>  
+</select>
+
+
+<select id="read" resultType="CategoryBigVO">
+	SELECT 	P_BIG,
+			P_BIG_NAME
+	FROM 	TC_P_BIG
+	WHERE	P_BIG = #{P_BIG}
 </select>
     
 </mapper>

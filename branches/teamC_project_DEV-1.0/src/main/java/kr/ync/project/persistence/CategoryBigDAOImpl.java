@@ -26,5 +26,10 @@ public class CategoryBigDAOImpl implements CategoryBigDAO{
 	public List<CategoryBigVO> listAll() throws Exception {
 		return session.selectList(namespace + ".listAll");
 	}
+
+	@Override
+	public CategoryBigVO read(Integer pBig) throws Exception {
+		return session.selectOne(namespace + ".read", pBig);
+	}
 	 
 }

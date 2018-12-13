@@ -10,13 +10,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ync.project.domain.BoardVO;
 import kr.ync.project.domain.CategoryBigVO;
+import kr.ync.project.domain.UserVO;
+import kr.ync.project.dto.LoginDTO;
 import kr.ync.project.service.CategoryBigService;
 import net.sf.json.JSONArray;
 
@@ -55,6 +59,16 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 		model.addAttribute("category",JSONArray.fromObject(categorybigVO));
 		return "admin/categorybigRegister";
 	}*/
+	
+	@RequestMapping(value = "/categorybigRead", method = RequestMethod.GET)
+	public String aNoticeRead(@RequestParam("pBig")int pBig, Model model) throws Exception {
+		
+		logger.info("리스트상세보기");	
+		
+		model.addAttribute("list",service.read(pBig));
+		
+		return "admin/categorybigRead";
+	}
 	
 	
 	@GetMapping(value = "/categorybigRegister")

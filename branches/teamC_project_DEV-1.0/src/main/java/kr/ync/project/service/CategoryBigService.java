@@ -10,5 +10,7 @@ public interface CategoryBigService {
 	//카테고리 출력
 	public List<CategoryBigVO> listAll() throws Exception;
 	
+	public CategoryBigVO read(Integer pBig) throws Exception;
+	
 	
 }
