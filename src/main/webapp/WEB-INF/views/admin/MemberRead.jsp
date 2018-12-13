@@ -39,7 +39,7 @@
 				</div>
 				<!-- /.box-header -->
 				<form role="form" method="post">
-			<!-- 앞에 소문자로 받아야됨 AnoticeVO -> anoticeNO -->
+			<!-- 앞에 소문자로 받아야됨 UserVO -> userVO -->
 					<input type="hidden" name="mId" value="${userVO.mId}"> 
 
 				</form>
@@ -92,8 +92,8 @@
 				<!-- /.box-body -->
 				
   <div class="box-footer">
-    
-    <button type="submit" class="btn btn-danger" style="float:right;">DELETE</button>
+  	<button type="submit" class="btn btn-danger" style="float:right;">DELETE</button>
+    <button type="submit" class="btn btn-primary" onclick="history.go(-1);" style="float:right;">GO LIST</button> 
   </div>
 
 			</div>
