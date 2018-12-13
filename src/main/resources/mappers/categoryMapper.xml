@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.categoryMapper">
 
-	<insert id="insert">
+	<insert id="bigcreate">
         INSERT INTO TC_P_BIG(P_BIG, P_BIG_NAME)
         VALUES (#{pBig}, #{pBigName})
     </insert>
