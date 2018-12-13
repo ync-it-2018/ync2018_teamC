@@ -2,6 +2,8 @@ package kr.ync.project.service;
 
 import java.util.Date;
 
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,9 +24,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void keepLogin(String M_ID, String sessionId, Date next) throws Exception {
+	public void keepLogin(String mId, String sessionId, Date next) throws Exception {
 
-		dao.keepLogin(M_ID, sessionId, next);
+		dao.keepLogin(mId, sessionId, next);
 
 	}
 
@@ -39,8 +41,4 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	/*public int insert(User user) {
-        return dao.insert(user);
-    }*/
 }

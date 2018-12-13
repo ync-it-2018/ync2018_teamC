@@ -22,5 +22,9 @@ public class CategoryBigServiceImpl implements CategoryBigService{
 	public List<CategoryBigVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+	@Override
+	public CategoryBigVO read(Integer pBig) throws Exception {
+		return dao.read(pBig);
+	}
 
 }

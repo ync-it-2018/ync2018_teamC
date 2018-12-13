@@ -20,110 +20,46 @@ public class ProductDAOImpl implements ProductDAO{
 	
 	private static String namespace = "kr.ync.project.mapper.ProductMapper";
 
-	@Override
-
-	public List<ProductVO> listProduct() throws Exception{
-		return session.selectList(namespace + ".list");//특정이름 찾아줌 id같은 역할
-	}
-
-
-	public List<ProductVO> productList(ProductVO productVO){
-		return session.selectList(namespace + ".list", productVO);
-
-	}
-
-	@Override
-	public ProductVO detailProduct(int p_idx) throws Exception{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateProduct(ProductVO vo) throws Exception{
-		session.update(namespace + ".update", vo);
-	}
-
-	@Override
-	public void deleteProduct(int p_idx) throws Exception{
-		session.delete(namespace + ".delete", p_idx);
-	}
-
-	@Override
-	public void insertProduct(ProductVO vo) throws Exception {
-		session.insert(namespace + ".insert", vo);
-	}
-
+	//목록
 	@Override
 	public List<ProductVO> listAll() throws Exception {
 		return session.selectList(namespace + ".listAll");
 	}
 
+	//상세
 	@Override
-	public List<ProductVO> listPage(int page) throws Exception {
-		if (page <= 0) {
-			page = 1;
-		}
+	public ProductVO readProduct(String pCode) throws Exception {
+		return session.selectOne(namespace + ".readProduct", pCode);
+	}
 
-		page = (page - 1) * 10;
+	//등록
+	@Override
+	public void createProduct(ProductVO vo) throws Exception {
+		session.insert(namespace + ".createProduct", vo);
+	}
 
-		return session.selectList(namespace + ".listPage", page);
+	//수정
+	@Override
+	public void updateProduct(ProductVO vo) throws Exception {
+		session.update(namespace + ".updateProduct", vo);
+	}
+
+	//삭제
+	@Override
+	public void deleteProduct(String pCode) throws Exception {
+		session.delete(namespace + ".deleteProduct", pCode);
+	}
+
+	//프론트 리스트
+	@Override
+	public List<ProductVO> listProduct() throws Exception {
+		return session.selectList(namespace + ".list");
 	}
 
 	@Override
-	public List<ProductVO> listCriteria(Criteria cri) throws Exception {
-		return session.selectList(namespace + ".listCriteria", cri);
+	public List<ProductVO> productList(ProductVO productVO) {
+		return session.selectList(namespace + ".list",productVO);
 	}
 
-	@Override
-	public int countPaging(Criteria cri) throws Exception {
-		return session.selectOne(namespace + ".countPaging", cri);
-	}
-
-	@Override
-	public List<ProductVO> listSearch(SearchCriteria cri) throws Exception {
-		return session.selectList(namespace + ".listSearch", cri);
-	}
-
-	@Override
-	public int listSearchCount(SearchCriteria cri) throws Exception {
-		return session.selectOne(namespace + ".listSearchCount", cri);
-	}
-
-
-	@Override
-	public ProductVO read(String pCode) throws Exception {
-		// TODO Auto-generated method stub
-		
-		return session.selectOne(namespace + ".read", pCode );
-	}
-	
-	
-	
-	
-	/*
-
-	
-	
-	@Override
-	public int getBno(Integer rno) throws Exception {
-		return session.selectOne(namespace + ".getBno", rno);
-	}
-
-	@Override
-	public List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception {
-
-		Map<String, Object> paramMap = new HashMap<>();
-
-		paramMap.put("bno", bno);
-		paramMap.put("cri", cri);
-
-		return session.selectList(namespace + ".listPage", paramMap);
-	}
-
-	@Override
-	public int count(Integer bno) throws Exception {
-
-		return session.selectOne(namespace + ".count", bno);
-	}*/
 	
 }

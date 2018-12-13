@@ -39,31 +39,34 @@
 				</div>
 				<!-- /.box-header -->
 
-				<form role="form" action="modifyPage" method="post">
+				<form role="form"  method="post">
 
-					<input type='hidden' name='nNum' value="${list.nNum}"> 
-					<input type='hidden' name='page' value="${cri.page}"> 
-					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
-					<input type='hidden' name='searchType' value="${cri.searchType}">
-					<input type='hidden' name='keyword' value="${cri.keyword}">
+					<input type='hidden' name='qNum' value="${list.qNum}"> 
+					
 
 				</form>
 				
 				<div class="box-body">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Title</label> 
+						<label for="exampleInputEmail1">제목</label> 
 						<input type="text" name='qTitle' class="form-control" value="${list.qTitle}"
 							readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Title</label> 
-						<input type="text" name='qTitle' class="form-control" value="${list.mID}"
+						<label for="exampleInputEmail1">질문자 아이디</label> 
+						<input type="text" name='mID' class="form-control" value="${list.mID}"
 							readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Content</label>
+						<label for="exampleInputPassword1">내용</label>
 						<textarea class="form-control" name="qContents" rows="3"
 							readonly="readonly">${list.qContents}</textarea>
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleInputEmail1">답변여부</label> 
+						<input type="text" name='qCheck' class="form-control" value="${list.qCheck}"
+							readonly="readonly">
 					</div>
 				</div>
 				
@@ -75,9 +78,9 @@
 
     <ul class="mailbox-attachments clearfix uploadedList">
     </ul>
-    <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
-    <button type="submit" class="btn btn-danger" id="removeBtn">REMOVE</button>
-    <button type="submit" class="btn btn-primary" id="goListBtn">GO LIST </button>
+    <button type="submit" class="btn btn-warning" id="modifyBtn">답변달기</button>
+    <button type="submit" class="btn btn-danger" id="removeBtn">삭제</button>
+    <button type="submit" class="btn btn-primary" id="goListBtn">리스트로</button>
   </div>
 
 			</div>
@@ -94,22 +97,24 @@
 
 <script>
 $(document).ready(function(){
-	/* update 클릭 */ 
-	$('#modifyBtn').on('click',function(){
-		formObj.attr("action", "/admin/QmaModify");
+var formObj = $("form[role='form']");
+	
+	console.log(formObj);
+	
+	/* 수정 클릭 */ 
+	$('.btn-warning').on('click',function(){
+		formObj.attr("action", "/admin/QnaModify");
 		formObj.attr("method", "get");		
 		formObj.submit();
 	});
 	/* 삭제 클릭 */ 
-	$('#removeBtn').on('click',function(){
-		formObj.attr("action", "/admin/QnaRemove");
+	$('.btn-danger').on('click',function(){
+		formObj.attr("action", "/deleteQna");
 		formObj.submit();
 	});  
 	/* 리스트 클릭 */ 
-	$('#goListBtn').on('click',function(){
-		formObj.attr("method", "get");
-		formObj.attr("action", "/admin/Qnalist");
-		formObj.submit();
+	$('.btn-primary').on('click',function(){
+		self.location = "/Qnalist";
 	});
 })
 </script>

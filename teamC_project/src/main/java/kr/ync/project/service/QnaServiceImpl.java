@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.QnaVO;
 import kr.ync.project.persistence.QnaDAO;
 
@@ -23,17 +24,42 @@ public class QnaServiceImpl implements QnaService {
 	// DB insert 오류 시 하나의 Transaction으로 묶여 DB insert는 되지 않지만
 	// 기존에 upload된 파일은 지워지지 않는 로직상의 오류가 존재한다.
 	//@Transactional
-
+	
+	//목록
 	@Override
 	public List<QnaVO> listAll() throws Exception {
 		return dao.listAll();
 	}
 	
-	
+	//상세
 	@Override
 	public QnaVO read(Integer qNum) throws Exception {
 
 		return dao.read(qNum);
+	}
+	
+	//작성
+	@Override
+	public void createQna(QnaVO vo) throws Exception {
+		dao.createQna(vo);
+	}
+
+	//수정
+	@Override
+	public void updateQna(QnaVO vo) throws Exception {
+		dao.updateQna(vo);
+	}
+
+	//삭제
+	@Override
+	public void deleteQna(Integer qNum) throws Exception {
+		dao.deleteQna(qNum);
+	}
+	
+	//페이징
+	@Override
+	public List<QnaVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
 	}
 
 

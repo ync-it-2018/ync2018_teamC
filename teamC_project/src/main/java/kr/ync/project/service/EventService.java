@@ -20,6 +20,13 @@ public interface EventService {
 
 	public List<EventVO> elistAll() throws Exception;
 
-	public EventVO read(Integer eNum) throws Exception;
+	public EventVO readEvent(Integer eNum) throws Exception;
+
+	public void insertEventPhoto(EventVO eventVO);
+	
+	//수정
+	public void updateEvent(EventVO vo) throws Exception;
+	//삭제
+	public void deleteEvent(Integer eNum) throws Exception;
 	
 }

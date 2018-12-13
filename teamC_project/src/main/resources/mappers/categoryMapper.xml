@@ -7,7 +7,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="bigcreate">
         INSERT INTO TC_P_BIG(P_BIG, P_BIG_NAME)
-        VALUES (#{P_BIG}, #{P_BIG_NAME})
+        VALUES (#{pBig}, #{pBigName})
+    </insert>
+    
+    <insert id="middlecreate">
+        INSERT INTO TC_P_MIDDLE(P_BIG, P_MIDDLE, P_MIDDLE_NAME)
+        VALUES (#{pBig},#{pMiddle}, #{pBigName})
     </insert>
     
     
@@ -17,6 +22,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	FROM 	TC_P_BIG
 	ORDER BY P_BIG
 	]]>  
+	</select>
+	
+	<select id="mlistAll" resultType="CategoryMiddleVO">
+	<![CDATA[
+	SELECT 	P_BIG, P_BIG_NAME
+	FROM 	TC_P_BIG
+	ORDER BY P_BIG
+	]]>  
+	</select>
+	    
+
+<select id="read" resultType="CategoryBigVO">
+	SELECT 	P_BIG,
+			P_BIG_NAME
+	FROM 	TC_P_BIG
+	WHERE	P_BIG = #{P_BIG}
 </select>
     
 </mapper>

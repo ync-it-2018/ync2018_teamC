@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
    
 <!DOCTYPE html>
 <html>
@@ -274,7 +276,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="/admin/alogout" class="btn btn-default btn-flat">log out</a>
                     </div>
                   </li>
                 </ul>
@@ -319,9 +321,39 @@
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>관리자 로그인</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
+
               <ul class="treeview-menu">
-                <li><a href="/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
+<%--               <c:catch>
+    <c:choose>
+        <c:when test="${AUserVO.aID == null}">
+            <li>
+                 <a href="/admin/alogin"><i class="fa fa-sign-in"></i> 로그인</a>
+             </li>
+             <li>
+                 <a href="/ajoin"><i class="fa fa-user"></i> 회원가입</a>
+             </li>
+        </c:when>
+        <c:otherwise>
+                ${AUserVO.aID} 관리자 계정 로그인중
+                <li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
+                <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
+        </c:otherwise>
+    </c:choose>
+</c:catch>
+
+              <c:if test="${AUserVO.aID == null}">
+      			<li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
                 <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
+				</c:if>
+			<c:if test="${AUserVO.aID != null}">
+  				<li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
+                <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
+			</c:if> --%>
+				<li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
+                <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
+				<li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
               </ul>
@@ -338,7 +370,7 @@
                 <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> 베스트상품</a></li>
                 <li><a href="/test02"><i class="fa fa-circle-o"></i> 팝업창 관리</a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 신상품 </a></li>
-                <li><a href="/"><i class="fa fa-circle-o"></i> 이벤트 </a></li>
+                <li><a href="/aeventUp"><i class="fa fa-circle-o"></i> 이벤트 </a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 추천상품 </a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 푸터관리</a></li>
                 
@@ -357,9 +389,11 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리 </a></li>
+                <li><a href="/categorybig/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리(대) </a></li>
+                <li><a href="/categorymiddleRegister"><i class="fa fa-circle-o"></i> 카테고리관리(중) </a></li>
+                <li><a href="/categorybig/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리(소) </a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
-                <li><a href="/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
+                <li><a href="/admin/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -369,23 +403,13 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/memberlist"><i class="fa fa-circle-o"></i> 회원관리 </a></li>
-                <li><a href="/management"><i class="fa fa-circle-o"></i> 등급관리 </a></li>
-                <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Front 화면 </a></li>
+                <li><a href="/admin/memberlist"><i class="fa fa-circle-o"></i> 회원관리 </a></li>
+                 <li><a href="/mlevellist"><i class="fa fa-circle-o"></i> 등급 목록 </a></li>
+                <li><a href="/mlevel"><i class="fa fa-circle-o"></i> 등급 등록 </a></li>
+              
               </ul>
             </li>
-            <!-- <li class="treeview active">
-              <a href="/popupload">
-                <i class="fa fa-edit"></i> <span>이벤트관리</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li class="active"><a href="general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-              </ul>
-            </li> -->
-            
+           
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
@@ -394,7 +418,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/aevent"><i class="fa fa-circle-o"></i> 이벤트 등록 </a></li>
-                <li><a href="/aeventList"><i class="fa fa-circle-o"></i> 이벤트 리스트 </a></li>
+                <li><a href="/admin/aeventList"><i class="fa fa-circle-o"></i> 이벤트 리스트 </a></li>
                  <li><a href="/aeventPhoto"><i class="fa fa-circle-o"></i> 이벤트 사진 관리 </a></li>
                </ul>
             </li>
@@ -405,8 +429,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> 일별매출</a></li>
-                <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 매출조회</a></li>
+                <li><a href="/adaysaleprice"><i class="fa fa-circle-o"></i> 일별매출</a></li>
+                <li><a href="/asaleprice"><i class="fa fa-circle-o"></i> 매출조회</a></li>
               </ul>
             </li>
             <li>
@@ -419,9 +443,9 @@
               </ul>
             </li>
             <li>
-              <a href="/aNotice">
+              <a href="/admin/aNotice">
                 <i class="fa fa-envelope"></i> <span>공지사항</span>
-                <small class="label pull-right bg-yellow">12</small>
+                <small class="label pull-right bg-yellow">1</small>
               </a>
             </li>
               <li>
@@ -429,26 +453,13 @@
                 <i class="fa fa-envelope"></i> <span>검색</span>
               </a>
             </li>
-            <li>
-              <a href="../mailbox/mailbox.html">
-                <i class="fa fa-envelope"></i> <span>어바웃관리</span>
-                <small class="label pull-right bg-blue">6</small>
-              </a>
-            </li>
+            
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> <span>후기</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-             <!--  <ul class="treeview-menu">
-                <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                <li><a href="../examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                <li><a href="../examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                <li><a href="../examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                <li><a href="../examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                <li><a href="../examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>              
-              </ul>  --> 
+             
             </li>
             <li class="treeview">
               <a href="#">

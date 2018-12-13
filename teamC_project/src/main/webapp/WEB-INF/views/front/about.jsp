@@ -410,40 +410,44 @@
             </div>
          </div>
          
-           <div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+         <div style="text-align:center;">
+           <div class="col-11 col-md-5 col-lg-4 m-lr-auto" style="display:inline-block;">
 				<h3 class="mtext-111 cl2 p-b-16">
                     Leader
                   </h3>
 	 		 <div style="width:200px; height:150px; margin:50px;">		 
-	 		 <img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+	 		 <img src="/resources/front/images/jinhee.jpg" alt="IMG" width="200px" height="270px">
 	 		 <p>김진희</p>
 	 		 </div> 
 	 		 </div>
+	 		</div>
 	 		
-	 		<div style="padding-top: 200px;">
+	 		<div style="text-align:center;">
+	 		<div style="padding-top: 200px; display:inline-block;">
 	     	  <h3 class="mtext-111 cl2 p-b-16">
                     Member
                   </h3>
-	   		<div style="width:200px; height:150px; float:left; margin:35px;">
- 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+	   		<div style="width:200px; height:150px; float:left; margin:40px;">
+ 				<img src="/resources/front/images/jihea.jpg" alt="IMG" width="200px" height="280px">
 	 		 	<p>김지혜</p>
 					</div>
 				
-				<div style="width:200px; height:150px; float:left; margin:35px;">
- 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+				<div style="width:200px; height:150px; float:left; margin:40px;">
+ 				<img src="/resources/front/images/bea.jpg" alt="IMG" width="200px" height="280px">
 	 		 	<p>배세희</p>
 				</div>
 				
-				<div style="width:200px; height:150px; float:left; margin:35px;">
- 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+				<div style="width:200px; height:150px; float:left; margin:40px;">
+ 				<img src="/resources/front/images/yunjeong.jpg" alt="IMG" width="200px" height="280px">
 	 		 	<p>이윤정</p>
 				</div>
 				
-				<div style="width:200px; height:150px; float:left; margin:35px;">
- 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="250px">
+				<div style="width:200px; height:150px; float:left; margin:40px;">
+ 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="280px">
 	 		 	<p>전유진</p>
 				</div>
 				
+				</div>
 				</div>
       </div>
    </section>   

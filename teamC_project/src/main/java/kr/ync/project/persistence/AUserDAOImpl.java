@@ -2,6 +2,7 @@ package kr.ync.project.persistence;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -28,10 +29,10 @@ public class AUserDAOImpl implements AUserDAO {
 	}
 
 	@Override
-	public void keepALogin(String A_ID, String sessionId, Date next) {
+	public void keepALogin(String aID, String sessionId, Date next) {
 
 		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("A_ID", A_ID);
+		paramMap.put("aID", aID);
 		paramMap.put("sessionId", sessionId);
 		paramMap.put("next", next);
 
@@ -43,5 +44,25 @@ public class AUserDAOImpl implements AUserDAO {
 	public AUserVO checkAUserWithSessionKey(String value) {
 
 		return session.selectOne(namespace + ".checkAUserWithSessionKey", value);
+	}
+
+	
+	//어드민 - 회원 리스트 출력
+	@Override
+	public List<UserVO> userlist() throws Exception {
+		return session.selectList(namespace + ".userlist");
+	}
+
+	//어드민 - 회원 삭제
+	@Override
+	public void deleteMember(String mId) throws Exception {
+		session.delete(namespace + ".deleteMember", mId);
+		
+	}
+	//어드민 - 회원 상세 
+	@Override
+	public UserVO readMember(String mId) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".readMember", mId);
 	}
 }

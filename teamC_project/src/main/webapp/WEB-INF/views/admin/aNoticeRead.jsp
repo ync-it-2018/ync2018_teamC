@@ -38,27 +38,23 @@
 					<h3 class="box-title">READ NOTICE</h3>
 				</div>
 				<!-- /.box-header -->
+			<!-- 앞에 소문자로 받아야됨 AnoticeVO -> anoticeNO -->
+				<form role="form" method="post">
 
-				<form role="form" action="modifyPage" method="post">
-
-					<input type='hidden' name='nCode' value="${list.nCode}"> 
-					<input type='hidden' name='page' value="${cri.page}"> 
-					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
-					<input type='hidden' name='searchType' value="${cri.searchType}">
-					<input type='hidden' name='keyword' value="${cri.keyword}">
+					<input type='hidden' name='nCode' value="${anoticeVO.nCode}"> 
 
 				</form>
 				
 				<div class="box-body">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Title</label> 
-						<input type="text" name='nTitle' class="form-control" value="${list.nTitle}"
-							readonly="readonly">
+						<input type="text" name='nTitle' class="form-control" value="${anoticeVO.nTitle}"
+							readonly="readonly"> 
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Content</label>
 						<textarea class="form-control" name="nContents" rows="3"
-							readonly="readonly">${list.nContents}</textarea>
+							readonly="readonly">${anoticeVO.nContents}</textarea>
 					</div>
 				</div>
 				
@@ -66,13 +62,9 @@
 				
   <div class="box-footer">
     
-    <div><hr></div>
-
-    <ul class="mailbox-attachments clearfix uploadedList">
-    </ul>
-    <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
-    <button type="submit" class="btn btn-danger" id="removeBtn">REMOVE</button>
-    <button type="submit" class="btn btn-primary" id="goListBtn">GO LIST </button>
+    <button type="submit" class="btn btn-warning">Modify</button>
+    <button type="submit" class="btn btn-danger">REMOVE</button>
+    <button type="submit" class="btn btn-primary">GO LIST </button>
   </div>
 
 			</div>
@@ -89,27 +81,28 @@
 
 <script>
 $(document).ready(function(){
-	/* update 클릭 */ 
-	$('#modifyBtn').on('click',function(){
-		formObj.attr("action", "/aNoticeModify");
+	
+	var formObj = $("form[role='form']");
+	
+	console.log(formObj);
+	
+	/* 수정 클릭 */ 
+	$('.btn-warning').on('click',function(){
+		formObj.attr("action", "/admin/aNoticeModify");
 		formObj.attr("method", "get");		
 		formObj.submit();
 	});
 	/* 삭제 클릭 */ 
-	$('#removeBtn').on('click',function(){
-		formObj.attr("action", "/aNoticeRemove");
+	$('.btn-danger').on('click',function(){
+		formObj.attr("action", "/admin/deleteNotice");
 		formObj.submit();
 	});  
 	/* 리스트 클릭 */ 
-	$('#goListBtn').on('click',function(){
-		formObj.attr("method", "get");
-		formObj.attr("action", "/aNotice");
-		formObj.submit();
+	$('.btn-primary').on('click',function(){
+		self.location = "/admin/aNotice";
 	});
-})
+});
 </script>
-
-
 
 
 <%@include file="../admin/include/footer.jsp" %>
