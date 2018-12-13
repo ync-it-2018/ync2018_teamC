@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page session="false"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
    <title>Review</title>
    <meta charset="UTF-8">
@@ -153,7 +151,7 @@
 							
 
 							<li class="label1" data-label1="hot">
-								<a href="/blog">Review</a>
+								<a href="/review">Review</a>
 							</li> 
 <!-- 
 							<li>
@@ -250,8 +248,8 @@
                <a href="/index">Home</a>
                <ul class="sub-menu-m">
                   <li><a href="/index">Homepage 1</a></li>
-                  <li><a href="/home_02">Homepage 2</a></li>
-                  <li><a href="/home_03">Homepage 3</a></li>
+                  <li><a href="/home-02">Homepage 2</a></li>
+                  
                </ul>
                <span class="arrow-main-menu-m">
                   <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -267,7 +265,7 @@
             </li>
 
             <li>
-               <a href="/blog">Blog</a>
+               <a href="/review">Review</a>
             </li>
 
             <li>
@@ -297,171 +295,125 @@
       </div>
    </header>
 
+   <!-- Cart -->
+   <div class="wrap-header-cart js-panel-cart">
+      <div class="s-full js-hide-cart"></div>
+
+      <div class="header-cart flex-col-l p-l-65 p-r-25">
+         <div class="header-cart-title flex-w flex-sb-m p-b-8">
+            <span class="mtext-103 cl2">
+               Your Cart
+            </span>
+
+            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+               <i class="zmdi zmdi-close"></i>
+            </div>
+         </div>
+         
+         <div class="header-cart-content flex-w js-pscroll">
+            <ul class="header-cart-wrapitem w-full">
+               <li class="header-cart-item flex-w flex-t m-b-12">
+                  <div class="header-cart-item-img">
+                     <img src="/resources/front/images/item-cart-01.jpg" alt="IMG">
+                  </div>
+
+                  <div class="header-cart-item-txt p-t-8">
+                     <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                        White Shirt Pleat
+                     </a>
+
+                     <span class="header-cart-item-info">
+                        1 x $19.00
+                     </span>
+                  </div>
+               </li>
+
+               <li class="header-cart-item flex-w flex-t m-b-12">
+                  <div class="header-cart-item-img">
+                     <img src="/resources/front/images/item-cart-02.jpg" alt="IMG">
+                  </div>
+
+                  <div class="header-cart-item-txt p-t-8">
+                     <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                        Converse All Star
+                     </a>
+
+                     <span class="header-cart-item-info">
+                        1 x $39.00
+                     </span>
+                  </div>
+               </li>
+
+               <li class="header-cart-item flex-w flex-t m-b-12">
+                  <div class="header-cart-item-img">
+                     <img src="/resources/front/images/item-cart-03.jpg" alt="IMG">
+                  </div>
+
+                  <div class="header-cart-item-txt p-t-8">
+                     <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                        Nixon Porter Leather
+                     </a>
+
+                     <span class="header-cart-item-info">
+                        1 x $17.00
+                     </span>
+                  </div>
+               </li>
+            </ul>
+            
+            <div class="w-full">
+               <div class="header-cart-total w-full p-tb-40">
+                  Total: $75.00
+               </div>
+
+               <div class="header-cart-buttons flex-w w-full">
+                  <a href="/shoping_cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                     View Cart
+                  </a>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
    <!-- Title page -->
-   <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/resources/front/images/rcat4.jpg');">
+   <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/resources/front/images/sd.jpg');">
       <h2 class="ltext-105 cl0 txt-center">
-         Review
+         Event
       </h2>
    </section>   
+
+
    <!-- Content page -->
-   <!-- Main content -->
-<section class="content">
-	<div class="row" style="padding : 80px;">
-		<!-- left column -->
-		<div class="col-md-12">
-			<!-- general form elements -->
+   <section class="bg0 p-t-75 p-b-120">
+      <div class="container">
+         <!-- 이벤트 반복 구문 -->
+         <c:forEach items = "${reviewList}" var="review">
+         <div class="row" style="margin-left:30px; margin-top:50px;">
+            <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
+               <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md" style="margin-top:20px;">
+                  <h3 class="mtext-111 cl2 p-b-16">
+                     ${review.rTitle}
+                  </h3> 
 
-			<div class="box">
-				<div class="box-header with-border">
-					<h3 class="box-title">LIST ALL PAGE</h3>
-				</div>
-				
-				<div class='box-body'>
+                  <p class="stext-113 cl6 p-b-26">
+                  	${review.rContents}<br>  
+                  </p>
+                  
+               </div>
+               <hr>
+            </div>
 
-					<select name="searchType">
-						<option value="n"
-							<c:out value="${cri.searchType == null?'selected':''}"/>>
-							---</option>
-						<option value="t"
-							<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-							Title</option>
-						<option value="c"
-							<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-							Content</option>
-						<option value="w"
-							<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-							Writer</option>
-						<option value="tc"
-							<c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
-							Title OR Content</option>
-						<option value="cw"
-							<c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
-							Content OR Writer</option>
-						<option value="tcw"
-							<c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
-							Title OR Content OR Writer</option>
-					</select> 
-					<div>
-						<input type="text" name='keyword' id="keywordInput"
-							value='${cri.keyword }'>
-						<button id='searchBtn'>Search</button>
-						<button id='newBtn'>New Board</button>
-					</div>
-				</div>
-				
-				<div class="box-body">
-					
-					<table class="table table-bordered">
-						<tr>
-							<th style="width: 10px">BNO</th>
-							<th>TITLE</th>
-							<th>WRITER</th>
-							<th>REGDATE</th>
-							<th style="width: 40px">VIEWCNT</th>
-						</tr>
-					
-					
-					<c:forEach items="${list}" var="boardVO">
-					
-						<tr>
-							<td>${boardVO.bno}</td>
-							<td>
-							<!-- <a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</a>-->
-							<a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>${boardVO.title}
-								<strong>[ ${boardVO.replycnt} ]</strong>
-							</a>
-							</td>
-							<td>${boardVO.writer}</td>
-							<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-									value="${boardVO.regdate}" /></td>
-							<td><span class="badge bg-red">${boardVO.viewcnt }</span></td>
-						</tr>
-					
-					</c:forEach>
-					
-					</table>
-
-				</div>
-				<!-- /.box-body -->
-				<div class="box-footer">
-				
-					<div class="text-center">
-							<ul class="pagination">
-								 
-								 <c:if test="${pageMaker.prev}">
-								<li><a
-									href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
-								</c:if>
-	
-								<c:forEach begin="${pageMaker.startPage }"
-									end="${pageMaker.endPage }" var="idx">
-									<li
-										<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-										<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
-									</li>
-								</c:forEach>
-	
-								<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-									<li><a
-										href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
-								</c:if>
-								
-							</ul>
-						</div>
-				
-				</div>
-				<!-- /.box-footer-->
-			</div>
-		</div>
-		<!--/.col (left) -->
-
-	</div>
-	<!-- /.row -->
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-<form id="jobForm">
-  <input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
-  <input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>
-</form>
-<script>
-	var result = '${msg}';
-
-	if (result == 'SUCCESS') {
-		alert("처리가 완료되었습니다.");
-	}
-	
-	/*
-	$(".pagination li a").on("click", function(event){
-		
-		event.preventDefault(); 
-		
-		var targetPage = $(this).attr("href");
-		
-		var jobForm = $("#jobForm");
-		jobForm.find("[name='page']").val(targetPage);
-		jobForm.attr("action","/board/listPage").attr("method", "get");
-		jobForm.submit();
-	});
-	*/
-	
-	$(document).ready(function() {
-		$('#searchBtn').on("click",function(event) {
-			self.location = "list"
-							+ '${pageMaker.makeQuery(1)}'
-							+ "&searchType="
-							+ $("select option:selected").val()
-							+ "&keyword=" + $('#keywordInput').val();
-
-		});
-
-		$('#newBtn').on("click", function(evt) {
-			self.location = "register";
-		});
-	});
-</script>  
+         </div>
+         </c:forEach>
+         
+      </div>
+   </section>   
    
+      
+      
       
 
    <!-- Footer -->
@@ -655,6 +607,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    </script>
 <!--===============================================================================================-->
    <script src="/resources/front/js/main.js"></script>
-
+   
 </body>
-</html>
+</html>>

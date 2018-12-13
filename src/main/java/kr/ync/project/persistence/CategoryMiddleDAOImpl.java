@@ -8,9 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.domain.CategoryBigVO;
+import kr.ync.project.domain.CategoryMiddleVO;
 
 @Repository
-public class CategoryBigDAOImpl implements CategoryBigDAO{
+public class CategoryMiddleDAOImpl implements CategoryMiddleDAO{
 
 	@Inject
     private SqlSession session;
@@ -18,18 +19,13 @@ public class CategoryBigDAOImpl implements CategoryBigDAO{
 	private static String namespace = "kr.ync.project.mapper.categoryMapper";
 	
 	@Override
-	public void insert(CategoryBigVO categorybig) {
-		session.insert("bigcreate", categorybig);
+	public void insert(CategoryMiddleVO categorymiddle) {
+		session.insert("middlecreate", categorymiddle);
 	}
 
 	@Override
-	public List<CategoryBigVO> listAll() throws Exception {
-		return session.selectList(namespace + ".listAll");
-	}
-
-	@Override
-	public CategoryBigVO read(Integer pBig) throws Exception {
-		return session.selectOne(namespace + ".read", pBig);
+	public List<CategoryMiddleVO> mlistAll() throws Exception {
+		return session.selectList(namespace + ".mlistAll");
 	}
 	 
 }

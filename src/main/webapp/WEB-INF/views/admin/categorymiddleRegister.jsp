@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="include/header.jsp" %>
 
@@ -22,19 +23,28 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">카테고리 - 대분류 등록</h3><br><br>
+					<h3 class="box-title">카테고리 - 중분류 등록</h3><br><br>
 				</div>
 				<!-- /.box-header -->
 				
-				<form class="modal-content" id="categorybigForm" method="POST" action="/categorybig/categorybig.do">
+				<form class="modal-content" id="categorybigForm" method="POST" action="/categorymiddle/categorymiddle.do">
 					<div class="box-body">
+						<!-- 대분류 숫자코드!! -->
+						<div>
+							<select name="pBigSlect"> 
+								<c:forEach items="${blist}" var="middle">
+									 <option value="${middle.pBig}">${middle.pBigName}</option>
+								</c:forEach>
+							</select>
+						</div>
+					
 						<div class="form-group">
 							<label for="exampleInputEmail1">카테고리 코드(숫자)</label> <input type="text"
-								name="pBig" class="form-control" placeholder="카테고리 코드">
+								name="pMiddle" class="form-control" placeholder="카테고리 코드">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">카테고리 명</label> <input type="text"
-								name="pBigName" class="form-control" placeholder="카테고리 명">
+								name="pMiddleName" class="form-control" placeholder="카테고리 명">
 						</div>
 					</div>
 					
@@ -47,31 +57,7 @@
 				
 					</div>
 				</form>
-				<form role="form" method="post" id="registerForm">
-	<div class="box-body">
-		<div class="form-group">
-			<label for="exampleInputEmail1">대분류 카테고리 번호</label> <input type="number"
-				name='pBig' class="form-control" placeholder="번호입력">
-		</div>
-		<div class="form-group">
-			<label for="exampleInputEmail1">대분류 카테고리명</label> 
-			<input type="text" name="pBigName" 
-			  class="form-control" placeholder="카테고리명 입력">
-		</div>
-	</div>
 
-	<!-- /.box-body -->
-
-	<div class="box-footer">
-    
-    <div><hr></div>
-
-    <ul class="mailbox-attachments clearfix uploadedList">
-    </ul>
-    <button type="submit" class="btn btn-danger" id="write">등록</button>
-    <button type="submit" class="btn btn-primary" id="goListBtn">취소</button>
-  </div>
-</form>
 
 			</div>
 			<!-- /.box -->
@@ -82,7 +68,6 @@
 	<!-- /.row -->
 </section>
 <!-- /.content -->
-</div>
 <!-- /.content-wrapper -->
 
 <script type="text/javascript" src="/resources/js/upload.js"></script>
@@ -245,17 +230,5 @@ $(".uploadedList").on("click", ".mailbox-attachment-info a", function(event){
 	});
 });
 </script>
-<%@include file="../include/footer.jsp"%>
-<script>
-function fn_view(pBig){
-    
-    var form = document.getElementById("categoryForm");
-    var url = "<c:url value='/categorybigRead'/>";
-    url = url + "?pBig=" + pBig;
-    
-    form.action = url;    
-    form.submit(); 
-}
-</script>
 
-<%@include file="../admin/include/footer.jsp"%>
+<%@include file="../include/footer.jsp"%>

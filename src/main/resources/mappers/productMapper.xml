@@ -16,7 +16,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			  ,A.P_SMALL
 			  ,A.P_BIG
 			  ,A.P_MIDDLE
-			  ,A.E_NUM
 			  ,A.P_SIZE
 			  ,A.P_CODE
 			  ,B.P_IMAGE_SRC
@@ -40,7 +39,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			  ,A.P_SMALL
 			  ,A.P_BIG
 			  ,A.P_MIDDLE
-			  ,A.E_NUM
 			  ,A.P_SIZE
 			  ,A.P_CODE
 			  ,B.P_IMAGE_SRC
@@ -65,7 +63,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				p_small,
 				p_middle,
 				p_big,
-				e_num,
 				size_s,
 				size_m,
 				size_l,

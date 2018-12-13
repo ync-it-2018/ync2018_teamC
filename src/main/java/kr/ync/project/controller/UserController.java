@@ -50,7 +50,7 @@ public class UserController {
 		
 		return "front/loginPost2";
 
-}
+	}
 	
 	//preHandle 실행
 	/*@PostMapping(value = "/loginPost")

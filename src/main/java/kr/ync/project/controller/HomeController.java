@@ -29,7 +29,9 @@ import kr.ync.project.service.AnoticeService;
 import kr.ync.project.service.EventService;
 import kr.ync.project.service.MLevelService;
 import kr.ync.project.domain.ProductVO;
+import kr.ync.project.domain.ReviewVO;
 import kr.ync.project.service.ProductService;
+import kr.ync.project.service.ReviewService;
 /**
  * Handles requests for the application home page.
  */
@@ -78,12 +80,18 @@ public class HomeController {
 		return "front/product";
 	}
 	
-	@RequestMapping(value = "/review", method = RequestMethod.GET)
-	public String review(Locale locale, Model model) {
+	/*
+	@RequestMapping(value = "/reviewList", method = RequestMethod.GET)
+	public String reviewList(Locale locale, Model model) throws Exception {
+		
+		logger.info("리스트목록보기", locale);
+		
+		model.addAttribute("reviewList", reviewService.rlistAll());
+		
 		
 		return "front/review";
 	}
-	
+	*/
 	@Inject
 	private EventService eventService;
 	
@@ -317,6 +325,17 @@ public class HomeController {
 		return "admin/aeventRead";
 	}
 	
+	@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
+	public String categorybigRegister(Locale locale, Model model) {
+		
+		return "admin/categorybigRegister";
+	}
+	
+	@RequestMapping(value = "/categorymiddleRegister", method = RequestMethod.GET)
+	public String categorymiddleRegister(Locale locale, Model model) {
+		
+		return "admin/categorymiddleRegister";
+	}
 
 	@Inject
 	private MLevelService mlevelservice;

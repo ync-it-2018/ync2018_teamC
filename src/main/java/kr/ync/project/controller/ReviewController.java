@@ -22,48 +22,50 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.WebUtils;
 
 import kr.ync.project.domain.EventVO;
+import kr.ync.project.domain.ReviewVO;
 import kr.ync.project.domain.SignupVO;
 import kr.ync.project.domain.UserVO;
 import kr.ync.project.dto.LoginDTO;
 import kr.ync.project.service.EventService;
+import kr.ync.project.service.ReviewService;
 import kr.ync.project.service.SignupService;
 import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/event/*")
+@RequestMapping("/review/*")
 @Slf4j
-public class EventController {
+public class ReviewController {
 
-	private static final Logger logger = LoggerFactory.getLogger(EventController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ReviewController.class);
 	
 	@Autowired
-	private EventService eventService;
+	private ReviewService reviewService;
     
     //SignUp GET
-    @RequestMapping(value="/event.do", method=RequestMethod.GET)
-    public void eventGET() {
+    @RequestMapping(value="/review.do", method=RequestMethod.GET)
+    public void reviewGET() {
         
     }
     
     //SignUp POST
-    @RequestMapping(value="/event.do", method=RequestMethod.POST)
-    public String eventPOST(EventVO eventVO) {
+    @RequestMapping(value="/review.do", method=RequestMethod.POST)
+    public String reviewPOST(ReviewVO reviewVO) {
             
-     eventService.insertEvent(eventVO);
+    	reviewService.insertReview(reviewVO);
             
         return "admin/index";
     }
     
-    @RequestMapping(value="/eventPhoto.do", method=RequestMethod.GET)
-    public void eventPhotoGET() {
+    @RequestMapping(value="/reviewPhoto.do", method=RequestMethod.GET)
+    public void reviewPhotoGET() {
         
     }
     
-    @RequestMapping(value="/eventPhoto.do", method=RequestMethod.POST)
-    public String eventPhotoPOST(EventVO eventVO) {
+    @RequestMapping(value="/reviewPhoto.do", method=RequestMethod.POST)
+    public String reviewPhotoPOST(ReviewVO reviewVO) {
             
-     eventService.insertEventPhoto(eventVO);
+    	reviewService.insertReviewPhoto(reviewVO);
             
         return "admin/index";
     }
