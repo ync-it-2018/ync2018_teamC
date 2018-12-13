@@ -69,7 +69,7 @@
 
 							<tr>
 								<td>${EventVO.eNum}</td>
-								<td><a href='' onClick='fe_view(${EventVO.eNum})'><c:out value="${EventVO.eName}"/></a></td>
+								<td><a href='/admin/aeventDetail?eNum=${EventVO.eNum}'>${EventVO.eName}</a></td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${EventVO.eStartdate}" /></td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${EventVO.eEnddate}" /></td>
 							</tr>
@@ -151,19 +151,6 @@
 
 			});
 </script>
-
-<script>
-function fe_view(eNum){
-    
-    var form = document.getElementById("eventForm");
-    var url = "<c:url value='/aeventRead'/>";
-    url = url + "?eNum=" + eNum;
-    
-    form.action = url;    
-    form.submit(); 
-}
-</script>
-
 
 
 <%@include file="../admin/include/footer.jsp" %>

@@ -35,22 +35,35 @@ public class EventServiceImpl implements EventService {
 		return dao.eventList(eventVO);
 	}
 	
+	//리스트
 	@Override
 	public List<EventVO> elistAll() throws Exception {
 		return dao.elistAll();
 	}
 
-	
+	//상세
 	@Override
-	public EventVO read(Integer eNum) throws Exception {
+	public EventVO readEvent(Integer eNum) throws Exception {
 
-		return dao.read(eNum);
+		return dao.readEvent(eNum);
 	}
 
 	@Override
 	public void insertEventPhoto(EventVO eventVO) {
 		// TODO Auto-generated method stub
 		dao.insertEventPhoto(eventVO);
+	}
+
+	//수정
+	@Override
+	public void updateEvent(EventVO vo) throws Exception {
+		dao.updateEvent(vo);
+	}
+
+	//삭제
+	@Override
+	public void deleteEvent(Integer eNum) throws Exception {
+		dao.deleteEvent(eNum);
 	}
 }
 

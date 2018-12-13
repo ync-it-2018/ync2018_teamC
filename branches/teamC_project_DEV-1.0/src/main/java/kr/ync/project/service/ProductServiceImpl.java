@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.ProductVO;
 import kr.ync.project.domain.SearchCriteria;
+import kr.ync.project.persistence.AnoticeDAO;
 import kr.ync.project.persistence.ProductDAO;
 
 @Service
@@ -18,69 +19,43 @@ public class ProductServiceImpl implements ProductService{
 	@Inject
 	private ProductDAO dao;
 
-	@Override
-
-	public List<ProductVO> listProduct() throws Exception {
-		return dao.listProduct();
-	}
-
-	public List<ProductVO> productList(ProductVO productVO) {
-		return dao.productList(productVO);
-
-	}
-
-	@Override
-	public void updateProduct(ProductVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public ProductVO detailProduct(String p_code) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void deleteProduct(String p_code) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void insertProduct(ProductVO vo) throws Exception {
-		dao.insertProduct(vo);
-	}
-
+	//목록
 	@Override
 	public List<ProductVO> listAll() throws Exception {
 		return dao.listAll();
 	}
 
+	//상세
 	@Override
-	public List<ProductVO> listCriteria(Criteria cri) throws Exception {
-		return dao.listCriteria(cri);
+	public ProductVO readProduct(String pCode) throws Exception {
+		return dao.readProduct(pCode);
 	}
 
+	//등록
 	@Override
-	public int listCountCriteria(Criteria cri) throws Exception {
-		return dao.countPaging(cri);
+	public void createProduct(ProductVO vo) throws Exception {
+		dao.createProduct(vo);
 	}
 
+	//수정
 	@Override
-	public List<ProductVO> listSearchCriteria(SearchCriteria cri) throws Exception {
-		return dao.listSearch(cri);
+	public void updateProduct(ProductVO vo) throws Exception {
+		dao.updateProduct(vo);
 	}
 
+	//삭제
 	@Override
-	public int listSearchCount(SearchCriteria cri) throws Exception {
-		return dao.listSearchCount(cri);
+	public void deleteProduct(String pCode) throws Exception {
+		dao.deleteProduct(pCode);
 	}
 
+	
+	//프론트 상품리스트
 	@Override
-	public ProductVO read(String pCode) throws Exception {
-		// TODO Auto-generated method stub
-		return dao.read(pCode);
+	public List<ProductVO> listProduct() throws Exception {
+		return dao.listProduct();
 	}
+
+	
 
 }

@@ -393,7 +393,7 @@
                 <li><a href="/categorymiddleRegister"><i class="fa fa-circle-o"></i> 카테고리관리(중) </a></li>
                 <li><a href="/categorybig/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리(소) </a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
-                <li><a href="/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
+                <li><a href="/admin/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -418,7 +418,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/aevent"><i class="fa fa-circle-o"></i> 이벤트 등록 </a></li>
-                <li><a href="/aeventList"><i class="fa fa-circle-o"></i> 이벤트 리스트 </a></li>
+                <li><a href="/admin/aeventList"><i class="fa fa-circle-o"></i> 이벤트 리스트 </a></li>
                  <li><a href="/aeventPhoto"><i class="fa fa-circle-o"></i> 이벤트 사진 관리 </a></li>
                </ul>
             </li>

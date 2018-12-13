@@ -1,6 +1,5 @@
 package kr.ync.project.controller;
 
-import java.awt.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -9,19 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kr.ync.project.domain.BoardVO;
-import kr.ync.project.domain.CategoryBigVO;
 import kr.ync.project.domain.CategoryMiddleVO;
-import kr.ync.project.domain.EventVO;
-import kr.ync.project.service.CategoryBigService;
 import kr.ync.project.service.CategoryMiddleService;
-import net.sf.json.JSONArray;
 
 @Controller
 @RequestMapping("/categorymiddle/*")

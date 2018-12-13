@@ -40,6 +40,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         )
     </insert>			
     
+    
+    <!-- front -->
     <select id="selectEvent" parameterType="hashMap" resultType="EventVO">
     	SELECT A.E_NAME,
            	 A.E_DETAIL,
@@ -52,26 +54,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       WHERE A.E_NUM = B.E_NUM
     </select>
     
+    <!-- 리스트 -->
     <select id="elistAll" resultType="EventVO">
 	<![CDATA[
 	SELECT 	E_NUM,
 			E_NAME,
 			E_STARTDATE,
-			E_ENDDATE,
-			E_DETAIL
+			E_ENDDATE
 	FROM TC_EVENT
+	ORDER BY E_NUM DESC
 	]]>  
 	</select>
 
-	<select id="read" resultType="EventVO">
+	<select id="readEvent" resultType="EventVO">
 		SELECT 	E_NUM,
 				E_NAME,
+				E_DETAIL,
 				E_STARTDATE,
-				E_ENDDATE
+				E_ENDDATE,
+				E_LINK
 		FROM TC_EVENT
 		WHERE	E_NUM = #{E_NUM}
 	</select>
-
+	
+	
+	<update id="updateEvent">
+	UPDATE TC_EVENT SET E_NAME = #{eName}, E_DETAIL = #{eDetail}, 
+						E_STARTDATE = #{eStartdate}, E_ENDDATE = #{eEnddate}, E_LINK = #{eLink}
+	WHERE E_NUM = #{eNum}
+	</update>
+	
+	<delete id="deleteEvent">
+	delete from TC_EVENT where E_NUM = #{eNum}
+	</delete>
 </mapper>
 
 
