@@ -5,15 +5,12 @@
 <head>
 <title>Home</title>
 </head>
-<script>
-	//self.location = "/user/value";
+<script type="text/javascript">
+	alert("오류");
+	location.href = "/front/login";
 </script>
 <body>
-	   ID :  ${M_ID}
-	   <hr>
-	   PW :  ${M_PWD}
-	   
-	   <input id="loginok" type="button" value="OK"/>
+	  
 </body>
 </html>
 

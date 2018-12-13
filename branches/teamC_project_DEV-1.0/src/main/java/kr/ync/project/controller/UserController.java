@@ -29,7 +29,7 @@ import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/user/*")
+@RequestMapping("/front/*")
 @Slf4j
 public class UserController {
 
@@ -42,6 +42,11 @@ public class UserController {
 		return "front/login";
 	}
 	
+	@GetMapping(value = "/loginError")
+	public String loginError(@ModelAttribute("dto") LoginDTO dto) {
+		log.info("Login Error");
+		return "front/loginError";
+	}
 	@GetMapping(value = "/value")
 	public String valueGET(@ModelAttribute("UserVO") UserVO vo , Model model) {
 		log.info("UserController valueGET");
@@ -52,54 +57,35 @@ public class UserController {
 
 	}
 	
-	//preHandle 실행
-	/*@PostMapping(value = "/loginPost")
-	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
+	
+	//postHandle 실행
+	@PostMapping("/index")
+	public void loginPost(LoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		UserVO vo = service.login(dto);
-		
-		// UserVO가 null 이란 말은 DB에서 해당 user에 대한 data가 없다는 말이다.  
+		System.out.println("넘어왔니?:  "+ vo);
+		// 로그인 실패시
 		if (vo == null) {
 			return;
 		}
-
-		model.addAttribute("userVO", vo);
-
-	}*/
-	
-	//postHandle 실행
-	@PostMapping("/loginPost")
-	//@ResponseStatus(value=HttpStatus.OK)
-	public String loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
-
-		UserVO vo = service.login(dto);
-
-		// 로그인 실패시
-		if (vo == null) {
-			return "front/login";
-		}
-		
 		log.info(vo.getmId());
 		model.addAttribute("UserVO", vo);
-		//JOptionPane.showMessageDialog(frame, "Eggs are not supposed to be green.");
 		
-
-		/*if (dto.isUseCookie()) {
+		if (dto.isUseCookie()) {
 
 			int amount = 60 * 60 * 24 * 7;
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
-			
-			 
-		}*/
+			service.keepLogin(vo.getmId(), session.getId(), sessionLimit);
+
+		}
 		
-		
-		return "front/loginPost";
+	
 	}
 
-	/*@GetMapping(value = "/logout")
+	@GetMapping(value = "/logout")
+	//@RequestMapping(value = "/logout", method=RequestMethod.GET)
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
@@ -121,12 +107,11 @@ public class UserController {
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
-				service.keepLogin(vo.getUids(), session.getId(), new Date());
+				service.keepLogin(vo.getmId(), session.getId(), new Date());
 				log.info("logout success................");
 			}
 		}
-		response.sendRedirect("/sboard/list");
-	}*/
-	
+		response.sendRedirect("/index");
+	}
 	
 }

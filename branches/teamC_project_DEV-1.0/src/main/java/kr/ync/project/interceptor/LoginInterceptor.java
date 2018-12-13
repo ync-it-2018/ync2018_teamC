@@ -21,15 +21,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			ModelAndView modelAndView) throws Exception {
 
 		HttpSession session = request.getSession();
-
 		ModelMap modelMap = modelAndView.getModelMap();
-		Object userVO = modelMap.get("userVO");
-		
+		Object UserVO = modelMap.get("UserVO");	
 		// UserVO가 null 이란 말은 DB에서 해당 user에 대한 data가 없다는 말이다.  
-		if (userVO != null) {
+		if (UserVO != null) {
 
 			log.info("new login success");
-			session.setAttribute(LOGIN, userVO);
+			session.setAttribute(LOGIN, UserVO);
 
 			if (request.getParameter("useCookie") != null) {
 
@@ -42,9 +40,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			//response.sendRedirect("/");
 			Object dest = session.getAttribute("dest");
 			log.info("target URI : " + (String) dest);
-			response.sendRedirect(dest != null ? (String) dest : "/");
+			response.sendRedirect(dest != null ? (String) dest : "/index");
 		} else {
-			response.sendRedirect("로그인에러jsp경로적는곳");
+			log.info("Error =" + modelMap.get("UserVO") );
+			response.sendRedirect("/front/loginError");
 		}
 	}
 
