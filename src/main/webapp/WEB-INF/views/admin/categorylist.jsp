@@ -38,7 +38,7 @@
                   <c:forEach items="${list}" var="CategoryBigVO">
                      <tr>
                         <td>${CategoryBigVO.pBig}</td>
-                        <td><a href='' onClick='fn_view(${CategoryBigVO.pBig})'><c:out value="${CategoryBigVO.pBigName}"/></a></td>
+                        <td><a href='/categorybigRead?pBig=${CategoryBigVO.pBig}'>${CategoryBigVO.pBigName}</a></td>
                         <td>
                         <button class="btn btn-primary" id="modifyBtn">수정</button>
                         <button class="btn btn-primary" id="deleteBtn">삭제</button>

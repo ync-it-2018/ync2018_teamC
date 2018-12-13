@@ -3,17 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="include/header.jsp" %>
 
-<style>
-.fileDrop {
-  width: 80%;
-  height: 100px;
-  border: 1px dotted gray;
-  background-color: lightslategrey;
-  margin: auto;
-  
-}
-</style>
-
 <!-- Main content -->
 <section class="content">
 <<<<<<< .mine
@@ -137,7 +126,7 @@ $(document).ready(function(){
       }
       
       //상품 정보 전송
-      document.form.action  "/categorybig/categorybig.do" ;
+      document.form.action  "/categorybig/categorylist" ;
       document.form.submit();
    });
    

@@ -38,21 +38,34 @@ public class EventDAOImpl implements EventDAO {
 		return session.selectList(namespace + ".selectEvent", eventVO);
 	}
 
+	//리스트
 	@Override
 	public List<EventVO> elistAll() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".elistAll");
 	}
-
+	//상세
 	@Override
-	public EventVO read(Integer eNum) throws Exception {
+	public EventVO readEvent(Integer eNum) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne(namespace + ".read", eNum);
+		return session.selectOne(namespace + ".readEvent", eNum);
 	}
 
 	@Override
 	public void insertEventPhoto(EventVO eventVO) {
 		// TODO Auto-generated method stub
 		session.insert("insertEventPhoto",eventVO);
+	}
+
+	//수정
+	@Override
+	public void updateEvent(EventVO vo) throws Exception {
+		session.update(namespace + ".updateEvent", vo);
+	}
+
+	//삭제
+	@Override
+	public void deleteEvent(Integer eNum) throws Exception {
+		session.delete(namespace + ".deleteEvent", eNum);
 	}
 }

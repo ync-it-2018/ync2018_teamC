@@ -3,33 +3,22 @@ package kr.ync.project.controller;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-
-import javax.inject.Inject;
 
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import org.springframework.web.bind.annotation.RequestParam;
-
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.domain.EventVO;
-import kr.ync.project.service.AnoticeService;
+import kr.ync.project.domain.ProductVO;
 import kr.ync.project.service.EventService;
 import kr.ync.project.service.MLevelService;
-import kr.ync.project.domain.ProductVO;
-import kr.ync.project.domain.ReviewVO;
 import kr.ync.project.service.ProductService;
 import kr.ync.project.service.ReviewService;
 /**
@@ -154,7 +143,7 @@ public class HomeController {
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
 	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
 		
-		model.addAttribute("productData", productService.read(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
+		model.addAttribute("productData", productService.readProduct(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
 		
 		return "front/product_detail";
 	}
@@ -196,11 +185,7 @@ public class HomeController {
 		return "admin/coInfo";
 	}
 	
-	@RequestMapping(value = "/productup", method = RequestMethod.GET)
-	public String productup(Locale locale, Model model) {
-		
-		return "admin/aproduct/productup";
-	}
+	
 	
 	@RequestMapping(value = "/addslider", method = RequestMethod.GET)
 	public String addslider(Locale locale, Model model) {
@@ -302,30 +287,7 @@ public class HomeController {
 		return "admin/aeventUp";
 	}
 	
-	@Inject
-	private EventService eventservice;
 	
-	@RequestMapping(value = "/aeventList", method = RequestMethod.GET)
-	public String aeventList(Locale locale, Model model) throws Exception {
-		
-		logger.info("리스트목록보기", locale);
-		
-		model.addAttribute("eventlist", eventservice.elistAll());
-		
-		
-		return "admin/aeventList";
-	}
-	
-	
-	@RequestMapping(value = "/aeventRead", method = {RequestMethod.GET,RequestMethod.POST})
-	public String aeventRead(@RequestParam("eNum")Integer eNum, Model model) throws Exception {
-		
-		logger.info("리스트상세보기");	
-		
-		model.addAttribute("list",eventservice.read(eNum));
-		
-		return "admin/aeventRead";
-	}
 	
 	@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
 	public String categorybigRegister(Locale locale, Model model) {

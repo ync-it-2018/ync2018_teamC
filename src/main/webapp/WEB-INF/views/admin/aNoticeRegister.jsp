@@ -80,17 +80,17 @@
 		
 		if(nCode == ""){
 			alert("번호를 입력하세요");
-			document.form.nCode.focus();
+			form.nCode.focus();
 			return;
 		}
 		if(nTitle == ""){
 			alert("제목을 입력하세요");
-			document.form.nTitle.focus();
+			form.nTitle.focus();
 			return;
 		}
 		if(nContents == ""){
 			alert("내용을 입력하세요");
-			document.form.nContents.focus();
+			orm.nContents.focus();
 			return;
 		}
 		form.action = "<c:url value='/aNotice'/>";
