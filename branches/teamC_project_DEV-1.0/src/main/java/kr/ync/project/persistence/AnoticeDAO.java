@@ -26,4 +26,7 @@ public interface AnoticeDAO {
 	public List<AnoticeVO> listPage(int page) throws Exception;
 	
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception;
+	
+	//프론트 목록
+	public List<AnoticeVO> flistAll() throws Exception;
 }

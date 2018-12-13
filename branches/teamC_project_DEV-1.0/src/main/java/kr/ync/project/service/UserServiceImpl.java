@@ -35,4 +35,10 @@ public class UserServiceImpl implements UserService {
 
 		return dao.checkUserWithSessionKey(value);
 	}
+
+	@Override
+	public UserVO join(LoginDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

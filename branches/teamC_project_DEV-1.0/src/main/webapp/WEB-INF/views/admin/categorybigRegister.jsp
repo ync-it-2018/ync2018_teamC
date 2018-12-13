@@ -16,6 +16,47 @@
 
 <!-- Main content -->
 <section class="content">
+<<<<<<< .mine
+	<div class="row">
+		<!-- left column -->
+		<div class="col-md-12">
+			<!-- general form elements -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">카테고리 - 대분류 등록</h3><br><br>
+				</div>
+				<!-- /.box-header -->
+				
+				<form class="modal-content" id="categorybigForm" method="POST" action="/categorybig/categorybig.do">
+					<div class="box-body">
+						<div class="form-group">
+							<label for="exampleInputEmail1">카테고리 코드(숫자)</label> <input type="text"
+								name="pBig" class="form-control" placeholder="카테고리 코드">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">카테고리 명</label> <input type="text"
+								name="pBigName" class="form-control" placeholder="카테고리 명">
+						</div>
+					</div>
+					
+					<div class="box-footer">
+						<div>
+							<hr>
+						</div>
+				
+						<button type="submit" class="btn btn-warning" style="float:right;" >등록</button>
+				
+					</div>
+				</form>
+				
+
+			</div>
+			<!-- /.box -->
+		</div>
+		<!--/.col (left) -->
+
+	</div>
+	<!-- /.row -->
    <div class="row">
       <!-- left column -->
       <div class="col-md-12">

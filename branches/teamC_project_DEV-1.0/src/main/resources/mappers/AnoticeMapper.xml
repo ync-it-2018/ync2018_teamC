@@ -14,6 +14,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	]]>  
 </select>
 
+<select id="flistAll" resultType="AnoticeVO">
+	<![CDATA[
+	SELECT 	N_CODE, N_TITLE, N_UP_DATE
+	FROM TC_NOTICE
+	WHERE N_CODE > 0
+	ORDER BY N_CODE DESC
+	]]>  
+</select>
+
 
 <insert id="createNotice">
 	INSERT INTO TC_NOTICE (N_CODE, N_TITLE, N_CONTENTS) 
