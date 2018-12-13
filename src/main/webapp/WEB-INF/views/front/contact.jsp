@@ -413,10 +413,11 @@
 							<th style="width: 30%;">DATE</th>
 						</tr>
 
-						<c:forEach items="${serverTime}" var="AnoticeVO">
+						<c:forEach items="${fclist}" var="AnoticeVO">
 							<tr>
 								<td>${AnoticeVO.nCode}</td>
-								<td><a href='#' onClick='fn_view(${AnoticeVO.nCode})'><c:out value="${AnoticeVO.nTitle}"/></a></td>
+								<td><a href='#' onClick='fn_view(${AnoticeVO.nCode})'>
+								<c:out value="${AnoticeVO.nTitle}"/></a></td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${AnoticeVO.nUpDate}" /></td>
 							</tr>
 						</c:forEach>

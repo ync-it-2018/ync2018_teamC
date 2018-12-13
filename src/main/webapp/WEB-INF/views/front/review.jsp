@@ -394,9 +394,9 @@
          <div class="row" style="margin-left:30px; margin-top:50px;">
             <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
                <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md" style="margin-top:20px;">
-                  <h3 class="mtext-111 cl2 p-b-16">
+                  <h4 class="mtext-111 cl2 p-b-16">
                      ${review.rTitle}
-                  </h3> 
+                  </h4> 
 
                   <p class="stext-113 cl6 p-b-26">
                   	${review.rContents}<br>  

@@ -22,4 +22,7 @@ public interface AnoticeService {
 	
 	//페이징
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception;
+	
+	//프론트 목록
+	public List<AnoticeVO> flistAll() throws Exception;
 }

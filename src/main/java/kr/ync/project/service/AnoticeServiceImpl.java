@@ -54,5 +54,11 @@ public class AnoticeServiceImpl implements AnoticeService {
 		return dao.listCriteria(cri);
 	}
 
+	@Override
+	public List<AnoticeVO> flistAll() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.flistAll();
+	}
+
 	
 }

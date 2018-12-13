@@ -84,13 +84,13 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 		return "admin/categorybigRead";
 	}
 	
-	
+	/*
 	@GetMapping(value = "/categorybigRegister")
 	public void registGET() throws Exception {
 
 		logger.info("regist get ...........");
-	}
-
+	}*/
+/*
 	@PostMapping(value = "/categorybigRegister")
 	public String registPOST(CategoryBigVO categorybigVO, RedirectAttributes rttr) throws Exception {
 
@@ -103,6 +103,6 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 
 		return "redirect:/categorylist";
 
-	}
+	}*/
 	
 }

@@ -80,8 +80,10 @@ public class HomeController {
 		return "front/product";
 	}
 	
-	/*
-	@RequestMapping(value = "/reviewList", method = RequestMethod.GET)
+	@Inject
+	private ReviewService reviewService;
+	
+	@RequestMapping(value = "/review", method = RequestMethod.GET)
 	public String reviewList(Locale locale, Model model) throws Exception {
 		
 		logger.info("리스트목록보기", locale);
@@ -91,7 +93,7 @@ public class HomeController {
 		
 		return "front/review";
 	}
-	*/
+	
 	@Inject
 	private EventService eventService;
 	

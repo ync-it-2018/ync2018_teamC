@@ -403,24 +403,13 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> 회원관리 </a></li>
+                <li><a href="/admin/memberlist"><i class="fa fa-circle-o"></i> 회원관리 </a></li>
                  <li><a href="/mlevellist"><i class="fa fa-circle-o"></i> 등급 목록 </a></li>
                 <li><a href="/mlevel"><i class="fa fa-circle-o"></i> 등급 등록 </a></li>
               
               </ul>
             </li>
-            <!-- <li class="treeview active">
-              <a href="/popupload">
-                <i class="fa fa-edit"></i> <span>이벤트관리</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li class="active"><a href="general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-              </ul>
-            </li> -->
-            
+           
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
@@ -464,26 +453,13 @@
                 <i class="fa fa-envelope"></i> <span>검색</span>
               </a>
             </li>
-            <li>
-              <a href="../mailbox/mailbox.html">
-                <i class="fa fa-envelope"></i> <span>어바웃관리</span>
-                <small class="label pull-right bg-blue">6</small>
-              </a>
-            </li>
+            
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> <span>후기</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-             <!--  <ul class="treeview-menu">
-                <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                <li><a href="../examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                <li><a href="../examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                <li><a href="../examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                <li><a href="../examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                <li><a href="../examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>              
-              </ul>  --> 
+             
             </li>
             <li class="treeview">
               <a href="#">

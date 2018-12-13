@@ -12,6 +12,12 @@ public class UserVO {
 	private String mId;
 	private String mPwd;
 	private String mName;
+	private String mAddress;
+	private String mTel;
+	private String mEmail;
+	private int mPoint;
+	private int mLevelCode;
+	
 //	private String M_ADDRESS;
 //	private String M_TEL;
 //	private String M_EMAIL;
@@ -36,11 +42,35 @@ public class UserVO {
 	public void setmName(String mName) {
 		this.mName = mName;
 	}
-	public int getPoint() {
-		return point;
+	public int getmPoint() {
+		return mPoint;
 	}
-	public void setPoint(int point) {
-		this.point = point;
+	public void setmPoint(int mPoint) {
+		this.mPoint = mPoint;
+	}
+	public String getmAddress() {
+		return mAddress;
+	}
+	public void setmAddress(String mAddress) {
+		this.mAddress = mAddress;
+	}
+	public String getmTel() {
+		return mTel;
+	}
+	public void setmmTel(String mTel) {
+		this.mTel = mTel;
+	}
+	public String getmEmail() {
+		return mEmail;
+	}
+	public void setmmEmail(String mEmail) {
+		this.mEmail = mEmail;
+	}
+	public int getmLevelCode() {
+		return mLevelCode;
+	}
+	public void setmLevelCode(int mLevelCode) {
+		this.mLevelCode = mLevelCode;
 	}
 
 	

@@ -29,7 +29,7 @@ public class AnoticeController {
 	@Inject
 	private AnoticeService service;
 
-	@RequestMapping(value = "/contact", method = { RequestMethod.GET, RequestMethod.POST })
+	/*@RequestMapping(value = "/contact", method = { RequestMethod.GET, RequestMethod.POST })
 	public String Notice(Locale locale, Model model) throws Exception {
 
 		logger.info("리스트목록보기", locale);
@@ -47,9 +47,8 @@ public class AnoticeController {
 		model.addAttribute("list", service.readNotice(nCode));
 
 		return "front/NoticeRead";
-	}
+	}*/
 	
-	////
 	
 	//글 작성 get
 	@RequestMapping(value = "/aNoticeRegister", method = RequestMethod.GET)

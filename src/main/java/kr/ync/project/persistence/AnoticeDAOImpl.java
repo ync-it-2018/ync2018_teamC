@@ -65,5 +65,11 @@ public class AnoticeDAOImpl implements AnoticeDAO {
 		return session.selectList(namespace + ".listCriteria", cri);
 	}
 
+	@Override
+	public List<AnoticeVO> flistAll() throws Exception{
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".flistAll");
+	}
+
 	
 }

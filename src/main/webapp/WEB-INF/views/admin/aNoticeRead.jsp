@@ -38,7 +38,7 @@
 					<h3 class="box-title">READ NOTICE</h3>
 				</div>
 				<!-- /.box-header -->
-<!-- 앞에 소문자로 받아야됨 AnoticeVO -> anoticeNO -->
+			<!-- 앞에 소문자로 받아야됨 AnoticeVO -> anoticeNO -->
 				<form role="form" method="post">
 
 					<input type='hidden' name='nCode' value="${anoticeVO.nCode}"> 
