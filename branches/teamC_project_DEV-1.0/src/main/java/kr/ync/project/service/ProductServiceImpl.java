@@ -49,13 +49,16 @@ public class ProductServiceImpl implements ProductService{
 		dao.deleteProduct(pCode);
 	}
 
-	
+///////////////////////////////////////////	
 	//프론트 상품리스트
 	@Override
 	public List<ProductVO> listProduct() throws Exception {
 		return dao.listProduct();
 	}
 
-	
+	public List<ProductVO> productList(ProductVO productVO) {
+	      return dao.productList(productVO);
+
+	}
 
 }

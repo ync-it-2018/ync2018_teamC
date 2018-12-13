@@ -53,7 +53,12 @@ public class ProductDAOImpl implements ProductDAO{
 	//프론트 리스트
 	@Override
 	public List<ProductVO> listProduct() throws Exception {
-		return session.selectList(namespace + ".listProduct");
+		return session.selectList(namespace + ".list");
+	}
+
+	@Override
+	public List<ProductVO> productList(ProductVO productVO) {
+		return session.selectList(namespace + ".list",productVO);
 	}
 
 	

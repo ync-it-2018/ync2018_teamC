@@ -27,5 +27,7 @@ public interface ProductService {
 	// 프론트 상품 목록
 
 	public List<ProductVO> listProduct() throws Exception;
+	
+	public List<ProductVO> productList(ProductVO productVO);
 
 }
