@@ -19,12 +19,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ync.project.domain.BoardVO;
 import kr.ync.project.domain.CategoryBigVO;
+import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.UserVO;
 import kr.ync.project.dto.LoginDTO;
 import kr.ync.project.service.CategoryBigService;
 import net.sf.json.JSONArray;
 
 @Controller
+@RequestMapping("/categorybig/*")
 public class CategoryBigController {
 		
 private static final Logger logger = LoggerFactory.getLogger(CategoryBigController.class);
@@ -43,8 +45,20 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryBigControll
 		
 		return "admin/categorylist";
 	}
-	
-	
+
+	@RequestMapping(value="/categorybig.do", method=RequestMethod.GET)
+    public void categorybigGET() {
+        
+    }
+    
+    //SignUp POST
+    @RequestMapping(value="/categorybig.do", method=RequestMethod.POST)
+    public String categorybigPOST(CategoryBigVO categorybigVO) {
+            
+    	service.insert(categorybigVO);
+            
+        return "admin/index";
+    }
 	
 	/*@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
 	public String categorybigRegister(Locale locale, Model model) throws Exception{

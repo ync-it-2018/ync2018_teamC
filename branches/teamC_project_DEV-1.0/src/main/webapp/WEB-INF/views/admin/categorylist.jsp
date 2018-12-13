@@ -17,37 +17,6 @@
                <h3 class="box-title">Big Category</h3>
             </div>
 
-
-            <div class='box-body'>
-
-               <select name="searchType">
-                  <option value="n"
-                     <c:out value="${cri.searchType == null?'selected':''}"/>>
-                     ---</option>
-                  <option value="t"
-                     <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-                     Title</option>
-                  <option value="c"
-                     <c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-                     Content</option>
-                  <option value="w"
-                     <c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-                     Writer</option>
-                  <option value="tc"
-                     <c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
-                     Title OR Content</option>
-                  <option value="cw"
-                     <c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
-                     Content OR Writer</option>
-                  <option value="tcw"
-                     <c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
-                     Title OR Content OR Writer</option>
-               </select> <input type="text" name='keyword' id="keywordInput"
-                  value='${cri.keyword }'>
-               <button id='searchBtn'>Search</button>
-               <button id='newBtn'>New Board</button>
-
-            </div>
          </div>
 
 
@@ -55,72 +24,38 @@
             <div class="box-header with-border">
                <h3 class="box-title">LIST PAGING</h3>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="text-align:center;">
+            
             <form id="categoryForm" name="categoryForm" method="POST">
-               <table class="table table-bordered">
-                  <tr>
-                     <th style="width: 150px">대분류 코드</th>
-                     <th>대분류</th>
+            <div  style="display:inline-block;">
+             <table class="table table-bordered" style="text-align:center;">
+                  <tr >
+                     <th >대분류 코드</th>
+                     <th style="width:150px;">대분류</th>
+                     <th >삭제/수정</th>
                   </tr>
 
                   <c:forEach items="${list}" var="CategoryBigVO">
-
                      <tr>
                         <td>${CategoryBigVO.pBig}</td>
                         <td><a href='' onClick='fn_view(${CategoryBigVO.pBig})'><c:out value="${CategoryBigVO.pBigName}"/></a></td>
+                        <td>
+                        <button class="btn btn-primary" id="modifyBtn">수정</button>
+                        <button class="btn btn-primary" id="deleteBtn">삭제</button>
+                        </td>
                      </tr>
-
                   </c:forEach>
 
                </table>
+               </div>
                </form>
+               <a href="/categorybigRegister">
+               <button class="btn btn-warning"  id="newBtn" style="float:right;" >
+                대분류 추가</button></a>
             </div>
             
             
-            <%-- <form role="form" id="form" name="form" enctype="meltipart/from-data" method="POST">
-					<div class="box-body">
-						<div class="form-group">
-							<label>대분류</label> 
-							<select class="category1">
-								<option value="">전체</option>
-								<option value="">${CategoryBigVO.pBig}</option>
-							</select>
-							
-							<label>중분류</label> 
-							<select class="category2">
-								<option value="${CategoryBigVO.pBigName}">전체</option>
-							</select>
-							
-							<label>소분류</label> 
-							<select class="category3">
-								<option value="${AnoticeVO.nCode}">전체</option>
-							</select>
-						</div>
-						<!-- <div class="form-group">
-							<label for="exampleInputEmail1">카테고리명</label> 
-							<input type="text" name='P_BIG_NAME' class="form-control" placeholder="카테고리명">
-						</div> -->
-						
-					</div>
-					
-					
-					<!-- /.box-body -->
-
-					<div class="box-footer">
-						<div>
-							<hr>
-						</div>
-				
-						<ul class="mailbox-attachments clearfix uploadedList">
-						</ul>
-				
-						<button type="submit" class="btn btn-primary">Submit</button>
-				
-					</div>
-				</form> --%>
-            <!-- /.box-body -->
-
-
+           
             <div class="box-footer">
 
                <div class="text-center">
@@ -184,11 +119,11 @@
 
                   });
 
-            $('#newBtn').on("click", function(evt) {
+             /* $("#newBtn").on("click", function() {
 
-               self.location = "categorybigRegister";
+               self.location = "/categorybigRegister";
 
-            });
+            });  */
 
          });
 </script>
