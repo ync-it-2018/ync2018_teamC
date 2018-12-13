@@ -26,5 +26,7 @@ public interface ProductDAO {
 	
 	// 프론트 상품목록
 	public List<ProductVO> listProduct() throws Exception;
+	
+	public List<ProductVO> productList(ProductVO productVO);
 
 }
