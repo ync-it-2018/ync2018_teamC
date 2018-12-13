@@ -1,113 +1,110 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%@include file="../admin/include/header.jsp" %>
+<%@include file="../admin/include/header.jsp"%>
 
-
-<style>
-.fileDrop {
-  width: 80%;
-  height: 100px;
-  border: 1px dotted gray;
-  background-color: lightslategrey;
-  margin: auto;
-  
-}
-</style>
 <div>
-<!-- Main content -->
-<section class="content">
-	<div class="row">
-		<!-- left column -->
-		<div class="col-md-12">
-			<!-- general form elements -->
-			<div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title">REGISTER NOTICE</h3>
-				</div>
-				<!-- /.box-header -->
+   <!-- Main content -->
+   <section class="content">
+      <div class="row">
+         <!-- left column -->
+         <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+               <div class="box-header">
+                  <h3 class="box-title">REGISTER NOTICE</h3>
+               </div>
+               <!-- /.box-header -->
 
-<form role="form" method="post" id="registerForm">
-	<div class="box-body">
-		<div class="form-group">
-			<label for="exampleInputEmail1">Title</label> <input type="text"
-				name='nTitle' class="form-control" placeholder="Enter Title">
-		</div>
-		<div class="form-group">
-			<label for="exampleInputPassword1">Content</label>
-			<textarea class="form-control" name="nContents" rows="3"
-				placeholder="Enter ..."></textarea>
-		</div>
-		
-	</div>
+               <form role="form" method="post">
+                  <div class="box-body">
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Code</label> 
+                        <input type="text" id="nCode" name='nCode' class="form-control"
+                           placeholder="Enter Code">
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Title</label> 
+                        <input type="text" id="nTitle" name='nTitle' class="form-control"
+                           placeholder="Enter Title">
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Content</label>
+                        <textarea class="form-control" id="nContents" name="nContents"
+                           rows="3" placeholder="Enter ..."></textarea>
+                     </div>
 
-	<!-- /.box-body -->
+                  </div>
 
-	<div class="box-footer">
-		<div>
-			<hr>
-		</div>
+                  <!-- /.box-body -->
 
-		<ul class="mailbox-attachments clearfix uploadedList">
-		</ul>
+                  <div class="box-footer">
+                     
+                     <button type="submit" id="regist" class="btn btn-primary">등록</button>
+                     <!-- <button type="submit" id="goListBtn" class="btn btn-primary">취소</button> -->
 
-		<button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+               </form>
 
-	</div>
-</form>
+            </div>
+            <!-- /.box -->
+         </div>
+         <!--/.col (left) -->
 
-			</div>
-			<!-- /.box -->
-		</div>
-		<!--/.col (left) -->
-
-	</div>
-	<!-- /.row -->
-</section>
-<!-- /.content -->
+      </div>
+      <!-- /.row -->
+   </section>
+   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
+
 <script type="text/javascript" src="/resources/js/upload.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
-<script id="template" type="text/x-handlebars-template">
-<li>
-  <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
-  <div class="mailbox-attachment-info">
-	<a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
-	<a href="{{fullFileName}}" 
-     class="btn btn-default btn-xs pull-right delbtn"><i class="fa fa-fw fa-remove"></i></a>
-	</span>
-  </div>
-</li>                
-</script>    
+<script>	 
 
-
-
-<script>
-
-$("#registerForm").submit(function(event){
-	event.preventDefault();
+	var form = document.getElementById("form");
 	
-	var that = $(this);
+	var formObj = $("form[role='form']");
 	
-	var str ="";
-	$(".uploadedList .delbtn").each(function(index){ 	
-		 str += "<input type='hidden' name='files["+index+"]' value='"+$(this).attr("href") +"'> ";
-	});
+	console.log(formObj);
 	
-	that.append(str);
-
-	//alert("submit");
-	
-	that.get(0).submit();
-});
-
-
-
+	 $("#regist").click(function(){
+		var nCode = $("#nCode").val();
+		var nTitle = $("#nTitle").val();
+		var nContents = $("#nContents").val();
+		
+		if(nCode == ""){
+			alert("번호를 입력하세요");
+			document.form.nCode.focus();
+			return;
+		}
+		if(nTitle == ""){
+			alert("제목을 입력하세요");
+			document.form.nTitle.focus();
+			return;
+		}
+		if(nContents == ""){
+			alert("내용을 입력하세요");
+			document.form.nContents.focus();
+			return;
+		}
+		form.action = "<c:url value='/aNotice'/>";
+		form.submit();
+		
+		
+		$('#goListBtn').on('click',function(){
+			formObj.attr("method", "get");
+			formObj.attr("action", "/aNotice");
+			formObj.submit();
+		});
+	}); 
 </script>
 
- 
-<%@include file="../admin/include/footer.jsp" %>
+
+<%@include file="../admin/include/footer.jsp"%>
 

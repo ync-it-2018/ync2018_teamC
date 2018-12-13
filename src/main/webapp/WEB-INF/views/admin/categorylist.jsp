@@ -197,7 +197,7 @@
 function fn_view(pBig){
     
     var form = document.getElementById("categoryForm");
-    var url = "<c:url value='/categoryBigRead'/>";
+    var url = "<c:url value='/categorybigRead'/>";
     url = url + "?pBig=" + pBig;
     
     form.action = url;    

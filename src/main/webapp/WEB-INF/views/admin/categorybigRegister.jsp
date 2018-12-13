@@ -31,12 +31,12 @@
 	<div class="box-body">
 		<div class="form-group">
 			<label for="exampleInputEmail1">대분류 카테고리 번호</label> <input type="number"
-				name='pBig' class="form-control" placeholder="Enter Title">
+				name='pBig' class="form-control" placeholder="번호입력">
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">대분류 카테고리명</label> 
 			<input type="text" name="pBigName" 
-			  class="form-control" placeholder="Enter...">
+			  class="form-control" placeholder="카테고리명 입력">
 		</div>
 	</div>
 
@@ -96,6 +96,18 @@ $(document).ready(function(){
 
 });
 
+</script>
+
+<script>
+function fn_view(pBig){
+    
+    var form = document.getElementById("categoryForm");
+    var url = "<c:url value='/categorybigRead'/>";
+    url = url + "?pBig=" + pBig;
+    
+    form.action = url;    
+    form.submit(); 
+}
 </script>
 
 <%@include file="../admin/include/footer.jsp"%>

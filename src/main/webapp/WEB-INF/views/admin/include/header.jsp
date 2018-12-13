@@ -422,7 +422,7 @@
             <li>
               <a href="/aNotice">
                 <i class="fa fa-envelope"></i> <span>공지사항</span>
-                <small class="label pull-right bg-yellow">12</small>
+                <small class="label pull-right bg-yellow">1</small>
               </a>
             </li>
               <li>

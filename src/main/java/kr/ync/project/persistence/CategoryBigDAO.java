@@ -8,4 +8,6 @@ public interface CategoryBigDAO {
 	public void insert(CategoryBigVO categorybig);
 	
 	public List<CategoryBigVO> listAll() throws Exception;
+	
+	public CategoryBigVO read(Integer pBig) throws Exception;
 }
