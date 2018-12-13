@@ -40,7 +40,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 				// 쿠키값으로 table에 저장되어 있는 session id 값을 조회해 사용자 정보를 가져온다.
 				UserVO UserVO = service.checkLoginBefore(loginCookie.getValue());
 
-				log.info("AUSERVO: " + UserVO);
+				log.info("USERVO: " + UserVO);
 
 				if (UserVO != null) {
 					session.setAttribute("login", UserVO);
@@ -49,7 +49,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
 			}
 
-			response.sendRedirect("/login");
+			response.sendRedirect("/front/login");
 			return false;
 		}
 		return true;

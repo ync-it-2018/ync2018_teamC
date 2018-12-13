@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+//@Getter
+//@Setter
+//@ToString
 public class UserVO {
 
 	private String mId;
@@ -15,7 +18,6 @@ public class UserVO {
 //	
 	private int point;
 //	private Integer LEVEL_CODE;
-//	
 	public String getmId() {
 		return mId;
 	}
@@ -40,5 +42,6 @@ public class UserVO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
+
 	
 }

@@ -14,8 +14,7 @@ import kr.ync.project.persistence.UserDAO;
 @Service
 public class UserServiceImpl implements UserService {
 
-//	@Autowired
-	@Inject
+	@Autowired
 	private UserDAO dao;
 
 	@Override
@@ -25,9 +24,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void keepLogin(String M_ID, String sessionId, Date next) throws Exception {
+	public void keepLogin(String mId, String sessionId, Date next) throws Exception {
 
-		dao.keepLogin(M_ID, sessionId, next);
+		dao.keepLogin(mId, sessionId, next);
 
 	}
 
@@ -36,14 +35,4 @@ public class UserServiceImpl implements UserService {
 
 		return dao.checkUserWithSessionKey(value);
 	}
-
-	@Override
-	public UserVO join(LoginDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	/*public int insert(User user) {
-        return dao.insert(user);
-    }*/
 }

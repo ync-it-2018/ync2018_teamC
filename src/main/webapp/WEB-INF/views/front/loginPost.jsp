@@ -1,28 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Home</title>
 </head>
+<script>
+	//self.location = "/user/value";
+</script>
 <body>
-  <script type="text/javascript">
-    //self.location = "/user/value";
-  </script>
-  
- <p>
-  	아이디 : ${UserVO.mId}
-  </p>
-  <p>
-  	패스워드 : ${UserVO.mPwd}
-  </p>
-  <p>
-  	이름 : ${UserVO.mName}
-  </p>
-  
-  <input id="loginok" type="button" value="OK"/>
-  
+	   ID :  ${login.mId}
+	   <hr>
+	   PW :  ${login.mPwd}
+	   
+	   <input id="loginok" type="button" value="OK"/>
 </body>
 </html>
+

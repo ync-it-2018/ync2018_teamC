@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,13 +62,46 @@
                </div>
 
                <div class="right-top-bar flex-w h-full" >
-                  <a href="/login" class="flex-c-m trans-04 p-lr-25">
+ <c:catch>
+    <c:choose>
+        <c:when test="${empty UserVO}">
+            <li>
+                <a href="/front/login" class="flex-c-m trans-04 p-lr-25">
                      LOGIN
                   </a>
-
-                  <a href="/join" class="flex-c-m trans-04 p-lr-25" >
+             </li>
+             <li>
+                <a href="/join" class="flex-c-m trans-04 p-lr-25" >
                      JOIN
                   </a>
+             </li>
+        </c:when>
+        <c:otherwise>
+           	
+                    <li style="margin:10px;">
+                       <p>${UserVO.mId}님, 반갑습니다!</p>
+                   </li>
+                   
+                  
+                   <li>
+                       <a href="/front/logout" class="flex-c-m trans-04 p-lr-25" >
+                     LOGOUT
+                  </a>
+                   </li>
+            
+        </c:otherwise>
+    </c:choose>
+</c:catch>
+
+                
+                  
+                <!--   <a href="/login" class="flex-c-m trans-04 p-lr-25">
+                     LOGIN
+                  </a> -->
+
+                 <!--  <a href="/join" class="flex-c-m trans-04 p-lr-25" >
+                     JOIN
+                  </a> -->
 
                   <a href="/MypageUserinfo" class="flex-c-m trans-04 p-lr-25">
                      MyPage
