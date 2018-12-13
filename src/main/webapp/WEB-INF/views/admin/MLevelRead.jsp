@@ -94,24 +94,26 @@
 
 <script>
 $(document).ready(function(){
-	/* update 클릭 */ 
-	$('#modifyBtn').on('click',function(){
-		formObj.attr("action", "/admin/QmaModify");
+	var formObj = $("form[role='form']");
+	
+	console.log(formObj);
+	
+	/* 수정 클릭 */ 
+	$('.btn-warning').on('click',function(){
+		formObj.attr("action", "/admin/MLevelModify");
 		formObj.attr("method", "get");		
 		formObj.submit();
 	});
 	/* 삭제 클릭 */ 
-	$('#removeBtn').on('click',function(){
-		formObj.attr("action", "/admin/QnaRemove");
+	$('.btn-danger').on('click',function(){
+		formObj.attr("action", "/admin/deleteMLevel");
 		formObj.submit();
 	});  
 	/* 리스트 클릭 */ 
-	$('#goListBtn').on('click',function(){
-		formObj.attr("method", "get");
-		formObj.attr("action", "/admin/Qnalist");
-		formObj.submit();
+	$('.btn-primary').on('click',function(){
+		self.location = "/admin/MLevelList";
 	});
-})
+});
 </script>
 
 
