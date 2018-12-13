@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
    
 <!DOCTYPE html>
 <html>
@@ -274,7 +276,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">log in</a>
+                      <a href="/admin/alogout" class="btn btn-default btn-flat">log out</a>
                     </div>
                   </li>
                 </ul>
@@ -319,9 +321,39 @@
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>관리자 로그인</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
+
               <ul class="treeview-menu">
-                <li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
+<%--               <c:catch>
+    <c:choose>
+        <c:when test="${AUserVO.aID == null}">
+            <li>
+                 <a href="/admin/alogin"><i class="fa fa-sign-in"></i> 로그인</a>
+             </li>
+             <li>
+                 <a href="/ajoin"><i class="fa fa-user"></i> 회원가입</a>
+             </li>
+        </c:when>
+        <c:otherwise>
+                ${AUserVO.aID} 관리자 계정 로그인중
+                <li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
+                <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
+        </c:otherwise>
+    </c:choose>
+</c:catch>
+
+              <c:if test="${AUserVO.aID == null}">
+      			<li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
                 <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
+				</c:if>
+			<c:if test="${AUserVO.aID != null}">
+  				<li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
+                <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
+                <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
+			</c:if> --%>
+				<li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
+                <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
+				<li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
               </ul>

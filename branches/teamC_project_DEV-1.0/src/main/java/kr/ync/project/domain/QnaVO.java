@@ -18,6 +18,28 @@ public class QnaVO {
 	private Date qUpDate;
 	private String mID;
 	private Integer qCategoryNum;
+	public Date getqADate() {
+		return qADate;
+	}
+	public void setqADate(Date qADate) {
+		this.qADate = qADate;
+	}
+	public String getaID() {
+		return aID;
+	}
+	public void setaID(String aID) {
+		this.aID = aID;
+	}
+	public String getqAContents() {
+		return qAContents;
+	}
+	public void setqAContents(String qAContents) {
+		this.qAContents = qAContents;
+	}
+	private Date qADate;
+	private String aID;
+	private String qAContents;
+	
 	
 	public Integer getqNum() {
 		return qNum;

@@ -9,12 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <script type="text/javascript">
-/*     self.location = "/aindex"; */
-    
+ <script type="text/javascript">
+  alert('로그아웃 되었습니다.');
+  location.href='/admin/alogin';
   </script>
-<%--   ${AUserVO.A_ID};
-  ${AUserVO.A_PWD}; --%>
   
 </body>
 </html>

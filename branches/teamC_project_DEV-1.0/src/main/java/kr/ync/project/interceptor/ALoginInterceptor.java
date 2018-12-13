@@ -30,7 +30,8 @@ public class ALoginInterceptor extends HandlerInterceptorAdapter {
 
 			log.info("new Alogin success");
 			session.setAttribute(LOGIN, AUserVO);
-
+			log.info("session" + modelMap.get("AUserVO"));
+			
 			if (request.getParameter("useCookie") != null) {
 
 				log.info("remember me................");
@@ -41,7 +42,9 @@ public class ALoginInterceptor extends HandlerInterceptorAdapter {
 			}
 			//response.sendRedirect("/");
 			Object dest = session.getAttribute("dest");
+			
 			response.sendRedirect(dest != null ? (String) dest : "/aindex");
+			
 		} else {
 			response.sendRedirect("/admin/aloginError");
 		}

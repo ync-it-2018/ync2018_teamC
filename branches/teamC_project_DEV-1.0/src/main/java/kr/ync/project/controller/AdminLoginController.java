@@ -90,24 +90,24 @@ public class AdminLoginController {
 	}
 
 	@GetMapping(value = "/alogout")
-	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+	public void alogout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
-		log.info("logout.................................1");
+		log.info("alogout.................................1");
 
-		Object obj = session.getAttribute("login");
+		Object obj = session.getAttribute("alogin");
 
 		if (obj != null) {
 			AUserVO vo = (AUserVO) obj;
-			log.info("logout.................................2");
-			session.removeAttribute("login");
+			log.info("alogout.................................2");
+			session.removeAttribute("alogin");
 			session.invalidate();
 
-			log.info("logout.................................3");
+			log.info("alogout.................................3");
 			Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
 
 			if (loginCookie != null) {
-				log.info("logout.................................4");
+				log.info("alogout.................................4");
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(0);
 				response.addCookie(loginCookie);
@@ -115,7 +115,7 @@ public class AdminLoginController {
 				log.info("logout success................");
 			}
 		}
-		response.sendRedirect("/anotice");
+		response.sendRedirect("/admin/alogin");
 	}
 	
 	

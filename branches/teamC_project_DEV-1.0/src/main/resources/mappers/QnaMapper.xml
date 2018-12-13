@@ -29,10 +29,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			Q_CONTENTS,
 			Q_UP_DATE,
 			Q_CHECK,
-			M_ID
+			M_ID,
+			Q_A_CONTENTS,
+			Q_A_DATE,
+			A_ID
 	FROM 	TC_QNA
-	WHERE	Q_NUM = #{Q_NUM}
+	WHERE	Q_NUM = #{qNum}
 </select>
  
+<update id="updateQna">
+	UPDATE TC_QNA SET Q_A_CONTENTS = #{qAContents}, Q_CHECK = #{qCheck}, A_ID = #{aID}
+	WHERE Q_NUM = #{qNum}
+</update>
+
+
+<delete id="deleteQna">
+	delete from TC_QNA where Q_NUM = #{qNum}
+</delete>
+
+<!-- <select id="listPage" resultType="QnaVO">
+	<![CDATA[
+	SELECT 	N_CODE, N_TITLE, N_UP_DATE
+	FROM TC_NOTICE
+	WHERE N_CODE > 0
+	ORDER BY N_CODE DESC, N_UP_DATE DESC
+	limit #{page}, 10
+	]]>
+</select>
+ 
+ 
+<select id="listCriteria" resultType="QnaVO">
+	<![CDATA[
+	SELECT 	N_CODE, N_TITLE, N_UP_DATE
+	FROM TC_NOTICE
+	WHERE N_CODE > 0
+	ORDER BY N_CODE DESC,N_UP_DATE DESC
+	limit #{pageStart}, #{perPageNum}
+	]]>
+</select> -->
  
 </mapper>
