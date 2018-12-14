@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ReviewVO;
 import kr.ync.project.domain.SignupVO;
@@ -17,13 +18,13 @@ import kr.ync.project.persistence.SignupDAO;
 
 @Service
 public class ReviewServiceImpl implements ReviewService {
- 
-    @Inject
-    private ReviewDAO dao;
- 
-    public void insertReview(ReviewVO reviewVO) {
-        dao.insertReview(reviewVO);
-    }
+
+	@Inject
+	private ReviewDAO dao;
+
+	public void insertReview(ReviewVO reviewVO) {
+		dao.insertReview(reviewVO);
+	}
 
 	@Override
 	public List<ReviewVO> listReview() throws Exception {
@@ -36,13 +37,12 @@ public class ReviewServiceImpl implements ReviewService {
 		// TODO Auto-generated method stub
 		return dao.reviewList(reviewVO);
 	}
-	
+
 	@Override
 	public List<ReviewVO> rlistAll() throws Exception {
 		return dao.rlistAll();
 	}
 
-	
 	@Override
 	public ReviewVO read(Integer rNum) throws Exception {
 
@@ -54,5 +54,6 @@ public class ReviewServiceImpl implements ReviewService {
 		// TODO Auto-generated method stub
 		dao.insertReviewPhoto(reviewVO);
 	}
-}
 
+
+}

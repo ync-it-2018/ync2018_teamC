@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ReviewVO;
 import kr.ync.project.domain.SignupVO;
@@ -16,16 +17,16 @@ import kr.ync.project.dto.LoginDTO;
 
 @Repository
 public class ReviewDAOImpl implements ReviewDAO {
- 
-    @Inject
-    private SqlSession session;
-    
-    private static String namespace = "kr.ync.project.mapper.reviewMapper";
- 
-    @Override
-    public void insertReview(ReviewVO reviewVO) {
-        session.insert("insertReview",reviewVO);
-    }
+
+	@Inject
+	private SqlSession session;
+
+	private static String namespace = "kr.ync.project.mapper.reviewMapper";
+
+	@Override
+	public void insertReview(ReviewVO reviewVO) {
+		session.insert("insertReview", reviewVO);
+	}
 
 	@Override
 	public List<ReviewVO> listReview() throws Exception {
@@ -54,6 +55,7 @@ public class ReviewDAOImpl implements ReviewDAO {
 	@Override
 	public void insertReviewPhoto(ReviewVO reviewVO) {
 		// TODO Auto-generated method stub
-		session.insert("insertReviewPhoto",reviewVO);
+		session.insert("insertReviewPhoto", reviewVO);
 	}
+
 }

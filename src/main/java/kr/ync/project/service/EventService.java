@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.SignupVO;
 import kr.ync.project.domain.UserVO;
@@ -28,5 +29,10 @@ public interface EventService {
 	public void updateEvent(EventVO vo) throws Exception;
 	//삭제
 	public void deleteEvent(Integer eNum) throws Exception;
+	
+	// 페이징
+	public List<EventVO> listCriteria(Criteria cri) throws Exception;
+
+	public int listCountCriteria(Criteria cri) throws Exception;
 	
 }
