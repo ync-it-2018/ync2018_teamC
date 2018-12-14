@@ -18,7 +18,7 @@ public class UserDAOImpl implements UserDAO {
 
 //	@Autowired
 	@Inject
-	private SqlSession session;
+	private SqlSession session;//sql연동해주는 마이바티스 객체
 
 	private static String namespace = "kr.ync.project.mapper.userMapper";
 
