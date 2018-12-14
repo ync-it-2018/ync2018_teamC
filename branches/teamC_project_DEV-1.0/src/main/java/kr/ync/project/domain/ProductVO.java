@@ -16,7 +16,7 @@ public class ProductVO {
 	private int pSmall; //카테고리 소 fk
 	private int pMiddle; //카테고리 중 fk
 	private int pBig; //카테고리 대 fk	
-	private String size; //사이즈
+	private String pSize; //사이즈
 	private int price; //가격
 	private int salePrice; //세일가격
 	private int pPoint; //적립률
@@ -89,12 +89,12 @@ public class ProductVO {
 		this.pBig = pBig;
 	}
 
-	public String getSize() {
-		return size;
+	public String getpSize() {
+		return pSize;
 	}
 
-	public void setSize(String size) {
-		this.size = size;
+	public void setpSize(String pSize) {
+		this.pSize = pSize;
 	}
 
 	public int getPrice() {

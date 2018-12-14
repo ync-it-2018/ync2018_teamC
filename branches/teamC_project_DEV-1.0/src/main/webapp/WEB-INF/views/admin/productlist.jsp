@@ -71,7 +71,7 @@
 										<td>${ProductVO.pBig}${ProductVO.pMiddle}${ProductVO.pSmall}</td>
 										<td><a
 											href='/admin/productRead?pCode=${ProductVO.pCode}'>${ProductVO.pName}</a></td>
-										<td>${ProductVO.price}</td>
+										<td><fmt:formatNumber value="${ProductVO.price}" pattern="###,###,###" /></td>
 										<td>${ProductVO.stock}</td>
 									</tr>
 								</c:forEach>
