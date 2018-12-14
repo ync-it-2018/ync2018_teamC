@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,7 +117,7 @@
                         <nav class="limiter-menu-desktop container">
 
                <!-- Logo desktop -->
-               <a href="/index" class="logo">
+               <a href="/" class="logo">
                   <img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO">
                </a>
 
@@ -828,11 +830,12 @@
          </div>
 
          <div class="row">
+          <c:forEach items = "${bestProduct}" var="best">
             <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item women">
-               <!-- Block2 -->
+               <!-- Block2 -->     
                <div class="block2">
                   <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/d01.jpeg" alt="IMG-PRODUCT" style="height:230px;">
+                     <img src="${best.pImageSrc}" alt="IMG-PRODUCT" style="height:230px;">
 
                  
                   </div>
@@ -840,13 +843,13 @@
                   <div class="block2-txt flex-w flex-t p-t-14">
                      <div class="block2-txt-child1 flex-col-l ">
                      
-                        <a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                        <a href="/product_detail.do?pCode=${best.pCode}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                         
-                           Esprit Ruffle Shirt
+                          ${best.pName}
                         </a>
 
                         <span class="stext-105 cl3">
-                           $16.64
+                          <fmt:formatNumber value="${best.salePrice}" pattern="###,###,###" />원
                         </span>
                      </div>
 
@@ -859,325 +862,22 @@
                   </div>
                </div>
             </div>
+         </c:forEach> 
 
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item women">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/d02.jpg" alt="IMG-PRODUCT" style="height:230px;">
+           
 
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Herschel supply
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $35.31
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item men">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/d03.jpg" alt="IMG-PRODUCT" style="height:230px;">
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product-detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Only Check Trouser
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $25.50
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item women">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/c01.jpg" alt="IMG-PRODUCT" style="height:230px;">
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product-detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Classic Trench Coat
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $75.00
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item women">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/dh01.jpg" alt="IMG-PRODUCT" style="height:230px;">
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product-detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Front Pocket Jumper
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $34.75
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item watches">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/product-06.jpg" alt="IMG-PRODUCT" style="height:230px;">
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Vintage Inspired Classic 
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $93.20
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item women">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/product-07.jpg" alt="IMG-PRODUCT" style="height:230px;">
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Shirt in Stretch Cotton
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $52.66
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item women">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/product-08.jpg" alt="IMG-PRODUCT" style="height:230px;">
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Pieces Metallic Printed
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $18.96
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item shoes">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/product-09.jpg" alt="IMG-PRODUCT" style="height:230px;" >
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Converse All Star Hi Plimsolls
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $75.00
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-2 p-b-35 isotope-item women">
-               <!-- Block2 -->
-               <div class="block2">
-                  <div class="block2-pic hov-img0">
-                     <img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT" style="height:230px;">
-
-                     <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                        Quick View
-                     </a>
-                  </div>
-
-                  <div class="block2-txt flex-w flex-t p-t-14">
-                     <div class="block2-txt-child1 flex-col-l ">
-                        <a href="/product_detail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                           Femme T-Shirt In Stripe
-                        </a>
-
-                        <span class="stext-105 cl3">
-                           $25.85
-                        </span>
-                     </div>
-
-                     <div class="block2-txt-child2 flex-r p-t-3">
-                        <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                           <img class="icon-heart1 dis-block trans-04" src="/resources/front/images/icons/icon-heart-01.png" alt="ICON">
-                           <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/resources/front/images/icons/icon-heart-02.png" alt="ICON">
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            
-         </div>
-
-         <!-- Load more -->
-         <!-- <div class="flex-c-m flex-w w-full p-t-45">
-            <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-               Load More
-            </a>
-         </div> -->
+        
          <div class="p-b-10" style="margin-top:10%;">
             <h3 class="ltext-103 cl5">
                NEW ARRIVAL
             </h3>
          </div>
          
-
-      <div class="owl-carousel owl-theme">
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
-          <div class="item"><img src="/resources/front/images/product-10.jpg" alt="IMG-PRODUCT"></div>
+ 
+      <div class="owl-carousel owl-theme">     
+      <c:forEach items = "${newArrival}" var="newArrival">
+          <div class="item"><img src="${newArrival.pImageSrc}" alt="IMG-PRODUCT"></div>
+      </c:forEach>
       </div>
 
 

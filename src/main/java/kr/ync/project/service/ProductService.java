@@ -31,6 +31,12 @@ public interface ProductService {
 	
 	public List<ProductVO> productList(ProductVO productVO);
 	
+	//제품상세보기
 	public ProductVO read(String pCode) throws Exception;
-
+	
+	//베스트 상품
+	public List<ProductVO> best()throws Exception;
+	
+	//신상
+	public List<ProductVO> newArrival()throws Exception;
 }

@@ -42,7 +42,6 @@ public class ProductServiceImpl implements ProductService{
 	public void updateProduct(ProductVO vo) throws Exception {
 		dao.updateProduct(vo);
 	}
-
 	//삭제
 	@Override
 	public void deleteProduct(String pCode) throws Exception {
@@ -60,10 +59,24 @@ public class ProductServiceImpl implements ProductService{
 	      return dao.productList(productVO);
 
 	}
-
+	//제품상세보기
 	@Override
 	public ProductVO read(String pCode) throws Exception {
 		return dao.read(pCode);
+	}
+	
+	//베스트 상품
+	@Override
+	public List<ProductVO> best() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.best();
+	}
+	
+	//신상
+	@Override
+	public List<ProductVO> newArrival() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.newArrival();
 	}
 
 	
