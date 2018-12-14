@@ -55,23 +55,13 @@ public class ProductController {
 
 	// 상세
 	@RequestMapping(value = "/productRead", method = RequestMethod.GET)
-	public void aNoticeRead(@RequestParam("pCode") String pCode, Model model) throws Exception {
+	public void ProductRead(@RequestParam("pCode") String pCode, Model model) throws Exception {
 
 		logger.info("리스트상세보기");
 
-		model.addAttribute("productData",service.readProduct(pCode));
+		model.addAttribute("productVO",service.readProduct(pCode));
 
 	}
-	
-	/*// 상세
-		@RequestMapping(value = "/productRead", method = RequestMethod.GET)
-		public void aNoticeRead(Model model) throws Exception {
-
-			logger.info("리스트상세보기");
-
-			model.addAttribute(service.readProduct());
-
-		}*/
 
 	// 삭제
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
@@ -86,19 +76,20 @@ public class ProductController {
 		return "redirect:/admin/productlist";
 	}
 
-	/*// 글 수정 get
+	// 글 수정 get
 	@RequestMapping(value = "/productModify", method = RequestMethod.GET)
 	public void getModify(String pCode, Model model) throws Exception {
-		logger.info("공지사항 수정 get");
+		
+		logger.info("상품 수정 get");
 
 		model.addAttribute(service.readProduct(pCode));
-	}*/
+	}
 
 	// 글 수정 post
 	@RequestMapping(value = "/productModify", method = RequestMethod.POST)
 	public String postModify(ProductVO vo, RedirectAttributes rttr) throws Exception {
 
-		logger.info("공지사항 수정 post");
+		logger.info("상품 수정 post");
 
 		service.updateProduct(vo);
 

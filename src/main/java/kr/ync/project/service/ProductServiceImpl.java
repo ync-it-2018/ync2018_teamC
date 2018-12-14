@@ -5,11 +5,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
-import org.springframework.stereotype.Service;
 
-import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.ProductVO;
-import kr.ync.project.persistence.AnoticeDAO;
 import kr.ync.project.persistence.ProductDAO;
 
 @Service

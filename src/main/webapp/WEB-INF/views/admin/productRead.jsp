@@ -62,73 +62,73 @@
 				<div class="box-body">
 					<div class="form-group">
 						<label for="exampleInputEmail1">상품 코드</label> <input type="text"
-							name='pCode' class="form-control" value="${productData.pCode}"
+							name='pCode' class="form-control" value="${productVO.pCode}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">대분류</label> <input type="text"
-							name='pBig' class="form-control" value="${productData.pBig}"
+							name='pBig' class="form-control" value="${productVO.pBig}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">중분류</label> <input type="text"
-							name='pMiddle' class="form-control" value="${productData.pMiddle}"
+							name='pMiddle' class="form-control" value="${productVO.pMiddle}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">소분류</label> <input type="text"
-							name='pSmall' class="form-control" value="${productData.pSmall}"
+							name='pSmall' class="form-control" value="${productVO.pSmall}"
 							readonly="readonly">
 					</div>
 
 					<div class="form-group">
 						<label for="exampleInputEmail1">상품명</label> <input type="text"
-							name='pName' class="form-control" value="${productData.pName}"
+							name='pName' class="form-control" value="${productVO.pName}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputPassword1">상품설명</label>
-						<textarea class="form-control" name="pDetail" rows="3"
-							readonly="readonly">${productData.pDetail}</textarea>
+						<textarea class="form-control" name="pDetail" rows="5"
+							readonly="readonly">${productVO.pDetail}</textarea>
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">판매가</label> <input type="text"
-							name='price' class="form-control" value="${productData.price}"
+							name='price' class="form-control" value="${productVO.price}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">세일가</label> <input type="text"
-							name='salePrice' class="form-control" value="${productData.salePrice}"
+							name='salePrice' class="form-control" value="${productVO.salePrice}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">재고</label> <input type="text"
-							name='stock' class="form-control" value="${productData.stock}"
+							name='stock' class="form-control" value="${productVO.stock}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">적립률</label> <input type="text"
-							name='pPoint' class="form-control" value="${productData.pPoint}"
+							name='pPoint' class="form-control" value="${productVO.pPoint}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">사이즈</label> <input type="text"
-							name='pSize' class="form-control" value="${productData.pSize}"
+							name='pSize' class="form-control" value="${productVO.pSize}"
 							readonly="readonly">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleInputEmail1">상품 이미지</label> <input type="text"
-							name='pImageSrc' class="form-control" value="${productData.pImageSrc}"
+							name='pImageSrc' class="form-control" value="${productVO.pImageSrc}"
 							readonly="readonly">
 					</div>
 					
