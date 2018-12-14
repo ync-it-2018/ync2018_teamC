@@ -60,6 +60,7 @@
 								<tr>
 									<th style="width: 150px">상품코드</th>
 									<th>카테고리</th>
+									<th>Main</th>
 									<th>상품명</th>
 									<th style="width: 100px">판매가</th>
 									<th style="width: 100px">재고</th>
@@ -69,8 +70,8 @@
 									<tr>
 										<td>${ProductVO.pCode}</td>
 										<td>${ProductVO.pBig}${ProductVO.pMiddle}${ProductVO.pSmall}</td>
-										<td><a
-											href='/admin/productRead?pCode=${ProductVO.pCode}'>${ProductVO.pName}</a></td>
+										<td>${ProductVO.pMain}</td>
+										<td><a href='/admin/productRead?pCode=${ProductVO.pCode}'>${ProductVO.pName}</a></td>
 										<td><fmt:formatNumber value="${ProductVO.price}" pattern="###,###,###" /></td>
 										<td>${ProductVO.stock}</td>
 									</tr>

@@ -1,11 +1,5 @@
 package kr.ync.project.domain;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 /*@Getter
 @Setter
 @ToString*/
@@ -22,34 +16,18 @@ public class ProductVO {
 	private int pPoint; //적립률
 	private int stock; //재고
 	private int eNum; //이벤트num fk
-	private String pMain;
-	
 
-
+	private String pMain;//main product 구분
+	private String pImageSrc;//이미지 경로
 
 	public String getpMain() {
+
 		return pMain;
 	}
 
 	public void setpMain(String pMain) {
 		this.pMain = pMain;
 	}
-
-	public MultipartFile getProductPhoto() {
-		return productPhoto;
-	}
-
-	public void setProductPhoto(MultipartFile productPhoto) {
-		this.productPhoto = productPhoto;
-	}
-
-	private MultipartFile productPhoto; //상품이미지
-
-
-	//private MultipartFile productPhoto; //상품이미지
-
-
-	private String pImageSrc;//이미지 경로
 
 	public String getpCode() {
 		return pCode;
@@ -146,14 +124,6 @@ public class ProductVO {
 	public void seteNum(int eNum) {
 		this.eNum = eNum;
 	}
-
-	/*public MultipartFile getProductPhoto() {
-		return productPhoto;
-	}
-
-	public void setProductPhoto(MultipartFile productPhoto) {
-		this.productPhoto = productPhoto;
-	}*/
 
 	public String getpImageSrc() {
 		return pImageSrc;

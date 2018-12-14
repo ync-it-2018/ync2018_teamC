@@ -9,4 +9,6 @@ public interface CategoryMiddleDAO {
 	public void insert(CategoryMiddleVO categorymiddle);
 	
 	public List<CategoryMiddleVO> mlistAll() throws Exception;
+	
+	public CategoryMiddleVO read(int pMiddle) throws Exception;
 }

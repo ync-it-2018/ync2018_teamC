@@ -67,7 +67,7 @@ public class ProductController {
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
 	public String remove(@RequestParam("pCode") String pCode, RedirectAttributes rttr) throws Exception {
 
-		logger.info("공지사항 삭제");
+		logger.info("상품 삭제");
 
 		service.deleteProduct(pCode);
 
