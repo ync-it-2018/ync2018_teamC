@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +33,28 @@
    <link rel="stylesheet" type="text/css" href="/resources/front/css/main.css">
 <!--===============================================================================================-->
 </head>
+<style>  
+body { background: #fff; }
+.bluetop {
+  border-collapse: collapse;
+  border-top: 3px solid #ffc851;
+}  
+.bluetop th {
+  color: #636262;
+  background: #ffe789;
+  text-align : center;
+}
+.bluetop th, .bluetop td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.bluetop th:first-child, .bluetop td:first-child {
+  border-left: 0;
+}
+.bluetop th:last-child, .bluetop td:last-child {
+  border-right: 0;
+}
+</style>
 <body class="animsition">
    
    <!-- Header -->
@@ -387,34 +410,39 @@
 
 
    <!-- Content page -->
+   <div style="margin-left:80%;">
+   	<a href="/write_review">
+   		<button type="button" id="regi" style="border:1px solid lightgray; background-color: white; padding: 14px 20px;
+           border-radius: 10px; width: 120px; margin-top:20px;">후기작성</button>
+    </a>
+   </div>
    <section class="bg0 p-t-75 p-b-120">
-      <div class="container">
+      <div id="a"   style="text-align:center; margin-top:-50px;">
          <!-- 이벤트 반복 구문 -->
+         <form id="reviewForm" name="reviewForm" method="POST" >
+         <div id="b" style="display : inline-block;">
+         <table class="bluetop"> 
+	         <tr>
+				<th style="width: 100px;"></th>
+				<th style="width: 40%;">TITLE</th>
+				<th style="width: 20%;">USER</th>
+				<th style="width: 30%;">DATE</th>
+			</tr>
          <c:forEach items = "${reviewList}" var="review">
-         <div class="row" style="margin-left:30px; margin-top:50px;">
-            <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
-               <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md" style="margin-top:20px;">
-                  <h4 class="mtext-111 cl2 p-b-16">
-                     ${review.rTitle}
-                  </h4> 
-
-                  <p class="stext-113 cl6 p-b-26">
-                  	${review.rContents}<br>  
-                  </p>
-                  
-               </div>
-               <hr>
-            </div>
-
-         </div>
+        	 <tr>
+				<td>${review.rNum}</td>
+				<td><a href='#' onClick='fn_view(${review.rTitle})'>
+				<c:out value="${review.rTitle}"/></a></td>
+				<td>${review.mId}</td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${review.rDate}" /></td>
+			 </tr>
          </c:forEach>
-         
+         </table>
+         </div>
+         </form>
       </div>
    </section>   
    
-      
-      
-      
 
    <!-- Footer -->
    <footer class="bg3 p-t-75 p-b-32">

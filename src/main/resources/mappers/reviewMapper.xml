@@ -13,18 +13,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             R_TITLE,
             R_DATE,
             R_CONTENTS,
-            R_VIEWCOUNT,
             M_ID,
             P_CODE
-            
         )VALUES(
             #{rNum, jdbcType=INTEGER},
             #{rTitle, jdbcType=VARCHAR},
             #{rDate, jdbcType=DATE},
             #{rContents, jdbcType=VARCHAR},
-            #{rViewCount, jdbcType=INTEGER},
             #{mId, jdbcType=VARCHAR},
-            #{pCode, jdbcType=VARCHAR},
+            #{pCode, jdbcType=VARCHAR}
         )
     </insert>	
     
