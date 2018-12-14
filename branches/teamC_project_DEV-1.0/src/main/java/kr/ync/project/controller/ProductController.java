@@ -59,9 +59,19 @@ public class ProductController {
 
 		logger.info("리스트상세보기");
 
-		model.addAttribute(service.readProduct(pCode));
+		model.addAttribute("productData",service.readProduct(pCode));
 
 	}
+	
+	/*// 상세
+		@RequestMapping(value = "/productRead", method = RequestMethod.GET)
+		public void aNoticeRead(Model model) throws Exception {
+
+			logger.info("리스트상세보기");
+
+			model.addAttribute(service.readProduct());
+
+		}*/
 
 	// 삭제
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
@@ -76,13 +86,13 @@ public class ProductController {
 		return "redirect:/admin/productlist";
 	}
 
-	// 글 수정 get
+	/*// 글 수정 get
 	@RequestMapping(value = "/productModify", method = RequestMethod.GET)
 	public void getModify(String pCode, Model model) throws Exception {
 		logger.info("공지사항 수정 get");
 
 		model.addAttribute(service.readProduct(pCode));
-	}
+	}*/
 
 	// 글 수정 post
 	@RequestMapping(value = "/productModify", method = RequestMethod.POST)

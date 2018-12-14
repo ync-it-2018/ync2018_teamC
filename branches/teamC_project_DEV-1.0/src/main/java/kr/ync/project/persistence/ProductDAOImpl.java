@@ -26,6 +26,10 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 
 	//상세
+	/*@Override
+	public List<ProductVO> readProduct(String pCode) throws Exception {
+		return session.selectList(namespace + ".readProduct",pCode);
+	}*/
 	@Override
 	public ProductVO readProduct(String pCode) throws Exception {
 		return session.selectOne(namespace + ".readProduct", pCode);
@@ -59,6 +63,13 @@ public class ProductDAOImpl implements ProductDAO{
 	public List<ProductVO> productList(ProductVO productVO) {
 		return session.selectList(namespace + ".list",productVO);
 	}
+
+	@Override
+	public ProductVO read(String pCode) throws Exception {
+		return session.selectOne(namespace + ".read" ,pCode);
+	}
+
+	
 
 	
 }

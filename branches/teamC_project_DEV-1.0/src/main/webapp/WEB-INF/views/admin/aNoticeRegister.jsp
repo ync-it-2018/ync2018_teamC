@@ -42,8 +42,8 @@
 
                   <div class="box-footer">
                      
-                     <button type="submit" id="regist" class="btn btn-primary">등록</button>
-                     <!-- <button type="submit" id="goListBtn" class="btn btn-primary">취소</button> -->
+                     <button type="submit" class="btn btn-primary">등록</button>
+                     <button type="submit" class="btn btn-danger">취소</button>
 
                   </div>
                </form>
@@ -65,7 +65,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
-<script>	 
+<!-- <script>	 
 
 	var form = document.getElementById("form");
 	
@@ -103,6 +103,62 @@
 			formObj.submit();
 		});
 	}); 
+</script> -->
+
+
+<script>
+$(document).ready(function(){
+	
+	var formObj = $("form[role='form']");
+	
+	console.log(formObj);
+	
+	/* 리스트 클릭 */ 
+	$('.btn-danger').on('click',function(){
+		self.location = "/admin/aNotice";
+	});
+	
+	/* 등록 클릭 */ 
+	$('.btn-primary').on('click',function(){
+		
+		if (document.post.nCode.value == "" || document.post.nCode.value == null) {
+			alert("번호를 입력하세요");
+            document.post.nCode.focus();
+            return;
+		} else if (document.post.nTitle.value == "" || document.post.nTitle.value == null) {
+			alert("제목을 입력하세요");
+            document.post.nTitle.focus();
+            return;
+        } else if (document.post.nContents.value == "" || document.post.nContents.value == null) {
+        	alert("내용을 입력하세요");
+            document.post.nContents.focus();
+            return;
+        } else {
+            document.post.submit();
+        }		
+		
+		/* var nCode = $("#nCode").val();
+		var nTitle = $("#nTitle").val();
+		var nContents = $("#nContents").val();
+		
+		if(nCode == ""){
+			alert("번호를 입력하세요");
+			form.nCode.focus();
+		}
+		if(nTitle == ""){
+			alert("제목을 입력하세요");
+			form.nTitle.focus();
+		}
+		if(nContents == ""){
+			alert("내용을 입력하세요");
+			orm.nContents.focus();
+		}
+		formObj.attr("method", "get");
+		formObj.attr("action", "/admin/aNotice");				
+		formObj.submit(); */
+	});
+	
+});
 </script>
 
 
