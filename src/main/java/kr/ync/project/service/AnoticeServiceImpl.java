@@ -53,6 +53,13 @@ public class AnoticeServiceImpl implements AnoticeService {
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception {
 		return dao.listCriteria(cri);
 	}
+	
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+		
+		return dao.countPaging(cri);
+	}
+	
 
 	@Override
 	public List<AnoticeVO> flistAll() throws Exception {

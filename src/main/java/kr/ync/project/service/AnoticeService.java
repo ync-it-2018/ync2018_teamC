@@ -5,7 +5,7 @@ import java.util.List;
 import kr.ync.project.domain.AnoticeVO;
 import kr.ync.project.domain.BoardVO;
 import kr.ync.project.domain.Criteria;
-import kr.ync.project.domain.SearchCriteria;
+//import kr.ync.project.domain.SearchCriteria;
 
 public interface AnoticeService {
 	//목록
@@ -21,6 +21,8 @@ public interface AnoticeService {
 	
 	//페이징
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception;
+	
+	public int listCountCriteria(Criteria cri)throws Exception;
 	
 	//프론트 목록
 	public List<AnoticeVO> flistAll() throws Exception;
