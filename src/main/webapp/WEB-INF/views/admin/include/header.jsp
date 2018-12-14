@@ -356,7 +356,7 @@
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
               </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>메인관리</span>
@@ -373,7 +373,7 @@
                 
               
               </ul>
-            </li>
+            </li> -->
              <!-- <li>
               <a href="../widgets.html">
                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
@@ -389,7 +389,7 @@
                 <li><a href="/categorybig/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리(대) </a></li>
                 <li><a href="/categorymiddleRegister"><i class="fa fa-circle-o"></i> 카테고리관리(중) </a></li>
                 <li><a href="/categorybig/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리(소) </a></li>
-                <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
+                <li><a href="/admin/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
                 <li><a href="/admin/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
             </li>
@@ -409,7 +409,7 @@
            
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-laptop"></i>
+                <i class="fa fa-files-o"></i>
                 <span>이벤트</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>

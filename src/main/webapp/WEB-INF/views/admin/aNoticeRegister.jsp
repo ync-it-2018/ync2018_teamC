@@ -21,11 +21,6 @@
                <form role="form" method="post">
                   <div class="box-body">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Code</label> 
-                        <input type="text" id="nCode" name='nCode' class="form-control"
-                           placeholder="Enter Code">
-                     </div>
-                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label> 
                         <input type="text" id="nTitle" name='nTitle' class="form-control"
                            placeholder="Enter Title">
@@ -43,8 +38,7 @@
                   <div class="box-footer">
                      
                      <button type="submit" class="btn btn-primary">등록</button>
-                     <button type="submit" class="btn btn-danger">취소</button>
-
+                     
                   </div>
                </form>
 
@@ -109,23 +103,14 @@
 <script>
 $(document).ready(function(){
 	
-	var formObj = $("form[role='form']");
+	/* var formObj = $("form[role='form']");
 	
-	console.log(formObj);
-	
-	/* 리스트 클릭 */ 
-	$('.btn-danger').on('click',function(){
-		self.location = "/admin/aNotice";
-	});
+	console.log(formObj); */
 	
 	/* 등록 클릭 */ 
 	$('.btn-primary').on('click',function(){
 		
-		if (document.post.nCode.value == "" || document.post.nCode.value == null) {
-			alert("번호를 입력하세요");
-            document.post.nCode.focus();
-            return;
-		} else if (document.post.nTitle.value == "" || document.post.nTitle.value == null) {
+		if (document.post.nTitle.value == "" || document.post.nTitle.value == null) {
 			alert("제목을 입력하세요");
             document.post.nTitle.focus();
             return;

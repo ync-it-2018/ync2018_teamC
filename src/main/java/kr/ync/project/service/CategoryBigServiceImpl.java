@@ -23,7 +23,7 @@ public class CategoryBigServiceImpl implements CategoryBigService{
 		return dao.listAll();
 	}
 	@Override
-	public CategoryBigVO read(Integer pBig) throws Exception {
+	public CategoryBigVO read(int pBig) throws Exception {
 		return dao.read(pBig);
 	}
 

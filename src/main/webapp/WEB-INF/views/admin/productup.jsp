@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@include file="../include/header.jsp"%>
+<%@include file="../admin/include/header.jsp"%>
 
 <style>
 .fileDrop {
@@ -26,223 +26,107 @@
 				</div>
 				<!-- /.box-header -->
 				
-				<form role="form" id="form" name="form" enctype="meltipart/from-data" method="POST">
+				<form role="form" id="registerForm" name="form" enctype="meltipart/from-data" method="POST">
 					<div class="box-body">
 						<div class="form-group">
 							<label for="exampleInputEmail1">상품번호</label> <input type="text"
-								name='P_CODE' class="form-control" placeholder="상품번호">
+								name='pCode' class="form-control" placeholder="상품번호">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">상품명</label> <input type="text"
-								name='P_NAME' class="form-control" placeholder="상품명">
+								name='pName' class="form-control" placeholder="상품명">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">메인 구분</label> <input type="text"
+								name='pMain' class="form-control" placeholder="ex)베스트,신상,추천,이벤트...">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">판매가</label> <input type="text"
-								name='PRICE' class="form-control" placeholder="판매가">
+								name='price' class="form-control" placeholder="판매가">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">세일가격</label> <input type="text"
-								name='SALE_PRICE' class="form-control" placeholder="세일가격">
+								name='salePrice' class="form-control" placeholder="세일가격">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">재고</label> <input type="text"
-								name='STOCK' class="form-control" placeholder="재고">
+								name='stock' class="form-control" placeholder="재고">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">적립률</label> <input type="text"
-								name='P_POINT' class="form-control" placeholder="적립률">
+								name='pPoint' class="form-control" placeholder="적립률">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">상품설명</label>
-							<textarea class="form-control" name="P_DETAIL" rows="3"
+							<textarea class="form-control" name="pDetail" rows="5"
 								placeholder="상품 설명"></textarea>
-						</div>
-						<%-- <div class='box-body'>
-					<select name="searchType">
-						<option value="n"
-							<c:out value="${cri.searchType == null?'selected':''}"/>>
-							---</option>
-						<option value="t"
-							<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-							Title</option>
-						<option value="c"
-							<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-							Content</option>
-						<option value="w"
-							<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-							Writer</option>
-						<option value="tc"
-							<c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
-							Title OR Content</option>
-						<option value="cw"
-							<c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
-							Content OR Writer</option>
-						<option value="tcw"
-							<c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
-							Title OR Content OR Writer</option>
-					</select> <input type="text" name='keyword' id="keywordInput"
-						value='${cri.keyword }'>
-					<button id='searchBtn'>Search</button>
-					<button id='newBtn'>New Board</button>
-				</div> --%>						
+						</div>		
 						<div class="form-group">
-							<label for="exampleInputEmail1">대분류</label> <input type="number"
-								min="0" max="" name='P_BIG' class="form-control" placeholder="대분류">
+							<label for="exampleInputEmail1">대분류</label> <input type="text"
+								name='pBig' class="form-control" placeholder="대분류">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail1">중분류</label> <input type="number"
-								min="0" max="" name='P_MIDDLE' class="form-control" placeholder="중분류">
+							<label for="exampleInputEmail1">중분류</label> <input type="text"
+								name='pMiddle' class="form-control" placeholder="중분류">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail1">소분류</label> <input type="number"
-								min="0" max="" name='P_SMALL' class="form-control" placeholder="소분류">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">이벤트번호</label> <input type="number"
-								min="0" max="" name='E_NUM' class="form-control" placeholder="이벤트번호">
+							<label for="exampleInputEmail1">소분류</label> <input type="text"
+								name='pSmall' class="form-control" placeholder="소분류">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">사이즈</label> <input type="text"
-								name='P_SIZE' class="form-control" placeholder="사이즈">
+								name='pSize' class="form-control" placeholder="사이즈">
 						</div>
 						
-						
-						<%-- <div class="form-group">
-							<label for="exampleInputEmail1">Writer</label>
-							<input type="text" name="writer" class="form-control"  value="${login.uids }" readonly>
-						</div> --%>
-						
-						<div class="form-group">
+					<!-- 	<div class="form-group">
 							<label for="exampleInputEmail1">파일 업로드</label>
 							<div class="fileDrop"></div>
-							<!-- <input type='file' name='files'>
 							<input type='file' name='files'>
-							<input type='file' name='files'> -->
-						</div>
+							<input type='file' name='files'>
+							<input type='file' name='files'>
+						</div> -->
 					</div>
-					
-					
-					<!-- <h2>상품등록</h2>
-					<form id="form1" name="form1" enctype="meltipart/from-data" method="post">
-						<table border="1">
-							<tr>
-								<td>상품명</td>
-								<td><input type="text" name="productName" id="productName"></td>
-							</tr>
-							<tr>
-								<td>상품명</td>
-								<td><input type="text" name="productName" id="productName"></td>
-							</tr>
-							<tr>
-								<td>상품명</td>
-								<td><input type="text" name="productName" id="productName"></td>
-							</tr>
-							<tr>
-								<td>상품명</td>
-								<td><input type="text" name="productName" id="productName"></td>
-							</tr>
-							<tr>
-								<td colspan="2" align="center">								
-									<input type="button" value="등록" id="addBtn">
-									<input type="button" value="목록" id="listBtn">
-								</td>
-							</tr>
-						</table>
-					</form> -->
 					
 					<!-- /.box-body -->
 
 					<div class="box-footer">
-						<div>
+					
+					<div>
 							<hr>
 						</div>
 				
 						<ul class="mailbox-attachments clearfix uploadedList">
 						</ul>
-				
-						<button type="submit" class="btn btn-primary">Submit</button>
-				
-					</div>
-				</form>
+                     
+                     <button type="submit" class="btn btn-primary">등록</button>
 
+                  </div>
+               </form>
 
-			</div>
-			<!-- /.box -->
-		</div>
-		<!--/.col (left) -->
+            </div>
+            <!-- /.box -->
+         </div>
+         <!--/.col (left) -->
 
-	</div>
-	<!-- /.row -->
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-
+      </div>
+      <!-- /.row -->
+   </section>
+   <!-- /.content -->
+   
 <script type="text/javascript" src="/resources/js/upload.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
 <script id="template" type="text/x-handlebars-template">
 <li>
   <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
   <div class="mailbox-attachment-info">
-	<a href="{{getLink}}" target="_blank" class="mailbox-attachment-name">{{fileName}}</a>
-	<a href="{{fullName}}" 
+	<a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
+	<a href="{{fullFileName}}" 
      class="btn btn-default btn-xs pull-right delbtn"><i class="fa fa-fw fa-remove"></i></a>
+	</span>
   </div>
 </li>                
 </script>    
-
-
-<script>
-$(document).ready(function(){
-	$("#addBtn").click(function(){
-		var P_CODE = $("P_CODE").val();
-		var P_NAME = $("P_NAME").val();
-		var PRICE = $("PRICE").val();
-		var STOCK = $("STOCK").val();
-		
-		if(P_CODE == ""){
-			alert("상품코드를 입력해주세요");
-			P_CODE.focus();
-		} else if (P_NAME == ""){
-			alert("상품명을 입력해주세요");
-			P_NAME.focus();
-		} else if (PRICE == ""){
-			alert("상품 가격을 입력해주세요");
-			PRICE.focus();
-		} else if (STOCK == ""){
-			alert("상품 재고를 입력해주세요");
-			STOCK.focus();
-		}
-		
-		//상품 정보 전송
-		document.form.action = "${path}/shop/product/insert.do";
-		document.form.submit();
-	});
-	
-	//상품 목록 이동
-	$("#listBtn").click(function(){
-		location.href = '${path}/shop/product/list.do'
-	});
-	
-	
-	$('#searchBtn').on("click",function(event) {
-		self.location = "list"
-						+ '${pageMaker.makeQuery(1)}'
-						+ "&searchType="
-						+ $("select option:selected").val()
-						+ "&keyword=" + $('#keywordInput').val();
-
-	});
-
-	$('#newBtn').on("click", function(evt) {
-		self.location = "register";
-	});
-});
-
-</script>
-
-
 
 
 <script>
@@ -267,19 +151,27 @@ $(".fileDrop").on("drop", function(event){
 	
 	
 	$.ajax({
-		url: '/uploadAjax',
-		data: formData,
-		dataType:'text',
-		processData: false,
-		contentType: false,
-		type: 'POST',
-		success: function(data){
-			var fileInfo = getFileInfo(data);
-			var html = template(fileInfo);
+		  url: '/uploadAjax',
+		  data: formData,
+		  dataType:'text',
+		  processData: false,
+		  contentType: false,
+		  type: 'POST',
+		  success: function(data){
 			  
-			$(".uploadedList").append(html);
-		}
-	});	
+			  var fileInfo = getFileInfo(data);
+			  
+			  console.log("-----------------");
+			  console.log(fileInfo)
+			  
+			  var html = template(fileInfo);
+			  
+			  console.log("hTML............");
+			  console.log(html);
+			  
+			  $(".uploadedList").append(html);
+		  }
+		});	
 });
 
 
@@ -289,12 +181,12 @@ $("#registerForm").submit(function(event){
 	var that = $(this);
 	
 	var str ="";
-	$(".uploadedList .delbtn").each(function(index){
+	$(".uploadedList .delbtn").each(function(index){ 	
 		 str += "<input type='hidden' name='files["+index+"]' value='"+$(this).attr("href") +"'> ";
 	});
 	
 	that.append(str);
-
+	
 	that.get(0).submit();
 });
 
@@ -321,4 +213,18 @@ $(".uploadedList").on("click", ".mailbox-attachment-info a", function(event){
 });
 </script>
 
-<%@include file="../include/footer.jsp"%>
+<script>
+	$(document).ready(function() {
+
+		var formObj = $("form[role='form']");
+
+		console.log(formObj);
+
+		/* 등록 클릭 */
+		$('.btn-primary').on('click', function() {
+			formObj.submit();
+		});
+	});
+</script>
+
+<%@include file="../admin/include/footer.jsp"%>

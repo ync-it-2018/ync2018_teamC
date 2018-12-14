@@ -83,6 +83,12 @@
 							name='pSmall' class="form-control" value="${productVO.pSmall}"
 							readonly="readonly">
 					</div>
+					
+					<div class="form-group">
+						<label for="exampleInputEmail1">메인 구분</label> <input type="text"
+							name='pMain' class="form-control" value="${productVO.pMain}"
+							readonly="readonly">
+					</div>
 
 					<div class="form-group">
 						<label for="exampleInputEmail1">상품명</label> <input type="text"
