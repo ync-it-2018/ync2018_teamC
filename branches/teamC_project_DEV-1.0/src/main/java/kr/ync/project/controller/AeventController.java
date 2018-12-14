@@ -29,7 +29,7 @@ public class AeventController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	//리스트
+	//어드민 이벤트 리스트
 	@RequestMapping(value = "/aeventList", method = RequestMethod.GET)
 	public void aeventList(Model model) throws Exception {
 		
@@ -39,7 +39,7 @@ public class AeventController {
 		
 	}
 	
-	//상세
+	//어드민 - 이벤트 상세
 	@RequestMapping(value = "/aeventDetail", method = RequestMethod.GET)
 	public void aeventDetail(@RequestParam("eNum") Integer eNum, Model model) throws Exception {
 
@@ -49,7 +49,7 @@ public class AeventController {
 
 	}
 	
-	//글 수정 get
+	//어드민 이벤트 수정 get
 		@RequestMapping(value = "/aeventModify", method = RequestMethod.GET)
 		public void getModify(Integer eNum, Model model) throws Exception {
 			logger.info("이벤트 수정 get");
@@ -57,7 +57,7 @@ public class AeventController {
 			model.addAttribute(eventservice.readEvent(eNum));
 		}
 			
-		//글 수정 post
+		//어드민 이벤트 수정 post
 		@RequestMapping(value = "/aeventModify", method = RequestMethod.POST)
 		public String postModify(EventVO vo, RedirectAttributes rttr) throws Exception {
 
@@ -71,7 +71,7 @@ public class AeventController {
 		}
 
 		
-		//삭제
+		//어드민 이벤트 삭제
 		@RequestMapping(value = "/deleteEvent", method = RequestMethod.POST)
 		public String remove(@RequestParam("eNum") Integer eNum, RedirectAttributes rttr) throws Exception {
 
