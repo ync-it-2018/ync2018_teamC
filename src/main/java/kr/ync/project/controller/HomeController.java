@@ -50,7 +50,7 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 				
 		model.addAttribute("serverTime", formattedDate);
-		
+
 		//베스트 상품
 		List<ProductVO> best = productService.best();
 		model.addAttribute("bestProduct", best);
@@ -58,7 +58,7 @@ public class HomeController {
 		//신상
 		List<ProductVO> newArrival = productService.newArrival();
 		model.addAttribute("newArrival", newArrival);
-		
+
 		return "front/index";
 	}
 	
@@ -152,7 +152,8 @@ public class HomeController {
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
 	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
 		
-		model.addAttribute("productData", productService.read(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
+		model.addAttribute("productData", productService.read(pCode));
+		//serviceimple에서 받아온 데이터를 view로 보내줌
 		
 		return "front/product_detail";
 	}
