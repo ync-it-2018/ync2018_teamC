@@ -45,7 +45,7 @@ public class AdminLoginController {
 	
 	
 	//postHandle 실행
-	@PostMapping("/aloginPost")
+	@GetMapping("/aloginPost")
 	//@ResponseStatus(value=HttpStatus.OK)
 	public void loginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
 
@@ -66,9 +66,6 @@ public class AdminLoginController {
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
 			service.keepALogin(vo.getAID(), session.getId(), sessionLimit);
-	
-			
-			 
 		}
 		
 		
