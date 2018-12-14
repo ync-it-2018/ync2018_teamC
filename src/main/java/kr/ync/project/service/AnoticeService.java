@@ -6,7 +6,6 @@ import kr.ync.project.domain.AnoticeVO;
 import kr.ync.project.domain.BoardVO;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.SearchCriteria;
-import kr.ync.project.domain.TestVO;
 
 public interface AnoticeService {
 	//목록

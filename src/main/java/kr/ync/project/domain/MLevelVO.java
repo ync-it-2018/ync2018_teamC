@@ -13,14 +13,14 @@ import lombok.ToString;
 @ToString*/
 public class MLevelVO {
 
-	private Integer lCode;
+	private Integer mlCode;
 	private String lName;
 	private Integer lPoint;
-	public Integer getlCode() {
-		return lCode;
+	public Integer getmlCode() {
+		return mlCode;
 	}
-	public void setlCode(Integer lCode) {
-		this.lCode = lCode;
+	public void setmlCode(Integer mlCode) {
+		this.mlCode = mlCode;
 	}
 	public String getlName() {
 		return lName;
