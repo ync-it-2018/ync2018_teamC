@@ -25,6 +25,10 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	//상세
+	/*@Override
+	public List<ProductVO> readProduct(String pCode) throws Exception {
+		return dao.readProduct(pCode);
+	}*/
 	@Override
 	public ProductVO readProduct(String pCode) throws Exception {
 		return dao.readProduct(pCode);
@@ -59,5 +63,12 @@ public class ProductServiceImpl implements ProductService{
 	      return dao.productList(productVO);
 
 	}
+
+	@Override
+	public ProductVO read(String pCode) throws Exception {
+		return dao.read(pCode);
+	}
+
+	
 
 }

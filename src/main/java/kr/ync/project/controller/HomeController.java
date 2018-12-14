@@ -143,7 +143,7 @@ public class HomeController {
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
 	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
 		
-		model.addAttribute("productData", productService.readProduct(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
+		model.addAttribute("productData", productService.read(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
 		
 		return "front/product_detail";
 	}
@@ -216,13 +216,6 @@ public class HomeController {
 	public String popupload(Locale locale, Model model) {
 		
 		return "admin/popupload";
-	}
-	
-	
-	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
-	public String productlist(Locale locale, Model model) {
-		
-		return "admin/aproduct/productlist";
 	}
 	
 	

@@ -79,6 +79,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<!-- admin -->
+	
 	<!-- 상품 목록 -->
 	<select id="listAll" resultType="ProductVO">
 	<![CDATA[
@@ -88,7 +89,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<!-- 상품 상세 -->
-	<select id="readProduct" parameterType="hashMap" resultType="ProductVO">
+	<select id="readProduct" parameterType="hashMap" resultType="productVO">
 	<![CDATA[
 	SELECT A.P_NAME
 
