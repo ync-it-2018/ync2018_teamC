@@ -42,7 +42,7 @@
 
                   <div class="box-footer">
                      
-                     <button type="submit" id="regist" class="btn btn-primary">등록</button>
+                     <input type="button" id="regist" class="btn btn-primary" value="등록"/>
                      
 
                   </div>
@@ -78,9 +78,10 @@
 		var lName = $("#lName").val();
 		var lPoint = $("#lPoint").val();
 		
-		if(lCode == ""){
+		if(mlCode == ""){
 			alert("번호를 입력하세요");
 			form.mlCode.focus();
+			
 		}
 		if(lName == ""){
 			alert("등급명을 입력하세요");

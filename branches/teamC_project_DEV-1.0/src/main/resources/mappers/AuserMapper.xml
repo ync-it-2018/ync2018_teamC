@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.AuserMapper">
 
+	<!--  관리자 로그인 --> 
 	<select id="alogin" resultType="AUserVO">
 		SELECT	A_ID,
 				A_PWD
@@ -13,12 +14,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND		A_PWD = #{aPWD}
 	</select>
   
+ 	 <!--  관리자 로그인 유지 --> 
 	<update id="keepALogin" >
 		UPDATE TC_ADMIN SET 	sessionKey = #{sessionId},
 	  							sessionLimit = #{next}
 		WHERE A_ID = #{aID}
 	</update>
 
+	<!--  관리자 로그인 확인 --> 
 	<select id="checkAUserWithSessionKey" resultType="AUserVO">
 		SELECT 	*
 		FROM	TC_ADMIN

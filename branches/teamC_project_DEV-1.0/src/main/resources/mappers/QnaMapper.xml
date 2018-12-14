@@ -5,67 +5,60 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.QnaMapper">
 
-<select id="listAll" resultType="QnaVO">
+	<!-- Qna 목록 -->
+	<select id="listAll" resultType="QnaVO">
 	<![CDATA[
-	SELECT  
+		SELECT  
 			N.Q_NUM,
 			N.Q_TITLE,
 			N.Q_CONTENTS,
 			N.Q_UP_DATE,
 			N.Q_CHECK,
 			M.M_ID,
-			N.Q_CATEGORY_NUM
+			C.Q_CATEGORY_NAME
 	FROM TC_MEMBER M,
-		 TC_QNA N
+		 TC_QNA N,
+		 TC_Q_CATEGORY C
 	WHERE M.M_ID = N.M_ID
-	]]> 
-
-</select>
-
-<select id="read" resultType="QnaVO">
-	
-	SELECT 	Q_NUM,
-			Q_TITLE,
-			Q_CONTENTS,
-			Q_UP_DATE,
-			Q_CHECK,
-			M_ID,
-			Q_A_CONTENTS,
-			Q_A_DATE,
-			A_ID
-	FROM 	TC_QNA
-	WHERE	Q_NUM = #{qNum}
-</select>
- 
-<update id="updateQna">
-	UPDATE TC_QNA SET Q_A_CONTENTS = #{qAContents}, Q_CHECK = #{qCheck}, A_ID = #{aID}
-	WHERE Q_NUM = #{qNum}
-</update>
-
-
-<delete id="deleteQna">
-	delete from TC_QNA where Q_NUM = #{qNum}
-</delete>
-
-<!-- <select id="listPage" resultType="QnaVO">
-	<![CDATA[
-	SELECT 	N_CODE, N_TITLE, N_UP_DATE
-	FROM TC_NOTICE
-	WHERE N_CODE > 0
-	ORDER BY N_CODE DESC, N_UP_DATE DESC
-	limit #{page}, 10
+	AND C.Q_CATEGORY_NUM = N.Q_CATEGORY_NUM
+	ORDER BY N.Q_NUM DESC
 	]]>
-</select>
- 
- 
-<select id="listCriteria" resultType="QnaVO">
-	<![CDATA[
-	SELECT 	N_CODE, N_TITLE, N_UP_DATE
-	FROM TC_NOTICE
-	WHERE N_CODE > 0
-	ORDER BY N_CODE DESC,N_UP_DATE DESC
-	limit #{pageStart}, #{perPageNum}
-	]]>
-</select> -->
- 
+
+	</select>
+
+	<!-- Qna 상세보기 -->
+	<select id="read" resultType="QnaVO">
+
+		SELECT Q_NUM,
+		Q_TITLE,
+		Q_CONTENTS,
+		Q_UP_DATE,
+		Q_CHECK,
+		M_ID,
+		Q_A_CONTENTS,
+		Q_A_DATE,
+		A_ID
+		FROM TC_QNA
+		WHERE Q_NUM = #{qNum}
+	</select>
+
+	<!-- Qna 댓글등록 -->
+	<update id="updateQna">
+		UPDATE TC_QNA SET Q_A_CONTENTS = #{qAContents}, Q_CHECK = #{qCheck}, A_ID =
+		#{aID}
+		WHERE Q_NUM = #{qNum}
+	</update>
+
+	<!-- Qna 삭제 -->
+	<delete id="deleteQna">
+		delete from TC_QNA where Q_NUM = #{qNum}
+	</delete>
+
+	<!-- <select id="listPage" resultType="QnaVO"> <![CDATA[ SELECT N_CODE, 
+		N_TITLE, N_UP_DATE FROM TC_NOTICE WHERE N_CODE > 0 ORDER BY N_CODE DESC, 
+		N_UP_DATE DESC limit #{page}, 10 ]]> </select> <select id="listCriteria" 
+		resultType="QnaVO"> <![CDATA[ SELECT N_CODE, N_TITLE, N_UP_DATE FROM TC_NOTICE 
+		WHERE N_CODE > 0 ORDER BY N_CODE DESC,N_UP_DATE DESC limit #{pageStart}, 
+		#{perPageNum} ]]> </select> -->
+
 </mapper>

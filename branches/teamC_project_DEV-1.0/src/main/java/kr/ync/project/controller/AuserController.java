@@ -39,7 +39,7 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 	 * Simply selects the home view to render by returning its name.
 	 */
 	
-	//목록
+	//목록 GET
 		@RequestMapping(value = "/memberlist", method = RequestMethod.GET)
 		public void memberlist(Model model) throws Exception {
 
@@ -49,7 +49,7 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 
 		}
 		
-		//상세
+		//상세 GET
 		@RequestMapping(value = "/MemberRead", method = RequestMethod.GET)
 		public void MemberRead(@RequestParam("mId") String mId, Model model) throws Exception {
 
@@ -59,7 +59,7 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 
 		}
 		
-		//삭제
+		//삭제 POST
 		@RequestMapping(value = "/deleteMember", method = RequestMethod.POST)
 		public String remove(@RequestParam("mId") String mId, RedirectAttributes rttr) throws Exception {
 
@@ -71,45 +71,6 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 
 			return "redirect:/admin/memberlist";
 		}
-		
-		
-		
-	/*@RequestMapping(value = "/memberlist", method = RequestMethod.GET)
-	public String memberlist(Locale locale, Model model) throws Exception {
-		
-		logger.info("회원 리스트", locale);
-		
-		model.addAttribute("userlist", service.userlist());
-		
-		return "admin/memberlist";
-	}
-
-	
-		//삭제
-		@RequestMapping(value = "/deleteMember", method = RequestMethod.POST)
-		public String remove(@RequestParam("mId") String mId, RedirectAttributes rttr) throws Exception {
-
-			logger.info("회원 삭제");
-			
-			service.deleteMember(mId);
-
-			rttr.addFlashAttribute("msg", "SUCCESS");
-
-			return "redirect:/admin/memberlist";
-		}
-	
-		//어드민 - 회원 선택해서 상세보기 
-		@RequestMapping(value = "/MemberRead", method = RequestMethod.GET)
-		public String MemberRead(@RequestParam("mId") String mId, Model model) throws Exception {
-
-			logger.info("리스트상세보기");
-
-			model.addAttribute("userlist", service.readMember(mId));
-
-			return "admin/MemberRead";
-		}*/
-	
-	
 		
 	
 }

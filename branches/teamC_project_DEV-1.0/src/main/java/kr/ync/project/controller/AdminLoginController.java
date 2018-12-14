@@ -28,7 +28,8 @@ public class AdminLoginController {
 
 	@Autowired
 	private AUserService service;
-
+	
+	//관리자 로그인 GET
 	@GetMapping(value = "/alogin")
 	public String aloginGET(@ModelAttribute("dto") ALoginDTO dto) {
 		log.info("AdminLoginController valueGET");
@@ -71,12 +72,14 @@ public class AdminLoginController {
 		
 	}
 	
+	//로그인 오류시 에러메세지
 	@GetMapping(value = "/aloginError")
 	public String aloginError(@ModelAttribute("dto") ALoginDTO dto) {
 		log.info("Error");
 		return "admin/aloginError";
 	}
-
+	
+	//관리자 로그아웃
 	@GetMapping(value = "/alogout")
 	public void alogout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {

@@ -20,31 +20,35 @@ public class AUserServiceImpl implements AUserService {
 	@Autowired
 	private AUserDAO dao;
 
+	//관리자 로그인
 	@Override
 	public AUserVO alogin(ALoginDTO dto) throws Exception {
 
 		return dao.alogin(dto);
 	}
 
+	//관리자 로그인유지
 	@Override
 	public void keepALogin(String aID, String sessionId, Date next) throws Exception {
 
 		dao.keepALogin(aID, sessionId, next);
 
 	}
-
+	//관리자 로그인확인
 	@Override
 	public AUserVO checkALoginBefore(String value) {
 
 		return dao.checkAUserWithSessionKey(value);
 	}
 
+	//관리자 회원가입(등록)
 	@Override
 	public AUserVO Ajoin(ALoginDTO dto) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	//어드민 - 회원 리스트
 	@Override
 	public List<UserVO> userlist() throws Exception {
 		// TODO Auto-generated method stub
@@ -56,7 +60,8 @@ public class AUserServiceImpl implements AUserService {
 		// TODO Auto-generated method stub
 		dao.deleteMember(mId);
 	}
-
+	
+	//어드민 -회원 정보
 	@Override
 	public UserVO readMember(String mId) throws Exception {
 		// TODO Auto-generated method stub

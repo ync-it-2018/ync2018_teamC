@@ -24,37 +24,37 @@ public class MLevelDAOImpl implements MLevelDAO {
     
     private static String namespace = "kr.ync.project.mapper.MLevelMapper";
     
-	//목록
+	//사용자 등급 목록
 	@Override
 	public List<MLevelVO> listAll() throws Exception {
 		return session.selectList(namespace + ".listAll");
 	}
 
-	//상세
+	//사용자 등급 상세
 	@Override
 	public MLevelVO read(Integer mlCode) throws Exception {
 		return session.selectOne(namespace + ".read", mlCode);
 	}
 
-	//작성
+	//사용자 등급 작성
 	@Override
 	public void createMLevel(MLevelVO vo) throws Exception {
 		session.insert(namespace + ".createMLevel", vo);
 	}
 
-	//수정
+	//사용자 등급 수정
 	@Override
 	public void updateMLevel(MLevelVO vo) throws Exception {
 		session.update(namespace + ".updateMLevel", vo);
 	}
 
-	//삭제
+	//사용자 등급 삭제
 	@Override
 	public void deleteMLevel(Integer mlCode) throws Exception {
 		session.delete(namespace + ".deleteMLevel", mlCode);
 	}
 	
-	//페이징
+	//사용자 등급 페이징
 	@Override
 	public List<MLevelVO> listPage(int page) throws Exception {
 		if(page <= 0) {

@@ -14,18 +14,18 @@ import kr.ync.project.dto.LoginDTO;
 public interface MLevelService {
 	
 	
-	//목록
+	//등급 목록
 	public List<MLevelVO> listAll() throws Exception;
-	//상세
+	//등급 상세
 	public MLevelVO read(Integer mlCode) throws Exception;
-	//작성
+	//등급 작성
 	public void createMLevel(MLevelVO vo) throws Exception;
-	//수정
+	//등급 수정
 	public void updateMLevel(MLevelVO vo) throws Exception;
-	//삭제
+	//등급 삭제
 	public void deleteMLevel(Integer mlCode) throws Exception;
 	
-	//페이징
+	//등급 페이징
 	public List<MLevelVO> listCriteria(Criteria cri) throws Exception;
 
 

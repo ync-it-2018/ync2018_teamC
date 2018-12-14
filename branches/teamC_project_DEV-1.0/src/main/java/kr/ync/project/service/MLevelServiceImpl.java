@@ -22,37 +22,38 @@ public class MLevelServiceImpl implements MLevelService {
     @Inject
     private MLevelDAO dao;
  
-	//목록
+	//등급 목록
 	@Override
 	public List<MLevelVO> listAll() throws Exception {
 		return dao.listAll();
+		
 	}
 
-	//상세
+	//등급 상세
 	@Override
 	public MLevelVO read(Integer mlCode) throws Exception {
 		return dao.read(mlCode);
 	}
 
-	//작성
+	//등급 작성
 	@Override
 	public void createMLevel(MLevelVO vo) throws Exception {
 		dao.createMLevel(vo);
 	}
 
-	//수정
+	//등급 수정
 	@Override
 	public void updateMLevel(MLevelVO vo) throws Exception {
 		dao.updateMLevel(vo);
 	}
 
-	//삭제
+	//등급 삭제
 	@Override
 	public void deleteMLevel(Integer mlCode) throws Exception {
 		dao.deleteMLevel(mlCode);
 	}
 	
-	//페이징
+	//등급 페이징
 	@Override
 	public List<MLevelVO> listCriteria(Criteria cri) throws Exception {
 		return dao.listCriteria(cri);

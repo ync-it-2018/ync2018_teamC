@@ -64,12 +64,12 @@
                      <th style="width: 200px">LPOINT(등극별 적립률)</th>
                   </tr>
 
-                  <c:forEach items="${list}" var="MLevelVO">
+                  <c:forEach items="${list}" var="mLevelVO">
 
                      <tr>
-                        <td>${MLevelVO.mlCode}</td>
-                        <td><a href='/admin/MLevelRead?mlCode=${MLevelVO.mlCode}'>${MLevelVO.lName}</a></td>
-                        <td>${MLevelVO.lPoint}</td>
+                        <td>${mLevelVO.mlCode}</td>
+                        <td><a href='/admin/MLevelRead?mlCode=${mLevelVO.mlCode}'>${mLevelVO.lName}</a></td>
+                        <td>${mLevelVO.lPoint}</td>
                      </tr>
 
                   </c:forEach>
