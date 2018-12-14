@@ -1,6 +1,8 @@
 package kr.ync.project.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -64,12 +66,36 @@ public class AnoticeDAOImpl implements AnoticeDAO {
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception {
 		return session.selectList(namespace + ".listCriteria", cri);
 	}
+	
+	@Override
+	public int countPaging(Criteria cri)throws Exception {
+		
+		return session.selectOne(namespace + ".countPaging", cri);
+	}
+	
 
 	@Override
 	public List<AnoticeVO> flistAll() throws Exception{
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".flistAll");
 	}
+
+	//공지 프론트 페이징
+	/*@Override
+	public List<AnoticeVO> nlistPage(Integer bno, Criteria cri) throws Exception {
+		Map<String, Object> paramMap = new HashMap<>();
+		
+		paramMap.put("bno", bno);
+		paramMap.put("cri", cri);
+		
+		return session.selectList(namespace + ".nlistPage", paramMap);
+	}
+
+	@Override
+	public int ncount(Integer bno) throws Exception {
+		
+		return session.selectOne(namespace) + ".ncount", bno);
+	}*/
 
 	
 }

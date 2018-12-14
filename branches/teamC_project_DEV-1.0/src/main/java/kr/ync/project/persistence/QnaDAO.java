@@ -8,8 +8,6 @@ import kr.ync.project.domain.BoardVO;
 //import kr.ync.project.domain.SearchCriteria;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.QnaVO;
-import kr.ync.project.domain.SearchCriteria;
-
 public interface QnaDAO {
 
 	//목록

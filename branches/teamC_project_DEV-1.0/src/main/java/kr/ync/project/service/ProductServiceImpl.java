@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.ProductVO;
-import kr.ync.project.domain.SearchCriteria;
 import kr.ync.project.persistence.AnoticeDAO;
 import kr.ync.project.persistence.ProductDAO;
 

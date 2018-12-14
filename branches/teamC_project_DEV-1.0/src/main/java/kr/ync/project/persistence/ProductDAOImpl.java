@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.ProductVO;
-import kr.ync.project.domain.SearchCriteria;
 
 @Repository
 public class ProductDAOImpl implements ProductDAO{
