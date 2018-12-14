@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.ProductVO;
-import kr.ync.project.domain.SearchCriteria;
 
 @Repository
 public class ProductDAOImpl implements ProductDAO{
@@ -27,6 +26,10 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 
 	//상세
+	/*@Override
+	public List<ProductVO> readProduct(String pCode) throws Exception {
+		return session.selectList(namespace + ".readProduct",pCode);
+	}*/
 	@Override
 	public ProductVO readProduct(String pCode) throws Exception {
 		return session.selectOne(namespace + ".readProduct", pCode);
@@ -60,6 +63,24 @@ public class ProductDAOImpl implements ProductDAO{
 	public List<ProductVO> productList(ProductVO productVO) {
 		return session.selectList(namespace + ".list",productVO);
 	}
+	
+	@Override
+	public ProductVO read(String pCode) throws Exception {
+		return session.selectOne(namespace + ".read" ,pCode);
+	}
 
+	//베스트 상품
+	@Override
+	public List<ProductVO> best() throws Exception {
+		// TODO Auto-generated method stub
+		return  session.selectList(namespace + ".best");
+	}
+	
+	//신상
+	@Override
+	public List<ProductVO> newArrival() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".newArrival");
+	}
 	
 }

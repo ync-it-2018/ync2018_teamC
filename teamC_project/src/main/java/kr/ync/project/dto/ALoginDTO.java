@@ -9,8 +9,8 @@ import lombok.ToString;
 @ToString
 public class ALoginDTO {
 	
-	private String aID;
-	private String aPWD;
-	private boolean useCookie;
+	private String aID; 		//관리자아이디
+	private String aPWD;		//관리자비밀번호
+	private boolean useCookie;	//쿠키유지
 
 }

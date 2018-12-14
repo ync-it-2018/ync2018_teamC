@@ -13,14 +13,15 @@ import lombok.ToString;
 @ToString*/
 public class MLevelVO {
 
-	private Integer lCode;
-	private String lName;
-	private Integer lPoint;
-	public Integer getlCode() {
-		return lCode;
+	//회원등급관리
+	private Integer mlCode;		//등급번호
+	private String lName;		//등급이름
+	private Integer lPoint;		//등급별적립률
+	public Integer getmlCode() {
+		return mlCode;
 	}
-	public void setlCode(Integer lCode) {
-		this.lCode = lCode;
+	public void setmlCode(Integer mlCode) {
+		this.mlCode = mlCode;
 	}
 	public String getlName() {
 		return lName;
@@ -33,6 +34,11 @@ public class MLevelVO {
 	}
 	public void setlPoint(Integer lPoint) {
 		this.lPoint = lPoint;
+	}
+	@Override
+	public String toString() {
+		System.out.println(mlCode);
+		return "MLevelVO [mlCode=" + mlCode + ", lName=" + lName + ", lPoint=" + lPoint + "]";
 	}
 	
 	

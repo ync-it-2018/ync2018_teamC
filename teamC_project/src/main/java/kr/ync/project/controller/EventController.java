@@ -22,13 +22,13 @@ public class EventController {
 	@Autowired
 	private EventService eventService;
     
-    //SignUp GET
+    //Event GET
     @RequestMapping(value="/event.do", method=RequestMethod.GET)
     public void eventGET() {
         
     }
     
-    //SignUp POST
+    //Event POST
     @RequestMapping(value="/event.do", method=RequestMethod.POST)
     public String eventPOST(EventVO eventVO) {
             

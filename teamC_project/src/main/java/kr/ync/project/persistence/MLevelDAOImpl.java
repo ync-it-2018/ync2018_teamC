@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.MLevelVO;
 import kr.ync.project.domain.SignupVO;
@@ -21,33 +23,51 @@ public class MLevelDAOImpl implements MLevelDAO {
     private SqlSession session;
     
     private static String namespace = "kr.ync.project.mapper.MLevelMapper";
- 
-    @Override
-    public void insertMLevel(MLevelVO mlevelVO) {
-        session.insert("insertMLevel",mlevelVO);
-    }
-
-	@Override
-	public List<MLevelVO> listMLevel() throws Exception {
-		// TODO Auto-generated method stub
-		return session.selectList(namespace + ".selectEvent");
-	}
-
-	@Override
-	public List<MLevelVO> MLevelList(MLevelVO mlevelVO) {
-		// TODO Auto-generated method stub
-		return session.selectList(namespace + ".selectEvent", mlevelVO);
-	}
-
+    
+	//사용자 등급 목록
 	@Override
 	public List<MLevelVO> listAll() throws Exception {
-		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".listAll");
 	}
 
+	//사용자 등급 상세
 	@Override
-	public MLevelVO read(Integer lCode) throws Exception {
-		// TODO Auto-generated method stub
-		return session.selectOne(namespace + ".read", lCode);
+	public MLevelVO read(Integer mlCode) throws Exception {
+		return session.selectOne(namespace + ".read", mlCode);
+	}
+
+	//사용자 등급 작성
+	@Override
+	public void createMLevel(MLevelVO vo) throws Exception {
+		session.insert(namespace + ".createMLevel", vo);
+	}
+
+	//사용자 등급 수정
+	@Override
+	public void updateMLevel(MLevelVO vo) throws Exception {
+		session.update(namespace + ".updateMLevel", vo);
+	}
+
+	//사용자 등급 삭제
+	@Override
+	public void deleteMLevel(Integer mlCode) throws Exception {
+		session.delete(namespace + ".deleteMLevel", mlCode);
+	}
+	
+	//사용자 등급 페이징
+	@Override
+	public List<MLevelVO> listPage(int page) throws Exception {
+		if(page <= 0) {
+			page = 1;
+		}
+		
+		page = (page - 1) * 10;
+		
+		return session.selectList(namespace + ".listPage", page);
+	}
+
+	@Override
+	public List<MLevelVO> listCriteria(Criteria cri) throws Exception {
+		return session.selectList(namespace + ".listCriteria", cri);
 	}
 }

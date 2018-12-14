@@ -415,7 +415,7 @@
 				<h3 class="mtext-111 cl2 p-b-16">
                     Leader
                   </h3>
-	 		 <div style="width:200px; height:150px; margin:50px;">		 
+	 		 <div style="width:200px; height:150px;">		 
 	 		 <img src="/resources/front/images/jinhee.jpg" alt="IMG" width="200px" height="270px">
 	 		 <p>김진희</p>
 	 		 </div> 
@@ -455,7 +455,7 @@
       
 
    <!-- Footer -->
-   <!-- <footer class="bg3 p-t-75 p-b-32">
+   <footer class="bg3 p-t-75 p-b-32">
       <div class="container">
          <div class="row">
             <div class="col-sm-6 col-lg-3 p-b-50">
@@ -597,7 +597,7 @@ Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
             </p>
          </div>
       </div>
-   </footer> -->
+   </footer>
 
 
    <!-- Back to top -->

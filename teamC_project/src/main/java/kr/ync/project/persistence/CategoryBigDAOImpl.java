@@ -28,7 +28,7 @@ public class CategoryBigDAOImpl implements CategoryBigDAO{
 	}
 
 	@Override
-	public CategoryBigVO read(Integer pBig) throws Exception {
+	public CategoryBigVO read(int pBig) throws Exception {
 		return session.selectOne(namespace + ".read", pBig);
 	}
 	 

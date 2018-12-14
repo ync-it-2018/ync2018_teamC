@@ -7,8 +7,6 @@ import kr.ync.project.domain.BoardVO;
 //import kr.ync.project.domain.Criteria;
 //import kr.ync.project.domain.SearchCriteria;
 import kr.ync.project.domain.Criteria;
-import kr.ync.project.domain.SearchCriteria;
-import kr.ync.project.domain.TestVO;
 
 public interface AnoticeDAO {
 	//목록
@@ -22,11 +20,18 @@ public interface AnoticeDAO {
 	//삭제
 	public void deleteNotice(Integer nCode) throws Exception;
 	
-	//페이징
+	// 어드민 페이징
 	public List<AnoticeVO> listPage(int page) throws Exception;
 	
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception;
 	
+	public int countPaging(Criteria cri)throws Exception;
+	
 	//프론트 목록
 	public List<AnoticeVO> flistAll() throws Exception;
+	
+	//프론트 페이징
+	/*public List<AnoticeVO> nlistPage(int page) throws Exception;
+	
+	public List<AnoticeVO> nlistCriteria(Criteria cri) throws Exception;*/
 }

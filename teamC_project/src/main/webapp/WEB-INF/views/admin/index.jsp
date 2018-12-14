@@ -14,6 +14,7 @@
 
 					<div class="box">
             <div class="box-header with-border">
+              <h3 class="box-title">HOME ${alogin.aID} PAGE </h3>
               <h3 class="box-title">Welcome! ${serverTime}</h3>
             </div>
           </div>

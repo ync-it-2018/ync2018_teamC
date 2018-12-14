@@ -87,6 +87,50 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteEvent">
 	delete from TC_EVENT where E_NUM = #{eNum}
 	</delete>
+	
+	<select id="listPage" resultType="EventVO">
+	<![CDATA[
+	SELECT 	E_NUM, E_NAME, E_STARTDATE,E_ENDDATE
+	FROM TC_EVENT
+	WHERE E_NUM > 0
+	ORDER BY E_NUM DESC
+	limit #{page}, 10
+	]]>
+</select>
+
+<select id="listCriteria" resultType="EventVO">
+	<![CDATA[
+	SELECT	E_NUM,
+			E_NAME,
+			E_STARTDATE,
+			E_ENDDATE
+	FROM   (SELECT 	
+					rownum rn,
+					E_NUM,
+					E_NAME,
+					E_STARTDATE,
+					E_ENDDATE
+	  		FROM	TC_EVENT
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		E_NUM > 0 
+			ORDER BY E_NUM DESC
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	ORDER BY E_NUM DESC
+	
+	]]>
+</select>
+
+<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT 
+		COUNT(E_NUM)
+	FROM
+		TC_EVENT
+	WHERE
+		E_NUM > 0
+	]]>
+</select>
 </mapper>
 
 

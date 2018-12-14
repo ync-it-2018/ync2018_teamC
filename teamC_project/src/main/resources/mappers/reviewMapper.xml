@@ -5,56 +5,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.reviewMapper">
 
-	<insert id="insertReview" >  
-	<!-- parameterType="kr.ync.project.domain.EventVO" -->
-	 
-        INSERT INTO TC_REVIEW(
-            R_NUM,
-            R_TITLE,
-            R_DATE,
-            R_CONTENTS,
-            R_VIEWCOUNT,
-            M_ID,
-            P_CODE
-            
-        )VALUES(
-            #{rNum, jdbcType=INTEGER},
-            #{rTitle, jdbcType=VARCHAR},
-            #{rDate, jdbcType=DATE},
-            #{rContents, jdbcType=VARCHAR},
-            #{rViewCount, jdbcType=INTEGER},
-            #{mId, jdbcType=VARCHAR},
-            #{pCode, jdbcType=VARCHAR},
-        )
-    </insert>	
-    
-    <!-- <insert id="insertReviewPhoto" >  
-    
-        INSERT INTO TC_E_FILE(
-            E_NUM,
-            E_IMAGE_SRC,
-            E_IMAGE_INDEX
-            
-        )VALUES(
-            #{eNum, jdbcType=INTEGER},
-            #{eImageSrc, jdbcType=VARCHAR},
-            #{eImageIndex, jdbcType=INTEGER}
-        )
-    </insert>	 -->		
-    
-    <select id="selectReview" parameterType="hashMap" resultType="ReviewVO">
-    	SELECT A.E_NAME,
-           	 A.E_DETAIL,
-           A.E_STARTDATE,
-           A.E_ENDDATE,
-           A.E_LINK,
-           B.E_IMAGE_SRC
-       FROM TC_EVENT  A,
-           TC_E_FILE  B
-      WHERE A.E_NUM = B.E_NUM
-    </select>
-    
-    <select id="rlistAll" resultType="ReviewVO">
+	<insert id="insertReview">
+		<!-- parameterType="kr.ync.project.domain.EventVO" -->
+
+		INSERT INTO TC_REVIEW(
+		R_NUM,
+		R_TITLE,
+		R_DATE,
+		R_CONTENTS,
+		M_ID,
+		P_CODE
+		)VALUES(
+		#{rNum, jdbcType=INTEGER},
+		#{rTitle, jdbcType=VARCHAR},
+		#{rDate, jdbcType=DATE},
+		#{rContents, jdbcType=VARCHAR},
+		#{mId, jdbcType=VARCHAR},
+		#{pCode, jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<!-- <insert id="insertReviewPhoto" > INSERT INTO TC_E_FILE( E_NUM, E_IMAGE_SRC, 
+		E_IMAGE_INDEX )VALUES( #{eNum, jdbcType=INTEGER}, #{eImageSrc, jdbcType=VARCHAR}, 
+		#{eImageIndex, jdbcType=INTEGER} ) </insert> -->
+
+	<select id="selectReview" parameterType="hashMap"
+		resultType="ReviewVO">
+		SELECT A.E_NAME,
+		A.E_DETAIL,
+		A.E_STARTDATE,
+		A.E_ENDDATE,
+		A.E_LINK,
+		B.E_IMAGE_SRC
+		FROM TC_EVENT A,
+		TC_E_FILE B
+		WHERE A.E_NUM = B.E_NUM
+	</select>
+
+	<select id="rlistAll" resultType="ReviewVO">
 	<![CDATA[
 	SELECT 	R_NUM,
             R_TITLE,
@@ -64,17 +52,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             M_ID,
             P_CODE
 	FROM TC_REVIEW
-	]]>  
+	]]>
 	</select>
 
 	<select id="read" resultType="ReviewVO">
-		SELECT 	E_NUM,
-				E_NAME,
-				E_STARTDATE,
-				E_ENDDATE
+		SELECT E_NUM,
+		E_NAME,
+		E_STARTDATE,
+		E_ENDDATE
 		FROM TC_EVENT
-		WHERE	E_NUM = #{E_NUM}
+		WHERE E_NUM = #{E_NUM}
 	</select>
+
+
 
 </mapper>
 

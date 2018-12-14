@@ -93,7 +93,7 @@
 <script>
 
 function goLogin(){
-	self.location ="/user/login";
+	self.location ="/user/alogin";
 }
 
 

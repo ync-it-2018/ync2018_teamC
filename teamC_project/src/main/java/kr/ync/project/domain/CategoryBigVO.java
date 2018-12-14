@@ -4,15 +4,15 @@ package kr.ync.project.domain;
 @Setter
 @ToString*/
 public class CategoryBigVO {
-	private Integer pBig;
+	private int pBig;
 	
 	private String pBigName;
 
-	public Integer getpBig() {
+	public int getpBig() {
 		return pBig;
 	}
 
-	public void setpBig(Integer pBig) {
+	public void setpBig(int pBig) {
 		this.pBig = pBig;
 	}
 

@@ -51,38 +51,129 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</select>
 
+	<!-- 베스트 상품 목록 -->
+	<select id="best" parameterType="hashMap" resultType="ProductVO">
+		SELECT
+		A.P_NAME
+		,A.PRICE
+		,A.SALE_PRICE
+		,A.STOCK
+		,A.P_POINT
+		,A.P_DETAIL
+		,A.P_SMALL
+		,A.P_BIG
+		,A.P_MIDDLE
+		,A.P_SIZE
+		,A.P_CODE
+		,A.P_MAIN
+		,B.P_IMAGE_SRC
+		FROM
+		TC_PRODUCT A
+		,TC_P_FILE B
+		WHERE A.P_MAIN like '베스트'
+		AND A.P_CODE =
+		B.P_CODE
+	</select>
+
+
+		<!-- 신상 상품 목록 -->
+	<select id="newArrival" parameterType="hashMap" resultType="ProductVO">
+		SELECT
+		A.P_NAME
+		,A.PRICE
+		,A.SALE_PRICE
+		,A.STOCK
+		,A.P_POINT
+		,A.P_DETAIL
+		,A.P_SMALL
+		,A.P_BIG
+		,A.P_MIDDLE
+		,A.P_SIZE
+		,A.P_CODE
+		,A.P_MAIN
+		,B.P_IMAGE_SRC
+		FROM TC_PRODUCT A
+		,TC_P_FILE B
+		WHERE A.P_MAIN like '신상'
+		AND A.P_CODE = B.P_CODE
+	</select>
+
 
 
 
 
 	<!-- admin -->
+
+	<!-- 상품 등록 -->
+	<insert id="createProduct">
+		INSERT INTO TC_PRODUCT (P_CODE, P_NAME, P_DETAIL,PRICE,SALE_PRICE,STOCK,P_POINT,
+								P_BIG,P_MIDDLE,P_SMALL,P_SIZE,P_MAIN)
+		VALUES(#{pCode}, #{pName}, #{pDetail}, #{price}, #{salePrice}, #{stock}, #{pPoint}
+				, #{pBig}, #{pMiddle}, #{pSmall}, #{pSize}, #{pMain})	
+	</insert>
+
+
 	<!-- 상품 목록 -->
 	<select id="listAll" resultType="ProductVO">
 	<![CDATA[
-	SELECT P_NAME,PRICE,STOCK,P_SMALL,P_BIG,P_MIDDLE,P_CODE
+	SELECT P_NAME,PRICE,STOCK,P_SMALL,P_BIG,P_MIDDLE,P_CODE,P_MAIN
 	FROM TC_PRODUCT 
 	]]>
 	</select>
 
 	<!-- 상품 상세 -->
-	<select id="readProduct" parameterType="hashMap" resultType="ProductVO">
-	<![CDATA[
-	SELECT A.P_NAME
-			  ,A.PRICE
-			  ,A.SALE_PRICE
-			  ,A.STOCK
-			  ,A.P_POINT
-			  ,A.P_DETAIL
-			  ,A.P_SMALL
-			  ,A.P_BIG
-			  ,A.P_MIDDLE
-			  ,A.P_SIZE
-			  ,A.P_CODE
-			  ,B.P_IMAGE_SRC
-		 FROM TC_PRODUCT A
-			 ,TC_P_FILE  B
+	<!-- <select id="readProduct" parameterType="hashMap" resultType="productVO">
+
+		SELECT
+		A.P_NAME
+		,A.PRICE
+		,A.SALE_PRICE
+		,A.STOCK
+		,A.P_POINT
+		,A.P_DETAIL
+		,A.P_SMALL
+		,A.P_BIG
+		,A.P_MIDDLE
+		,A.P_SIZE
+		,A.P_CODE
+		,A.P_MAIN
+		,B.P_IMAGE_SRC
+		FROM TC_PRODUCT A
+		,TC_P_FILE B
 		WHERE A.P_CODE = B.P_CODE
-	]]>
+		AND A.P_CODE = #{A.P_CODE}
+
+	</select> -->
+	
+	
+	<select id="readProduct" parameterType="hashMap" resultType="productVO">
+
+		SELECT * FROM TC_PRODUCT A, TC_P_FILE B
+		WHERE A.P_CODE = B.P_CODE
+		AND A.P_CODE = #{A.P_CODE}
 	</select>
+
+	<!-- 상품 수정 -->
+	<update id="updateProduct" parameterType="hashMap">
+		UPDATE TC_PRODUCT A,TC_P_FILE B SET
+		A.P_NAME = #{pName}
+		,A.PRICE = #{price}
+		,A.SALE_PRICE = #{salePrice}
+		,A.STOCK = #{stock}
+		,A.P_POINT = #{pPoint}
+		,A.P_DETAIL = #{pDetail}
+		,A.P_SMALL = #{pSmall}
+		,A.P_BIG = #{pBig}
+		,A.P_MIDDLE = #{pMiddle}
+		,A.P_SIZE =	#{pSize}
+		,A.P_MAIN = #{pMain}
+		,B.P_IMAGE_SRC = #{pImageSrc}
+		WHERE P_CODE = #{pCode}
+	</update>
+
+	<!-- 상품 삭제 -->
+	<delete id="deleteProduct">
+		delete from TC_PRODUCT where P_CODE = #{pCode}
+	</delete>
 
 </mapper>

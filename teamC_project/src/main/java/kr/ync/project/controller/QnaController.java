@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.domain.Criteria;
+import kr.ync.project.domain.PageMaker;
 import kr.ync.project.domain.QnaVO;
 import kr.ync.project.service.QnaService;
 
@@ -30,6 +32,7 @@ public class QnaController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	/*//목록
 	@RequestMapping(value = "/Qnalist", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) throws Exception {
 		//saehee
@@ -40,9 +43,9 @@ public class QnaController {
 		model.addAttribute("qnalist", service.listAll());
 		
 		return "admin/Qnalist";
-	}
+	}*/
 	
-	
+	//상세
 	@RequestMapping(value = "/QnaRead", method = {RequestMethod.GET,RequestMethod.POST})
 	public String aNoticeRead(@RequestParam("qNum")Integer qNum, Model model) throws Exception {
 		
@@ -74,16 +77,6 @@ public class QnaController {
 		}
 		
 		
-/*		//목록
-		@RequestMapping(value = "/Qnalist", method = RequestMethod.GET)
-		public void aNotice(Model model) throws Exception {
-
-			logger.info("리스트목록보기");
-
-			model.addAttribute("list", service.listAll());
-
-		}
-		*/
 		//삭제
 		@RequestMapping(value = "/deleteQna", method = RequestMethod.POST)
 		public String remove(@RequestParam("qNum") Integer qNum, RedirectAttributes rttr) throws Exception {
@@ -120,13 +113,30 @@ public class QnaController {
 		}
 
 		
-/*		//페이징 처리
-		@RequestMapping(value = "/listCri", method = RequestMethod.GET)
-		public void listAll(Criteria cri, Model model) throws Exception{
+		//페이징 처리
+		@RequestMapping(value = "/listCric", method = RequestMethod.GET)
+		public void elistAll(Criteria cri, Model model) throws Exception{
 			
 			logger.info("Criteria Page");
 			
-			model.addAttribute("list", service.listCriteria(cri));
-		}*/
+			model.addAttribute("qnalist", service.listCriteria(cri));
+		}
+		
+		@RequestMapping(value = "/Qnalist", method = RequestMethod.GET)
+		public String listPage(Criteria cri, Model model) throws Exception{
+			
+			logger.info(cri.toString());
+			
+			model.addAttribute("qnalist", service.listCriteria(cri));
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(cri);
+			//pageMaker.setTotalCount(131);
+			
+			pageMaker.setTotalCount(service.listCountCriteria(cri));
+			
+			model.addAttribute("pageMaker", pageMaker);
+			
+			return "admin/Qnalist";
+		}
 	
 }

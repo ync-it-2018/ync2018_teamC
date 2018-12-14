@@ -12,6 +12,7 @@
 			<div class="box box-primary">
 				<div class="box-header">
 					<h3 class="box-title">MODIFY QNA</h3>
+					<!-- Q&A수정페이지 -->
 				</div>
 				<!-- /.box-header -->
 
@@ -43,7 +44,7 @@
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">관리자 아이디</label> <input type="text"
-								name='aID' class="form-control" value="${qnaVO.aID}">
+								name='aID' class="form-control" value="${qnaVO.aID}"readonly="readonly">
 						</div>
 
 						<div class="form-group">
@@ -54,7 +55,7 @@
 						<div class="form-group">
 							<label for="exampleInputPassword1">답변확인/미확인</label> <br>
 							<%-- <textarea class="form-control" name="qCheck" rows="3">${qnaVO.qCheck}</textarea> --%>
-							<input type="radio" name="qCheck" value="답변미완료"> 답변완료 <br>
+							<input type="radio" name="qCheck" value="답변완료"> 답변완료 <br>
 							<input type="radio" name="qCheck" value="답변미완료"> 답변미완료  <br>
 						</div>
 					</div>

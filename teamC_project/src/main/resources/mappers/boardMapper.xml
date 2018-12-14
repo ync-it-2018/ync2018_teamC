@@ -61,7 +61,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
  
 
-<select id="listPage"  resultType="BoardVO">
+<!-- <select id="listPage"  resultType="BoardVO">
 	<![CDATA[
 	SELECT	bno,
 			title,
@@ -85,7 +85,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			)
 	WHERE 	rn > (#{page} -1) * #{perPageNum}
 	]]>
-</select>
+</select> -->
+
 
 <select id="listCriteria" resultType="BoardVO">
 	<![CDATA[

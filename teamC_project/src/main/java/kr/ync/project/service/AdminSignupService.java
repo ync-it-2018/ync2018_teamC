@@ -9,6 +9,7 @@ import kr.ync.project.dto.LoginDTO;
 
 public interface AdminSignupService {
 
+	//관리자 회원가입(등록)
 	public void insertadminMember(AdminSignupVO adminsignVO);
 	
 }

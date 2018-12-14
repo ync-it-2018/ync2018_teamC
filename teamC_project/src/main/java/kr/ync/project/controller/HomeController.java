@@ -27,6 +27,7 @@ import kr.ync.project.service.ReviewService;
 
 @Controller
 public class HomeController {
+
 	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -34,8 +35,12 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	@Inject
+	private EventService eventService;
+	@Inject
+	private ProductService productService; //서비스 객체
 	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
-	public String home(Locale locale, Model model) {
+	public String home( Locale locale, Model model) throws Exception {
 		
 		logger.info("hi", locale);
 
@@ -43,15 +48,21 @@ public class HomeController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-		
+				
 		model.addAttribute("serverTime", formattedDate);
-		 
-		//return "front/index";
+
+		//베스트 상품
+		List<ProductVO> best = productService.best();
+		model.addAttribute("bestProduct", best);
+		
+		//신상
+		List<ProductVO> newArrival = productService.newArrival();
+		model.addAttribute("newArrival", newArrival);
+
 		return "front/index";
 	}
 	
-	@Inject
-	private ProductService productService; //서비스 객체
+	
 	
 	/*1017수정2*/
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
@@ -83,15 +94,13 @@ public class HomeController {
 		return "front/review";
 	}
 	
-	@Inject
-	private EventService eventService;
+	
 	
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
 	public String event(Locale locale, Model model) throws Exception {
 		
 		 List<EventVO> eventList = eventService.listEvent();
 	      
-		 System.out.println(eventList);
 		 
 	     model.addAttribute("eventList", eventList);
 		
@@ -134,19 +143,31 @@ public class HomeController {
 		return "front/contact";
 	}*/
 	
-	@RequestMapping(value = "/home_02", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/home_02", method = RequestMethod.GET)
 	public String home_02(Locale locale, Model model) {
 		
 		return "front/home_02";
-	}
+	}*/
 	
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
 	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
 		
-		model.addAttribute("productData", productService.readProduct(pCode));//serviceimple에서 받아온 데이터를 view로 보내줌
+		model.addAttribute("productData", productService.read(pCode));
+		//serviceimple에서 받아온 데이터를 view로 보내줌
 		
 		return "front/product_detail";
 	}
+	
+	
+	/*@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String best(@RequestParam("pMain")String pMain, Model model) throws Exception {
+		
+		model.addAttribute("bestProduct", productService.best(pMain));//serviceimple에서 받아온 데이터를 view로 보내줌
+		
+		return "front/index";
+	}*/
+	
+	
 		
 	@RequestMapping(value = "/shoping_cart", method = RequestMethod.GET)
 	public String shopping_cart(Locale locale, Model model) {
@@ -192,7 +213,7 @@ public class HomeController {
 		
 		return "admin/addslider";
 	}
-	
+	/*
 	@RequestMapping(value = "/test02", method = RequestMethod.GET)
 	public String popup(Locale locale, Model model) {
 		
@@ -203,7 +224,7 @@ public class HomeController {
 	public String popuptest(Locale locale, Model model) {
 		
 		return "admin/test02_1";
-	}
+	}*/
 	
 	@RequestMapping(value = "/management", method = RequestMethod.GET)
 	public String management(Locale locale, Model model) {
@@ -216,13 +237,6 @@ public class HomeController {
 	public String popupload(Locale locale, Model model) {
 		
 		return "admin/popupload";
-	}
-	
-	
-	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
-	public String productlist(Locale locale, Model model) {
-		
-		return "admin/aproduct/productlist";
 	}
 	
 	
