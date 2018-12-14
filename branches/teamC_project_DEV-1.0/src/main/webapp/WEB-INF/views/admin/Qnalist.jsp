@@ -132,7 +132,7 @@
                   function(event) {
 
                      self.location = "qnalist"
-                           + '${pageMaker.makeQuery(1)}'
+      				       + '${pageMaker.makeQuery(1)}'
                            + "&searchType="
                            + $("select option:selected").val()
                            + "&keyword=" + $('#keywordInput').val();
