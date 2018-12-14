@@ -19,7 +19,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ync.project.domain.BoardVO;
 import kr.ync.project.domain.CategoryBigVO;
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
+import kr.ync.project.domain.PageMaker;
 import kr.ync.project.domain.UserVO;
 import kr.ync.project.dto.LoginDTO;
 import kr.ync.project.service.AUserService;
@@ -39,7 +41,7 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 	 * Simply selects the home view to render by returning its name.
 	 */
 	
-	//목록
+/*	//목록 GET
 		@RequestMapping(value = "/memberlist", method = RequestMethod.GET)
 		public void memberlist(Model model) throws Exception {
 
@@ -47,9 +49,9 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 
 			model.addAttribute("userlist", service.userlist());
 
-		}
+		}*/
 		
-		//상세
+		//상세 GET
 		@RequestMapping(value = "/MemberRead", method = RequestMethod.GET)
 		public void MemberRead(@RequestParam("mId") String mId, Model model) throws Exception {
 
@@ -59,7 +61,7 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 
 		}
 		
-		//삭제
+		//삭제 POST
 		@RequestMapping(value = "/deleteMember", method = RequestMethod.POST)
 		public String remove(@RequestParam("mId") String mId, RedirectAttributes rttr) throws Exception {
 
@@ -72,44 +74,29 @@ private static final Logger logger = LoggerFactory.getLogger(AuserController.cla
 			return "redirect:/admin/memberlist";
 		}
 		
-		
-		
-	/*@RequestMapping(value = "/memberlist", method = RequestMethod.GET)
-	public String memberlist(Locale locale, Model model) throws Exception {
-		
-		logger.info("회원 리스트", locale);
-		
-		model.addAttribute("userlist", service.userlist());
-		
-		return "admin/memberlist";
-	}
-
-	
-		//삭제
-		@RequestMapping(value = "/deleteMember", method = RequestMethod.POST)
-		public String remove(@RequestParam("mId") String mId, RedirectAttributes rttr) throws Exception {
-
-			logger.info("회원 삭제");
+		//페이징 처리
+		@RequestMapping(value = "/listCrib", method = RequestMethod.GET)
+		public void elistAll(Criteria cri, Model model) throws Exception{
 			
-			service.deleteMember(mId);
-
-			rttr.addFlashAttribute("msg", "SUCCESS");
-
-			return "redirect:/admin/memberlist";
+			logger.info("Criteria Page");
+			
+			model.addAttribute("userlist", service.listCriteria(cri));
 		}
-	
-		//어드민 - 회원 선택해서 상세보기 
-		@RequestMapping(value = "/MemberRead", method = RequestMethod.GET)
-		public String MemberRead(@RequestParam("mId") String mId, Model model) throws Exception {
-
-			logger.info("리스트상세보기");
-
-			model.addAttribute("userlist", service.readMember(mId));
-
-			return "admin/MemberRead";
-		}*/
-	
-	
+		
+		@RequestMapping(value = "/memberlist", method = RequestMethod.GET)
+		public void listPage(Criteria cri, Model model) throws Exception{
+			
+			logger.info(cri.toString());
+			
+			model.addAttribute("userlist", service.listCriteria(cri));
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(cri);
+			//pageMaker.setTotalCount(131);
+			
+			pageMaker.setTotalCount(service.listCountCriteria(cri));
+			
+			model.addAttribute("pageMaker", pageMaker);
+		}
 		
 	
 }

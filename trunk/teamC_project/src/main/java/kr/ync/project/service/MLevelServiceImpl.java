@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.MLevelVO;
 import kr.ync.project.domain.SignupVO;
@@ -21,33 +22,43 @@ public class MLevelServiceImpl implements MLevelService {
     @Inject
     private MLevelDAO dao;
  
-    public void insertMLevel(MLevelVO mlevelVO) {
-        dao.insertMLevel(mlevelVO);
-    }
-
-	@Override
-	public List<MLevelVO> listMLevel() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.listMLevel();
-	}
-
-	@Override
-	public List<MLevelVO> MLevelList(MLevelVO mlevelVO) {
-		// TODO Auto-generated method stub
-		return dao.MLevelList(mlevelVO);
-	}
-	
+	//등급 목록
 	@Override
 	public List<MLevelVO> listAll() throws Exception {
 		return dao.listAll();
+		
 	}
 
-	
+	//등급 상세
 	@Override
-	public MLevelVO read(Integer lCode) throws Exception {
-
-		return dao.read(lCode);
+	public MLevelVO read(Integer mlCode) throws Exception {
+		return dao.read(mlCode);
 	}
+
+	//등급 작성
+	@Override
+	public void createMLevel(MLevelVO vo) throws Exception {
+		dao.createMLevel(vo);
+	}
+
+	//등급 수정
+	@Override
+	public void updateMLevel(MLevelVO vo) throws Exception {
+		dao.updateMLevel(vo);
+	}
+
+	//등급 삭제
+	@Override
+	public void deleteMLevel(Integer mlCode) throws Exception {
+		dao.deleteMLevel(mlCode);
+	}
+	
+	//등급 페이징
+	@Override
+	public List<MLevelVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
+	}
+
 
 
 }

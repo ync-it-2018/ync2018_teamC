@@ -27,5 +27,10 @@ public class CategoryMiddleDAOImpl implements CategoryMiddleDAO{
 	public List<CategoryMiddleVO> mlistAll() throws Exception {
 		return session.selectList(namespace + ".mlistAll");
 	}
+
+	@Override
+	public CategoryMiddleVO read(int pMiddle) throws Exception {
+		return session.selectOne(namespace + ".read", pMiddle);
+	}
 	 
 }

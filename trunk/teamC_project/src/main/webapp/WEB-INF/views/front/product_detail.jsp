@@ -440,13 +440,15 @@
 							${productData.pName}
 						</h4>
 
+						<p class="stext-102 cl3 p-t-23">
+							원가:<fmt:formatNumber value="${productData.price}" pattern="###,###,###" />원
+						</p>
+						
 						<span class="mtext-106 cl2">
-							<fmt:formatNumber value="${productData.price}" pattern="###,###,###" />원
+							세일: <fmt:formatNumber value="${productData.salePrice}" pattern="###,###,###" />원
 						</span>
 
-						<p class="stext-102 cl3 p-t-23">
-							${productData.pDetail}
-						</p>
+						
 						
 						<!--  -->
 						<div class="p-t-33">
@@ -544,8 +546,7 @@
 						</li>
 
 						<li class="nav-item p-b-10">
-							<a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional information</a>
-						</li>
+							</li>
 
 						<li class="nav-item p-b-10">
 							<a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a>
@@ -558,7 +559,7 @@
 						<div class="tab-pane fade show active" id="description" role="tabpanel">
 							<div class="how-pos2 p-lr-15-md">
 								<p class="stext-102 cl6">
-									Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.
+								${productData.pDetail}
 								</p>
 							</div>
 						</div>

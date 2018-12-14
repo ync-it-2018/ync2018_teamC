@@ -1,6 +1,5 @@
 package kr.ync.project.controller;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +21,11 @@ public class ReviewController {
 	@Autowired
 	private ReviewService reviewService;
     
-    //SignUp GET
+    /*//SignUp GET
     @RequestMapping(value="/review.do", method=RequestMethod.GET)
     public void reviewGET() {
         
-    }
+    }*/
     
     //SignUp POST
     @RequestMapping(value="/review.do", method=RequestMethod.POST)
@@ -34,7 +33,7 @@ public class ReviewController {
             
     	reviewService.insertReview(reviewVO);
             
-        return "admin/index";
+        return "redirect:/front/review";
     }
     
     @RequestMapping(value="/reviewPhoto.do", method=RequestMethod.GET)

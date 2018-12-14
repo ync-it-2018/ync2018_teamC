@@ -1,11 +1,5 @@
 package kr.ync.project.domain;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 /*@Getter
 @Setter
 @ToString*/
@@ -16,16 +10,24 @@ public class ProductVO {
 	private int pSmall; //카테고리 소 fk
 	private int pMiddle; //카테고리 중 fk
 	private int pBig; //카테고리 대 fk	
-	private String size; //사이즈
+	private String pSize; //사이즈
 	private int price; //가격
 	private int salePrice; //세일가격
 	private int pPoint; //적립률
 	private int stock; //재고
 	private int eNum; //이벤트num fk
-	
-	//private MultipartFile productPhoto; //상품이미지
 
+	private String pMain;//main product 구분
 	private String pImageSrc;//이미지 경로
+
+	public String getpMain() {
+
+		return pMain;
+	}
+
+	public void setpMain(String pMain) {
+		this.pMain = pMain;
+	}
 
 	public String getpCode() {
 		return pCode;
@@ -75,12 +77,12 @@ public class ProductVO {
 		this.pBig = pBig;
 	}
 
-	public String getSize() {
-		return size;
+	public String getpSize() {
+		return pSize;
 	}
 
-	public void setSize(String size) {
-		this.size = size;
+	public void setpSize(String pSize) {
+		this.pSize = pSize;
 	}
 
 	public int getPrice() {
@@ -122,14 +124,6 @@ public class ProductVO {
 	public void seteNum(int eNum) {
 		this.eNum = eNum;
 	}
-
-	/*public MultipartFile getProductPhoto() {
-		return productPhoto;
-	}
-
-	public void setProductPhoto(MultipartFile productPhoto) {
-		this.productPhoto = productPhoto;
-	}*/
 
 	public String getpImageSrc() {
 		return pImageSrc;

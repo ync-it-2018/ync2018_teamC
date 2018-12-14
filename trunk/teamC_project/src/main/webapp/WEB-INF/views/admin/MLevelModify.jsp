@@ -20,19 +20,19 @@
 					<div class="box-body">
 
 						<div class="form-group">
-							<label for="exampleInputEmail1">nCode</label> <input type="text"
-								name='nCode' class="form-control" value="${MLevelVO.lCode}"
+							<label for="exampleInputEmail1">mlCode</label> <input type="text"
+								name='mlCode' class="form-control" value="${MLevelVO.mlCode}"
 								readonly="readonly">
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Title</label> 
-							<input type="text" name='nTitle' class="form-control" value="${MLevelVO.lName}"/>
+							<input type="text" name='nTitle' class="form-control" value="${MLevelVO.nTitle}"/>
 						</div>
 						
 						<div class="form-group">
 							<label for="exampleInputPassword1">Content</label>
-							<textarea class="form-control" name="nContents" rows="3">${MLevelVO.lPoint}</textarea>
+							<textarea class="form-control" name="nContents" rows="3">${MLevelVO.nContents}</textarea>
 						</div>
 					</div>
 					<!-- /.box-body -->
@@ -68,7 +68,7 @@
 	
 	// 취소 버튼 클릭
 	$(".btn-warning").click(function(){
-	  self.location = "/admin/MLevelList";	  
+	  self.location = "/admin/aNotice";	  
 	});
 	
 	// 수정 버튼 클릭

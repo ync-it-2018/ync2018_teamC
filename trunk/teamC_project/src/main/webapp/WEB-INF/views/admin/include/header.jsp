@@ -323,9 +323,8 @@
               </a>
 
               <ul class="treeview-menu">
-<%--               <c:catch>
-    <c:choose>
-        <c:when test="${AUserVO.aID == null}">
+<%--      <c:choose>
+        <c:when test="${empty AUserVO}">
             <li>
                  <a href="/admin/alogin"><i class="fa fa-sign-in"></i> 로그인</a>
              </li>
@@ -339,10 +338,9 @@
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
         </c:otherwise>
-    </c:choose>
-</c:catch>
+    </c:choose> --%>
 
-              <c:if test="${AUserVO.aID == null}">
+              <%-- <c:if test="${AUserVO.aID == null}">
       			<li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
                 <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
 				</c:if>
@@ -350,7 +348,7 @@
   				<li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
                 <li><a href="/productup"><i class="fa fa-circle-o"></i> 관리자계정</a></li>
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
-			</c:if> --%>
+			</c:if> --%> 
 				<li><a href="/admin/alogin"><i class="fa fa-circle-o"></i> 로그인</a></li>
                 <li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
 				<li> <a href="/admin/alogout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
@@ -358,25 +356,24 @@
                 <li><a href="/coInfo"><i class="fa fa-circle-o"></i> 회사정보</a></li>
               </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>메인관리</span>
                 <span class="label label-primary pull-right">4</span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/addslider"><i class="fa fa-circle-o"></i> 슬라이드</a></li>
-                <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> 대표카테고리</a></li>
                 <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> 베스트상품</a></li>
-                <li><a href="/test02"><i class="fa fa-circle-o"></i> 팝업창 관리</a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 신상품 </a></li>
-                <li><a href="/aeventUp"><i class="fa fa-circle-o"></i> 이벤트 </a></li>
                 <li><a href="/"><i class="fa fa-circle-o"></i> 추천상품 </a></li>
+                <li><a href="/addslider"><i class="fa fa-circle-o"></i> 슬라이드</a></li>
+                <li><a href="/test02"><i class="fa fa-circle-o"></i> 팝업창 관리</a></li>               
+                <li><a href="/aeventUp"><i class="fa fa-circle-o"></i> 이벤트 </a></li>          
                 <li><a href="/"><i class="fa fa-circle-o"></i> 푸터관리</a></li>
                 
               
               </ul>
-            </li>
+            </li> -->
              <!-- <li>
               <a href="../widgets.html">
                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
@@ -392,7 +389,7 @@
                 <li><a href="/categorybig/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리(대) </a></li>
                 <li><a href="/categorymiddleRegister"><i class="fa fa-circle-o"></i> 카테고리관리(중) </a></li>
                 <li><a href="/categorybig/categorylist"><i class="fa fa-circle-o"></i> 카테고리관리(소) </a></li>
-                <li><a href="/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
+                <li><a href="/admin/productup"><i class="fa fa-circle-o"></i> 상품등록</a></li>
                 <li><a href="/admin/productlist"><i class="fa fa-circle-o"></i> 상품관리</a></li>
               </ul>
             </li>
@@ -404,7 +401,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/admin/memberlist"><i class="fa fa-circle-o"></i> 회원관리 </a></li>
-                 <li><a href="/mlevellist"><i class="fa fa-circle-o"></i> 등급 목록 </a></li>
+                 <li><a href="/admin/MLevel"><i class="fa fa-circle-o"></i> 등급 목록 </a></li>
                 <li><a href="/mlevel"><i class="fa fa-circle-o"></i> 등급 등록 </a></li>
               
               </ul>
@@ -412,7 +409,7 @@
            
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-laptop"></i>
+                <i class="fa fa-files-o"></i>
                 <span>이벤트</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>

@@ -53,7 +53,6 @@
 					<h3 class="box-title">Product Detail</h3>
 				</div>
 				<!-- /.box-header -->
-				<!-- 앞에 소문자로 받아야됨 AnoticeVO -> anoticeNO -->
 				<form role="form" method="post">
 
 					<input type='hidden' name='pCode' value="${productVO.pCode}">
@@ -84,6 +83,12 @@
 							name='pSmall' class="form-control" value="${productVO.pSmall}"
 							readonly="readonly">
 					</div>
+					
+					<div class="form-group">
+						<label for="exampleInputEmail1">메인 구분</label> <input type="text"
+							name='pMain' class="form-control" value="${productVO.pMain}"
+							readonly="readonly">
+					</div>
 
 					<div class="form-group">
 						<label for="exampleInputEmail1">상품명</label> <input type="text"
@@ -93,7 +98,7 @@
 					
 					<div class="form-group">
 						<label for="exampleInputPassword1">상품설명</label>
-						<textarea class="form-control" name="pDetail" rows="3"
+						<textarea class="form-control" name="pDetail" rows="5"
 							readonly="readonly">${productVO.pDetail}</textarea>
 					</div>
 					

@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ync.project.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
+import kr.ync.project.domain.PageMaker;
 import kr.ync.project.service.AnoticeService;
 
 /**
@@ -71,15 +72,15 @@ public class AnoticeController {
 	}
 	
 	
-	//목록
-	@RequestMapping(value = "/aNotice", method = RequestMethod.GET)
-	public void aNotice(Model model) throws Exception {
-
-		logger.info("리스트목록보기");
-
-		model.addAttribute("list", service.listAll());
-
-	}
+//	//목록
+//	@RequestMapping(value = "/aNotice", method = RequestMethod.GET)
+//	public void aNotice(Model model) throws Exception {
+//
+//		logger.info("리스트목록보기");
+//
+//		model.addAttribute("list", service.listAll());
+//
+//	}
 	
 	//상세
 	@RequestMapping(value = "/aNoticeRead", method = RequestMethod.GET)
@@ -134,5 +135,20 @@ public class AnoticeController {
 		logger.info("Criteria Page");
 		
 		model.addAttribute("list", service.listCriteria(cri));
+	}
+	
+	@RequestMapping(value = "/aNotice", method = RequestMethod.GET)
+	public void listPage(Criteria cri, Model model) throws Exception{
+		
+		logger.info(cri.toString());
+		
+		model.addAttribute("list", service.listCriteria(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		//pageMaker.setTotalCount(131);
+		
+		pageMaker.setTotalCount(service.listCountCriteria(cri));
+		
+		model.addAttribute("pageMaker", pageMaker);
 	}
 }

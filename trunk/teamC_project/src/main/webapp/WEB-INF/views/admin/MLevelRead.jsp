@@ -35,35 +35,26 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">Member Level</h3>
+					<h3 class="box-title">READ NOTICE</h3>
 				</div>
 				<!-- /.box-header -->
+			<!-- 앞에 소문자로 받아야됨 AnoticeVO -> anoticeNO -->
+				<form role="form" method="post">
 
-				<form role="form" action="modifyPage" method="post">
-
-					<input type='hidden' name='nNum' value="${list.lCode}"> 
-					<input type='hidden' name='page' value="${cri.page}"> 
-					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
-					<input type='hidden' name='searchType' value="${cri.searchType}">
-					<input type='hidden' name='keyword' value="${cri.keyword}">
+					<input type='hidden' name='mlCode' value="${MLevelVO.mlCode}"> 
 
 				</form>
 				
 				<div class="box-body">
 					<div class="form-group">
-						<label for="exampleInputEmail1">LEVEL_CODE</label> 
-						<input type="text" name='lCode' class="form-control" value="${list.lCode}"
-							readonly="readonly">
+						<label for="exampleInputEmail1">LNAME</label> 
+						<input type="text" name='lName' class="form-control" value="${MLevelVO.lName}"
+							> 
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">NAME</label> 
-						<input type="text" name='lName' class="form-control" value="${list.lName}"
-							readonly="readonly">
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">POINT</label>
-						<textarea class="form-control" name='lPoint' rows="3"
-							readonly="readonly">${list.L_POINT}</textarea>
+						<label for="exampleInputPassword1">LPOINT</label>
+						<textarea class="form-control" name="lPoint" rows="3"
+							>${mLevelVO.lPoint}</textarea>
 					</div>
 				</div>
 				
@@ -71,13 +62,9 @@
 				
   <div class="box-footer">
     
-    <div><hr></div>
-
-    <ul class="mailbox-attachments clearfix uploadedList">
-    </ul>
-    <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
-    <button type="submit" class="btn btn-danger" id="removeBtn">REMOVE</button>
-    <button type="submit" class="btn btn-primary" id="goListBtn">GO LIST </button>
+    <button type="submit" class="btn btn-warning">Modify</button>
+    <button type="submit" class="btn btn-danger">REMOVE</button>
+    <button type="submit" class="btn btn-primary">GO LIST </button>
   </div>
 
 			</div>
@@ -94,6 +81,7 @@
 
 <script>
 $(document).ready(function(){
+	
 	var formObj = $("form[role='form']");
 	
 	console.log(formObj);
@@ -111,12 +99,10 @@ $(document).ready(function(){
 	});  
 	/* 리스트 클릭 */ 
 	$('.btn-primary').on('click',function(){
-		self.location = "/admin/MLevelList";
+		self.location = "/admin/MLevel";
 	});
 });
 </script>
-
-
 
 
 <%@include file="../admin/include/footer.jsp" %>

@@ -17,7 +17,8 @@ public class AdminSignupDAOImpl implements AdminSignupDAO {
  
     @Inject
     private SqlSession session;
- 
+    
+    //관리가 회원가입(등록)
     @Override
     public void insertadminMember(AdminSignupVO adminsignVO) {
         session.insert("insertadminMember",adminsignVO);

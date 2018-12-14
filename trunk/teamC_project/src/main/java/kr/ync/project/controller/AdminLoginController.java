@@ -28,7 +28,8 @@ public class AdminLoginController {
 
 	@Autowired
 	private AUserService service;
-
+	
+	//관리자 로그인 GET
 	@GetMapping(value = "/alogin")
 	public String aloginGET(@ModelAttribute("dto") ALoginDTO dto) {
 		log.info("AdminLoginController valueGET");
@@ -45,7 +46,7 @@ public class AdminLoginController {
 	
 	
 	//postHandle 실행
-	@PostMapping("/aloginPost")
+	@GetMapping("/aloginPost")
 	//@ResponseStatus(value=HttpStatus.OK)
 	public void loginPOST(ALoginDTO dto, HttpSession session, Model model) throws Exception {
 
@@ -66,20 +67,19 @@ public class AdminLoginController {
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
 			service.keepALogin(vo.getAID(), session.getId(), sessionLimit);
-	
-			
-			 
 		}
 		
 		
 	}
 	
+	//로그인 오류시 에러메세지
 	@GetMapping(value = "/aloginError")
 	public String aloginError(@ModelAttribute("dto") ALoginDTO dto) {
 		log.info("Error");
 		return "admin/aloginError";
 	}
-
+	
+	//관리자 로그아웃
 	@GetMapping(value = "/alogout")
 	public void alogout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {

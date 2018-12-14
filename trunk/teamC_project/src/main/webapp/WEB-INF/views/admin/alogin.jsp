@@ -31,7 +31,7 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-<form action="/admin/aloginPost" method="post">
+<form action="/admin/aloginPost" method="get">
   <div class="form-group has-feedback">
     <input type="text" name="aID" class="form-control" placeholder="USER ID"/>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

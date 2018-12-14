@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.SignupVO;
 import kr.ync.project.persistence.EventDAO;
@@ -64,6 +65,18 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public void deleteEvent(Integer eNum) throws Exception {
 		dao.deleteEvent(eNum);
+	}
+	
+	// 페이징
+	@Override
+	public List<EventVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
+	}
+
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+
+		return dao.countPaging(cri);
 	}
 }
 

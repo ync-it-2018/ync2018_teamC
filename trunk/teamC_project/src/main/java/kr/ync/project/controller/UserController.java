@@ -52,14 +52,14 @@ public class UserController {
 	
 	
 	//postHandle 실행
-	@PostMapping("/index")
+	@PostMapping("/loginPost")
 	public void loginPost(LoginDTO dto, HttpSession session, Model model) throws Exception {
-
+		 String returnURL = "";
 		UserVO vo = service.login(dto);
 		System.out.println("넘어왔니?:  "+ vo);
 		// 로그인 실패시
 		if (vo == null) {
-			return;
+			returnURL = "redirect:/login";
 		}
 		log.info(vo.getmId());
 		model.addAttribute("UserVO", vo);
@@ -69,12 +69,10 @@ public class UserController {
 			int amount = 60 * 60 * 24 * 7;
 
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
-
+			log.info("session.getID():================"+session.getId().toString());
 			service.keepLogin(vo.getmId(), session.getId(), sessionLimit);
 
 		}
-		
-	
 	}
 
 	@GetMapping(value = "/logout")

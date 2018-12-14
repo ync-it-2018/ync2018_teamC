@@ -9,5 +9,5 @@ public interface CategoryBigDAO {
 	
 	public List<CategoryBigVO> listAll() throws Exception;
 	
-	public CategoryBigVO read(Integer pBig) throws Exception;
+	public CategoryBigVO read(int pBig) throws Exception;
 }

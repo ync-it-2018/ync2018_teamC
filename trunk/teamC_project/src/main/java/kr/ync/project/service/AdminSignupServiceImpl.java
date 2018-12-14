@@ -17,6 +17,7 @@ public class AdminSignupServiceImpl implements AdminSignupService {
     @Inject
     private AdminSignupDAO dao;
  
+    //관리자 회원가입(등록)
     @Override
     public void insertadminMember(AdminSignupVO adminsignVO) {
         dao.insertadminMember(adminsignVO);

@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <insert id="createNotice">
 	INSERT INTO TC_NOTICE (N_CODE, N_TITLE, N_CONTENTS) 
-	VALUES(#{nCode}, #{nTitle},	#{nContents})
+	VALUES(TC_SEQ_NOTICE.NEXTVAL, #{nTitle}, #{nContents})
 </insert>
 
 
@@ -50,6 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	delete from TC_NOTICE where N_CODE = #{nCode}
 </delete>
 
+
 <select id="listPage" resultType="AnoticeVO">
 	<![CDATA[
 	SELECT 	N_CODE, N_TITLE, N_UP_DATE
@@ -59,15 +60,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	limit #{page}, 10
 	]]>
 </select>
- 
- 
+
 <select id="listCriteria" resultType="AnoticeVO">
 	<![CDATA[
-	SELECT 	N_CODE, N_TITLE, N_UP_DATE
-	FROM TC_NOTICE
-	WHERE N_CODE > 0
-	ORDER BY N_CODE DESC,N_UP_DATE DESC
-	limit #{pageStart}, #{perPageNum}
+	SELECT	N_CODE,
+			N_TITLE,
+			N_UP_DATE
+	FROM   (SELECT 	
+					rownum rn,
+					N_CODE,
+					N_TITLE,
+					N_UP_DATE
+	  		FROM	TC_NOTICE
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		N_CODE > 0 
+			ORDER BY N_CODE DESC
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	ORDER BY N_CODE DESC
+	
 	]]>
 </select>
+
+<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT 
+		COUNT(N_CODE)
+	FROM
+		TC_NOTICE
+	WHERE
+		N_CODE > 0
+	]]>
+</select>
+
 </mapper>
