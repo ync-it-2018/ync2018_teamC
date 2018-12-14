@@ -20,6 +20,7 @@ public class AAuthInterceptor extends HandlerInterceptorAdapter {
 	@Autowired
 	private AUserService service;
 
+	//관리자 세션 존재여부 확인후 logincookie진행
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {

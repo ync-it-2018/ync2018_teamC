@@ -34,7 +34,7 @@ public class MLevelController {
 	
 	//목록
 	@RequestMapping(value = "/MLevel", method = RequestMethod.GET)
-	public void aNotice(Model model) throws Exception {
+	public void MLevel(Model model) throws Exception {
 
 		logger.info("등급목록보기");
 

@@ -12,6 +12,7 @@
 			<div class="box box-primary">
 				<div class="box-header">
 					<h3 class="box-title">MODIFY QNA</h3>
+					<!-- Q&A수정페이지 -->
 				</div>
 				<!-- /.box-header -->
 

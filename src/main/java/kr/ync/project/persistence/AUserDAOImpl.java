@@ -21,13 +21,15 @@ public class AUserDAOImpl implements AUserDAO {
 	private SqlSession session;
 
 	private static String namespace = "kr.ync.project.mapper.AuserMapper";
-
+	
+	//관리자 로그인
 	@Override
 	public AUserVO alogin(ALoginDTO dto) throws Exception {
 
 		return session.selectOne(namespace + ".alogin", dto);
 	}
-
+	
+	//관리자 로그인 유지
 	@Override
 	public void keepALogin(String aID, String sessionId, Date next) {
 

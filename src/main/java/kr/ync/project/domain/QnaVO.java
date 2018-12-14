@@ -11,13 +11,21 @@ import lombok.ToString;
 
 
 public class QnaVO {
-	private Integer qNum;
-	private String qTitle;
-	private String qContents;
-	private String qCheck;
-	private Date qUpDate;
-	private String mID;
-	private Integer qCategoryNum;
+	private Integer qNum; 		//Qna글번호
+	private String qTitle; 		//Qna글제목
+	private String qContents; 	//Qna글내용
+	private String qCheck; 		//Qna답변여부
+	private Date qUpDate; 		//Qna등록날짜
+	private String mID;			//Qna등록회원아이디
+	private Integer qCategoryNum; //Qna카테고리넘버
+	private String qCategoryName; //Qna카테고리이름
+	
+	public String getqCategoryName() {
+		return qCategoryName;
+	}
+	public void setqCategoryName(String qCategoryName) {
+		this.qCategoryName = qCategoryName;
+	}
 	public Date getqADate() {
 		return qADate;
 	}

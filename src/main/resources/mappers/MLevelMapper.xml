@@ -5,67 +5,55 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.MLevelMapper">
 
-	<insert id="createMLevel" >  
-	<!-- parameterType="kr.ync.project.domain.EventVO" -->
-	 
-        INSERT INTO TC_LEVEL(
-            LEVEL_CODE,
-            L_NAME,
-            L_POINT
-        )VALUES(
-            #{mlCode, jdbcType=INTEGER},
-            #{lName, jdbcType=VARCHAR},
-            #{lPoint, jdbcType=INTEGER}
-        )
-    </insert>		
-    
-    <select id="listAll" resultType="MLevelVO">
+	<!-- 회원 등급 등록 -->
+	<insert id="createMLevel">
+		<!-- parameterType="kr.ync.project.domain.EventVO" -->
+
+		INSERT INTO TC_LEVEL(
+		LEVEL_CODE,
+		L_NAME,
+		L_POINT
+		)VALUES(
+		#{mlCode, jdbcType=INTEGER},
+		#{lName, jdbcType=VARCHAR},
+		#{lPoint, jdbcType=INTEGER}
+		)
+	</insert>
+
+	<!-- 회원 등급 목록 -->
+	<select id="listAll" resultType="MLevelVO">
 	<![CDATA[
 	SELECT 	LEVEL_CODE,
 			L_NAME,
 			L_POINT
 	FROM TC_LEVEL
-	]]>  
+	ORDER BY L_POINT
+	]]>
 	</select>
 
-	 <select id="read" resultType="MLevelVO">
-		SELECT 	LEVEL_CODE,
-				L_NAME,
-				L_POINT
+	<!-- 회원 등급 상세 -->
+	<select id="read" resultType="MLevelVO">
+		SELECT LEVEL_CODE,
+		L_NAME,
+		L_POINT
 		FROM TC_LEVEL
-		WHERE	LEVEL_CODE = #{LEVEL_CODE}
+		WHERE LEVEL_CODE = #{mlCode}
+
 	</select>
 
-<update id="updateMLelvel">
-	UPDATE TC_LEVEL SET L_NAME = #{lName}, L_POINT = #{lPoint}
-	WHERE LEVEL_CODE = #{mlCode}
-</update>
+	<!-- 회원 등급 등록 -->
+	<update id="updateMLelvel">
+		UPDATE TC_LEVEL SET L_NAME = #{lName}, L_POINT =
+		#{lPoint}
+		WHERE LEVEL_CODE = #{mlCode}
+	</update>
+
+	<!-- 회원 등급 삭제 -->
+	<delete id="deleteMLelvel">
+		delete from TC_LEVEL where LEVEL_CODE = #{mlCode}
+	</delete>
 
 
-<delete id="deleteMLelvel">
-	delete from TC_LEVEL where LEVEL_CODE = #{mlCode}
-</delete>
-
-<!-- <select id="listPage" resultType="MLelvelVO">
-	<![CDATA[
-	SELECT 	N_CODE, N_TITLE, N_UP_DATE
-	FROM TC_NOTICE
-	WHERE N_CODE > 0
-	ORDER BY N_CODE DESC, N_UP_DATE DESC
-	limit #{page}, 10
-	]]>
-</select>
- 
- 
-<select id="listCriteria" resultType="MLelvelVO">
-	<![CDATA[
-	SELECT 	N_CODE, N_TITLE, N_UP_DATE
-	FROM TC_NOTICE
-	WHERE N_CODE > 0
-	ORDER BY N_CODE DESC,N_UP_DATE DESC
-	limit #{pageStart}, #{perPageNum}
-	]]>
-</select> -->
 </mapper>
 
 
