@@ -22,15 +22,25 @@ public class ProductVO {
 	private int pPoint; //적립률
 	private int stock; //재고
 	private int eNum; //이벤트num fk
-	private int pMain;
+	private String pMain;
 	
 
-	public int getpMain() {
+
+
+	public String getpMain() {
 		return pMain;
 	}
 
-	public void setpMain(int pMain) {
+	public void setpMain(String pMain) {
 		this.pMain = pMain;
+	}
+
+	public MultipartFile getProductPhoto() {
+		return productPhoto;
+	}
+
+	public void setProductPhoto(MultipartFile productPhoto) {
+		this.productPhoto = productPhoto;
 	}
 
 	private MultipartFile productPhoto; //상품이미지

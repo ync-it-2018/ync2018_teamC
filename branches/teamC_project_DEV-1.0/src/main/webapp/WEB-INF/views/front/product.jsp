@@ -74,7 +74,7 @@
 								<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="/index" class="logo">
+					<a href="/" class="logo">
 						<img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 

@@ -31,5 +31,11 @@ public interface ProductDAO {
 	public List<ProductVO> productList(ProductVO productVO);
 	
 	public ProductVO read(String pCode) throws Exception;
-
+	
+	//베스트 상품목록
+	public List<ProductVO> best()throws Exception;
+	
+	//신상상품목록
+	public List<ProductVO> newArrival()throws Exception;
+	
 }
