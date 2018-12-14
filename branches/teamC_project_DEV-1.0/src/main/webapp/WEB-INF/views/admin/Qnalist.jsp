@@ -136,7 +136,6 @@
                            + "&searchType="
                            + $("select option:selected").val()
                            + "&keyword=" + $('#keywordInput').val();
-
                   });
 
             $('#newBtn').on("click", function(evt) {

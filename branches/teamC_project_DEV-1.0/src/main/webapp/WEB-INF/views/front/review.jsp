@@ -431,8 +431,7 @@ body { background: #fff; }
          <c:forEach items = "${reviewList}" var="review">
         	 <tr>
 				<td>${review.rNum}</td>
-				<td><a href='#' onClick='fn_view(${review.rTitle})'>
-				<c:out value="${review.rTitle}"/></a></td>
+				<td><a href='/admin/aeventDetail?rNum=${review.rNum}'>${review.rTitle}</a></td>
 				<td>${review.mId}</td>
 				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${review.rDate}" /></td>
 			 </tr>
