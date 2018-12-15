@@ -28,6 +28,7 @@ public class ReplyController {
 	@Autowired
 	private ReplyService service;
 
+	//댓글 달기
 	@PostMapping(value = "")
 	public ResponseEntity<String> register(@RequestBody ReplyVO vo) {
 

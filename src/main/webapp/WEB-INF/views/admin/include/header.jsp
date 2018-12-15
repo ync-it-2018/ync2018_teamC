@@ -388,16 +388,6 @@
 					<li><a href="/admin/aNotice"> <i class="fa fa-envelope"></i>
 							<span>공지사항</span>
 					</a></li>
-					<li><a href="../widgets.html"> <i class="fa fa-envelope"></i>
-							<span>검색</span>
-					</a></li>
-
-					<li class="treeview"><a href="#"> <i class="fa fa-folder"></i>
-							<span>후기</span> <i class="fa fa-angle-left pull-right"></i>
-					</a></li>
-					<li class="treeview"><a href="#"> <i class="fa fa-share"></i>
-							<span>주문관리</span> <i class="fa fa-angle-left pull-right"></i>
-					</a></li>
 			</section>
 			<!-- /.sidebar -->
 		</aside>

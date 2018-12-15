@@ -1,7 +1,8 @@
 package kr.ync.project.domain;
 
 public class Criteria {
-
+	
+	//페이징 
 	private int page;
 	private int perPageNum;
 

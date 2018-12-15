@@ -45,7 +45,7 @@ public class ProductController {
 		return "redirect:/admin/productlist";
 	}
 
-/*	// 목록
+/*	//상품 목록
 	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
 	public void productlist(Model model) throws Exception {
 
@@ -55,7 +55,7 @@ public class ProductController {
 
 	}*/
 
-	// 상세
+	//상품 상세
 	@RequestMapping(value = "/productRead", method = RequestMethod.GET)
 	public void ProductRead(@RequestParam("pCode") String pCode, Model model) throws Exception {
 
@@ -65,7 +65,7 @@ public class ProductController {
 
 	}
 
-	// 삭제
+	//상품 삭제
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
 	public String remove(@RequestParam("pCode") String pCode, RedirectAttributes rttr) throws Exception {
 
@@ -100,7 +100,7 @@ public class ProductController {
 		return "redirect:/admin/productlist";
 	}
 	
-	//페이징 처리
+	//상품 페이징 처리
 	@RequestMapping(value = "/listCrie", method = RequestMethod.GET)
 	public void listAll(Criteria cri, Model model) throws Exception{
 		

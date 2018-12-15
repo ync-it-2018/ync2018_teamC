@@ -18,37 +18,37 @@ public class AnoticeServiceImpl implements AnoticeService {
 	@Inject
 	private AnoticeDAO dao;
 
-	//목록
+	//공지사항 목록
 	@Override
 	public List<AnoticeVO> listAll() throws Exception {
 		return dao.listAll();
 	}
 
-	//상세
+	//공지사항 상세
 	@Override
 	public AnoticeVO readNotice(Integer nCode) throws Exception {
 		return dao.readNotice(nCode);
 	}
 
-	//작성
+	//공지사항 작성
 	@Override
 	public void createNotice(AnoticeVO vo) throws Exception {
 		dao.createNotice(vo);
 	}
 
-	//수정
+	//공지사항 수정
 	@Override
 	public void updateNotice(AnoticeVO vo) throws Exception {
 		dao.updateNotice(vo);
 	}
 
-	//삭제
+	//공지사항 삭제
 	@Override
 	public void deleteNotice(Integer nCode) throws Exception {
 		dao.deleteNotice(nCode);
 	}
 	
-	//페이징
+	//공지사항 페이징
 	@Override
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception {
 		return dao.listCriteria(cri);

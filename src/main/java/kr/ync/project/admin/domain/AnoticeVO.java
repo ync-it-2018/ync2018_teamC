@@ -6,11 +6,13 @@ import java.util.Date;
 @Setter
 @ToString*/
 public class AnoticeVO {
-	private Integer nCode;
-	private String nTitle;
-	private Date nUpDate;
-	private String nContents;
-	private Integer nViewCount;
+	
+	//관리자 공지사항
+	private Integer nCode;		//글번호
+	private String nTitle;		//공지사항 제목
+	private Date nUpDate;		//공지사항 등록 날짜
+	private String nContents;	//공지사항 내용
+	private Integer nViewCount;	//공지사항 뷰 카운트
 	
 	public Integer getnCode() {
 		return nCode;

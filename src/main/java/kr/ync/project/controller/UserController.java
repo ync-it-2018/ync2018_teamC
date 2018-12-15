@@ -29,17 +29,21 @@ public class UserController {
 	@Autowired
 	private UserService service;
 
+	//사용자 로그인
 	@GetMapping(value = "/login")
 	public String loginGET(@ModelAttribute("dto") LoginDTO dto) {
 		log.info("UserController loginGET");
 		return "front/login";
 	}
 	
+	//사용자 로그인 에러
 	@GetMapping(value = "/loginError")
 	public String loginError(@ModelAttribute("dto") LoginDTO dto) {
 		log.info("Login Error");
 		return "front/loginError";
 	}
+	
+	//사용자 로그인 포스트
 	@GetMapping(value = "/value")
 	public String valueGET(@ModelAttribute("UserVO") UserVO vo , Model model) {
 		log.info("UserController valueGET");
@@ -75,6 +79,7 @@ public class UserController {
 		return "redirect:/index";
 	}
 
+	//사용자 로그아웃
 	@GetMapping(value = "/logout")
 	//@RequestMapping(value = "/logout", method=RequestMethod.GET)
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)

@@ -1,9 +1,11 @@
 package kr.ync.project.admin.domain;
 
 public class CategoryMiddleVO {
-	private int pBig;
-	private int pMiddle;
-	private String pMiddleName;
+	
+	//카테로기
+	private int pBig;			//대분류코드
+	private int pMiddle;		//중분류코트
+	private String pMiddleName;	//중분류 이름
 
 	public int getpBig() {
 		return pBig;

@@ -23,55 +23,59 @@ public class EventDAOImpl implements EventDAO {
     
     private static String namespace = "kr.ync.project.mapper.eventMapper";
  
+    //이벤트 등록
     @Override
     public void insertEvent(EventVO eventVO) {
         session.insert("insertEvent",eventVO);
     }
 
+    //이벤트 목록
 	@Override
 	public List<EventVO> listEvent() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".selectEvent");
 	}
 
+	//이벤트 목록
 	@Override
 	public List<EventVO> eventList(EventVO eventVO) {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".selectEvent", eventVO);
 	}
 
-	//리스트
+	//이벤트 리스트
 	@Override
 	public List<EventVO> elistAll() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".elistAll");
 	}
-	//상세
+	//이벤트 상세
 	@Override
 	public EventVO readEvent(Integer eNum) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace + ".readEvent", eNum);
 	}
 
+	//이벤트 사진 등록
 	@Override
 	public void insertEventPhoto(EventVO eventVO) {
 		// TODO Auto-generated method stub
 		session.insert("insertEventPhoto",eventVO);
 	}
 
-	//수정
+	//이벤트 수정
 	@Override
 	public void updateEvent(EventVO vo) throws Exception {
 		session.update(namespace + ".updateEvent", vo);
 	}
 
-	//삭제
+	//이벤트 삭제
 	@Override
 	public void deleteEvent(Integer eNum) throws Exception {
 		session.delete(namespace + ".deleteEvent", eNum);
 	}
 	
-	// 페이징
+	//이벤트 페이징
 	@Override
 	public List<EventVO> listPage(int page) throws Exception {
 		if (page <= 0) {

@@ -1,11 +1,11 @@
 package kr.ync.project.admin.domain;
 
 public class CategorySmallVO {
-	private int pSmall;
 	
-	private String pSmallName;
-	
-	private int pMiddle;
+	//카테고리
+	private int pSmall;			//소분류코드
+	private String pSmallName;	//소분류이름
+	private int pMiddle;		//중분류코드
 
 	public int getpSmall() {
 		return pSmall;

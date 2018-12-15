@@ -9,20 +9,20 @@ import kr.ync.project.domain.ProductVO;
 
 public interface ProductService {
 
-	// 목록
+	//상품 목록
 	public List<ProductVO> listAll() throws Exception;
 
-	// 상세
+	//상품 상세
 	// public List<ProductVO> readProduct(String pCode) throws Exception;
 	public ProductVO readProduct(String pCode) throws Exception;
 
-	// 작성
+	//상품 작성
 	public void createProduct(ProductVO vo) throws Exception;
 
-	// 수정
+	//상품 수정
 	public void updateProduct(ProductVO vo) throws Exception;
 
-	// 삭제
+	//상품 삭제
 	public void deleteProduct(String pCode) throws Exception;
 
 	// 프론트 상품 목록
