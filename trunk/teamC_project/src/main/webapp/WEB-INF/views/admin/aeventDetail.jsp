@@ -71,8 +71,7 @@
 						<input type="text" name='eLink' class="form-control" value="${eventVO.eLink}"
 							readonly="readonly">
 							
-						<%-- 링크 달고싶다... --%>
-						<%-- <input type="button" value="${eventVO.eLink}" onClick="window.open('${eventVO.eLink}')"> --%>
+						
 					</div>
 				</div>
 				
