@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class ReplyVO {
-
+	//댓글
 	private Integer rno;
 	private Integer bno;
 	private String replytext;

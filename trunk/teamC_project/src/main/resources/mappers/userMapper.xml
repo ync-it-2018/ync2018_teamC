@@ -5,22 +5,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.userMapper">
 
+	<!-- 회원 로그인 -->
 	<select id="login" resultType="UserVO">
-		SELECT	M_ID,
-				M_PWD
+		SELECT  M_ID
+			   ,M_NAME
+			   ,M_ADDRESS
+			   ,M_TEL
+			   ,M_EMAIL
+			   ,LEVEL_CODE
 		FROM	TC_MEMBER
 		WHERE	M_ID = #{mId}
 		AND		M_PWD = #{mPwd}
 	</select>
 	
+		<!-- 회원 로그인 유지 -->
 	<update id="keepLogin" >
 		UPDATE TC_MEMBER SET 	sessionKey = #{sessionId},
 	  							sessionLimit = #{next}
 		WHERE M_ID = #{mId}
 	</update>
 
+
 	<select id="checkUserWithSessionKey" resultType="UserVO">
-		value는 loginCookie에 저장된 session 값
 		SELECT 	*
 		FROM	TC_MEMBER
 		WHERE	sessionKey = #{value}

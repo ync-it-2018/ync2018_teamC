@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.reviewMapper">
 
+	<!--리뷰 등록 -->
 	<insert id="insertReview">
 		<!-- parameterType="kr.ync.project.domain.EventVO" -->
-
 		INSERT INTO TC_REVIEW(
 		R_NUM,
 		R_TITLE,
@@ -28,7 +28,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- <insert id="insertReviewPhoto" > INSERT INTO TC_E_FILE( E_NUM, E_IMAGE_SRC, 
 		E_IMAGE_INDEX )VALUES( #{eNum, jdbcType=INTEGER}, #{eImageSrc, jdbcType=VARCHAR}, 
 		#{eImageIndex, jdbcType=INTEGER} ) </insert> -->
-
+		
+	<!--리뷰 목록 -->
 	<select id="selectReview" parameterType="hashMap"
 		resultType="ReviewVO">
 		SELECT A.E_NAME,
@@ -41,31 +42,96 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		TC_E_FILE B
 		WHERE A.E_NUM = B.E_NUM
 	</select>
-
+	
+	<!--리뷰 목록 -->
 	<select id="rlistAll" resultType="ReviewVO">
-	<![CDATA[
-	SELECT 	R_NUM,
+   <![CDATA[
+   SELECT    R_NUM,
             R_TITLE,
             R_DATE,
             R_CONTENTS,
             R_VIEWCOUNT,
             M_ID,
             P_CODE
+   FROM TC_REVIEW
+   ]]>
+	</select>
+	
+	<!--리뷰 상세 -->
+	<select id="readReview" parameterType="hashMap"
+		resultType="ReviewVO">
+   <![CDATA[
+      SELECT    R.R_NUM,
+            R.M_ID,
+            R.R_TITLE,
+            P.P_CODE,
+            P.P_NAME,
+            R.R_CONTENTS,
+            F.P_IMAGE_SRC
+      FROM    TC_REVIEW R, TC_PRODUCT P, TC_P_FILE F
+      WHERE   R.P_CODE = P.P_CODE
+      AND      P.P_CODE = F.P_CODE
+      AND      R.P_CODE = F.P_CODE
+      AND    R_NUM = #{R_NUM}
+   ]]>
+	</select>
+
+
+	<!--리뷰 페이징 -->
+	<!-- <select id="readReview" resultType="ReviewVO"> SELECT R_NUM, M_ID, 
+		R_TITLE, P_CODE, R_CONTENTS FROM TC_REVIEW WHERE R_NUM = #{R_NUM} </select> -->
+	<select id="listPage" resultType="ReviewVO">
+	<![CDATA[
+	SELECT 	R_NUM, R_TITLE, R_DATE,R_CONTENTS,R_VIEWCOUNT,M_ID, P_CODE
 	FROM TC_REVIEW
+	WHERE R_NUM > 0
+	ORDER BY R_NUM DESC
+	limit #{page}, 10
 	]]>
 	</select>
 
-	<select id="read" resultType="ReviewVO">
-		SELECT E_NUM,
-		E_NAME,
-		E_STARTDATE,
-		E_ENDDATE
-		FROM TC_EVENT
-		WHERE E_NUM = #{E_NUM}
+	<select id="listCriteria" resultType="ReviewVO">
+	<![CDATA[
+	SELECT	R_NUM,
+			R_TITLE,
+			R_DATE,
+			R_CONTENTS,
+			R_VIEWCOUNT,
+			M_ID,
+			P_CODE
+	FROM   (SELECT 	
+					rownum rn,
+					R_NUM,
+					R_TITLE,
+					R_DATE,
+					R_CONTENTS,
+					R_VIEWCOUNT,
+					M_ID,
+					P_CODE
+	  		FROM	TC_REVIEW
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		R_NUM > 0 
+			ORDER BY R_NUM DESC
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	ORDER BY R_NUM DESC
+	
+	]]>
+	</select>
+
+	<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT 
+		COUNT(R_NUM)
+	FROM
+		TC_REVIEW
+	WHERE
+		R_NUM > 0
+	]]>
 	</select>
 
 
-
 </mapper>
+
 
 

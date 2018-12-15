@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.AdminsignupMapper">
 
+	<!-- 관리자 회원가입 -->
 	<insert id="insertadminMember" >  
 	<!-- parameterType="kr.ync.project.domain.AdminSignupVO" -->
         INSERT INTO TC_ADMIN(

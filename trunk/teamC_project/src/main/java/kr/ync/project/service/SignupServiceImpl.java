@@ -15,6 +15,7 @@ public class SignupServiceImpl implements SignupService {
     @Inject
     private SignupDAO dao;
  
+    //사용자 회원가입
     @Override
     public void insertMember(SignupVO signVO) {
         dao.insertMember(signVO);

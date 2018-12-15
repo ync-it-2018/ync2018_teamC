@@ -17,6 +17,7 @@ public class SignupDAOImpl implements SignupDAO {
     @Inject
     private SqlSession session;
  
+    //사용자 회원가입
     @Override
     public void insertMember(SignupVO signVO) {
         session.insert("insertMember",signVO);

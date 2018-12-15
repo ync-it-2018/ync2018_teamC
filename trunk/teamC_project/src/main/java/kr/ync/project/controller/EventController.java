@@ -37,11 +37,13 @@ public class EventController {
         return "admin/index";
     }
     
+    //이벤트 사진 GET
     @RequestMapping(value="/eventPhoto.do", method=RequestMethod.GET)
     public void eventPhotoGET() {
         
     }
     
+    //이벤트 사진 POST
     @RequestMapping(value="/eventPhoto.do", method=RequestMethod.POST)
     public String eventPhotoPOST(EventVO eventVO) {
             

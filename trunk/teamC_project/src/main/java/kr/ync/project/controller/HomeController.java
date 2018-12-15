@@ -2,10 +2,13 @@ package kr.ync.project.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ProductVO;
 import kr.ync.project.service.EventService;
-import kr.ync.project.service.MLevelService;
+import kr.ync.project.admin.service.MLevelService;
 import kr.ync.project.service.ProductService;
 import kr.ync.project.service.ReviewService;
 /**
@@ -34,16 +37,17 @@ public class HomeController {
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
-	 */
+	 */	
+	
 	@Inject
 	private EventService eventService;
 	@Inject
 	private ProductService productService; //서비스 객체
-	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
+	
+	//home컨트롤러(베스트상품, 신상, 추천)
+	@RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
 	public String home( Locale locale, Model model) throws Exception {
 		
-		logger.info("hi", locale);
-
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
@@ -59,19 +63,24 @@ public class HomeController {
 		List<ProductVO> newArrival = productService.newArrival();
 		model.addAttribute("newArrival", newArrival);
 
+		//추천
+		List<ProductVO> recommend = productService.recommend();
+		model.addAttribute("recommend", recommend);
+		
 		return "front/index";
 	}
 	
 	
-	
-	/*1017수정2*/
+	//제품리스트(개,고양이 카테고리에따라)
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
-	public String product(Locale locale, Model model) throws Exception {//model:택배기사
-		/*Map param = new HashMap<String, String>();
-		param.put("big", "01");
-		param.put("middle", "02");*/
+	public String product(Locale locale, HttpServletRequest request, Model model) throws Exception {//model:택배기사
+		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("big", request.getParameter("bigcategory"));
+		param.put("middle", request.getParameter("middlecategory"));
+		param.put("small", request.getParameter("smallcategory"));
+		//param.put("middle", "02");
 		
-		List<ProductVO> productList = productService.listProduct();
+		List<ProductVO> productList = productService.listProduct(param);
 		
 		System.out.println("가져온 상품 : " + productList);
 		
@@ -80,22 +89,10 @@ public class HomeController {
 		return "front/product";
 	}
 	
-	@Inject
-	private ReviewService reviewService;
-	
-	@RequestMapping(value = "/review", method = RequestMethod.GET)
-	public String reviewList(Locale locale, Model model) throws Exception {
-		
-		logger.info("리스트목록보기", locale);
-		
-		model.addAttribute("reviewList", reviewService.rlistAll());
-		
-		
-		return "front/review";
-	}
+
 	
 	
-	
+	//이벤트 리스트
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
 	public String event(Locale locale, Model model) throws Exception {
 		
@@ -107,48 +104,23 @@ public class HomeController {
 		return "front/event";
 	}
 	
+	
+	//리뷰 작성
 	@RequestMapping(value = "/write_review", method = RequestMethod.GET)
 	public String write_review(Locale locale, Model model) {
 		
 		return "front/write_review";
 	}
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(Locale locale, Model model) {
-		
-		return "front/index";
-	}
 	
+	//관리자 정보 
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String about(Locale locale, Model model) {
 		
 		return "front/about";
 	}
-	
-	@RequestMapping(value = "/blog_detail", method = RequestMethod.GET)
-	public String blog_detail(Locale locale, Model model) {
-		
-		return "front/blog_detail";
-	}
-	
-	@RequestMapping(value = "/blog", method = RequestMethod.GET)
-	public String blog(Locale locale, Model model) {
-		
-		return "front/blog";
-	}
-	
-	/*@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public String contact(Locale locale, Model model) {
-		
-		return "front/contact";
-	}*/
-	
-/*	@RequestMapping(value = "/home_02", method = RequestMethod.GET)
-	public String home_02(Locale locale, Model model) {
-		
-		return "front/home_02";
-	}*/
-	
+
+	//제품상세보기
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
 	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
 		
@@ -158,48 +130,35 @@ public class HomeController {
 		return "front/product_detail";
 	}
 	
-	
-	/*@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String best(@RequestParam("pMain")String pMain, Model model) throws Exception {
-		
-		model.addAttribute("bestProduct", productService.best(pMain));//serviceimple에서 받아온 데이터를 view로 보내줌
-		
-		return "front/index";
-	}*/
-	
-	
-		
+	//쇼핑 카트에 담기
 	@RequestMapping(value = "/shoping_cart", method = RequestMethod.GET)
 	public String shopping_cart(Locale locale, Model model) {
 		
 		return "front/shoping_cart";
 	}
 	
-	
+	//프론트 로그인
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
 		logger.info("home ctroller");
 		return "front/login";
 	}
 	
+	//어드민 인덱스
 	@RequestMapping(value = "/aindex", method = RequestMethod.GET)
 	public String aindex(Locale locale, Model model) {
 		
 		return "admin/index";
 	}
 	
+	//어드민 회원가입
 	@RequestMapping(value = "/ajoin", method = RequestMethod.GET)
 	public String ajoin(Locale locale, Model model) {
 		
 		return "admin/ajoin";
 	}
 	
-	@RequestMapping(value = "/adaysaleprice", method = RequestMethod.GET)
-	public String adaysaleprice(Locale locale, Model model) {
-		
-		return "admin/aDaySaleprice";
-	}
-	
+	//어드민 회사정보
 	@RequestMapping(value = "/coInfo", method = RequestMethod.GET)
 	public String coInfo(Locale locale, Model model) {
 		
@@ -207,117 +166,108 @@ public class HomeController {
 	}
 	
 	
-	
+	//어드민 슬라이드 관리
 	@RequestMapping(value = "/addslider", method = RequestMethod.GET)
 	public String addslider(Locale locale, Model model) {
 		
 		return "admin/addslider";
 	}
-	/*
-	@RequestMapping(value = "/test02", method = RequestMethod.GET)
-	public String popup(Locale locale, Model model) {
-		
-		return "admin/test02";
-	}
 	
-	@RequestMapping(value = "/test02_1", method = RequestMethod.GET)
-	public String popuptest(Locale locale, Model model) {
-		
-		return "admin/test02_1";
-	}*/
-	
+	//어드민 관리
 	@RequestMapping(value = "/management", method = RequestMethod.GET)
 	public String management(Locale locale, Model model) {
 		
 		return "admin/management";
 	}
 	
-	
+	//어드민 팝업창 관리
 	@RequestMapping(value = "/popupload", method = RequestMethod.GET)
 	public String popupload(Locale locale, Model model) {
 		
 		return "admin/popupload";
 	}
 	
-	
+	//프로트 회원가입
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Locale locale, Model model) {
 		
 		return "front/join";
 	}
 	
+	//프론트 마이페이지 사용자 정보
 	@RequestMapping(value = "/MypageUserinfo", method = RequestMethod.GET)
 	public String MypageUserinfo(Locale locale, Model model) {
 		
 		return "front/MypageUserinfo";
 	}
 	
+	//프론트 마이페이지 사용자 포인트
 	@RequestMapping(value = "/MypageSavedMoney", method = RequestMethod.GET)
 	public String MypageSavedMoney(Locale locale, Model model) {
 		
 		return "front/MypageSavedMoney";
 	}
 	
+	//프론트 마이페이지 사용자 주문 목록
 	@RequestMapping(value = "/MypageOrder", method = RequestMethod.GET)
 	public String MypageOrder(Locale locale, Model model) {
 		
 		return "front/MypageOrder";
 	}
 	
+	//프론트 마이페이지 회원 탈퇴
 	@RequestMapping(value = "/MypageWithdrawal", method = RequestMethod.GET)
 	public String MypageWithdrawal(Locale locale, Model model) {
 		
 		return "front/MypageWithdrawal";
 	}
 	
+	//프론트 마이페이지 회원 관심상품 목록
 	@RequestMapping(value = "/MypageInterestedpdt", method = RequestMethod.GET)
 	public String MypageInterestedpdt(Locale locale, Model model) {
 		
 		return "front/MypageInterestedpdt";
 	}
 	
-	
+	//어드민 이벤트 목록
 	@RequestMapping(value = "/aevent", method = RequestMethod.GET)
 	public String aevent(Locale locale, Model model) {
 		
 		return "admin/aevent";
 	}
 	
-	@RequestMapping(value = "/asaleprice", method = RequestMethod.GET)
-	public String asaleprice(Locale locale, Model model) {
-		
-		return "admin/aSaleprice";
-	}
-	
+	//어드민 이벤트 사진
 	@RequestMapping(value = "/aeventPhoto", method = RequestMethod.GET)
 	public String aeventPhoto(Locale locale, Model model) {
 		
 		return "admin/aeventPhoto";
 	}
 	
+	//어드민 총 매출
+	@RequestMapping(value = "/asaleprice", method = RequestMethod.GET)
+	   public String asaleprice(Locale locale, Model model) {
+	      
+	      return "admin/aSaleprice";
+	   }
+	
+	//어드민 일변 매출
+	@RequestMapping(value = "/adaysaleprice", method = RequestMethod.GET)
+	   public String adaysaleprice(Locale locale, Model model) {
+	      
+	      return "admin/aDaySaleprice";
+	   }
+	
+	//어드민 이벤트 등록
 	@RequestMapping(value = "/aeventUp", method = RequestMethod.GET)
 	public String aeventUp(Locale locale, Model model) {
 		
 		return "admin/aeventUp";
 	}
-	
-	
-	
-	@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
-	public String categorybigRegister(Locale locale, Model model) {
-		
-		return "admin/categorybigRegister";
-	}
-	
-	@RequestMapping(value = "/categorymiddleRegister", method = RequestMethod.GET)
-	public String categorymiddleRegister(Locale locale, Model model) {
-		
-		return "admin/categorymiddleRegister";
-	}
 
 	@Inject
 	private MLevelService mlevelservice;
 	
+	//어드민 회원 등급 관리
 	@RequestMapping(value = "/mlevel", method = RequestMethod.GET)
 	public String mlevel(Locale locale, Model model) {
 		

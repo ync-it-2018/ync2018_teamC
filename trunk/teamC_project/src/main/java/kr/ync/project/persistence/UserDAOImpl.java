@@ -22,12 +22,14 @@ public class UserDAOImpl implements UserDAO {
 
 	private static String namespace = "kr.ync.project.mapper.userMapper";
 
+	//사용자 로그인
 	@Override
 	public UserVO login(LoginDTO dto) throws Exception {
 
 		return session.selectOne(namespace + ".login", dto);
 	}
 
+	//사용자 로그인 유지
 	@Override
 	public void keepLogin(String mId, String sessionId, Date next) {
 

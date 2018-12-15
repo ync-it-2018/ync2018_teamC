@@ -1,3 +1,6 @@
+<%@page import="javax.swing.text.StyledEditorKit.BoldAction"%>
+<%@page import="kr.ync.project.domain.UserVO"%>
+<%@page import="net.sf.json.JSONObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -50,378 +53,14 @@
 <style>
    
 </style>
+
 <body class="animsition">
-   <!-- front -->
-   <!-- Header -->
-   <header>
-      <!-- Header desktop -->
-      <div class="container-menu-desktop" >
-         <!-- Topbar -->
-         <div class="top-bar" style="background-color:#dbbb87;">
-            <div class="content-topbar flex-sb-m h-full container" >
-               <div class="left-top-bar" style="color : black;">
-                  Free shipping for standard order over $100
-               </div>
+	<!-- header -->
+   <%@ include file="include/header.jsp" %>  
 
-               <div class="right-top-bar flex-w h-full" >
- <c:catch>
-    <c:choose>
-        <c:when test="${empty UserVO}">
-            <li>
-                <a href="/front/login" class="flex-c-m trans-04 p-lr-25">
-                     LOGIN
-                  </a>
-             </li>
-             <li>
-                <a href="/join" class="flex-c-m trans-04 p-lr-25" >
-                     JOIN
-                  </a>
-             </li>
-        </c:when>
-        <c:otherwise>
-           	
-                    <li style="margin:10px;">
-                       <p>${UserVO.mId}님, 반갑습니다!</p>
-                   </li>
-                   
-                  
-                   <li>
-                       <a href="/front/logout" class="flex-c-m trans-04 p-lr-25" >
-                     LOGOUT
-                  </a>
-                   </li>
-            
-        </c:otherwise>
-    </c:choose>
-</c:catch>
-
-                
-                  
-                <!--   <a href="/login" class="flex-c-m trans-04 p-lr-25">
-                     LOGIN
-                  </a> -->
-
-                 <!--  <a href="/join" class="flex-c-m trans-04 p-lr-25" >
-                     JOIN
-                  </a> -->
-
-                  <a href="/MypageUserinfo" class="flex-c-m trans-04 p-lr-25">
-                     MyPage
-                  </a>
-
-               </div>
-            </div>
-         </div>
-
-         <div class="wrap-menu-desktop">
-                        <nav class="limiter-menu-desktop container">
-
-               <!-- Logo desktop -->
-               <a href="/" class="logo">
-                  <img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO">
-               </a>
-
-               <!-- Menu desktop -->
-               <div class="menu-desktop">
-                  <ul class="main-menu">
-                     <!-- <li class="active-menu">
-                        <a href="/index">Home</a>
-
-                     </li>
- -->
-                     <li>
-                        <a href="/product">Shop</a>
-                        <ul class="sub-menu">
-                           <li><a href="/product">강아지</a>
-                              <ul class="sub-menu">
-                                 <li><a href="/product">사료 / 간식</a>
-                                    <ul class="sub-menu">
-                                       <li><a href="/product">자견용</a></li>
-                                       <li><a href="/product">성견용</a></li>
-                                       <li><a href="/product">노견용</a></li>
-                                       <li><a href="/product">유기농</a></li>
-                                    </ul>
-                                 </li>
-                                 <li><a href="/product">생활 / 훈련</a>
-                                    <ul class="sub-menu">
-                                       <li><a href="/product">배변</a></li>
-                                       <li><a href="/product">장난감</a></li>
-                                       <li><a href="/product">목욕</a></li>
-                                       <li><a href="/product">하우스</a></li>
-                                    </ul>
-                                 </li>
-                                 <li><a href="/product">패션 / 악세사리</a>
-                                    <ul class="sub-menu">
-                                       <li><a href="/product">신발</a></li>
-                                       <li><a href="/product">상의</a></li>
-                                       <li><a href="/product">하의</a></li>
-                                       <li><a href="/product">원피스</a></li>
-                                    </ul>
-                                 </li>
-                              </ul>
-                           </li>
-                           <li><a href="/product">고양이</a>
-                              <ul class="sub-menu">
-                                 <li><a href="/product">사료 / 간식</a>
-                                    <ul class="sub-menu">
-                                       <li><a href="/product">자묘용</a></li>
-                                       <li><a href="/product">성묘용</a></li>
-                                       <li><a href="/product">노묘용</a></li>
-                                       <li><a href="/product">유기농</a></li>
-                                    </ul>
-                                 </li>
-                                 <li><a href="/product">생활 / 훈련</a>
-                                    <ul class="sub-menu">
-                                       <li><a href="/product">배변</a></li>
-                                       <li><a href="/product">장난감</a></li>
-                                       <li><a href="/product">목욕</a></li>
-                                       <li><a href="/product">하우스</a></li>
-                                    </ul>
-                                 </li>
-                                 <li><a href="/product">패션 / 악세사리</a>
-                                    <ul class="sub-menu">
-                                       <li><a href="/product">신발</a></li>
-                                       <li><a href="/product">상의</a></li>
-                                       <li><a href="/product">하의</a></li>
-                                       <li><a href="/product">원피스</a></li>
-                                    </ul>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </li>
-                     
-                     <li>
-                        <a href="/event">Event</a>
-                     </li>
-                     
-                     
-                     <li>
-                        <a href="/about">About</a>
-                     </li>
-                     
-
-                     <li class="label1" data-label1="hot">
-                        <a href="/review">Review</a>
-                     </li> 
-
-                     <li>
-                        <a href="/contact">Contact</a>
-                     </li>
-                  </ul>
-               </div>
-
-               <!-- Icon header -->
-               <div class="wrap-icon-header flex-w flex-r-m">
-                  <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-                     <i class="zmdi zmdi-search"></i>
-                  </div>
-
-                  <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-                     <i class="zmdi zmdi-shopping-cart"></i>
-                  </div>
-
-                  <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-                     <i class="zmdi zmdi-favorite-outline"></i>
-                  </a>
-               </div>
-            </nav>
-         </div>   
-      </div>
-
-      <!-- Header Mobile -->
-      <div class="wrap-header-mobile">
-         <!-- Logo moblie -->      
-         <div class="logo-mobile">
-            <a href="/index"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
-         </div>
-
-         <!-- Icon header -->
-         <div class="wrap-icon-header flex-w flex-r-m m-r-15">
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-               <i class="zmdi zmdi-search"></i>
-            </div>
-
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-               <i class="zmdi zmdi-shopping-cart"></i>
-            </div>
-
-            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-               <i class="zmdi zmdi-favorite-outline"></i>
-            </a>
-         </div>
-
-         <!-- Button show menu -->
-         <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-            <span class="hamburger-box">
-               <span class="hamburger-inner"></span>
-            </span>
-         </div>
-      </div>
-
-
-      <!-- Menu Mobile -->
-      <div class="menu-mobile">
-         <ul class="topbar-mobile">
-            <li>
-               <div class="left-top-bar">
-                  Free shipping for standard order over $100
-               </div>
-            </li>
-
-            <li>
-               <div class="right-top-bar flex-w h-full">
-                  <a href="#" class="flex-c-m p-lr-10 trans-04">
-                  </a>
-
-                  <a href="#" class="flex-c-m p-lr-10 trans-04">
-                     My Account
-                  </a>
-
-                  <a href="#" class="flex-c-m p-lr-10 trans-04">
-                     EN
-                  </a>
-
-               </div>
-            </li>
-         </ul>
-
-         <ul class="main-menu-m">
-            <li>
-               <a href="/index">Home</a>
-            </li>
-
-            <li>
-               <a href="/product">Shop</a>
-               <ul class="sub-menu-m">
-                  <li><a href="/index">Homepage 1</a></li>
-                  <li><a href="/home_02">Homepage 2</a></li>
-                  <li><a href="/home_03">Homepage 3</a></li>
-               </ul>
-               <span class="arrow-main-menu-m">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i>
-               </span>
-            </li>
-
-            <li>
-               <a href="/shoping_cart" class="label1 rs1" data-label1="hot">Features</a>
-            </li>
-
-            <li>
-               <a href="/review">Review</a>
-            </li>
-
-            <li>
-               <a href="/about">About</a>
-            </li>
-
-            <li>
-               <a href="/contact">Contact</a>
-            </li>
-         </ul>
-      </div>
-
-      <!-- Modal Search -->
-      <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-         <div class="container-search-header">
-            <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-               <img src="/resources/front/images/icons/icon-close2.png" alt="CLOSE">
-            </button>
-
-            <form class="wrap-search-header flex-w p-l-15">
-               <button class="flex-c-m trans-04">
-                  <i class="zmdi zmdi-search"></i>
-               </button>
-               <input class="plh3" type="text" name="search" placeholder="Search...">
-            </form>
-         </div>
-      </div>
-   </header>
-
-   <!-- Cart -->
-   <div class="wrap-header-cart js-panel-cart">
-      <div class="s-full js-hide-cart"></div>
-
-      <div class="header-cart flex-col-l p-l-65 p-r-25">
-         <div class="header-cart-title flex-w flex-sb-m p-b-8">
-            <span class="mtext-103 cl2">
-               Your Cart
-            </span>
-
-            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-               <i class="zmdi zmdi-close"></i>
-            </div>
-         </div>
-         
-         <div class="header-cart-content flex-w js-pscroll">
-            <ul class="header-cart-wrapitem w-full">
-               <li class="header-cart-item flex-w flex-t m-b-12">
-                  <div class="header-cart-item-img">
-                     <img src="/resources/front/images/item-cart-01.jpg" alt="IMG">
-                  </div>
-
-                  <div class="header-cart-item-txt p-t-8">
-                     <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                        White Shirt Pleat
-                     </a>
-
-                     <span class="header-cart-item-info">
-                        1 x $19.00
-                     </span>
-                  </div>
-               </li>
-
-               <li class="header-cart-item flex-w flex-t m-b-12">
-                  <div class="header-cart-item-img">
-                     <img src="/resources/front/images/item-cart-02.jpg" alt="IMG">
-                  </div>
-
-                  <div class="header-cart-item-txt p-t-8">
-                     <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                        Converse All Star
-                     </a>
-
-                     <span class="header-cart-item-info">
-                        1 x $39.00
-                     </span>
-                  </div>
-               </li>
-
-               <li class="header-cart-item flex-w flex-t m-b-12">
-                  <div class="header-cart-item-img">
-                     <img src="/resources/front/images/item-cart-03.jpg" alt="IMG">
-                  </div>
-
-                  <div class="header-cart-item-txt p-t-8">
-                     <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                        Nixon Porter Leather
-                     </a>
-
-                     <span class="header-cart-item-info">
-                        1 x $17.00
-                     </span>
-                  </div>
-               </li>
-            </ul>
-            
-            <div class="w-full">
-               <div class="header-cart-total w-full p-tb-40">
-                  Total: $75.00
-               </div>
-
-               <div class="header-cart-buttons flex-w w-full" style="float:right;">
-                  <a href="/shoping_cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-                     View Cart
-                  </a>
-
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-
-      
-
+  	<!-- cart -->
+   <%@ include file="include/cart.jsp" %>
+ 
    <!-- Slider -->
    <section class="section-slide">
       <div class="wrap-slick1">
@@ -511,7 +150,7 @@
                <div class="block1 wrap-pic-w">
                   <img src="/resources/front/images/cate06.png" alt="IMG-BANNER" >
 
-                  <a href="/product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                  <a href="/product?bigcategory=1" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                      <div class="block1-txt-child1 flex-col-l">
                         <span class="block1-name ltext-102 trans-04 p-b-8">
                            Dog
@@ -536,7 +175,7 @@
                <div class="block1 wrap-pic-w">
                   <img src="/resources/front/images/cate02.jpg" alt="IMG-BANNER">
 
-                  <a href="/product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                  <a href="/product?bigcategory=2" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                      <div class="block1-txt-child1 flex-col-l">
                         <span class="block1-name ltext-102 trans-04 p-b-8">
                            Cat
@@ -564,7 +203,7 @@
                   <a href="/product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                      <div class="block1-txt-child1 flex-col-l">
                         <span class="block1-name ltext-102 trans-04 p-b-8">
-                           Organic
+                           All Product
                         </span>
 
                         <span class="block1-info stext-102 trans-04">
@@ -595,38 +234,8 @@
          </div>
 
          <div class="flex-w flex-sb-m p-b-52">
-            <div class="flex-w flex-l-m filter-tope-group m-tb-10">
-               <!-- <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                  All Products
-               </button>
-
-               <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-                  Dog
-               </button>
-
-               <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-                  Cat
-               </button>
-
-               <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-                  Organic
-               </button> -->
-
-            </div>
-
-            <div class="flex-w flex-c-m m-tb-10">
-               <div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
-                  <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
-                  <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                   Filter
-               </div>
-
-               <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-                  <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-                  <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                  Search
-               </div>
-            </div>
+          
+          
             
             <!-- Search product -->
             <div class="dis-none panel-search w-full p-t-10 p-b-15">
@@ -876,7 +485,12 @@
  
       <div class="owl-carousel owl-theme">     
       <c:forEach items = "${newArrival}" var="newArrival">
-          <div class="item"><img src="${newArrival.pImageSrc}" alt="IMG-PRODUCT"></div>
+          <div class="item">
+           <a href="/product_detail.do?pCode=${newArrival.pCode}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> 
+          <img src="${newArrival.pImageSrc}" alt="IMG-PRODUCT">
+          </a>
+          </div>
+           
       </c:forEach>
       </div>
 
@@ -886,26 +500,36 @@
                EVENT   
             </h3>
          </div>
-         <img src="/resources/front/images/event.png" alt="IMG-PRODUCT" style="width:100%;">
          
-         
+        <div style="margin-top:120px;">
+         <a href="/event">
+         <img src="/resources/eventImages/MainEvent.png" alt="IMG-PRODUCT" style="width:100%;">
+         </a>
+        </div>
+        
+        
+        
          <div class="p-b-10" style="margin-top:5%;">
             <h3 class="ltext-103 cl5">
                MD'S PICK   
             </h3>
          </div>
+         
+         <div>
+        
          <div class="row">
+         <c:forEach items = "${recommend}" var="recommend">
             <div class="col-md-4">
-               <img src="/resources/front/images/md.png" alt="IMG-PRODUCT" style="width:100%;">
+             <a href="/product_detail.do?pCode=${recommend.pCode}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+               <img src="${recommend.pImageSrc}" alt="IMG-PRODUCT" style="width:100%;">
+                 </a>
             </div>
-            <div class="col-md-4">
-               <img src="/resources/front/images/md.png" alt="IMG-PRODUCT" style="width:100%;">
-            </div>
-            <div class="col-md-4">
-               <img src="/resources/front/images/md.png" alt="IMG-PRODUCT" style="width:100%;">
-            </div>
+      
+             </c:forEach>
+         </div>
          </div>
       </div>
+      
       
       
       
