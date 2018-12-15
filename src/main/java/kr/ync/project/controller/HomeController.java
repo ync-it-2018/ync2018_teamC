@@ -37,7 +37,8 @@ public class HomeController {
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
-	 */
+	 */	
+	
 	@Inject
 	private EventService eventService;
 	@Inject
@@ -74,7 +75,9 @@ public class HomeController {
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Locale locale, HttpServletRequest request, Model model) throws Exception {//model:택배기사
 		Map<String, Object> param = new HashMap<String, Object>();
-		param.put("big", request.getParameter("catregory"));
+		param.put("big", request.getParameter("bigcategory"));
+		param.put("middle", request.getParameter("middlecategory"));
+		param.put("small", request.getParameter("smallcategory"));
 		//param.put("middle", "02");
 		
 		List<ProductVO> productList = productService.listProduct(param);
@@ -261,9 +264,6 @@ public class HomeController {
 		
 		return "admin/aeventUp";
 	}
-	
-	
-
 
 	@Inject
 	private MLevelService mlevelservice;

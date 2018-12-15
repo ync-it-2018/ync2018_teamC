@@ -219,7 +219,7 @@ hr {
       <input style="width: 130px;" type="text" placeholder="petname" name="LEVEL_CODE"> 
       
 	      <div class="clearfix">
-	        <button type="button" onclick="location.href='/'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
+	        <button type="button" onclick="location.href='/index'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
 	        
 	        <button type="submit" class="signupbtn" >Sign Up</button>
 	        
