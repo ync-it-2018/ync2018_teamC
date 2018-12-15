@@ -9,17 +9,17 @@ import kr.ync.project.domain.ProductVO;
 
 public interface ProductDAO {
 
-	// 목록
+	//상품 목록
 	public List<ProductVO> listAll() throws Exception;
 
-	// 상품상세
+	// 상품상품상세
 	// public List<ProductVO> readProduct(String pCode) throws Exception;
 	public ProductVO readProduct(String pCode) throws Exception;
 
-	// 상품등록
+	//상품 상품등록
 	public void createProduct(ProductVO vo) throws Exception;
 
-	// 상품수정
+	//상품 상품수정
 	public void updateProduct(ProductVO vo) throws Exception;
 
 	// 상품삭제

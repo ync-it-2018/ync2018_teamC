@@ -23,17 +23,21 @@ public class ReplyServiceImpl implements ReplyService {
 	@Autowired
 	private BoardDAO boardDAO;
 
+	//댓글 리스트
 	@Override
 	public List<ReplyVO> listReply(Integer bno) throws Exception {
 
 		return dao.list(bno);
 	}
 
+	//댓글 수정
 	@Override
 	public void modifyReply(ReplyVO vo) throws Exception {
 
 		dao.update(vo);
 	}
+	
+	//댓글 페이징
 	@Override
 	public List<ReplyVO> listReplyPage(Integer bno, Criteria cri) throws Exception {
 
@@ -46,6 +50,7 @@ public class ReplyServiceImpl implements ReplyService {
 		return dao.count(bno);
 	}
 	
+	//댓글 등록
 	@Transactional
 	@Override
 	public void addReply(ReplyVO vo) throws Exception {
@@ -54,6 +59,7 @@ public class ReplyServiceImpl implements ReplyService {
 		boardDAO.updateReplyCnt(vo.getBno(), 1);
 	}
 	
+	//댓글 삭제
 	@Transactional
 	@Override
 	public void removeReply(Integer rno) throws Exception {

@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.signupMapper">
 
+	<!-- 회원 회원가입 -->
 	<insert id="insertMember" >  
 	<!-- parameterType="kr.ync.project.domain.SignupVO" -->
         INSERT INTO TC_MEMBER(

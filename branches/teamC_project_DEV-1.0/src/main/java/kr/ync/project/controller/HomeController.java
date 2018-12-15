@@ -92,7 +92,7 @@ public class HomeController {
 
 	
 	
-	
+	//이벤트 리스트
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
 	public String event(Locale locale, Model model) throws Exception {
 		
@@ -104,6 +104,8 @@ public class HomeController {
 		return "front/event";
 	}
 	
+	
+	//리뷰 작성
 	@RequestMapping(value = "/write_review", method = RequestMethod.GET)
 	public String write_review(Locale locale, Model model) {
 		
@@ -111,25 +113,12 @@ public class HomeController {
 	}
 	
 	
-	
+	//관리자 정보 
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String about(Locale locale, Model model) {
 		
 		return "front/about";
 	}
-	
-	@RequestMapping(value = "/blog_detail", method = RequestMethod.GET)
-	public String blog_detail(Locale locale, Model model) {
-		
-		return "front/blog_detail";
-	}
-	
-	@RequestMapping(value = "/blog", method = RequestMethod.GET)
-	public String blog(Locale locale, Model model) {
-		
-		return "front/blog";
-	}
-	
 
 	//제품상세보기
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
@@ -141,41 +130,35 @@ public class HomeController {
 		return "front/product_detail";
 	}
 	
-	
-	
-	
-		
+	//쇼핑 카트에 담기
 	@RequestMapping(value = "/shoping_cart", method = RequestMethod.GET)
 	public String shopping_cart(Locale locale, Model model) {
 		
 		return "front/shoping_cart";
 	}
 	
-	
+	//프론트 로그인
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
 		logger.info("home ctroller");
 		return "front/login";
 	}
 	
+	//어드민 인덱스
 	@RequestMapping(value = "/aindex", method = RequestMethod.GET)
 	public String aindex(Locale locale, Model model) {
 		
 		return "admin/index";
 	}
 	
+	//어드민 회원가입
 	@RequestMapping(value = "/ajoin", method = RequestMethod.GET)
 	public String ajoin(Locale locale, Model model) {
 		
 		return "admin/ajoin";
 	}
 	
-	@RequestMapping(value = "/adaysaleprice", method = RequestMethod.GET)
-	public String adaysaleprice(Locale locale, Model model) {
-		
-		return "admin/aDaySaleprice";
-	}
-	
+	//어드민 회사정보
 	@RequestMapping(value = "/coInfo", method = RequestMethod.GET)
 	public String coInfo(Locale locale, Model model) {
 		
@@ -183,82 +166,98 @@ public class HomeController {
 	}
 	
 	
-	
+	//어드민 슬라이드 관리
 	@RequestMapping(value = "/addslider", method = RequestMethod.GET)
 	public String addslider(Locale locale, Model model) {
 		
 		return "admin/addslider";
 	}
 	
+	//어드민 관리
 	@RequestMapping(value = "/management", method = RequestMethod.GET)
 	public String management(Locale locale, Model model) {
 		
 		return "admin/management";
 	}
 	
-	
+	//어드민 팝업창 관리
 	@RequestMapping(value = "/popupload", method = RequestMethod.GET)
 	public String popupload(Locale locale, Model model) {
 		
 		return "admin/popupload";
 	}
 	
-	
+	//프로트 회원가입
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Locale locale, Model model) {
 		
 		return "front/join";
 	}
 	
+	//프론트 마이페이지 사용자 정보
 	@RequestMapping(value = "/MypageUserinfo", method = RequestMethod.GET)
 	public String MypageUserinfo(Locale locale, Model model) {
 		
 		return "front/MypageUserinfo";
 	}
 	
+	//프론트 마이페이지 사용자 포인트
 	@RequestMapping(value = "/MypageSavedMoney", method = RequestMethod.GET)
 	public String MypageSavedMoney(Locale locale, Model model) {
 		
 		return "front/MypageSavedMoney";
 	}
 	
+	//프론트 마이페이지 사용자 주문 목록
 	@RequestMapping(value = "/MypageOrder", method = RequestMethod.GET)
 	public String MypageOrder(Locale locale, Model model) {
 		
 		return "front/MypageOrder";
 	}
 	
+	//프론트 마이페이지 회원 탈퇴
 	@RequestMapping(value = "/MypageWithdrawal", method = RequestMethod.GET)
 	public String MypageWithdrawal(Locale locale, Model model) {
 		
 		return "front/MypageWithdrawal";
 	}
 	
+	//프론트 마이페이지 회원 관심상품 목록
 	@RequestMapping(value = "/MypageInterestedpdt", method = RequestMethod.GET)
 	public String MypageInterestedpdt(Locale locale, Model model) {
 		
 		return "front/MypageInterestedpdt";
 	}
 	
-	
+	//어드민 이벤트 목록
 	@RequestMapping(value = "/aevent", method = RequestMethod.GET)
 	public String aevent(Locale locale, Model model) {
 		
 		return "admin/aevent";
 	}
 	
-	@RequestMapping(value = "/asaleprice", method = RequestMethod.GET)
-	public String asaleprice(Locale locale, Model model) {
-		
-		return "admin/aSaleprice";
-	}
-	
+	//어드민 이벤트 사진
 	@RequestMapping(value = "/aeventPhoto", method = RequestMethod.GET)
 	public String aeventPhoto(Locale locale, Model model) {
 		
 		return "admin/aeventPhoto";
 	}
 	
+	//어드민 총 매출
+	@RequestMapping(value = "/asaleprice", method = RequestMethod.GET)
+	   public String asaleprice(Locale locale, Model model) {
+	      
+	      return "admin/aSaleprice";
+	   }
+	
+	//어드민 일변 매출
+	@RequestMapping(value = "/adaysaleprice", method = RequestMethod.GET)
+	   public String adaysaleprice(Locale locale, Model model) {
+	      
+	      return "admin/aDaySaleprice";
+	   }
+	
+	//어드민 이벤트 등록
 	@RequestMapping(value = "/aeventUp", method = RequestMethod.GET)
 	public String aeventUp(Locale locale, Model model) {
 		
@@ -268,6 +267,7 @@ public class HomeController {
 	@Inject
 	private MLevelService mlevelservice;
 	
+	//어드민 회원 등급 관리
 	@RequestMapping(value = "/mlevel", method = RequestMethod.GET)
 	public String mlevel(Locale locale, Model model) {
 		

@@ -9,22 +9,29 @@ import lombok.ToString;
 //@ToString
 public class UserVO {
 
-	private String mId;
-	private String mPwd;
-	private String mName;
-	private String mAddress;
-	private String mTel;
-	private String mEmail;
-	private int mLevelCode;
+	//사용자
+	private String mId;			//사용자 아이디
+	private String mPwd;		//사용자 비밀번호
+	private String mName;		//사용자 이름
+	private String mAddress;	//사용자 주소
+	private String mTel;		//사용자 전화번호
+	private String mEmail;		//사용자 이메일
+	private int mLevelCode;		//사용자 등급코드
 	
 //	private String M_ADDRESS;
 //	private String M_TEL;
 //	private String M_EMAIL;
 //	
-	private int point;
+	private int mPoint;
 //	private Integer LEVEL_CODE;
 	public String getmId() {
 		return mId;
+	}
+	public int getmPoint() {
+		return mPoint;
+	}
+	public void setmPoint(int mPoint) {
+		this.mPoint = mPoint;
 	}
 	public void setmId(String mId) {
 		this.mId = mId;

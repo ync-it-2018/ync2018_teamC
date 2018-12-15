@@ -11,15 +11,17 @@ import lombok.ToString;
 @Setter
 @ToString*/
 public class ReviewVO {
-	private Integer rNum;
-	private String rTitle;
-	private Date rDate;
-	private Integer rViewCount;
-	private String rContents;
-	private String mId;
-	private String pCode;
-	private String pName;
-	private String pImageSrc;
+	
+	//리뷰
+	private Integer rNum;		//리뷰 글 번호
+	private String rTitle;		//리뷰 글 제목
+	private Date rDate;			//리뷰 작성 날짜
+	private Integer rViewCount;	//리뷰 뷰 카운트
+	private String rContents;	//리뷰 내용
+	private String mId;			//리뷰 작성자 아이디
+	private String pCode;		//상품코드
+	private String pName;		//상품 명
+	private String pImageSrc;	//상품 이미지 경로
 	
 	public Integer getrNum() {
 		return rNum;

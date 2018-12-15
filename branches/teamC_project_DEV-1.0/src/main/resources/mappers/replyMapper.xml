@@ -5,36 +5,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.ReplyMapper">
 
+	<!-- 댓글 목록 -->
 	<select id="list" resultType="ReplyVO">
 		SELECT *
 		FROM tbl_reply
-		WHERE bno = #{bno}
+		WHERE bno =
+		#{bno}
 		ORDER BY rno DESC
 	</select>
-	
+
 	<select id="getBno" resultType="int">
-		SELECT	bno
-		FROM	tbl_reply
-		WHERE	rno = #{rno}
+		SELECT bno
+		FROM tbl_reply
+		WHERE rno
+		= #{rno}
 	</select>
-	
+
+	<!-- 댓글 등록 -->
 	<insert id="create">
 		INSERT INTO tbl_reply (rno, bno, replytext, replyer)
 		VALUES (SEQ_REPLY.NEXTVAL, #{bno},#{replytext},#{replyer})
 	</insert>
-
+	
+	<!-- 댓글 수정 -->
 	<update id="update">
 		UPDATE tbl_reply SET replytext = #{replytext},
 		updatedate = SYSDATE
 		WHERE rno = #{rno}
 	</update>
 
+	<!-- 댓글 삭제 -->	
 	<delete id="delete">
 		DELETE
 		FROM tbl_reply
 		WHERE rno = #{rno}
 	</delete>
 
+	<!-- 댓글 페이징 -->
 	<select id="listPage" resultType="ReplyVO">
 	<![CDATA[
 		SELECT	rno,
@@ -59,7 +66,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE	rn > (#{cri.page} -1) * #{cri.perPageNum}
 	]]>
 	</select>
-	
+
 	<select id="count" resultType="int">
 		SELECT COUNT(bno)
 		FROM tbl_reply

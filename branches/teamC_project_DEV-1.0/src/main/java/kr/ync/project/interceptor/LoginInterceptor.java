@@ -15,7 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 	private static final String LOGIN = "login";
-
+	
+	//UserVO 타입의 객체를 보관해 중간에 쿠키생성
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {

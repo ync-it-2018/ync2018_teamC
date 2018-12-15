@@ -9,18 +9,24 @@ import kr.ync.project.domain.Criteria;
 
 public interface BoardDAO {
 
+	//게시판 등록
 	public void create(BoardVO vo) throws Exception;
 
+	//게시판 상세
 	public BoardVO read(Integer bno) throws Exception;
 
+	//게시판 수정
 	public void update(BoardVO vo) throws Exception;
 
+	//게시판 삭제
 	public void delete(Integer bno) throws Exception;
 	
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
+	//게시판 목록
 	public List<BoardVO> listAll() throws Exception;
 
+	//게시판 페이징
 	public List<BoardVO> listPage(int page) throws Exception;
   
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception;

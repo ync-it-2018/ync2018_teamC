@@ -28,6 +28,7 @@ public class noticeController {
 	@Inject
 	private AnoticeService service;
 
+	//공지사항 목록 보기
 	@RequestMapping(value = "/contact", method = { RequestMethod.GET, RequestMethod.POST })
 	public String Notice(Locale locale, Model model) throws Exception {
 
@@ -38,6 +39,7 @@ public class noticeController {
 		return "front/contact";
 	}
 
+	//공지사항 목록 상세보기
 	@RequestMapping(value = "/NoticeRead", method = { RequestMethod.GET, RequestMethod.POST })
 	public String NoticeRead(@RequestParam("nCode") Integer nCode, Model model) throws Exception {
 

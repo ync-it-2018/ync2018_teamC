@@ -12,13 +12,14 @@ import lombok.ToString;
 @Setter
 @ToString*/
 public class EventVO {
-
-	private Integer eNum;
-	private String eName;
-	private Date eStartdate;
-	private Date eEnddate;
-	private String eDetail;
-	private String eLink;
+	
+	//이벤트 
+	private Integer eNum;		//이벤트 글 번호
+	private String eName;		//이벤트 글 제목
+	private Date eStartdate;	//이벤트  시작 날짜
+	private Date eEnddate;		//이벤트 종료 날짜
+	private String eDetail;		//이벤트 상세
+	private String eLink;		//이벤트 링크 경로
 	private String eImageSrc; //이미지 경로 
 	
 	private String eImageIndex; //이미지 인덱스

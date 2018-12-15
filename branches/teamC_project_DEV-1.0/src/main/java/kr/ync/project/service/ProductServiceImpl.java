@@ -18,13 +18,13 @@ public class ProductServiceImpl implements ProductService {
 	@Inject
 	private ProductDAO dao;
 
-	// 목록
+	//상품 목록
 	@Override
 	public List<ProductVO> listAll() throws Exception {
 		return dao.listAll();
 	}
 
-	// 상세
+	//상품 상세
 	/*
 	 * @Override public List<ProductVO> readProduct(String pCode) throws Exception {
 	 * return dao.readProduct(pCode); }
@@ -34,19 +34,19 @@ public class ProductServiceImpl implements ProductService {
 		return dao.readProduct(pCode);
 	}
 
-	// 등록
+	//상품 등록
 	@Override
 	public void createProduct(ProductVO vo) throws Exception {
 		dao.createProduct(vo);
 	}
 
-	// 수정
+	//상품 수정
 	@Override
 	public void updateProduct(ProductVO vo) throws Exception {
 		dao.updateProduct(vo);
 	}
 
-	// 삭제
+	//상품 삭제
 	@Override
 	public void deleteProduct(String pCode) throws Exception {
 		dao.deleteProduct(pCode);

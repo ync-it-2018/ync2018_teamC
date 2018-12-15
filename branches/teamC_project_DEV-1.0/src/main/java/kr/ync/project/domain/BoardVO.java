@@ -4,18 +4,20 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class BoardVO {
-	private Integer bno;
-	private String title;
-	private String content;
-	private String writer;
-	private Date regdate;
-	private int viewcnt;
-	private int replycnt;
 	
-	private String  R_TITEL;
-	private int  R_NUM;
-	private String  R_CONTENTS;
-	private int  R_VIEWCOUNT;
+	//게시판
+	private Integer bno;		//게시판 글 번호
+	private String title;		//게시판 글 제목
+	private String content;		//게시판 글 내용
+	private String writer;		//게시판 글 작성자
+	private Date regdate;		//게시판  작성 날짜
+	private int viewcnt;		//게시판 뷰 카운트
+	private int replycnt;		//게시판 댓글 갯수
+	
+	private String  R_TITEL;		//댓글 제목
+	private int  R_NUM;				//댓글 번호
+	private String  R_CONTENTS;		//댓글 내용
+	private int  R_VIEWCOUNT;		//댓글 뷰 카운트
 	
 	private String[] files;
 	

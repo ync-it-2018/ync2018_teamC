@@ -53,11 +53,13 @@ public class ReviewController {
         return "redirect:/front/review";
     }
     
+    //리뷰 사진 GET
     @RequestMapping(value="/reviewPhoto.do", method=RequestMethod.GET)
     public void reviewPhotoGET() {
         
     }
     
+    //리뷰 사진 POST
     @RequestMapping(value="/reviewPhoto.do", method=RequestMethod.POST)
     public String reviewPhotoPOST(ReviewVO reviewVO) {
             
@@ -77,7 +79,7 @@ public class ReviewController {
 		return "front/ReviewRead";
 	}
 	
-	//페이징 처리
+	//리뷰 페이징 처리
 	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
 	public void listAll(Criteria cri, Model model) throws Exception{
 		

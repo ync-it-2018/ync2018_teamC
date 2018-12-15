@@ -4,9 +4,10 @@ package kr.ync.project.admin.domain;
 @Setter
 @ToString*/
 public class CategoryBigVO {
-	private int pBig;
 	
-	private String pBigName;
+	//카테고리
+	private int pBig;		//대분류 코드
+	private String pBigName;//대분류 이름
 
 	public int getpBig() {
 		return pBig;

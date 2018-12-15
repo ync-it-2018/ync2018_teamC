@@ -12,19 +12,20 @@ import kr.ync.project.dto.LoginDTO;
 
 public interface ReviewDAO {
 
+	//리뷰 등록
 	public void insertReview(ReviewVO reviewVO);
-
+	//리뷰 리스트
 	public List<ReviewVO> listReview() throws Exception;
-
+	//리뷰 리스트
 	public List<ReviewVO> reviewList(ReviewVO reviewVO);
 
 	// 리뷰 상세
 	public ReviewVO readReview(Integer rNum) throws Exception;
-
+	//리뷰 리스트
 	public List<ReviewVO> rlistAll() throws Exception;
-
+	//리뷰 상세
 	public ReviewVO read(Integer rNum) throws Exception;
-
+	//리뷰 사진등록
 	public void insertReviewPhoto(ReviewVO reviewVO);
 
 	// 어드민 페이징

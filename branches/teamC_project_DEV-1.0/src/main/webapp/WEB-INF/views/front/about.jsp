@@ -66,7 +66,7 @@
 	 		</div>
 	 		
 	 		<div style="text-align:center;">
-	 		<div style="padding-top: 100px; display:inline-block;">
+	 		<div style="padding-top: 100px; display:inline-block; margin-bottom:40px;">
 	     	  <h3 class="mtext-111 cl2 p-b-16">
                     Member
                   </h3>
@@ -86,7 +86,7 @@
 				</div>
 				
 				<div style="width:200px; height:150px; float:left; margin:40px;">
- 				<img src="/resources/front/images/pk5.jpg" alt="IMG" width="200px" height="280px">
+ 				<img src="/resources/front/images/yujin.jpg" alt="IMG" width="200px" height="280px">
 	 		 	<p>전유진</p>
 				</div>
 				

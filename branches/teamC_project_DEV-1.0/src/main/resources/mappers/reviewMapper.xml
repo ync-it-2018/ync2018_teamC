@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.reviewMapper">
 
+	<!--리뷰 등록 -->
 	<insert id="insertReview">
 		<!-- parameterType="kr.ync.project.domain.EventVO" -->
-
 		INSERT INTO TC_REVIEW(
 		R_NUM,
 		R_TITLE,
@@ -28,7 +28,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- <insert id="insertReviewPhoto" > INSERT INTO TC_E_FILE( E_NUM, E_IMAGE_SRC, 
 		E_IMAGE_INDEX )VALUES( #{eNum, jdbcType=INTEGER}, #{eImageSrc, jdbcType=VARCHAR}, 
 		#{eImageIndex, jdbcType=INTEGER} ) </insert> -->
-
+		
+	<!--리뷰 목록 -->
 	<select id="selectReview" parameterType="hashMap"
 		resultType="ReviewVO">
 		SELECT A.E_NAME,
@@ -41,7 +42,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		TC_E_FILE B
 		WHERE A.E_NUM = B.E_NUM
 	</select>
-
+	
+	<!--리뷰 목록 -->
 	<select id="rlistAll" resultType="ReviewVO">
    <![CDATA[
    SELECT    R_NUM,
@@ -54,7 +56,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    FROM TC_REVIEW
    ]]>
 	</select>
-
+	
+	<!--리뷰 상세 -->
 	<select id="readReview" parameterType="hashMap"
 		resultType="ReviewVO">
    <![CDATA[
@@ -74,6 +77,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 
+	<!--리뷰 페이징 -->
 	<!-- <select id="readReview" resultType="ReviewVO"> SELECT R_NUM, M_ID, 
 		R_TITLE, P_CODE, R_CONTENTS FROM TC_REVIEW WHERE R_NUM = #{R_NUM} </select> -->
 	<select id="listPage" resultType="ReviewVO">
