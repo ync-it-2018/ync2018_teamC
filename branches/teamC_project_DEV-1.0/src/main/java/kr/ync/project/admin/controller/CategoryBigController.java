@@ -15,87 +15,91 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kr.ync.project.admin.domain.AnoticeVO;
 import kr.ync.project.admin.domain.CategoryBigVO;
 import kr.ync.project.admin.service.CategoryBigService;
 
 @Controller
-@RequestMapping("/categorybig/*")
+@RequestMapping("/admin/*")
 public class CategoryBigController {
-		
-private static final Logger logger = LoggerFactory.getLogger(CategoryBigController.class);
-	
+
+	private static final Logger logger = LoggerFactory.getLogger(CategoryBigController.class);
+
 	@Inject
 	private CategoryBigService service;
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/categorylist", method = RequestMethod.GET)
-	public String categorylist(Locale locale, Model model) throws Exception {
-		
-		logger.info("카테고리보기", locale);
-		
-		model.addAttribute("list", service.listAll());
-		
-		return "admin/categorylist";
+
+	@RequestMapping(value = "/categorybigList", method = RequestMethod.GET)
+	public String BigList(Model model) throws Exception {
+
+		logger.info("리스트목록보기");
+
+		model.addAttribute("biglist", service.BiglistAll());
+
+		return "admin/categorybigList";
 	}
 
-	@RequestMapping(value="/categorybig.do", method=RequestMethod.GET)
-    public void categorybigGET() {
-        
-    }
-    
-    //SignUp POST
-    @RequestMapping(value="/categorybig.do", method=RequestMethod.POST)
-    public String categorybigPOST(CategoryBigVO categorybigVO) {
-            
-    	service.insert(categorybigVO);
-            
-        return "admin/index";
-    }
-	
-	/*@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
-	public String categorybigRegister(Locale locale, Model model) throws Exception{
-		
-		logger.info("카테고리 등록");
-		
-		List category = null;
-		category = (List) service.insert(categorybigVO);
-		
-		//틀만 잡힘. 
-		
-		model.addAttribute("category",JSONArray.fromObject(categorybigVO));
-		return "admin/categorybigRegister";
-	}*/
-	
+	// 글 작성 get
+	@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
+	public void getCategoryBig(CategoryBigVO vo, Model model) throws Exception {
+		logger.info("get categorybig");
+	}
+
+	// 글 작성 post
+	@RequestMapping(value = "/categorybigRegister", method = RequestMethod.POST)
+	public String postCategoryBig(CategoryBigVO vo, RedirectAttributes rttr) throws Exception {
+
+		logger.info("post categorybig");
+		logger.info(vo.toString());
+
+		service.createCategoryBig(vo);
+
+		rttr.addFlashAttribute("msg", "success");
+
+		return "redirect:/admin/categorybigList";
+	}
+
+	// 상세
 	@RequestMapping(value = "/categorybigRead", method = RequestMethod.GET)
-	public String CateBigRead(@RequestParam("pBig")int pBig, Model model) throws Exception {
-		
-		logger.info("리스트상세보기");	
-		
-		model.addAttribute("list",service.read(pBig));
-		
-		return "admin/categorybigRead";
+	public void categorybigRead(@RequestParam("pBig") int pBig, Model model) throws Exception {
+
+		logger.info("리스트상세보기");
+
+		model.addAttribute(service.readCategoryBig(pBig));
+
 	}
-	
-	/*
-	@GetMapping(value = "/categorybigRegister")
-	public void registGET() throws Exception {
 
-		logger.info("regist get ...........");
-	}*/
-/*
-	@PostMapping(value = "/categorybigRegister")
-	public String registPOST(CategoryBigVO categorybigVO, RedirectAttributes rttr) throws Exception {
+	// 삭제
+	@RequestMapping(value = "/deleteCategoryBig", method = RequestMethod.POST)
+	public String remove(@RequestParam("pBig") int pBig, RedirectAttributes rttr) throws Exception {
 
-		logger.info("regist post ...........");
-		logger.info(categorybigVO.toString());
+		logger.info("대분류 카테고리 삭제");
 
-		service.insert(categorybigVO);
+		service.deleteCategoryBig(pBig);
 
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
-		return "redirect:/categorylist";
+		return "redirect:/admin/categorybigList";
+	}
 
-	}*/
-	
+	// 글 수정 get
+	@RequestMapping(value = "/categorybigModify", method = RequestMethod.GET)
+	public void getModify(int pBig, Model model) throws Exception {
+		logger.info("대분류 카테고리 수정 get");
+
+		model.addAttribute(service.readCategoryBig(pBig));
+	}
+
+	// 글 수정 post
+	@RequestMapping(value = "/categorybigModify", method = RequestMethod.POST)
+	public String postModify(CategoryBigVO vo, RedirectAttributes rttr) throws Exception {
+
+		logger.info("대분류 카테고리 수정 post");
+
+		service.updateCategoryBig(vo);
+
+		rttr.addFlashAttribute("msg", "SUCCESS");
+
+		return "redirect:/admin/categorybigList";
+	}
+
 }

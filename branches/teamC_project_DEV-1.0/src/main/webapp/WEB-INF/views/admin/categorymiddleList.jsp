@@ -14,7 +14,7 @@
          <!-- general form elements -->
          <div class='box'>
             <div class="box-header with-border">
-               <h3 class="box-title">Big Category</h3>
+               <h3 class="box-title">Middle Category</h3>
             </div>
 
          </div>
@@ -30,27 +30,22 @@
             <div  style="display:inline-block;">
              <table class="table table-bordered" style="text-align:center;">
                   <tr >
-                     <th >대분류 코드</th>
-                     <th style="width:150px;">대분류</th>
-                     <th >삭제/수정</th>
+                     <th >중분류 코드</th>
+                     <th style="width:150px;">중분류</th>
                   </tr>
 
-                  <c:forEach items="${list}" var="CategoryBigVO">
+                  <c:forEach items="${middlelist}" var="CategoryMiddleVO">
                      <tr>
                         <td>${CategoryBigVO.pBig}</td>
-                        <td><a href='/categorybigRead?pBig=${CategoryBigVO.pBig}'>${CategoryBigVO.pBigName}</a></td>
-                        <td>
-                        <button class="btn btn-primary" id="modifyBtn">수정</button>
-                        <button class="btn btn-primary" id="deleteBtn">삭제</button>
-                        </td>
+                        <td><a href='/admin/categorymiddleRead?pBig=${CategoryBigVO.pBig}'>${CategoryBigVO.pBigName}</a></td>
                      </tr>
                   </c:forEach>
 
                </table>
                </div>
                </form>
-               <a href="/categorybigRegister">
-               <button class="btn btn-warning"  id="newBtn" style="float:right;" >
+               <a href="/admin/categorybigRegister">
+               <button class="btn btn-warning" style="float:right;" >
                 대분류 추가</button></a>
             </div>
             
@@ -111,7 +106,7 @@
                   "click",
                   function(event) {
 
-                     self.location = "list"
+                     self.location = "biglist"
                            + '${pageMaker.makeQuery(1)}'
                            + "&searchType="
                            + $("select option:selected").val()
@@ -119,25 +114,13 @@
 
                   });
 
-             /* $("#newBtn").on("click", function() {
+            $('.btn-warning').on("click", function() {
 
-               self.location = "/categorybigRegister";
+            	self.location = "/admin/categorybigRegister";
 
-            });  */
+             });
 
          });
-</script>
-
-<script>
-function fn_view(pBig){
-    
-    var form = document.getElementById("categoryForm");
-    var url = "<c:url value='/categorybigRead'/>";
-    url = url + "?pBig=" + pBig;
-    
-    form.action = url;    
-    form.submit(); 
-}
 </script>
 
 <%@include file="../admin/include/footer.jsp" %>

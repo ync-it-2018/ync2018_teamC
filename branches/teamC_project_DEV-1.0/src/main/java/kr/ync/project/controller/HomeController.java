@@ -291,7 +291,7 @@ public class HomeController {
 	
 	
 	
-	@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
 	public String categorybigRegister(Locale locale, Model model) {
 		
 		return "admin/categorybigRegister";
@@ -301,7 +301,7 @@ public class HomeController {
 	public String categorymiddleRegister(Locale locale, Model model) {
 		
 		return "admin/categorymiddleRegister";
-	}
+	}*/
 
 	@Inject
 	private MLevelService mlevelservice;
