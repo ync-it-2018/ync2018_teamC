@@ -39,50 +39,72 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from TC_P_BIG where P_BIG = #{pBig}
 	</delete>
 	
-
-	<select id="flistAll" resultType="AnoticeVO">
-	<![CDATA[
-	SELECT 	N_CODE, N_TITLE, N_UP_DATE
-	FROM TC_NOTICE
-	WHERE N_CODE > 0
-	ORDER BY N_CODE DESC
-	]]>
-	</select>
-
-
-
-
-
-	<insert id="middlecreate">
-		INSERT INTO TC_P_MIDDLE(P_BIG, P_MIDDLE,
-		P_MIDDLE_NAME)
-		VALUES (#{pBig},#{pMiddle}, #{pBigName})
+	
+	<!-- 중분류 카테고리 생성 -->
+	<insert id="createCategoryMiddle">
+		INSERT INTO TC_P_MIDDLE(P_BIG, P_MIDDLE, P_MIDDLE_NAME)
+		VALUES (#{pBig}, #{pMiddle}, #{pMiddleName})
 	</insert>
 
-
-	<select id="listAll" resultType="CategoryBigVO">
+	<!-- 중분류 카테고리 리스트 -->
+	<select id="MiddlelistAll" parameterType="hashMap" resultType="CategoryMiddleVO">
 	<![CDATA[
-	SELECT 	P_BIG, P_BIG_NAME
-	FROM 	TC_P_BIG
-	ORDER BY P_BIG
+	SELECT * FROM TC_P_MIDDLE A, TC_P_BIG B
+	WHERE A.P_BIG = B.P_BIG
 	]]>
 	</select>
+	
+	<!-- 중분류 카테고리 상세 -->
+	<select id="readCategoryMiddle" parameterType="hashMap" resultType="CategoryMiddleVO">
+		SELECT * FROM TC_P_MIDDLE A, TC_P_BIG B
+		WHERE A.P_BIG = B.P_BIG
+		AND A.P_MIDDLE = #{A.P_MIDDLE}
+	</select>
+	
+	<!-- 중분류 카테고리 수정 -->
+	<update id="updateCategoryMiddle">
+		UPDATE TC_P_MIDDLE SET P_MIDDLE_NAME = #{pMiddleName}
+		WHERE P_MIDDLE = #{pMiddle}
+	</update>
+	
+	<!-- 중분류 카테고리 삭제 -->
+	<delete id="deleteCategoryMiddle">
+		delete from TC_P_MIDDLE where P_MIDDLE = #{pMiddle}
+	</delete>
+	
+	
+	<!-- 소분류 카테고리 생성 -->
+	<insert id="createCategorySmall">
+		INSERT INTO TC_P_SMALL(P_MIDDLE, P_SMALL, P_SMALL_NAME)
+		VALUES (#{pMiddle}, #{pSmall}, #{pSmallName})
+	</insert>
 
-	<select id="mlistAll" resultType="CategoryMiddleVO">
+	<!-- 소분류 카테고리 리스트 -->
+	<select id="SmalllistAll" parameterType="hashMap" resultType="CategorySmallVO">
 	<![CDATA[
-	SELECT 	P_BIG, P_BIG_NAME
-	FROM 	TC_P_BIG
-	ORDER BY P_BIG
+	SELECT * FROM TC_P_SMALL A, TC_P_MIDDLE B
+	WHERE A.P_MIDDLE = B.P_MIDDLE
 	]]>
 	</select>
-
-
-	<select id="read" resultType="CategoryBigVO">
-		SELECT P_BIG,
-		P_BIG_NAME
-		FROM
-		TC_P_BIG
-		WHERE P_BIG = #{P_BIG}
+	
+	<!-- 소분류 카테고리 상세 -->
+	<select id="readCategorySmall" parameterType="hashMap" resultType="CategorySmallVO">
+		SELECT * FROM TC_P_SMALL A, TC_P_MIDDLE B
+		WHERE A.P_MIDDLE = B.P_MIDDLE
+		AND A.P_SMALL = #{A.P_SMALL}
 	</select>
+	
+	<!-- 소분류 카테고리 수정 -->
+	<update id="updateCategorySmall">
+		UPDATE TC_P_SMALL SET P_SMALL_NAME = #{pSmallName}
+		WHERE P_SMALL = #{pSmall}
+	</update>
+	
+	<!-- 소분류 카테고리 삭제 -->
+	<delete id="deleteCategorySmall">
+		delete from TC_P_SMALL where P_SMALL = #{pSmall}
+	</delete>
+
+
 
 </mapper>

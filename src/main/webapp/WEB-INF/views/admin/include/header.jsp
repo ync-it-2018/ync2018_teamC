@@ -338,9 +338,9 @@
 						<ul class="treeview-menu">
 							<li><a href="/admin/categorybigList"><i
 									class="fa fa-circle-o"></i> 카테고리관리(대) </a></li>
-							<li><a href="/categorymiddleRegister"><i
+							<li><a href="/admin/categorymiddleList"><i
 									class="fa fa-circle-o"></i> 카테고리관리(중) </a></li>
-							<li><a href="/categorybig/categorylist"><i
+							<li><a href="/admin/categorysmallList"><i
 									class="fa fa-circle-o"></i> 카테고리관리(소) </a></li>
 							<li><a href="/admin/productup"><i class="fa fa-circle-o"></i>
 									상품등록</a></li>

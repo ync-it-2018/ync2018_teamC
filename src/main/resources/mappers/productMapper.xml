@@ -122,32 +122,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<!-- 상품 상세 -->
-	<!-- <select id="readProduct" parameterType="hashMap" resultType="productVO">
-
-		SELECT
-		A.P_NAME
-		,A.PRICE
-		,A.SALE_PRICE
-		,A.STOCK
-		,A.P_POINT
-		,A.P_DETAIL
-		,A.P_SMALL
-		,A.P_BIG
-		,A.P_MIDDLE
-		,A.P_SIZE
-		,A.P_CODE
-		,A.P_MAIN
-		,B.P_IMAGE_SRC
-		FROM TC_PRODUCT A
-		,TC_P_FILE B
-		WHERE A.P_CODE = B.P_CODE
-		AND A.P_CODE = #{A.P_CODE}
-
-	</select> -->
-	
-	
 	<select id="readProduct" parameterType="hashMap" resultType="productVO">
-
 		SELECT * FROM TC_PRODUCT A, TC_P_FILE B
 		WHERE A.P_CODE = B.P_CODE
 		AND A.P_CODE = #{A.P_CODE}
