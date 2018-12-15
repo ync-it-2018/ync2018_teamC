@@ -37,7 +37,7 @@
  	 <!-- header -->
    <%@ include file="include/header.jsp" %>  
 
-   <!-- cart -->
+    	<!-- cart -->
    <%@ include file="include/cart.jsp" %>
 
 

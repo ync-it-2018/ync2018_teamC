@@ -65,6 +65,7 @@ public class ProductDAOImpl implements ProductDAO{
 		return session.selectList(namespace + ".list",productVO);
 	}
 	
+	//제품상세보기
 	@Override
 	public ProductVO read(String pCode) throws Exception {
 		return session.selectOne(namespace + ".read" ,pCode);

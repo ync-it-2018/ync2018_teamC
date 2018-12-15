@@ -42,6 +42,8 @@ public class HomeController {
 	private EventService eventService;
 	@Inject
 	private ProductService productService; //서비스 객체
+	
+	//home컨트롤러(베스트상품, 신상, 추천)
 	@RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
 	public String home( Locale locale, Model model) throws Exception {
 		
@@ -68,8 +70,7 @@ public class HomeController {
 	}
 	
 	
-	
-	/*1017수정2*/
+	//제품리스트(개,고양이 카테고리에따라)
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Locale locale, HttpServletRequest request, Model model) throws Exception {//model:택배기사
 		Map<String, Object> param = new HashMap<String, Object>();
@@ -106,11 +107,7 @@ public class HomeController {
 		return "front/write_review";
 	}
 	
-	/*@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(Locale locale, Model model) {
-		
-		return "front/index";
-	}*/
+	
 	
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String about(Locale locale, Model model) {
@@ -130,18 +127,8 @@ public class HomeController {
 		return "front/blog";
 	}
 	
-	/*@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public String contact(Locale locale, Model model) {
-		
-		return "front/contact";
-	}*/
-	
-/*	@RequestMapping(value = "/home_02", method = RequestMethod.GET)
-	public String home_02(Locale locale, Model model) {
-		
-		return "front/home_02";
-	}*/
-	
+
+	//제품상세보기
 	@RequestMapping(value = "/product_detail", method = RequestMethod.GET)
 	public String product_detail(@RequestParam("pCode")String pCode, Model model) throws Exception {
 		
@@ -152,13 +139,6 @@ public class HomeController {
 	}
 	
 	
-	/*@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String best(@RequestParam("pMain")String pMain, Model model) throws Exception {
-		
-		model.addAttribute("bestProduct", productService.best(pMain));//serviceimple에서 받아온 데이터를 view로 보내줌
-		
-		return "front/index";
-	}*/
 	
 	
 		
@@ -283,18 +263,7 @@ public class HomeController {
 	}
 	
 	
-	
-	/*@RequestMapping(value = "/categorybigRegister", method = RequestMethod.GET)
-	public String categorybigRegister(Locale locale, Model model) {
-		
-		return "admin/categorybigRegister";
-	}
-	
-	@RequestMapping(value = "/categorymiddleRegister", method = RequestMethod.GET)
-	public String categorymiddleRegister(Locale locale, Model model) {
-		
-		return "admin/categorymiddleRegister";
-	}*/
+
 
 	@Inject
 	private MLevelService mlevelservice;
