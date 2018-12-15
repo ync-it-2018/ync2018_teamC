@@ -143,7 +143,7 @@ hr {
   
   <!--  action="/action_page.php" -->
     <div class="container">
-     <a href="/index" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a> 
+     <a href="/" data-rel="back" data-direction="reverse" ><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:95%;"></a> 
     
       <h1>Sign Up</h1>
       <p>회원정보입력</p>
@@ -219,7 +219,7 @@ hr {
       <input style="width: 130px;" type="text" placeholder="petname" name="LEVEL_CODE"> 
       
 	      <div class="clearfix">
-	        <button type="button" onclick="location.href='/index'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
+	        <button type="button" onclick="location.href='/'" class="cancelbtn">Cancel</button><!-- document.getElementById('id01').style.display='none' -->
 	        
 	        <button type="submit" class="signupbtn" >Sign Up</button>
 	        

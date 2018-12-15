@@ -82,7 +82,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<!-- <li class="active-menu">
-								<a href="/index">Home</a>
+								<a href="/">Home</a>
 
 							</li>
  -->
@@ -194,7 +194,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="/index"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="/"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -253,9 +253,9 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="/index">Home</a>
+					<a href="/">Home</a>
 					<ul class="sub-menu-m">
-						<li><a href="/index">Homepage 1</a></li>
+						<li><a href="/">Homepage 1</a></li>
 						<li><a href="/home_02">Homepage 2</a></li>
 						<li><a href="/home-03">Homepage 3</a></li>
 					</ul>

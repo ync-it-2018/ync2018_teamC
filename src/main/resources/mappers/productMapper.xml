@@ -175,5 +175,73 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteProduct">
 		delete from TC_PRODUCT where P_CODE = #{pCode}
 	</delete>
+	
+	<select id="listPage" resultType="productVO">
+	<![CDATA[
+	SELECT 	A.P_NAME
+		,A.PRICE
+		,A.SALE_PRICE
+		,A.STOCK
+		,A.P_POINT
+		,A.P_DETAIL
+		,A.P_SMALL
+		,A.P_BIG
+		,A.P_MIDDLE
+		,A.P_SIZE
+		,A.P_CODE
+		,B.P_IMAGE_SRC
+	FROM TC_PRODUCT A
+		,TC_P_FILE B
+	WHERE A.P_CODE = B.P_CODE
+	ORDER BY A.P_NAME DESC
+	limit #{page}, 10
+	]]>
+</select>
+
+<select id="listCriteria" resultType="productVO">
+	<![CDATA[
+	SELECT		P_NAME
+		,PRICE
+		,SALE_PRICE
+		,STOCK
+		,P_POINT
+		,P_DETAIL
+		,P_SMALL
+		,P_BIG
+		,P_MIDDLE
+		,P_SIZE
+		,P_CODE
+	FROM   (SELECT 	
+					rownum rn,
+					P_NAME
+		,PRICE
+		,SALE_PRICE
+		,STOCK
+		,P_POINT
+		,P_DETAIL
+		,P_SMALL
+		,P_BIG
+		,P_MIDDLE
+		,P_SIZE
+		,P_CODE
+	  		FROM	TC_PRODUCT
+			WHERE	rownum <= #{page} * #{perPageNum} 
+			ORDER BY P_NAME DESC
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	ORDER BY P_NAME DESC
+	
+	]]>
+</select>
+
+<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT 
+		COUNT(P_NAME)
+	FROM
+		TC_PRODUCT
+
+	]]>
+</select>
 
 </mapper>

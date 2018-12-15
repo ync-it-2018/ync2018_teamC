@@ -49,7 +49,7 @@
                <table class="table table-bordered">
                   <tr>
                      <th style="width: 10px">Q_NUM</th>
-                     <th>Q_CATEGORY_NAME</th>
+                     <th>Q_CATEGORY_NUM</th>
                      <th>Q_TITLE</th>
                      <th>Q_UP_DATE</th>
                      <th>M_ID</th>
@@ -60,7 +60,7 @@
 
                      <tr>
                         <td>${QnaVO.qNum}</td>
-                        <td>${QnaVO.qCategoryName}</td>
+                        <td>${QnaVO.qCategoryNum}</td>
                         <td><a href='#' onClick='fn_view(${QnaVO.qNum})'><c:out value="${QnaVO.qTitle}"/></a></td>
                         <td>${QnaVO.mID}</td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss"
