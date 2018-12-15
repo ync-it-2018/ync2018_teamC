@@ -9,9 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.util.WebUtils;
 
-import kr.ync.project.domain.AUserVO;
+
 import kr.ync.project.domain.UserVO;
-import kr.ync.project.service.AUserService;
 import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,7 +19,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
 	@Autowired
 	private UserService service;
-
+	//회원 세션 존재여부 확인후 logincookie진행
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {

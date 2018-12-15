@@ -1,57 +1,27 @@
+<%@page import="kr.ync.project.domain.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <title>Home</title>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->   
-   <link rel="icon" type="image/png" href="/resources/front/images/icons/favicon.png"/>
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/fonts/linearicons-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/animate/animate.css">
-<!--===============================================================================================-->   
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/select2/select2.min.css">
-<!--===============================================================================================-->   
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/slick/slick.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/MagnificPopup/magnific-popup.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/util.css">
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/main.css">
-   <link rel="stylesheet" type="text/css" href="/resources/front/vendor/bootstrap/css/bootstrap-grid.css">
-<!--===============================================================================================-->
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/owl.carousel.css">
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/owl.carousel.min.css">
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.default.css">
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.default.min.css">
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.green.css">
-   <link rel="stylesheet" type="text/css" href="/resources/front/css/owl.theme.green.min.css">
-</head>
-<style>
-   
-</style>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
 <body class="animsition">
-   <!-- front -->
-   <!-- Header -->
-   <header>
+	<%
+		// 세션정보 가져오기
+	 	HttpSession mySession = request.getSession();
+		UserVO sessionUser = (UserVO)mySession.getAttribute("login");
+		
+		// 로그인 상태 변수
+		boolean loginStatus = false;
+		
+		if(sessionUser != null){
+			loginStatus = true;	// 로그인 OK
+		}
+	%>
+<header>
+   	  <script>
+   	  	
+   	  </script>
       <!-- Header desktop -->
       <div class="container-menu-desktop" >
          <!-- Topbar -->
@@ -62,10 +32,11 @@
                </div>
 
                <div class="right-top-bar flex-w h-full" >
- <c:catch>
-    <c:choose>
-        <c:when test="${empty UserVO}">
-            <li>
+		
+        <% 
+        	if(!loginStatus){	// 로그인 안됐을때
+       	%>
+    		 <li>
                 <a href="/front/login" class="flex-c-m trans-04 p-lr-25">
                      LOGIN
                   </a>
@@ -75,24 +46,22 @@
                      JOIN
                   </a>
              </li>
-        </c:when>
-        <c:otherwise>
-           	
-                    <li style="margin:10px;">
-                       <p>${UserVO.mId}님, 반갑습니다!</p>
-                   </li>
+       	<%
+        	}else if(loginStatus){	// 로그인 됐을때
+        %>
+        	 <li style="margin:10px;">
+                 <p><%=sessionUser.getmId()%>님, 반갑습니다!</p>
+             </li>
                    
                   
-                   <li>
-                       <a href="/front/logout" class="flex-c-m trans-04 p-lr-25" >
-                     LOGOUT
-                  </a>
-                   </li>
-            
-        </c:otherwise>
-    </c:choose>
-</c:catch>
-
+             <li>
+                <a href="/front/logout" class="flex-c-m trans-04 p-lr-25" >
+              		LOGOUT
+           		</a>
+             </li>
+        <%
+        	}
+        %>
                 
                   
                 <!--   <a href="/login" class="flex-c-m trans-04 p-lr-25">
@@ -130,58 +99,58 @@
                      <li>
                         <a href="/product">Shop</a>
                         <ul class="sub-menu">
-                           <li><a href="/product">강아지</a>
+                           <li><a href="/product?bigcategory=1">강아지</a>
                               <ul class="sub-menu">
-                                 <li><a href="/product">사료 / 간식</a>
+                                 <li><a href="/product?bigcategory=1&middlecategory=1">사료 / 간식</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">자견용</a></li>
-                                       <li><a href="/product">성견용</a></li>
-                                       <li><a href="/product">노견용</a></li>
-                                       <li><a href="/product">유기농</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=1">자견용</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=2">성견용</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=3">노견용</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=4">유기농</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">생활 / 훈련</a>
+                                 <li><a href="/product?bigcategory=1&middlecategory=2">생활 / 훈련</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">배변</a></li>
-                                       <li><a href="/product">장난감</a></li>
-                                       <li><a href="/product">목욕</a></li>
-                                       <li><a href="/product">하우스</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=5">배변</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=6">장난감</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=7">목욕</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=8">하우스</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">패션 / 악세사리</a>
+                                 <li><a href="/product?bigcategory=1&middlecategory=3">패션 / 악세사리</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">신발</a></li>
-                                       <li><a href="/product">상의</a></li>
-                                       <li><a href="/product">하의</a></li>
-                                       <li><a href="/product">원피스</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=9">신발</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=10">상의</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=11">하의</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=12">원피스</a></li>
                                     </ul>
                                  </li>
                               </ul>
                            </li>
-                           <li><a href="/product">고양이</a>
+                           <li><a href="/product?bigcategory=2">고양이</a>
                               <ul class="sub-menu">
-                                 <li><a href="/product">사료 / 간식</a>
+                                 <li><a href="/product?bigcategory=2&middlecategory=4">사료 / 간식</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">자묘용</a></li>
-                                       <li><a href="/product">성묘용</a></li>
-                                       <li><a href="/product">노묘용</a></li>
-                                       <li><a href="/product">유기농</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=13">자묘용</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=14">성묘용</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=15">노묘용</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=16">유기농</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">생활 / 훈련</a>
+                                 <li><a href="/product?bigcategory=2&middlecategory=5">생활 / 훈련</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">배변</a></li>
-                                       <li><a href="/product">장난감</a></li>
-                                       <li><a href="/product">목욕</a></li>
-                                       <li><a href="/product">하우스</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=17">배변</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=18">장난감</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=19">목욕</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=20">하우스</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">패션 / 악세사리</a>
+                                 <li><a href="/product?bigcategory=2&middlecategory=6">패션 / 악세사리</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">신발</a></li>
-                                       <li><a href="/product">상의</a></li>
-                                       <li><a href="/product">하의</a></li>
-                                       <li><a href="/product">원피스</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=21">신발</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=22">상의</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=23">하의</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=24">원피스</a></li>
                                     </ul>
                                  </li>
                               </ul>
@@ -200,7 +169,7 @@
                      
 
                      <li class="label1" data-label1="hot">
-                        <a href="/review">Review</a>
+                        <a href="/review/reviewList">Review</a>
                      </li> 
 
                      <li>
@@ -306,7 +275,7 @@
             </li>
 
             <li>
-               <a href="/review">Review</a>
+               <a href="/review/reviewList">Review</a>
             </li>
 
             <li>

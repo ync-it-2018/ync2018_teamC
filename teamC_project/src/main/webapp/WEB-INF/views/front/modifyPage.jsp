@@ -224,5 +224,6 @@ $.getJSON("/sboard/getAttach/"+bno,function(list){
 </div>
 <!-- /.content-wrapper -->
 
-<%@include file="../include/footer.jsp"%>
+   <!-- Footer -->
+   <%@ include file="include/footer.jsp" %>
 

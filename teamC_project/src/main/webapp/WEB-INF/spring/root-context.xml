@@ -68,5 +68,11 @@
    
    <context:component-scan base-package="kr.ync.project.service">
    </context:component-scan>
+   
+    <context:component-scan base-package="kr.ync.project.admin.persistence">
+   </context:component-scan>
+   
+   <context:component-scan base-package="kr.ync.project.admin.service">
+   </context:component-scan>
 
 </beans>

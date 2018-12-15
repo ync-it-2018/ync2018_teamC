@@ -502,4 +502,6 @@ $(document).ready(function(){
 });
 </script>
 
-<%@include file="../include/footer.jsp"%>
+   <!-- Footer -->
+   <%@ include file="include/footer.jsp" %>
+      

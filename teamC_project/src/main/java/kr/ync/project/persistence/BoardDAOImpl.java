@@ -19,26 +19,27 @@ public class BoardDAOImpl implements BoardDAO {
 
 	private static String namespace = "kr.ync.project.mapper.BoardMapper";
 
+	//게시판 등록
 	@Override
 	public void create(BoardVO vo) throws Exception {
 		session.insert(namespace + ".create", vo);
 	}
-
+	//게시판 상세
 	@Override
 	public BoardVO read(Integer bno) throws Exception {
 		return session.selectOne(namespace + ".read", bno);
 	}
-
+	//게시판 수정
 	@Override
 	public void update(BoardVO vo) throws Exception {
 		session.update(namespace + ".update", vo);
 	}
-
+	//게시판 삭제
 	@Override
 	public void delete(Integer bno) throws Exception {
 		session.delete(namespace + ".delete", bno);
 	}
-	
+	//게시판 페이징
 	@Override
 	public void updateReplyCnt(Integer bno, int amount) throws Exception {
 		Map<String, Object> paraMap = new HashMap<String, Object>();

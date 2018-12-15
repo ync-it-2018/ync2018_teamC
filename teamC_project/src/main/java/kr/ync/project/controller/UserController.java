@@ -29,17 +29,21 @@ public class UserController {
 	@Autowired
 	private UserService service;
 
+	//사용자 로그인
 	@GetMapping(value = "/login")
 	public String loginGET(@ModelAttribute("dto") LoginDTO dto) {
 		log.info("UserController loginGET");
 		return "front/login";
 	}
 	
+	//사용자 로그인 에러
 	@GetMapping(value = "/loginError")
 	public String loginError(@ModelAttribute("dto") LoginDTO dto) {
 		log.info("Login Error");
 		return "front/loginError";
 	}
+	
+	//사용자 로그인 포스트
 	@GetMapping(value = "/value")
 	public String valueGET(@ModelAttribute("UserVO") UserVO vo , Model model) {
 		log.info("UserController valueGET");
@@ -53,55 +57,37 @@ public class UserController {
 	
 	//postHandle 실행
 	@PostMapping("/loginPost")
-	public void loginPost(LoginDTO dto, HttpSession session, Model model) throws Exception {
-		 String returnURL = "";
+	public String loginPost(LoginDTO dto, HttpSession session, Model model) throws Exception {
+		// 세션 초기화
+		session.removeAttribute("login");
+		
+		// 로그인 처리
 		UserVO vo = service.login(dto);
-		System.out.println("넘어왔니?:  "+ vo);
+		
 		// 로그인 실패시
 		if (vo == null) {
-			returnURL = "redirect:/login";
+			return "redirect:/login";
+		}else {// 로그인 성공시
+			// 세션 생성
+			session.setAttribute("login", vo);
+			
+			System.out.println("세션 : " + session.getAttribute("login"));
 		}
-		log.info(vo.getmId());
-		model.addAttribute("UserVO", vo);
 		
-		if (dto.isUseCookie()) {
-
-			int amount = 60 * 60 * 24 * 7;
-
-			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
-			log.info("session.getID():================"+session.getId().toString());
-			service.keepLogin(vo.getmId(), session.getId(), sessionLimit);
-
-		}
+		//model.addAttribute("UserVO", vo);
+		
+		return "redirect:/index";
 	}
 
+	//사용자 로그아웃
 	@GetMapping(value = "/logout")
 	//@RequestMapping(value = "/logout", method=RequestMethod.GET)
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
-		log.info("logout.................................1");
+		// 세션 삭제
+		session.removeAttribute("login");
 
-		Object obj = session.getAttribute("login");
-
-		if (obj != null) {
-			UserVO vo = (UserVO) obj;
-			log.info("logout.................................2");
-			session.removeAttribute("login");
-			session.invalidate();
-
-			log.info("logout.................................3");
-			Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
-
-			if (loginCookie != null) {
-				log.info("logout.................................4");
-				loginCookie.setPath("/");
-				loginCookie.setMaxAge(0);
-				response.addCookie(loginCookie);
-				service.keepLogin(vo.getmId(), session.getId(), new Date());
-				log.info("logout success................");
-			}
-		}
 		response.sendRedirect("/index");
 	}
 	

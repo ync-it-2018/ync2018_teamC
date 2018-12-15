@@ -5,57 +5,59 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.ync.project.mapper.eventMapper">
 
-	<insert id="insertEvent" >  
-	<!-- parameterType="kr.ync.project.domain.EventVO" -->
-	 
-        INSERT INTO TC_EVENT(
-            E_NUM,
-            E_NAME,
-            E_DETAIL,
-            E_STARTDATE,
-            E_ENDDATE,
-            E_LINK
-            
-        )VALUES(
-            #{eNum, jdbcType=INTEGER},
-            #{eName, jdbcType=VARCHAR},
-            #{eDetail, jdbcType=VARCHAR},
-            #{eStartdate, jdbcType=DATE},
-            #{eEnddate, jdbcType=DATE},
-            #{eLink, jdbcType=VARCHAR}
-        )
-    </insert>	
-    
-    <insert id="insertEventPhoto" >  
-    
-        INSERT INTO TC_E_FILE(
-            E_NUM,
-            E_IMAGE_SRC,
-            E_IMAGE_INDEX
-            
-        )VALUES(
-            #{eNum, jdbcType=INTEGER},
-            #{eImageSrc, jdbcType=VARCHAR},
-            #{eImageIndex, jdbcType=INTEGER}
-        )
-    </insert>			
-    
-    
-    <!-- front -->
-    <select id="selectEvent" parameterType="hashMap" resultType="EventVO">
-    	SELECT A.E_NAME,
-           	 A.E_DETAIL,
-           A.E_STARTDATE,
-           A.E_ENDDATE,
-           A.E_LINK,
-           B.E_IMAGE_SRC
-       FROM TC_EVENT  A,
-           TC_E_FILE  B
-      WHERE A.E_NUM = B.E_NUM
-    </select>
-    
-    <!-- 리스트 -->
-    <select id="elistAll" resultType="EventVO">
+	<!-- 이벤트 등록 -->
+	<insert id="insertEvent">
+		<!-- parameterType="kr.ync.project.domain.EventVO" -->
+
+		INSERT INTO TC_EVENT(
+		E_NUM,
+		E_NAME,
+		E_DETAIL,
+		E_STARTDATE,
+		E_ENDDATE,
+		E_LINK
+
+		)VALUES(
+		#{eNum, jdbcType=INTEGER},
+		#{eName, jdbcType=VARCHAR},
+		#{eDetail, jdbcType=VARCHAR},
+		#{eStartdate, jdbcType=DATE},
+		#{eEnddate, jdbcType=DATE},
+		#{eLink, jdbcType=VARCHAR}
+		)
+	</insert>
+	<!-- 이벤트 사진 등록 -->
+	<insert id="insertEventPhoto">
+
+		INSERT INTO TC_E_FILE(
+		E_NUM,
+		E_IMAGE_SRC,
+		E_IMAGE_INDEX
+
+		)VALUES(
+		#{eNum, jdbcType=INTEGER},
+		#{eImageSrc, jdbcType=VARCHAR},
+		#{eImageIndex, jdbcType=INTEGER}
+		)
+	</insert>
+
+
+	<!-- front -->
+	<select id="selectEvent" parameterType="hashMap"
+		resultType="EventVO">
+		SELECT A.E_NAME,
+		A.E_DETAIL,
+		A.E_STARTDATE,
+		A.E_ENDDATE,
+		A.E_LINK,
+		B.E_IMAGE_SRC
+		FROM TC_EVENT A,
+		TC_E_FILE B
+		WHERE A.E_NUM = B.E_NUM
+	</select>
+
+	<!-- 이벤트 리스트 -->
+	<select id="elistAll" resultType="EventVO">
 	<![CDATA[
 	SELECT 	E_NUM,
 			E_NAME,
@@ -63,31 +65,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			E_ENDDATE
 	FROM TC_EVENT
 	ORDER BY E_NUM DESC
-	]]>  
+	]]>
+	</select>
+	
+	<!-- 이벤트 상세 -->
+	<select id="readEvent" resultType="EventVO">
+		SELECT E_NUM,
+		E_NAME,
+		E_DETAIL,
+		E_STARTDATE,
+		E_ENDDATE,
+		E_LINK
+		FROM TC_EVENT
+		WHERE E_NUM = #{E_NUM}
 	</select>
 
-	<select id="readEvent" resultType="EventVO">
-		SELECT 	E_NUM,
-				E_NAME,
-				E_DETAIL,
-				E_STARTDATE,
-				E_ENDDATE,
-				E_LINK
-		FROM TC_EVENT
-		WHERE	E_NUM = #{E_NUM}
-	</select>
-	
-	
+	<!-- 이벤트 수정 -->
 	<update id="updateEvent">
-	UPDATE TC_EVENT SET E_NAME = #{eName}, E_DETAIL = #{eDetail}, 
-						E_STARTDATE = #{eStartdate}, E_ENDDATE = #{eEnddate}, E_LINK = #{eLink}
-	WHERE E_NUM = #{eNum}
+		UPDATE TC_EVENT SET E_NAME = #{eName}, E_DETAIL = #{eDetail},
+		E_STARTDATE = #{eStartdate}, E_ENDDATE = #{eEnddate}, E_LINK = #{eLink}
+		WHERE E_NUM = #{eNum}
 	</update>
 	
+	<!-- 이벤트 삭제 -->
 	<delete id="deleteEvent">
-	delete from TC_EVENT where E_NUM = #{eNum}
+		delete from TC_EVENT where E_NUM = #{eNum}
 	</delete>
 	
+	<!-- 이벤트 페이징 -->
 	<select id="listPage" resultType="EventVO">
 	<![CDATA[
 	SELECT 	E_NUM, E_NAME, E_STARTDATE,E_ENDDATE
@@ -96,9 +101,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	ORDER BY E_NUM DESC
 	limit #{page}, 10
 	]]>
-</select>
+	</select>
 
-<select id="listCriteria" resultType="EventVO">
+	<select id="listCriteria" resultType="EventVO">
 	<![CDATA[
 	SELECT	E_NUM,
 			E_NAME,
@@ -119,9 +124,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	ORDER BY E_NUM DESC
 	
 	]]>
-</select>
+	</select>
 
-<select id="countPaging" resultType="int">
+	<select id="countPaging" resultType="int">
 	<![CDATA[
 	SELECT 
 		COUNT(E_NUM)
@@ -130,7 +135,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	WHERE
 		E_NUM > 0
 	]]>
-</select>
+	</select>
 </mapper>
 
 

@@ -4,6 +4,7 @@ package kr.ync.project.domain;
 @Setter
 @ToString*/
 public class ProductVO {
+	//상품
 	private String pCode; //상품코드  넘어오는 컬럼값을 카멜이 바꿔줌(P_CODE -> pCode)
 	private String pName; //상품명
 	private String pDetail; //상품상세설명
