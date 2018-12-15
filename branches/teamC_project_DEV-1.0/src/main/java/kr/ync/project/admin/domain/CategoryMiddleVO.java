@@ -1,8 +1,5 @@
 package kr.ync.project.admin.domain;
 
-/*@Getter
-@Setter
-@ToString*/
 public class CategoryMiddleVO {
 	private int pBig;
 	private int pMiddle;

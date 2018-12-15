@@ -1,4 +1,4 @@
-package kr.ync.project.domain;
+package kr.ync.project.admin.domain;
 
 public class CategorySmallVO {
 	private int pSmall;

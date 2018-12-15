@@ -14,21 +14,26 @@
 				<!-- general form elements -->
 				<div class="box box-primary">
 					<div class="box-header">
-						<h3 class="box-title">REGISTER Big Category</h3>
+						<h3 class="box-title">REGISTER Small Category</h3>
 					</div>
 					<!-- /.box-header -->
 
 					<form role="form" method="post">
 						<div class="box-body">
 							<div class="form-group">
-								<label for="exampleInputEmail1">대분류 카테고리 번호</label> <input
-									type="text" id="pBig" name='pBig' class="form-control"
-									placeholder="Enter pBig">
+								<label for="exampleInputEmail1">중분류 카테고리 번호</label> <input
+									type="text" id="pMiddle" name='pMiddle' class="form-control"
+									placeholder="Enter pMiddle">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">대분류 카테고리 명</label>
-								<textarea class="form-control" id="pBigName" name="pBigName"
-									rows="3" placeholder="Enter pBigName"></textarea>
+								<label for="exampleInputEmail1">소분류 카테고리 번호</label> <input
+									type="text" id="pSmall" name='pSmall' class="form-control"
+									placeholder="Enter pSmall">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">소분류 카테고리 명</label> <input
+									type="text" id="pSmallName" name='pSmallName'
+									class="form-control" placeholder="Enter pSmallName">
 							</div>
 
 						</div>
@@ -69,11 +74,13 @@ $(document).ready(function(){
 	/* 등록 클릭 */ 
 	$('.btn-warning').on("click", function() {
 
-		elf.location = "/admin/categorybigList";
+		elf.location = "/admin/categorysmallList";
 
 	});
+		/* formObj.attr("method", "get");
+		formObj.attr("action", "/admin/categorySmallList");				
+		formObj.submit(); */
 });
-	
 </script>
 
 

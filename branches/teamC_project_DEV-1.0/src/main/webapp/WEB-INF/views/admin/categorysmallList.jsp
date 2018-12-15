@@ -14,7 +14,7 @@
 			<!-- general form elements -->
 			<div class='box'>
 				<div class="box-header with-border">
-					<h3 class="box-title">Middle Category</h3>
+					<h3 class="box-title">Small Category</h3>
 				</div>
 
 			</div>
@@ -30,17 +30,17 @@
 						<div style="display: inline-block;">
 							<table class="table table-bordered" style="text-align: center;">
 								<tr>
-									<th>대분류 코드</th>
 									<th>중분류 코드</th>
-									<th style="width: 150px;">중분류</th>
+									<th>소분류 코드</th>
+									<th style="width: 150px;">소분류</th>
 								</tr>
 
-								<c:forEach items="${middlelist}" var="CategoryMiddleVO">
+								<c:forEach items="${smalllist}" var="CategorySmallVO">
 									<tr>
-										<td>${CategoryMiddleVO.pBig}</td>
-										<td>${CategoryMiddleVO.pMiddle}</td>
+										<td>${CategorySmallVO.pMiddle}</td>
+										<td>${CategorySmallVO.pSmall}</td>
 										<td><a
-											href='/admin/categorymiddleRead?pBig=${CategoryMiddleVO.pBig}&pMiddle=${CategoryMiddleVO.pMiddle}'>${CategoryMiddleVO.pMiddleName}</a></td>
+											href='/admin/categorysmallRead?pMiddle=${CategorySmallVO.pMiddle}&pSmall=${CategorySmallVO.pSmall}'>${CategorySmallVO.pSmallName}</a></td>
 									</tr>
 								</c:forEach>
 
@@ -48,7 +48,7 @@
 						</div>
 					</form>
 						<button class="btn btn-warning" style="float: right;">
-							중분류 추가</button>
+							소분류 추가</button>
 					</a>
 				</div>
 
@@ -109,7 +109,7 @@
 						"click",
 						function(event) {
 
-							self.location = "Middlelist"
+							self.location = "smalllist"
 									+ '${pageMaker.makeQuery(1)}'
 									+ "&searchType="
 									+ $("select option:selected").val()
@@ -119,7 +119,7 @@
 
 				$('.btn-warning').on("click", function() {
 
-					self.location = "/admin/categorymiddleRegister";
+					self.location = "/admin/categorysmallRegister";
 
 				});
 
