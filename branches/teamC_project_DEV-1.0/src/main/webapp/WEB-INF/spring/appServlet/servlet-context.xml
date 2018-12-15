@@ -57,9 +57,14 @@
 		</interceptor>
 		
 		<interceptor>
-			<mapping path="/front/loginPost" />
+			<mapping path="/MypageUserinfo" />
 			<beans:ref bean="loginInterceptor" />
 		</interceptor>
+		<!-- 
+		<interceptor>
+			<mapping path="/front/loginPost" />
+			<beans:ref bean="loginInterceptor" />
+		</interceptor> -->
 		
 		<!-- <interceptor>
 			<mapping path="/aindex"/>

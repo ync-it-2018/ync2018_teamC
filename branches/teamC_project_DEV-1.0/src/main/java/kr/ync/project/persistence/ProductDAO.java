@@ -1,6 +1,7 @@
 package kr.ync.project.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.ync.project.admin.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
@@ -25,7 +26,7 @@ public interface ProductDAO {
 	public void deleteProduct(String pCode) throws Exception;
 
 	// 프론트 상품목록
-	public List<ProductVO> listProduct() throws Exception;
+	public List<ProductVO> listProduct(Map<String, Object> param) throws Exception;
 
 	public List<ProductVO> productList(ProductVO productVO);
 
@@ -44,4 +45,7 @@ public interface ProductDAO {
 
 	public int countPaging(Criteria cri) throws Exception;
 
+	
+	//추천상품목록
+	public List<ProductVO> recommend()throws Exception;
 }

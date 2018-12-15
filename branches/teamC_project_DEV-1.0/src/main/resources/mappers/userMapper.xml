@@ -6,8 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.userMapper">
 
 	<select id="login" resultType="UserVO">
-		SELECT	M_ID,
-				M_PWD
+		SELECT  M_ID
+			   ,M_NAME
+			   ,M_ADDRESS
+			   ,M_TEL
+			   ,M_EMAIL
+			   ,LEVEL_CODE
 		FROM	TC_MEMBER
 		WHERE	M_ID = #{mId}
 		AND		M_PWD = #{mPwd}

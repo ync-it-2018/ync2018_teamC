@@ -1,11 +1,11 @@
 package kr.ync.project.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.admin.domain.AnoticeVO;
@@ -56,8 +56,8 @@ public class ProductDAOImpl implements ProductDAO{
 
 	//프론트 리스트
 	@Override
-	public List<ProductVO> listProduct() throws Exception {
-		return session.selectList(namespace + ".list");
+	public List<ProductVO> listProduct(Map<String, Object> param) throws Exception {
+		return session.selectList(namespace + ".list", param);
 	}
 
 	@Override
@@ -84,6 +84,13 @@ public class ProductDAOImpl implements ProductDAO{
 		return session.selectList(namespace + ".newArrival");
 	}
 	
+	//추천 상품
+	@Override
+	public List<ProductVO> recommend() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".recommend");
+	}
+
 	//페이징
 	@Override
 	public List<AnoticeVO> listPage(int page) throws Exception {
@@ -106,6 +113,4 @@ public class ProductDAOImpl implements ProductDAO{
 		
 		return session.selectOne(namespace + ".countPaging", cri);
 	}
-	
-	
 }
