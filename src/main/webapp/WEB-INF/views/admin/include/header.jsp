@@ -355,9 +355,6 @@
 									class="fa fa-circle-o"></i> 회원관리 </a></li>
 							<li><a href="/admin/MLevel"><i class="fa fa-circle-o"></i>
 									등급 목록 </a></li>
-							<li><a href="/mlevel"><i class="fa fa-circle-o"></i> 등급
-									등록 </a></li>
-
 						</ul></li>
 
 					<li class="treeview"><a href="#"> <i class="fa fa-files-o"></i>
