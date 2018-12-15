@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import kr.ync.project.admin.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ReviewVO;
@@ -59,5 +60,16 @@ public class ReviewServiceImpl implements ReviewService {
 		return dao.readReview(rNum);
 	}
 
+	// 페이징
+	@Override
+	public List<ReviewVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
+	}
+
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+
+		return dao.countPaging(cri);
+	}
 
 }

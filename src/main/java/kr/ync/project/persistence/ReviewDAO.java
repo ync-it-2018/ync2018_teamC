@@ -17,8 +17,8 @@ public interface ReviewDAO {
 	public List<ReviewVO> listReview() throws Exception;
 
 	public List<ReviewVO> reviewList(ReviewVO reviewVO);
-	
-	//리뷰 상세
+
+	// 리뷰 상세
 	public ReviewVO readReview(Integer rNum) throws Exception;
 
 	public List<ReviewVO> rlistAll() throws Exception;
@@ -26,5 +26,12 @@ public interface ReviewDAO {
 	public ReviewVO read(Integer rNum) throws Exception;
 
 	public void insertReviewPhoto(ReviewVO reviewVO);
+
+	// 어드민 페이징
+	public List<ReviewVO> listPage(int page) throws Exception;
+
+	public List<ReviewVO> listCriteria(Criteria cri) throws Exception;
+
+	public int countPaging(Criteria cri) throws Exception;
 
 }

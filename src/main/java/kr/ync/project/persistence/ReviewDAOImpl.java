@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.admin.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ReviewVO;
@@ -61,6 +62,28 @@ public class ReviewDAOImpl implements ReviewDAO {
 	@Override
 	public ReviewVO readReview(Integer rNum) throws Exception {
 		return session.selectOne(namespace + ".readReview", rNum);
+	}
+	//페이징
+	@Override
+	public List<ReviewVO> listPage(int page) throws Exception {
+		if(page <= 0) {
+			page = 1;
+		}
+		
+		page = (page - 1) * 10;
+		
+		return session.selectList(namespace + ".listPage", page);
+	}
+
+	@Override
+	public List<ReviewVO> listCriteria(Criteria cri) throws Exception {
+		return session.selectList(namespace + ".listCriteria", cri);
+	}
+	
+	@Override
+	public int countPaging(Criteria cri)throws Exception {
+		
+		return session.selectOne(namespace + ".countPaging", cri);
 	}
 
 }
