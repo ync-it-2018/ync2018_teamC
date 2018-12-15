@@ -2,10 +2,13 @@ package kr.ync.project.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,11 +42,9 @@ public class HomeController {
 	private EventService eventService;
 	@Inject
 	private ProductService productService; //서비스 객체
-	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
 	public String home( Locale locale, Model model) throws Exception {
 		
-		logger.info("hi", locale);
-
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
@@ -59,6 +60,10 @@ public class HomeController {
 		List<ProductVO> newArrival = productService.newArrival();
 		model.addAttribute("newArrival", newArrival);
 
+		//추천
+		List<ProductVO> recommend = productService.recommend();
+		model.addAttribute("recommend", recommend);
+		
 		return "front/index";
 	}
 	
@@ -66,12 +71,12 @@ public class HomeController {
 	
 	/*1017수정2*/
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
-	public String product(Locale locale, Model model) throws Exception {//model:택배기사
-		/*Map param = new HashMap<String, String>();
-		param.put("big", "01");
-		param.put("middle", "02");*/
+	public String product(Locale locale, HttpServletRequest request, Model model) throws Exception {//model:택배기사
+		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("big", request.getParameter("catregory"));
+		//param.put("middle", "02");
 		
-		List<ProductVO> productList = productService.listProduct();
+		List<ProductVO> productList = productService.listProduct(param);
 		
 		System.out.println("가져온 상품 : " + productList);
 		
@@ -101,11 +106,11 @@ public class HomeController {
 		return "front/write_review";
 	}
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
 		
 		return "front/index";
-	}
+	}*/
 	
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String about(Locale locale, Model model) {

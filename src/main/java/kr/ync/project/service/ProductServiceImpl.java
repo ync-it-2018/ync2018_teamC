@@ -1,6 +1,7 @@
 package kr.ync.project.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -54,8 +55,8 @@ public class ProductServiceImpl implements ProductService {
 ///////////////////////////////////////////	
 	// 프론트 상품리스트
 	@Override
-	public List<ProductVO> listProduct() throws Exception {
-		return dao.listProduct();
+	public List<ProductVO> listProduct(Map<String, Object> param) throws Exception {
+		return dao.listProduct(param);
 	}
 
 	public List<ProductVO> productList(ProductVO productVO) {
@@ -82,7 +83,6 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return dao.newArrival();
 	}
-
 	// 페이징
 	@Override
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception {
@@ -93,6 +93,12 @@ public class ProductServiceImpl implements ProductService {
 	public int listCountCriteria(Criteria cri) throws Exception {
 
 		return dao.countPaging(cri);
+	}
+
+	@Override
+	public List<ProductVO> recommend() throws Exception {
+		
+		return dao.recommend();
 	}
 
 }

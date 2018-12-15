@@ -1,6 +1,7 @@
 package kr.ync.project.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.ync.project.admin.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
@@ -26,7 +27,7 @@ public interface ProductService {
 
 	// 프론트 상품 목록
 
-	public List<ProductVO> listProduct() throws Exception;
+	public List<ProductVO> listProduct(Map<String, Object> param) throws Exception;
 
 	public List<ProductVO> productList(ProductVO productVO);
 
@@ -43,4 +44,7 @@ public interface ProductService {
 	public List<AnoticeVO> listCriteria(Criteria cri) throws Exception;
 
 	public int listCountCriteria(Criteria cri) throws Exception;
+	
+	//추천상품
+	public List<ProductVO> recommend()throws Exception;
 }

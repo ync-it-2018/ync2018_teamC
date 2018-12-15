@@ -15,7 +15,6 @@ public class UserVO {
 	private String mAddress;
 	private String mTel;
 	private String mEmail;
-	private int mPoint;
 	private int mLevelCode;
 	
 //	private String M_ADDRESS;
@@ -41,12 +40,6 @@ public class UserVO {
 	}
 	public void setmName(String mName) {
 		this.mName = mName;
-	}
-	public int getmPoint() {
-		return mPoint;
-	}
-	public void setmPoint(int mPoint) {
-		this.mPoint = mPoint;
 	}
 	public String getmAddress() {
 		return mAddress;
