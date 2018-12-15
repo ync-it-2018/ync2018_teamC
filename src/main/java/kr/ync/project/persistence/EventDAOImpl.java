@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import kr.ync.project.domain.AnoticeVO;
+
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.SignupVO;

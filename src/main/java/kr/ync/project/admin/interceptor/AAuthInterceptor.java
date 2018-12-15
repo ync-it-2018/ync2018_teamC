@@ -1,4 +1,4 @@
-package kr.ync.project.interceptor;
+package kr.ync.project.admin.interceptor;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -9,26 +9,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.util.WebUtils;
 
-
-import kr.ync.project.domain.UserVO;
+import kr.ync.project.admin.domain.AUserVO;
+import kr.ync.project.admin.service.AUserService;
 import kr.ync.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class AuthInterceptor extends HandlerInterceptorAdapter {
+public class AAuthInterceptor extends HandlerInterceptorAdapter {
 
 	@Autowired
-	private UserService service;
+	private AUserService service;
 
+	//관리자 세션 존재여부 확인후 logincookie진행
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
 		HttpSession session = request.getSession();
 
-		if (session.getAttribute("login") == null) {
+		if (session.getAttribute("alogin") == null) {
 
-			log.info("current Auser is not logined");
+			log.info("current user is not logined");
 
 			saveDest(request);
 
@@ -37,18 +38,18 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			if (loginCookie != null) { // 쿠기값이 있다면
 				
 				// 쿠키값으로 table에 저장되어 있는 session id 값을 조회해 사용자 정보를 가져온다.
-				UserVO UserVO = service.checkLoginBefore(loginCookie.getValue());
+				AUserVO AUserVO = service.checkALoginBefore(loginCookie.getValue());
 
-				log.info("USERVO: " + UserVO);
+				log.info("AUSERVO: " + AUserVO);
 
-				if (UserVO != null) {
-					session.setAttribute("login", UserVO);
+				if (AUserVO != null) {
+					session.setAttribute("alogin", AUserVO);
 					return true;
 				}
 
 			}
 
-			response.sendRedirect("/front/login");
+			response.sendRedirect("/alogin");
 			return false;
 		}
 		return true;

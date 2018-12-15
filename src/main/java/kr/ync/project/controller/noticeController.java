@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kr.ync.project.domain.AnoticeVO;
+import kr.ync.project.admin.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
-import kr.ync.project.service.AnoticeService;
+import kr.ync.project.admin.service.AnoticeService;
 
 /**
  * Handles requests for the application home page.

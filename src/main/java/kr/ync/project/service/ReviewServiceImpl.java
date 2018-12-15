@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import kr.ync.project.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ReviewVO;
