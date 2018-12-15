@@ -16,8 +16,8 @@ public interface ReviewService {
 	public List<ReviewVO> listReview() throws Exception;
 
 	public List<ReviewVO> reviewList(ReviewVO reviewVO);
-	
-	//리뷰 상세보기
+
+	// 리뷰 상세보기
 	public ReviewVO readReview(Integer rNum) throws Exception;
 
 	public void insertReview(ReviewVO reviewVO);
@@ -28,5 +28,9 @@ public interface ReviewService {
 
 	public void insertReviewPhoto(ReviewVO reviewVO);
 
+	// 페이징
+	public List<ReviewVO> listCriteria(Criteria cri) throws Exception;
+
+	public int listCountCriteria(Criteria cri) throws Exception;
 
 }

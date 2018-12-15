@@ -169,4 +169,6 @@ $(".uploadedList").on("click", ".mailbox-attachment-info a", function(event){
 });
 </script>
 
-<%@include file="../include/footer.jsp"%>
+   <!-- Footer -->
+   <%@ include file="include/footer.jsp" %>
+      

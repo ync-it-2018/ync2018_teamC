@@ -80,19 +80,7 @@ public class HomeController {
 		return "front/product";
 	}
 	
-	@Inject
-	private ReviewService reviewService;
-	
-	@RequestMapping(value = "/review", method = RequestMethod.GET)
-	public String reviewList(Locale locale, Model model) throws Exception {
-		
-		logger.info("리스트목록보기", locale);
-		
-		model.addAttribute("reviewList", reviewService.rlistAll());
-		
-		
-		return "front/review";
-	}
+
 	
 	
 	
