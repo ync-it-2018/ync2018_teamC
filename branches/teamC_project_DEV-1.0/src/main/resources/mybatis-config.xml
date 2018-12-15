@@ -11,6 +11,8 @@
    </settings>
 
 	<typeAliases>
-    	<package name="kr.ync.project.domain"/>    
+    	<package name="kr.ync.project.domain"/> 
+    	<package name="kr.ync.project.admin.domain"/>    
   	</typeAliases>
+  	
 </configuration>

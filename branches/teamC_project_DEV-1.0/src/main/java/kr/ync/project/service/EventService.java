@@ -3,7 +3,6 @@ package kr.ync.project.service;
 import java.sql.Date;
 import java.util.List;
 
-import kr.ync.project.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.SignupVO;

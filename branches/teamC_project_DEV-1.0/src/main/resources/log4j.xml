@@ -14,6 +14,9 @@
 	<logger name="kr.ync.project.controller">
 		<level value="info" />
 	</logger>
+	<logger name="kr.ync.project.admin.controller">
+		<level value="info" />
+	</logger>
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">

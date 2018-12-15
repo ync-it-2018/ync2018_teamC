@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ProductVO;
 import kr.ync.project.service.EventService;
-import kr.ync.project.service.MLevelService;
+import kr.ync.project.admin.service.MLevelService;
 import kr.ync.project.service.ProductService;
 import kr.ync.project.service.ReviewService;
 /**
@@ -213,18 +213,6 @@ public class HomeController {
 		
 		return "admin/addslider";
 	}
-	/*
-	@RequestMapping(value = "/test02", method = RequestMethod.GET)
-	public String popup(Locale locale, Model model) {
-		
-		return "admin/test02";
-	}
-	
-	@RequestMapping(value = "/test02_1", method = RequestMethod.GET)
-	public String popuptest(Locale locale, Model model) {
-		
-		return "admin/test02_1";
-	}*/
 	
 	@RequestMapping(value = "/management", method = RequestMethod.GET)
 	public String management(Locale locale, Model model) {
