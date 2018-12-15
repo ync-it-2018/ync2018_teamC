@@ -130,27 +130,8 @@ $(document).ready(function(){
 
 
 
-<!-- <script type="text/javascript">
-//script구문 내부에 해당 메소드를 입력합니다.
-$(function() {
-  $( "#testDatepicker" ).datepicker({
-         changeMonth: true, 
-         changeYear: true,
-         nextText: '다음 달',
-         prevText: '이전 달' 
-  });
-  $( "#testDatepicker1" ).datepicker({
-      changeMonth: true, 
-      changeYear: true,
-      nextText: '다음 달',
-      prevText: '이전 달' 
-});
-});
-</script> -->
-
-
 <script>
-
+//이벤트 사진 업로드 시도
 var template = Handlebars.compile($("#template").html());
 
 $(".fileDrop").on("dragenter dragover", function(event){
