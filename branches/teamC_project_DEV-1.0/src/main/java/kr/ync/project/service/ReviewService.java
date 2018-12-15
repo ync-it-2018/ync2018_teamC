@@ -3,6 +3,7 @@ package kr.ync.project.service;
 import java.sql.Date;
 import java.util.List;
 
+import kr.ync.project.admin.domain.AnoticeVO;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.EventVO;
 import kr.ync.project.domain.ReviewVO;
@@ -15,6 +16,9 @@ public interface ReviewService {
 	public List<ReviewVO> listReview() throws Exception;
 
 	public List<ReviewVO> reviewList(ReviewVO reviewVO);
+	
+	//리뷰 상세보기
+	public ReviewVO readReview(Integer rNum) throws Exception;
 
 	public void insertReview(ReviewVO reviewVO);
 

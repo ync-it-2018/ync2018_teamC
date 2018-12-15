@@ -418,7 +418,7 @@ body { background: #fff; }
    </div>
    <section class="bg0 p-t-75 p-b-120">
       <div id="a"   style="text-align:center; margin-top:-50px;">
-         <!-- 이벤트 반복 구문 -->
+         <!-- 리뷰 반복 구문 -->
          <form id="reviewForm" name="reviewForm" method="POST" >
          <div id="b" style="display : inline-block;">
          <table class="bluetop"> 
@@ -428,12 +428,12 @@ body { background: #fff; }
 				<th style="width: 20%;">USER</th>
 				<th style="width: 30%;">DATE</th>
 			</tr>
-         <c:forEach items = "${reviewList}" var="review">
+         <c:forEach items = "${reviewList}" var="ReviewVO">
         	 <tr>
-				<td>${review.rNum}</td>
-				<td><a href='/admin/aeventDetail?rNum=${review.rNum}'>${review.rTitle}</a></td>
-				<td>${review.mId}</td>
-				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${review.rDate}" /></td>
+				<td>${ReviewVO.rNum}</td>
+				<td><a href='/review/ReviewRead?rNum=${ReviewVO.rNum}'>${ReviewVO.rTitle}</a></td>
+				<td>${ReviewVO.mId}</td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${ReviewVO.rDate}" /></td>
 			 </tr>
          </c:forEach>
          </table>
@@ -597,6 +597,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    </div>
 
 <!--===============================================================================================-->   
+<!-- 리뷰 상세페이지로 이동하는 스크립트 -->
+<script>
+function fn_view(nCode){
+    
+    var form = document.getElementById("reviewForm");
+    var url = "<c:url value='/ReviewRead'/>";
+    url = url + "?rNum=" + rNum;
+    
+    form.action = url;    
+    form.submit(); 
+}
+<!--===============================================================================================-->   
+</script>
    <script src="/resources/front/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
    <script src="/resources/front/vendor/animsition/js/animsition.min.js"></script>
