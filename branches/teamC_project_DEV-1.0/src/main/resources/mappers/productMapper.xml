@@ -23,10 +23,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM TC_PRODUCT A
 		,TC_P_FILE B
 		WHERE A.P_CODE = B.P_CODE
-		<if test="big != null">
+		<if test="small != null ">
 			AND   P_BIG = #{big}
-		</if>		
-
+			AND   P_MIDDLE = #{middle}
+			AND   P_SMALL = #{small}
+		</if>
 	</select>
 
 
@@ -181,6 +182,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from TC_PRODUCT where P_CODE = #{pCode}
 	</delete>
 	
+	
+	<!-- 페이징 -->
 	<select id="listPage" resultType="productVO">
 	<![CDATA[
 	SELECT 	A.P_NAME

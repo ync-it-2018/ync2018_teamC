@@ -54,15 +54,13 @@
    
 </style>
 
-
-   <!-- Header -->
+<body class="animsition">
+	<!-- header -->
    <%@ include file="include/header.jsp" %>  
-   
-   
-   <!-- cart -->
+
+  	<!-- cart -->
    <%@ include file="include/cart.jsp" %>
  
-
    <!-- Slider -->
    <section class="section-slide">
       <div class="wrap-slick1">
@@ -152,7 +150,7 @@
                <div class="block1 wrap-pic-w">
                   <img src="/resources/front/images/cate06.png" alt="IMG-BANNER" >
 
-                  <a href="/product?catregory=1" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                  <a href="/product?bigcategory=1" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                      <div class="block1-txt-child1 flex-col-l">
                         <span class="block1-name ltext-102 trans-04 p-b-8">
                            Dog
@@ -177,7 +175,7 @@
                <div class="block1 wrap-pic-w">
                   <img src="/resources/front/images/cate02.jpg" alt="IMG-BANNER">
 
-                  <a href="/product?catregory=2" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                  <a href="/product?bigcategory=2" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                      <div class="block1-txt-child1 flex-col-l">
                         <span class="block1-name ltext-102 trans-04 p-b-8">
                            Cat

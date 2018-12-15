@@ -99,58 +99,58 @@
                      <li>
                         <a href="/product">Shop</a>
                         <ul class="sub-menu">
-                           <li><a href="/product">강아지</a>
+                           <li><a href="/product?bigcategory=1">강아지</a>
                               <ul class="sub-menu">
-                                 <li><a href="/product">사료 / 간식</a>
+                                 <li><a href="/product?bigcategory=1&middlecategory=1">사료 / 간식</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">자견용</a></li>
-                                       <li><a href="/product">성견용</a></li>
-                                       <li><a href="/product">노견용</a></li>
-                                       <li><a href="/product">유기농</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=1">자견용</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=2">성견용</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=3">노견용</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=1&smallcategory=4">유기농</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">생활 / 훈련</a>
+                                 <li><a href="/product?bigcategory=1&middlecategory=2">생활 / 훈련</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">배변</a></li>
-                                       <li><a href="/product">장난감</a></li>
-                                       <li><a href="/product">목욕</a></li>
-                                       <li><a href="/product">하우스</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=5">배변</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=6">장난감</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=7">목욕</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=2&smallcategory=8">하우스</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">패션 / 악세사리</a>
+                                 <li><a href="/product?bigcategory=1&middlecategory=3">패션 / 악세사리</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">신발</a></li>
-                                       <li><a href="/product">상의</a></li>
-                                       <li><a href="/product">하의</a></li>
-                                       <li><a href="/product">원피스</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=9">신발</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=10">상의</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=11">하의</a></li>
+                                       <li><a href="/product?bigcategory=1&middlecategory=3&smallcategory=12">원피스</a></li>
                                     </ul>
                                  </li>
                               </ul>
                            </li>
-                           <li><a href="/product">고양이</a>
+                           <li><a href="/product?bigcategory=2">고양이</a>
                               <ul class="sub-menu">
-                                 <li><a href="/product">사료 / 간식</a>
+                                 <li><a href="/product?bigcategory=2&middlecategory=4">사료 / 간식</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">자묘용</a></li>
-                                       <li><a href="/product">성묘용</a></li>
-                                       <li><a href="/product">노묘용</a></li>
-                                       <li><a href="/product">유기농</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=13">자묘용</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=14">성묘용</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=15">노묘용</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=4&smallcategory=16">유기농</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">생활 / 훈련</a>
+                                 <li><a href="/product?bigcategory=2&middlecategory=5">생활 / 훈련</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">배변</a></li>
-                                       <li><a href="/product">장난감</a></li>
-                                       <li><a href="/product">목욕</a></li>
-                                       <li><a href="/product">하우스</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=17">배변</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=18">장난감</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=19">목욕</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=5&smallcategory=20">하우스</a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="/product">패션 / 악세사리</a>
+                                 <li><a href="/product?bigcategory=2&middlecategory=6">패션 / 악세사리</a>
                                     <ul class="sub-menu">
-                                       <li><a href="/product">신발</a></li>
-                                       <li><a href="/product">상의</a></li>
-                                       <li><a href="/product">하의</a></li>
-                                       <li><a href="/product">원피스</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=21">신발</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=22">상의</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=23">하의</a></li>
+                                       <li><a href="/product?bigcategory=2&middlecategory=6&smallcategory=24">원피스</a></li>
                                     </ul>
                                  </li>
                               </ul>
