@@ -54,5 +54,10 @@ public class ReviewServiceImpl implements ReviewService {
 		dao.insertReviewPhoto(reviewVO);
 	}
 
+	@Override
+	public ReviewVO readReview(Integer rNum) throws Exception {
+		return dao.readReview(rNum);
+	}
+
 
 }

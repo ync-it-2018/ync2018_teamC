@@ -18,6 +18,8 @@ public class ReviewVO {
 	private String rContents;
 	private String mId;
 	private String pCode;
+	private String pName;
+	private String pImageSrc;
 	
 	public Integer getrNum() {
 		return rNum;
@@ -62,12 +64,18 @@ public class ReviewVO {
 	public void setpCode(String pCode) {
 		this.pCode = pCode;
 	}
-	
-	
-	
-	
-	
-	
-	
+	public String getpImageSrc() {
+		return pImageSrc;
+	}
+
+	public void setpImageSrc(String pImageSrc) {
+		this.pImageSrc = pImageSrc;
+	}
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
 
 }

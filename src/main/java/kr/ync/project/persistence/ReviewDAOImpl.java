@@ -58,4 +58,9 @@ public class ReviewDAOImpl implements ReviewDAO {
 		session.insert("insertReviewPhoto", reviewVO);
 	}
 
+	@Override
+	public ReviewVO readReview(Integer rNum) throws Exception {
+		return session.selectOne(namespace + ".readReview", rNum);
+	}
+
 }

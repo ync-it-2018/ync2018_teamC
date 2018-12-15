@@ -67,7 +67,7 @@
 								<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="/" class="logo">
+					<a href="/index" class="logo">
 						<img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
@@ -75,7 +75,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<!-- <li class="active-menu">
-								<a href="/">Home</a>
+								<a href="/index">Home</a>
 
 							</li>
  -->
@@ -187,7 +187,7 @@
       <div class="wrap-header-mobile">
          <!-- Logo moblie -->      
          <div class="logo-mobile">
-            <a href="/"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="/index"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
          </div>
 
          <!-- Icon header -->
@@ -246,9 +246,9 @@
 
          <ul class="main-menu-m">
             <li>
-               <a href="/">Home</a>
+               <a href="/index">Home</a>
                <ul class="sub-menu-m">
-                  <li><a href="/">Homepage 1</a></li>
+                  <li><a href="/index">Homepage 1</a></li>
                   <li><a href="/home-02">Homepage 2</a></li>
                   <li><a href="home-03.jsp">Homepage 3</a></li>
                </ul>
@@ -382,7 +382,7 @@
    <!-- Title page -->
    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/resources/front/images/bg-01.jpg');">
       <h2 class="ltext-105 cl0 txt-center">
-         Contact
+         Review
       </h2>
    </section>   
 
@@ -397,35 +397,76 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">공지 상세</h3><br><br>
+					<h3 class="box-title">상세 후기</h3><br><br>
 				</div>
+				<hr>
 				<!-- /.box-header -->
 
 				<form role="form" action="modifyPage" method="post">
 
-					<input type='hidden' name='nCode' value="${list.nCode}"> 
+					<input type='hidden' name='nCode' value="${list.rNum}"> 
 					<input type='hidden' name='page' value="${cri.page}"> 
 					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
 					<input type='hidden' name='searchType' value="${cri.searchType}">
 					<input type='hidden' name='keyword' value="${cri.keyword}">
 
 				</form>
-				
-				<div class="box-body">
-					<div class="form-group">
-						<label for="exampleInputEmail1">Title</label> 
-						<input type="text" name='nTitle' class="form-control" value="${list.nTitle}"
-							readonly="readonly">
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">Content</label>
-						<textarea class="form-control" name="nContents" rows="3"
-							readonly="readonly">${list.nContents}</textarea>
-					</div>
+				<div class="row">
+					<div class="hov-img0 col-md-6">
+	                     <img src="${list.pImageSrc}" alt="IMG">
+	                     <!-- 이벤트 사진 -->
+	                </div>
+	                
+		            <div class="col-md-6" style="margin-top:50px;">    
+					<table style="margin : 0 auto; ">
+			         <tr>
+			         	<td >
+			         		<label for="title" style="width:50px; margin-right:30px;"><b>제목</b></label> 
+			         		<br>
+			         	</td>
+			         	<td>
+			         		<input style="width: 60%; border: 1px solid lightgray;"
+			            type="text" name="rTitle" value="${list.rTitle}" readonly="readonly"> 
+			            <br> 
+			         	</td>
+			         </tr>
+			         <tr>
+			         	<td >
+			         		<label for="title" style="width:100%;"><b>작성자</b></label> 
+			         		<br>
+			         	</td>
+			         	<td>
+			         		<input style="width: 60%; border: 1px solid lightgray;"
+			            type="text" name="mId" value="${list.mId}" readonly="readonly"> 
+			            <br> 
+			         	</td>
+			         </tr>
+			         <tr>
+			         	<td >
+			         		<label for="title" ><b>상품명</b></label> 
+			         		<br>
+			         	</td>
+			         	<td>
+			         		<input style="width: 80%; border: 1px solid lightgray;"
+			            type="text" name="pName" value="${list.pName}" readonly="readonly"> 
+			            <br> 
+			         	</td>
+			         </tr>
+		         
+			          <tr>
+			         	<td>
+			         		<label for="content" ><b>내용</b></label>
+			         	</td>
+			         	<td>
+			         		 <input style="width: 500px; height: 200px; border: 1px solid lightgray;"
+			            type="text" name="pCode" value="${list.rContents}" readonly="readonly"> 
+			            <br> 
+			         	</td>
+					</tr>  
+		         </table>
+		         </div>
 				</div>
-				
-				<!-- /.box-body -->
-				
+                
 			  <div class="box-footer">
 			    
 			    <div><hr></div>
@@ -436,23 +477,13 @@
 			  </div>
 
 			</div>
-			<!-- /.box -->
 		</div>
-		<!--/.col (left) -->
 
 	</div> 
-   
-   
-   
-   
+	
    
       </div>
    </section>   
-   
-   
-
-
-
    <!-- Footer -->
    <footer class="bg3 p-t-75 p-b-32">
       <div class="container">
