@@ -1,7 +1,5 @@
 package kr.ync.project.admin.controller;
 
-import java.util.Locale;
-
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -14,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ync.project.admin.domain.AnoticeVO;
+import kr.ync.project.admin.service.AnoticeService;
 import kr.ync.project.domain.Criteria;
 import kr.ync.project.domain.PageMaker;
-import kr.ync.project.admin.service.AnoticeService;
 
 /**
  * Handles requests for the application home page.
@@ -29,27 +27,6 @@ public class AnoticeController {
 
 	@Inject
 	private AnoticeService service;
-
-	/*@RequestMapping(value = "/contact", method = { RequestMethod.GET, RequestMethod.POST })
-	public String Notice(Locale locale, Model model) throws Exception {
-
-		logger.info("리스트목록보기", locale);
-
-		model.addAttribute("serverTime", service.listAll());
-
-		return "front/contact";
-	}
-
-	@RequestMapping(value = "/NoticeRead", method = { RequestMethod.GET, RequestMethod.POST })
-	public String NoticeRead(@RequestParam("nCode") Integer nCode, Model model) throws Exception {
-
-		logger.info("리스트상세보기");
-
-		model.addAttribute("list", service.readNotice(nCode));
-
-		return "front/NoticeRead";
-	}*/
-	
 	
 	//글 작성 get
 	@RequestMapping(value = "/aNoticeRegister", method = RequestMethod.GET)
@@ -71,16 +48,6 @@ public class AnoticeController {
 		return "redirect:/admin/aNotice";
 	}
 	
-	
-//	//목록
-//	@RequestMapping(value = "/aNotice", method = RequestMethod.GET)
-//	public void aNotice(Model model) throws Exception {
-//
-//		logger.info("리스트목록보기");
-//
-//		model.addAttribute("list", service.listAll());
-//
-//	}
 	
 	//상세
 	@RequestMapping(value = "/aNoticeRead", method = RequestMethod.GET)

@@ -35,24 +35,20 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">READ Category</h3>
+					<h3 class="box-title">READ Big Category</h3>
 				</div>
 				<!-- /.box-header -->
 
-				<form role="form" action="modifyPage" method="post">
+				<form role="form" method="post">
 
-					<input type='hidden' name='pBig' value="${list.pBig}"> 
-					<%-- <input type='hidden' name='page' value="${cri.page}"> 
-					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
-					<input type='hidden' name='searchType' value="${cri.searchType}">
-					<input type='hidden' name='keyword' value="${cri.keyword}"> --%>
+					<input type='hidden' name='pBig' value="${categoryBigVO.pBig}"> 
 
 				</form>
 				
 				<div class="box-body">
 					<div class="form-group">
 						<label for="exampleInputEmail1">대분류 카테고리 명</label> 
-						<input type="text" name='pBigName' class="form-control" value="${list.pBigName}"
+						<input type="text" name='pBigName' class="form-control" value="${categoryBigVO.pBigName}"
 							readonly="readonly">
 					</div>
 				</div>
@@ -85,18 +81,18 @@ $(document).ready(function(){
 	
 	/* 수정 클릭 */ 
 	$('.btn-warning').on('click',function(){
-		formObj.attr("action", "/categorybig/categorybigModify");
+		formObj.attr("action", "/admin/categorybigModify");
 		formObj.attr("method", "get");		
 		formObj.submit();
 	});
 	/* 삭제 클릭 */ 
 	$('.btn-danger').on('click',function(){
-		formObj.attr("action", "/categorybig/categorybigDelete");
+		formObj.attr("action", "/admin/deleteCategoryBig");
 		formObj.submit();
 	});  
 	/* 리스트 클릭 */ 
 	$('.btn-primary').on('click',function(){
-		self.location = "/categorybig/categorylist";
+		self.location = "/admin/categorybigList";
 	});
 });
 </script>
