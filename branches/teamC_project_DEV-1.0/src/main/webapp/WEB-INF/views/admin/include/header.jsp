@@ -48,7 +48,7 @@
 
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="/resources/index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<a href="/aindex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg"><b>Mung</b> Nyang</span>
 			</a>
@@ -328,8 +328,6 @@
 							<li><a href="/ajoin"><i class="fa fa-circle-o"></i> 회원가입</a></li>
 							<li><a href="/admin/alogout"><i class="fa fa-sign-out"></i>
 									로그아웃</a></li>
-							<li><a href="/productup"><i class="fa fa-circle-o"></i>
-									관리자계정</a></li>
 							<li><a href="/coInfo"><i class="fa fa-circle-o"></i>
 									회사정보</a></li>
 						</ul></li>

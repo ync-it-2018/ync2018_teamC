@@ -120,7 +120,7 @@
 			</div>
 			<div style="width:900px; height:150px; border:1px solid lightgray;  margin: 45px 45px 35px 0px; padding: 30px;">
 				<img src="/resources/front/images/cate01.jpg" alt="IMG" style="width:120px; height:100px; padding:left;">
-				<a href="/index" data-rel="back" data-direction="reverse"><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:600px"></a>
+				<a href="/" data-rel="back" data-direction="reverse"><img src="/resources/front/images/icons/icon-close2.png" style="margin-left:600px"></a>
 			</div>
 		</div>
 	</div>

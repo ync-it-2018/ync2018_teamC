@@ -65,7 +65,7 @@
 								<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="/index" class="logo">
+					<a href="/" class="logo">
 						<img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
@@ -73,7 +73,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<!-- <li class="active-menu">
-								<a href="/index">Home</a>
+								<a href="/">Home</a>
 
 							</li>
  -->
@@ -185,7 +185,7 @@
       <div class="wrap-header-mobile">
          <!-- Logo moblie -->      
          <div class="logo-mobile">
-            <a href="/index"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="/"><img src="/resources/front/images/icons/logo-01.png" alt="IMG-LOGO"></a>
          </div>
 
          <!-- Icon header -->
@@ -244,9 +244,9 @@
 
          <ul class="main-menu-m">
             <li>
-               <a href="/index">Home</a>
+               <a href="/">Home</a>
                <ul class="sub-menu-m">
-                  <li><a href="/index">Homepage 1</a></li>
+                  <li><a href="/">Homepage 1</a></li>
                   <li><a href="/home-02">Homepage 2</a></li>
                   
                </ul>
@@ -415,15 +415,15 @@
 				<h3 class="mtext-111 cl2 p-b-16">
                     Leader
                   </h3>
-	 		 <div style="width:200px; height:150px;">		 
-	 		 <img src="/resources/front/images/jinhee.jpg" alt="IMG" width="200px" height="270px">
+	 		 <div style="width:200px; height:150px; margin:23% ">		 
+	 		 <img src="/resources/front/images/jinhee.jpg" alt="IMG" width="200px" height="280px">
 	 		 <p>김진희</p>
 	 		 </div> 
 	 		 </div>
 	 		</div>
 	 		
 	 		<div style="text-align:center;">
-	 		<div style="padding-top: 200px; display:inline-block;">
+	 		<div style="padding-top: 100px; display:inline-block;">
 	     	  <h3 class="mtext-111 cl2 p-b-16">
                     Member
                   </h3>

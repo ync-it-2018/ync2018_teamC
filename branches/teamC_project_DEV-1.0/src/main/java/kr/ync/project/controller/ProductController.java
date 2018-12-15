@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kr.ync.project.domain.Criteria;
+import kr.ync.project.domain.PageMaker;
 import kr.ync.project.domain.ProductVO;
 import kr.ync.project.service.ProductService;
 
@@ -43,7 +45,7 @@ public class ProductController {
 		return "redirect:/admin/productlist";
 	}
 
-	// 목록
+/*	// 목록
 	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
 	public void productlist(Model model) throws Exception {
 
@@ -51,7 +53,7 @@ public class ProductController {
 
 		model.addAttribute("list", service.listAll());
 
-	}
+	}*/
 
 	// 상세
 	@RequestMapping(value = "/productRead", method = RequestMethod.GET)
@@ -96,6 +98,30 @@ public class ProductController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
 		return "redirect:/admin/productlist";
+	}
+	
+	//페이징 처리
+	@RequestMapping(value = "/listCrie", method = RequestMethod.GET)
+	public void listAll(Criteria cri, Model model) throws Exception{
+		
+		logger.info("Criteria Page");
+		
+		model.addAttribute("list", service.listCriteria(cri));
+	}
+	
+	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
+	public void listPage(Criteria cri, Model model) throws Exception{
+		
+		logger.info(cri.toString());
+		
+		model.addAttribute("list", service.listCriteria(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		//pageMaker.setTotalCount(131);
+		
+		pageMaker.setTotalCount(service.listCountCriteria(cri));
+		
+		model.addAttribute("pageMaker", pageMaker);
 	}
 
 
